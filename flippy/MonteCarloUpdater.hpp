@@ -7,6 +7,14 @@
 
 namespace fp {
 
+/**
+ * A helper class for updating of the triangulation, using [Metropolis–Hastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
+ * @tparam Real type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the fp::floating_point_number concept is allowed, for example `float`.
+ * @tparam Index type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the fp::integer_number concept is allowed, for example `int`.
+ * @tparam EnergyFunctionParameters
+ * @tparam RandomNumberEngine
+ * @tparam triangulation_type
+ */
 template<floating_point_number Real, integer_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
 class MonteCarloUpdater
 {

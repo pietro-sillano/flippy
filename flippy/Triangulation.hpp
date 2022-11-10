@@ -9,15 +9,6 @@
 
 /**
  * flippy's namespace.
- *
- * All class methods in flippy use similar prefix based nomenclature
- *
- * prefix | description
- * :-----:| :--------
- * calculate_| Indicates that a calculation will happen when the method is called, which might be expensive.
- * [action]_| [action]_ could be move_ or flip_ or any other descriptor. This prefixes indicate a state change and are usually expensive.
- * [no prefix] | usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this).
- * Example: In the triangulation class `mass_center()` returns a const reference to the private member `mass_center.`
  */
 namespace fp {
 
@@ -49,14 +40,33 @@ struct BondFlipData
 
 /**
  * A helper struct;  makes addition and subtraction on a ring easier.
- * */
+ * Each fp::Node stores its next neighbours in a vector Node.nn_ids,
+ * where the adjacent members in a vector are also next neighbours of each other.
+ * This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary.
+ * @see fp::Node.
+ * @tparam Index
+ */
 template<integer_number Index>
 struct Neighbors
 {
-  Index j_m_1{-1};  //neighbor j+1
-  Index j_p_1{-1};  //neighbor j-1
+  //! neighbor j+1
+  Index j_m_1{-1};
+  //! neighbor j-1
+  Index j_p_1{-1};
 
+  /**
+   *
+   * @param j index of the j-th next neighbour
+   * @param ring_size corresponds to the number of elements of Node.nn_ids
+   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e. if `j` is the index of Node.nn_ids its next neighbour will be stored in `j+1` element, unless `j` is the last element, then its next neighbour will be stored in the 0th element.
+   */
   static Index plus_one(Index j, Index ring_size) { return ((j<ring_size - 1) ? j + 1 : (Index) 0); }
+  /**
+ *
+ * @param j index of the j-th next neighbour
+ * @param ring_size corresponds to the number of elements of Node.nn_ids
+ * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e. if `j` is the index of Node.nn_ids its previous next neighbour will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbour will be stored in the last element.
+ */
   static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
 
 };

@@ -31,7 +31,7 @@ struct Node
    */
   Real volume;
   /**
-   * unit_bending energy corresponds to the Helfrich bending energy with bending rigidity 1
+   * `unit_bending_energy` corresponds to the [Helfrich bending energy](https://en.wikipedia.org/wiki/Elasticity_of_cell_membranes) with bending rigidity 1 and gaussian bending stiffness 0
    * \f[
    *  \mathrm{unit\_bending\_energy} = \frac{1}{2} A_{\mathrm{node}} (2 H_{node})^2
    * \f]
@@ -46,7 +46,11 @@ struct Node
   vec3<Real> pos;
   //! curvature vector of the node as defined in [1]
   vec3<Real> curvature_vec;
-  //! nn_ids contains the ids of nodes that are connected to this node
+  //! nn_ids contains the ids of nodes that are connected to this node.
+  //! The next neighbours that are also neighbours in the triangulation are stored sequentially in the vector.
+  //! The last and the first elements are also neighbours, i.e. the nn_ids vector wraps around.
+  //! During the calculation this is facilitated through the use of @ref fp::Neighbors.
+  //! @note The order of the next neighbours matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
   std::vector<Index> nn_ids;
   //! distance vectors pointing from the node to it's next neighbours.
   std::vector<vec3<Real>> nn_distances;
