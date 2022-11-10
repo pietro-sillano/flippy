@@ -1,5 +1,5 @@
 var files_dup =
 [
-    [ "docs", "dir_49e56c817e5e54854c35e136979f97ca.html", "dir_49e56c817e5e54854c35e136979f97ca" ],
+    [ "assets", "dir_34e9a5f624ac092a9ae2401c28d616d7.html", "dir_34e9a5f624ac092a9ae2401c28d616d7" ],
     [ "flippy", "dir_6b186b4a3fa96a5ae1faf2feaa17366f.html", "dir_6b186b4a3fa96a5ae1faf2feaa17366f" ]
 ];

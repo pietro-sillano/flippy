@@ -1,5 +1,5 @@
-OUTPUT_DIRECTORY        = docs/
-INPUT                   = flippy, docs/markdown_files
+OUTPUT_DIRECTORY        = .
+INPUT                   = flippy, assets/markdown_files
 IMAGE_PATH              = assets/
 EXCLUDE                 = flippy/external
 PROJECT_NAME            = flippy
@@ -9,7 +9,7 @@ DISABLE_INDEX           = NO
 FULL_SIDEBAR            = YES
 EXTRACT_PRIVATE         = NO
 EXTRACT_STATIC          = NO
-HTML_EXTRA_STYLESHEET   = docs/doxygen-awesome-css-2.1.0/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET   = assets/doxygen-awesome-css-2.1.0/doxygen-awesome.css
 PROJECT_SYNOPSIS        = a c++20 package for dynamically triangulated membrane simulations.
 RECURSIVE               = YES
 EXTRACT_ALL             = YES
