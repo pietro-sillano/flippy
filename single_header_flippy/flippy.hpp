@@ -40,425 +40,13 @@
  *```
  */
 
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
 
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
 
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
+// begin --- .DS_Store --- 
 
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
+Bud1	itiesbw	utilitiesbwspblob∫bplist00÷	]ShowStatusBar[ShowToolbar[ShowTabView_ContainerShowSidebar\WindowBounds[ShowSidebar			_{{2052, 465}, {1393, 777}}	#/;R_klmnoåç	utilitiesvSrnlong @Ä @Ä @Ä @E	DSDB `Ä @Ä @Ä @
 
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
+// end --- .DS_Store --- 
 
 
 
@@ -478,6 +66,16 @@
 
 
 
+// begin --- Triangulator.hpp --- 
+
+#ifndef FLIPPY_TRIANGULATOR_HPP
+#define FLIPPY_TRIANGULATOR_HPP
+
+#include <array>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+
 // begin --- custom_concepts.hpp --- 
 
 #ifndef FLIPPY_CUSTOM_CONCEPTS_HPP
@@ -486,11 +84,29 @@
 
 namespace fp{
 /**
- * Here we implement the concepts of a floating point number and integral number.
- * Since apple clang does not implement concepts fully we need to do this here.
+ * @defgroup myConcepts Special concepts
+ * @brief definitions of concepts that restrict template parameters in  flippy's classes.
+ * @note For more information on what `c++` concepts are in general see [this](https://en.cppreference.com/w/cpp/language/constraints) cpp reference page.
+ *@{
+ */
+
+/**
+ * @brief Here we implement the concepts of a floating point number.
+ *
+ * This concept is equivalent to [std::floating_point](https://en.cppreference.com/w/cpp/concepts/floating_point).
+ * However, not all `c++20` compilers implement these features yet.
+ * In particular some apple clang versions that are technically `c++20` capable.
+ * @tparam T This concept requires the type T to be a floating point number.
  */
 template<class T> concept floating_point_number = std::is_floating_point_v<T>;
-template<class T> concept integer_number = std::is_integral_v<T>;
+
+/**
+ * @brief Here we implement the concepts of a positive integer number that is used throughout the code for indexing.
+ *
+ * @tparam T This concept requires the type T to be unsigned and an integral type.
+ */
+template<class T> concept indexing_number = std::is_unsigned_v<T> && std::is_integral_v<T>;
+/**@}*/
 }
 
 
@@ -501,20 +117,764 @@ template<class T> concept integer_number = std::is_integral_v<T>;
 
 
 
-// begin --- Triangulation.hpp --- 
+// begin --- vec3.hpp --- 
 
-#ifndef FLIPPY_TRIANGULATION_HPP
-#define FLIPPY_TRIANGULATION_HPP
+#ifndef FLIPPY_VEC3_HPP
+#define FLIPPY_VEC3_HPP
 
-#include<optional>
+#include <ostream>
+#include <iostream>
+#include <cmath>
 
-// begin --- Nodes.hpp --- 
 
-#ifndef FLIPPY_NODES_HPP
-#define FLIPPY_NODES_HPP
+namespace fp{
+/**
+ * Internal implementation of a 3D vector.
+ *
+ * !!! vec3 does not throw !!! This means that if you ask vec3 to divide a vector by 0 or more realistically if you
+ * normalize a zero length vector vec3 will not check for the division by zero and will return a nan result!
+ * Since vec3 is used everywhere in flippy, including in very expensive calculations, I decided to omit the security check
+ * for the sake of speed.
+ *
+ * To keep the external dependencies low, flippy implements it's own 3D vector class with basic functionality like dot product and cross product
+ *
+ * Example:
+ * ```c++
+ * fp::vec3<double> v1{1,0,0};
+ * fp::vec3<double> v2{0,0,1};
+ *
+ *  assert(v1.dot(v2)==0);
+ *  assert(v1.cross(v2).norm()==1);
+ *  assert(((v1-v2)==fp::vec3<double>{1.,0.,-1.}));
+ * ```
+ */
+template<floating_point_number Real>
+class vec3
+{
+public:
+    Real x, y, z;
 
-#include <vector>
-#include <unordered_set>
+    //! In place addition method.
+    /**
+     * Example:
+     * ```c++
+     * fp::vec3<double> v1{1,0,0};
+     * fp::vec3<double> v2{0,0,1};
+     * v1.add(v2);  // v1 will contain {1, 0, 1}
+     * ```
+     * @param v add this vector elementwise to the vector that is calling the *add* method.
+     */
+    void add(vec3<Real> const& v)
+    {
+        x += v.x;
+        y += v.y;
+        z += v.z;
+    }
+
+    //! In place subtraction method.
+    /**
+     * Example:
+     * ```c++
+     * fp::vec3<double> v1{2,0,0};
+     * fp::vec3<double> v2{1,0,1};
+     * v1.subtract(v2);  // v1 will contain {1, 0, -1}
+     * ```
+     * @param v subtract this vector elementwise from the vector that is calling the *subtract* method.
+     */
+    void subtract(vec3<Real> const& v)
+    {
+        x -= v.x;
+        y -= v.y;
+        z -= v.z;
+    }
+
+    void scale(Real s)
+    {
+        /**
+         * scale the vector by a real number s
+         */
+        x = s*x;
+        y = s*y;
+        z = s*z;
+    }
+
+    Real dot(vec3<Real> const& v) const
+    {
+        Real res = x*v.x + y*v.y + z*v.z;
+        return res;
+    }
+
+    [[nodiscard]] constexpr std::size_t size() const { return 3; }
+
+    static inline vec3<Real> cross(vec3<Real> const& a, vec3<Real> const& b)
+    {
+        vec3<Real> res;
+        res.x = a.y*b.z - a.z*b.y;
+        res.y = a.z*b.x - a.x*b.z;
+        res.z = a.x*b.y - a.y*b.x;
+        return res;
+    }
+
+    vec3<Real> cross(vec3<Real> const& other) const { return cross(*this, other); }
+
+    Real norm() const { return std::sqrt(this->dot(*this)); }
+
+    Real norm_square() const { return this->dot(*this); }
+
+    vec3<Real>const& normalize(){
+        /**
+         * normalize vector in place. And return a reference.
+         *
+         * IMPORTANT: if you normalize a zero length vector, you effectively
+         * demand to divide by zero! this function will not do a security check
+         * for you and will just return nan!
+         */
+        *this= *this/this->norm();
+        return *this;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const vec3<Real>& obj)
+    {
+        os << "{" << obj.x << ',' << obj.y << ',' << obj.z << '}';
+        return os;
+    }
+
+    bool operator==(vec3<Real> const& other) const =default;
+
+
+    // mathematical operations
+    friend vec3<Real> operator+(vec3<Real> lhs, vec3<Real> const& rhs)
+    {
+        lhs+=rhs;
+        return lhs;
+    }
+
+    friend void operator+=(vec3<Real>& lhs, vec3<Real> const& rhs)
+    {
+        lhs.add(rhs);
+    }
+
+    friend vec3<Real> operator-(vec3<Real> lhs, vec3<Real> const& rhs)
+    {
+        lhs-=rhs;
+        return lhs;
+    }
+
+    friend void operator-=(vec3<Real>& lhs, vec3<Real> const& rhs)
+    {
+        lhs.subtract(rhs);
+    }
+
+    friend vec3<Real> operator*(Real const& lhs, vec3<Real> rhs)
+    {
+        rhs.scale(lhs);
+        return rhs;
+    }
+
+    friend vec3<Real> operator*(vec3<Real> lhs, Real const& rhs)
+    {
+        lhs.scale(rhs);
+        return lhs;
+    }
+
+    friend void operator/=(vec3<Real>& lhs, Real const& rhs){
+        lhs.scale((Real)1/rhs);
+    }
+    friend vec3<Real> operator/(vec3<Real> lhs, Real const& rhs)
+    {
+        lhs/=rhs;
+        return lhs;
+    }
+
+    template<typename Index>
+    requires std::is_integral_v<Index>
+    Real& operator[](Index idx)
+    {
+        switch (idx) {
+            case 0:return x;
+            case 1:return y;
+            case 2:return z;
+            default:std::cerr << idx << "is out of range for as vec3 index";
+            exit(12);
+        }
+    }
+
+    template<typename Index>
+    requires std::is_integral_v<Index>
+    const Real& operator[](Index idx) const
+    {
+        switch (idx) {
+            case 0:return x;
+            case 1:return y;
+            case 2:return z;
+            default:std::cerr << idx << "is out of range for as vec3 index";
+                exit(12);
+        }
+    }
+
+    friend vec3<Real> operator-(vec3<Real> v)
+    {
+        v.x = -v.x;
+        v.y = -v.y;
+        v.z = -v.z;
+        return v;
+    }
+
+    friend vec3<Real>& operator-(vec3<Real>&& v)
+    {
+        v.x = -v.x;
+        v.y = -v.y;
+        v.z = -v.z;
+        return v;
+    }
+
+};
+}
+
+#endif //FLIPPY_VEC3_HPP
+
+
+// end --- vec3.hpp --- 
+
+
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846	/* pi */
+#endif
+
+/**
+ * The API stability of the functions in the implementation namespace is not guaranteed!
+ * Functions that are part of the implementation namespace are not part of the public facing API and are not intended fot the end-user.
+ * Since flippy is a headers only library this could not be hidden in source files.
+ */
+namespace fp::implementation{
+
+//! @private
+template<floating_point_number Real, indexing_number Index>
+struct SimpleNodeData{
+  std::string hash{};
+  Index id{};
+  vec3<Real> pos{};
+  std::unordered_set<std::string> nn_hashes{};
+};
+
+//! @private
+template<floating_point_number Real, indexing_number Index>
+class IcosahedronSubTriangulation
+{
+public:
+    static std::string hash_node(Index c)
+    {
+        /**
+         * returns a unique hash for a corner node, which is just the id of that corner node.
+         */
+        return std::to_string(c);
+    }
+
+    static std::string hash_node(Index c0, Index c1, Index n)
+    {
+        /**
+         * returns a unique hash for a node on one of the sides of the initial triangle.
+         * This hash is determined by the (ordered) corner nodes of the initial edge and the index of the node.
+         */
+        Index a = std::min(c0, c1);
+        Index b = std::max(c0, c1);
+        return std::to_string(a) + "_" + std::to_string(b) + "_" + std::to_string(n);
+    }
+
+    static std::string hash_node(Index c0, Index c1, Index c2, Index i, Index j)
+    {
+        /**
+         * returns a unique hash for a node in the bulk of the subtriangulation.
+         */
+        std::vector<Index> cv{c0, c1, c2};
+        std::sort(cv.begin(), cv.end());
+
+        return std::to_string(cv[0]) + "_" + std::to_string(cv[1]) + "_" + std::to_string(cv[2])
+                + "_" + std::to_string(i) + "_" + std::to_string(j);
+    }
+
+    static vec3<Real> r_S1(Real R, Real t, Real f) {
+        vec3<Real> r{R * std::sin(t) * std::cos(f), R * std::sin(t) * std::sin(f), R * std::cos(t)};
+        return r;
+    }
+
+    static constexpr int N_ICOSA_FACEs = 20;
+    static constexpr int N_ICOSA_EDGEs = 30;
+    static constexpr int N_ICOSA_NODEs = 12;
+
+    static constexpr std::array<int, N_ICOSA_FACEs> FACE_IDs{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+    static constexpr std::array<int, N_ICOSA_NODEs> NODE_IDs{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+    static constexpr std::array<std::array<int, 3>, N_ICOSA_FACEs> FACE_CORNER_NODES_ = {
+            std::array<int, 3>{NODE_IDs[0], NODE_IDs[5], NODE_IDs[1]},
+            std::array<int, 3>{NODE_IDs[0], NODE_IDs[1], NODE_IDs[2]},
+            std::array<int, 3>{NODE_IDs[0], NODE_IDs[2], NODE_IDs[3]},
+            std::array<int, 3>{NODE_IDs[0], NODE_IDs[3], NODE_IDs[4]},
+            std::array<int, 3>{NODE_IDs[0], NODE_IDs[4], NODE_IDs[5]},
+            std::array<int, 3>{NODE_IDs[10], NODE_IDs[5], NODE_IDs[4]},
+            std::array<int, 3>{NODE_IDs[10], NODE_IDs[6], NODE_IDs[5]},
+            std::array<int, 3>{NODE_IDs[6], NODE_IDs[1], NODE_IDs[5]},
+            std::array<int, 3>{NODE_IDs[6], NODE_IDs[7], NODE_IDs[1]},
+            std::array<int, 3>{NODE_IDs[7], NODE_IDs[2], NODE_IDs[1]},
+            std::array<int, 3>{NODE_IDs[7], NODE_IDs[8], NODE_IDs[2]},
+            std::array<int, 3>{NODE_IDs[8], NODE_IDs[3], NODE_IDs[2]},
+            std::array<int, 3>{NODE_IDs[8], NODE_IDs[9], NODE_IDs[3]},
+            std::array<int, 3>{NODE_IDs[9], NODE_IDs[4], NODE_IDs[3]},
+            std::array<int, 3>{NODE_IDs[9], NODE_IDs[10], NODE_IDs[4]},
+            std::array<int, 3>{NODE_IDs[11], NODE_IDs[10], NODE_IDs[9]},
+            std::array<int, 3>{NODE_IDs[11], NODE_IDs[6], NODE_IDs[10]},
+            std::array<int, 3>{NODE_IDs[11], NODE_IDs[7], NODE_IDs[6]},
+            std::array<int, 3>{NODE_IDs[11], NODE_IDs[8], NODE_IDs[7]},
+            std::array<int, 3>{NODE_IDs[11], NODE_IDs[9], NODE_IDs[8]}
+    };
+
+    static constexpr const std::array<std::array<int, 3>, N_ICOSA_FACEs> FACE_CORNER_NODES = {
+            std::array<int, 3>{0, 5, 1},
+            std::array<int, 3>{0, 1, 2},
+            std::array<int, 3>{0, 2, 3},
+            std::array<int, 3>{0, 3, 4},
+            std::array<int, 3>{0, 4, 5},
+            std::array<int, 3>{10, 5, 4},
+            std::array<int, 3>{10, 6, 5},
+            std::array<int, 3>{6, 1, 5},
+            std::array<int, 3>{6, 7, 1},
+            std::array<int, 3>{7, 2, 1},
+            std::array<int, 3>{7, 8, 2},
+            std::array<int, 3>{8, 3, 2},
+            std::array<int, 3>{8, 9, 3},
+            std::array<int, 3>{9, 4, 3},
+            std::array<int, 3>{9, 10, 4},
+            std::array<int, 3>{11, 10, 9},
+            std::array<int, 3>{11, 6, 10},
+            std::array<int, 3>{11, 7, 6},
+            std::array<int, 3>{11, 8, 7},
+            std::array<int, 3>{11, 9, 8}
+    };
+
+    static std::unordered_map<std::string, SimpleNodeData<Real, Index>> make_corner_nodes()
+    {
+
+        Real R = 1.;
+        std::unordered_map<std::string, SimpleNodeData<Real, Index>> base_nodes(N_ICOSA_NODEs);
+        base_nodes[hash_node(0)] = {.hash=hash_node(0), .id=0, .pos=r_S1(R, 0., 0.)};
+        std::string hash;
+        hash.reserve(2);
+        for (Index i = 1; i<6; ++i) {
+            hash = hash_node(i);
+            base_nodes[hash] = {
+                    .hash=hash,
+                    .id=i,
+                    .pos=r_S1(R,
+                            static_cast<Real>(M_PI/2. - std::atan(0.5)),
+                            static_cast<Real>(2.*M_PI*(i - 1.)/5.))};
+        }
+
+        for (Index i = 6; i<N_ICOSA_NODEs - 1; ++i) {
+            hash = hash_node(i);
+            base_nodes[hash] = {
+                    .hash=hash,
+                    .id=i,
+                    .pos=r_S1(R,
+                            static_cast<Real>(M_PI/2. + std::atan(0.5)),
+                            static_cast<Real>(2.*M_PI*(i - 6.5)/5.))};
+        }
+        hash = hash_node(N_ICOSA_NODEs - 1);
+        base_nodes[hash] = {
+                .hash=hash,
+                .id=static_cast<Index>(N_ICOSA_NODEs - 1),
+                .pos=r_S1(R, static_cast<Real>(M_PI), static_cast<Real>(0.))};
+        return base_nodes;
+    }
+
+    enum TriangleRegion
+    {
+      TOP_CORNER, BOTTOM_LEFT_CORNER, BOTTOM_RIGHT_CORNER, LEFT_EDGE, BOTTOM_EDGE, DIAGONAL_EDGE, BULK
+    };
+
+    static TriangleRegion get_region(Index i, Index j, Index sizeMinOne)
+    {
+        if (i==0) { return TOP_CORNER; }
+        else if (j==0 && i==sizeMinOne) { return BOTTOM_LEFT_CORNER; }
+        else if (j==sizeMinOne && i==sizeMinOne) { return BOTTOM_RIGHT_CORNER; }
+        else if (j==0) { return LEFT_EDGE; }
+        else if (i==sizeMinOne) { return BOTTOM_EDGE; }
+        else if (i==j) { return DIAGONAL_EDGE; }
+        else { return BULK; }
+    }
+
+    static std::string hash_any(Index c0, Index c1, Index c2, Index i, Index j, Index maxIdx)
+    {
+        switch (get_region(i, j, maxIdx)) {
+            case TOP_CORNER:return hash_node(c0);
+            case BOTTOM_LEFT_CORNER:return hash_node(c1);
+            case BOTTOM_RIGHT_CORNER:return hash_node(c2);
+            case LEFT_EDGE:return hash_node(c0, c1, i);
+            case BOTTOM_EDGE:return hash_node(c1, c2, j);
+            case DIAGONAL_EDGE:return hash_node(c0, c2, j);
+            case BULK:return hash_node(c0, c1, c2, i, j);
+            default:
+                std::cerr<<"something went wrong! provided indices i: "
+                         <<i<<" and j: "
+                         <<j<<" together with the maxIdx: "<<maxIdx
+                         <<" produced a wrong region.\n";
+                exit(12);
+        }
+    }
+
+    static std::vector<std::string> neighbour_hash_vec(Index c0, Index c1, Index c2, Index i, Index j, Index maxIdx)
+    {
+        std::vector<std::string> neighbour_hash;
+        neighbour_hash.reserve(6);
+        switch (get_region(i, j, maxIdx)) {
+
+            case TOP_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, 1, 0, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, 1, 1, maxIdx));
+                return neighbour_hash;
+
+            case BOTTOM_LEFT_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
+                return neighbour_hash;
+
+            case BOTTOM_RIGHT_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
+                return neighbour_hash;
+
+            case LEFT_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
+                return neighbour_hash;
+
+            case BOTTOM_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
+                return neighbour_hash;
+
+            case DIAGONAL_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
+                return neighbour_hash;
+
+            case BULK:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
+                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
+                return neighbour_hash;
+            default:
+                std::cerr<<"something went wrong! provided indices i: "
+                         <<i<<" and j: "
+                         <<j<<" together with the maxIdx: "<<maxIdx
+                         <<" produced a wrong region.\n";
+                exit(12);
+        }
+
+    }
+
+    static Real even_angular_distance_length(Real l, Index k, Index n, Real R = 1.)
+    {
+        /**
+         * The points of the sub-triangulation can not be equally spaced or their angular distances
+         * won't be the same.
+         */
+        if (k==0) {
+            return 0;
+        }
+        else {
+            Real fr = static_cast<Real>(k)/static_cast<Real>(n);
+            Real denominator = static_cast<Real>(l + std::sqrt(4.*R*R - l*l)/std::tan(fr*2.*asin(l/(2.*R))));
+            return static_cast<Real>(2.)*R*R/denominator;
+        }
+    }
+
+    static vec3<Real> get_pos(vec3<Real> const& p0, vec3<Real> const& p1, vec3<Real> const& p2, Index i, Index j, Index maxIdx)
+    {
+/**
+ * get the position o a node in the sub triangulation of a face of the initial icosahedron.
+ * ```{.txt}
+ *              p0
+ *            /___\
+ *     e1   /__\/__\ e2
+ *        / \ / \  / \
+ *      p1 --------- p3
+ *            e3
+ * ```
+ */
+        vec3<Real> e1 = p1 - p0;
+        vec3<Real> e2 = p2 - p0;
+        auto e = e1.norm();
+        Real wi = even_angular_distance_length(e, i, maxIdx);
+
+        e1.normalize();
+        e2.normalize();
+
+        vec3<Real> li{};
+        Real li_norm{0};
+        vec3<Real> interm_1 = p0 + wi*e1;
+        interm_1.normalize();
+        if (i!=0) {
+            vec3<Real> interm_2 = p0 + wi*e2;
+            interm_2.normalize();
+
+            li = interm_2 - interm_1;
+            li_norm = li.norm();
+            li.normalize();
+        }
+        Real wj = even_angular_distance_length(li_norm, j, i);
+        return interm_1 + wj*li;
+    }
+
+    static std::tuple<Index, Index, Index> get_sorted_face_nodes(std::array<int, 3> face)
+    {
+        std::sort(face.begin(), face.end());
+        return {static_cast<Index>(face[0]),
+                static_cast<Index>(face[1]),
+                static_cast<Index>(face[2])};
+    }
+    static void make_face_nodes(std::unordered_map<std::string, SimpleNodeData<Real, Index>>& node_cache, Index nIter)
+    {
+        vec3<Real> p0, p1, p2, pos;
+        Index nEdge = nIter + 2;// total Number of nodes on an edge
+        Index maxIdx = nIter + 1;// max value i or j can have
+
+        std::string hash;
+        hash.reserve(10);
+
+        std::string c0_h, c1_h, c2_h;
+        for (auto face: FACE_CORNER_NODES) {
+            auto[c0, c1, c2] = get_sorted_face_nodes(face);
+            c0_h = hash_node(c0);
+            c1_h = hash_node(c1);
+            c2_h = hash_node(c2);
+            p0 = node_cache[c0_h].pos;
+            p1 = node_cache[c1_h].pos;
+            p2 = node_cache[c2_h].pos;
+            for (Index i = 0; i<nEdge; ++i) {
+                for (Index j = 0; j<=i; ++j) {
+                    pos = get_pos(p0, p1, p2, i, j, maxIdx);
+                    hash = hash_any(c0, c1, c2, i, j, maxIdx);
+                    node_cache[hash] = {.hash=hash, .pos=pos};
+                }
+            }
+        }
+
+        for (auto face: FACE_CORNER_NODES) {
+//        std::sort(face.begin(),face.end());
+//        auto [c0, c1, c2] = face;
+            auto[c0, c1, c2] = get_sorted_face_nodes(face);
+            for (Index i = 0; i<nEdge; ++i) {
+                for (Index j = 0; j<=i; ++j) {
+                    hash = hash_any(c0, c1, c2, i, j, maxIdx);
+                    std::vector<std::string> neighbour_hashes = neighbour_hash_vec(c0, c1, c2, i, j, maxIdx);
+                    for (auto const& neighbour_hash: neighbour_hashes) {
+                        node_cache[hash].nn_hashes.insert(neighbour_hash);
+                        node_cache[neighbour_hash].nn_hashes.insert(hash);
+                    }
+                }
+            }
+            for (Index idx = 0; auto& nodeEl: node_cache) {
+                nodeEl.second.id = idx;
+                ++idx;
+            }
+
+        }
+
+    }
+};
+
+//! @private
+template<floating_point_number Real, indexing_number Index>
+class PlanarTriangulation{
+    Index n_length;
+public:
+    std::vector<std::vector<Index>> nn_ids;
+    std::vector<bool> is_bulk;
+    [[nodiscard]] Index ij_to_id(Index i, Index j){return i*n_length+j;}
+    [[nodiscard]] Index id_to_i(Index id){return id/n_length;}
+    [[nodiscard]] Index id_to_j(Index id){return id%n_length;}
+
+    // TL T TR
+    //  L    R
+    // BL B BR
+
+    [[nodiscard]] Index TL(Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)-1);}
+    [[nodiscard]] Index T (Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)  );}
+    [[nodiscard]] Index TR(Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)+1);}
+    [[nodiscard]] Index  L(Index id){ return ij_to_id(id_to_i(id)  , id_to_j(id)-1);}
+    [[nodiscard]] Index  R(Index id){ return ij_to_id(id_to_i(id)  , id_to_j(id)+1);}
+    [[nodiscard]] Index BL(Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)-1);}
+    [[nodiscard]] Index B (Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)  );}
+    [[nodiscard]] Index BR(Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)+1);}
+
+    [[nodiscard]] std::vector<Index> bulk_odd_j_neighbor_ids(Index id){
+        return { B(id), R(id), TR(id), T(id), TL(id), L(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> bulk_even_j_neighbor_ids(Index id){
+        return { T(id), L(id), BL(id), B(id), BR(id), R(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> top_boundary_odd_j_neighbor_ids(Index id){
+        return { L(id), B(id), R(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> top_boundary_even_j_neighbor_ids(Index id){
+        return { L(id), BL(id), B(id), BR(id), R(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> bottom_boundary_odd_j_neighbor_ids(Index id){
+        return { R(id), TR(id), T(id), TL(id), L(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> bottom_boundary_even_j_neighbor_ids(Index id){
+        return { T(id), L(id), R(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> left_boundary_neighbor_ids(Index id){
+        return { T(id), B(id), BR(id), R(id)};
+    }
+
+    [[nodiscard]] std::vector<Index> right_boundary_odd_j_neighbor_ids(Index id){
+        return { T(id), TL(id), L(id), B(id) };
+    }
+
+    [[nodiscard]] std::vector<Index> right_boundary_even_j_neighbor_ids(Index id){
+        return { T(id), L(id), BL(id), B(id) };
+    }
+
+    PlanarTriangulation(Index n_length_inp, Index n_width):n_length(n_length_inp){
+        Index N_nodes = n_length*n_width;
+
+        nn_ids.resize(N_nodes);
+        is_bulk.resize(N_nodes,false);
+        for(Index i=0; i<n_width;++i) {
+            for (Index j = 0; j<n_length; ++j) {
+                Index id = ij_to_id(i, j);
+            }
+        }
+        // populate_bulk
+        for(Index i=1; i<n_width-1;++i){
+            for(Index j=1; j<n_length-1;++j){
+                Index bulk_id = ij_to_id(i,j);
+                is_bulk[bulk_id] = true;
+                if(j%2==0){
+                    nn_ids[bulk_id] = bulk_even_j_neighbor_ids(bulk_id);
+                }else{
+                    nn_ids[bulk_id] = bulk_odd_j_neighbor_ids(bulk_id);
+                }
+            }
+        }
+
+        // populate top and bottom boundaries
+        for (Index j = 1; j<n_length-1; ++j) {
+            Index i = 0;
+            Index id = ij_to_id(i,j);
+            if (j%2==0) {
+                nn_ids[id] = top_boundary_even_j_neighbor_ids(id);
+            }else{
+                nn_ids[id] = top_boundary_odd_j_neighbor_ids(id);
+            }
+
+            i = n_width-1;
+            id = ij_to_id(i,j);
+            if (j%2==0) {
+                nn_ids[id] = bottom_boundary_even_j_neighbor_ids(id);
+            }else{
+                nn_ids[id] = bottom_boundary_odd_j_neighbor_ids(id);
+            }
+        }
+
+        // populate left and right boundaries
+        for (Index i = 1; i<n_width-1; ++i) {
+            Index j = 0;
+            Index id = ij_to_id(i,j);
+            nn_ids[id] = left_boundary_neighbor_ids(id);
+
+            j = n_length-1;
+            id = ij_to_id(i,j);
+            if (j%2==0) {
+                nn_ids[id] = right_boundary_even_j_neighbor_ids(id);
+            }else{
+                nn_ids[id] = right_boundary_odd_j_neighbor_ids(id);
+            }
+        }
+
+        // populate top left corner
+        nn_ids[0] = std::vector<Index>{B(0), BR(0), R(0)};
+        // populate bottom left corner
+        Index bottom_left_id = ij_to_id(n_width-1,0);
+        nn_ids[bottom_left_id] = std::vector<Index>{R(bottom_left_id), T(bottom_left_id)}; //Todo this bond will never flip
+        // populate top and bottom right corner
+        Index top_right_id = n_length-1;
+        Index bottom_right_id = N_nodes-1;
+        if((n_length-1)%2==0){
+            nn_ids[top_right_id] = {L(top_right_id), BL(top_right_id), B(top_right_id)};
+            nn_ids[bottom_right_id] = {T(bottom_right_id), L(bottom_right_id)};// Todo this bond will never flip
+        }else{
+            nn_ids[top_right_id] = {L(top_right_id), /*BL(top_right_id),*/ B(top_right_id)}; // Todo this bond will never flip
+            nn_ids[bottom_right_id] = {T(bottom_right_id), TL(bottom_right_id), L(bottom_right_id),};// Todo this bond will never flip
+        }
+
+
+    }
+};
+}
+#endif //FLIPPY_TRIANGULATOR_HPP
+
+
+// end --- Triangulator.hpp --- 
+
+
+
+// begin --- flippy.hpp --- 
+
+/**
+ *```txt
+ *
+ *  .d888 888 d8b
+ * d88P"  888 Y8P
+ * 888    888
+ * 888888 888 888 88888b.  88888b.  888  888
+ * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
+ * 888    888 888 888  888 888  888 888  888     dynamically triangulated
+ * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
+ * 888    888 888 88888P"  88888P"   "Y88888
+ *                888      888           888     version 1.0.0
+ *                888      888      Y8b d88P
+ *                888      888       "Y88P"
+ *
+ * https://gitlab.tudelft.nl/idema-group/flippy
+ *
+ *
+ * MIT License
+ *
+ * Copyright (c) 2021 George Dadunashvili
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *```
+ */
+
+#ifndef FLIPPY_FLIPPY_HPP
+#define FLIPPY_FLIPPY_HPP
 
 // begin --- json.hpp --- 
 
@@ -22615,231 +22975,129 @@ inline nlohmann::json::json_pointer operator "" _json_pointer(const char* s, std
 
 
 
-// begin --- vec3.hpp --- 
+// begin --- utils.hpp --- 
 
-#ifndef FLIPPY_VEC3_HPP
-#define FLIPPY_VEC3_HPP
-
-#include <ostream>
-#include <iostream>
-#include <cmath>
-
-
-namespace fp{
-/**
- * Internal implementation of a 3D vector.
- *
- * !!! vec3 does not throw !!! This means that if you ask vec3 to divide a vector by 0 or more realistically if you
- * normalize a zero length vector vec3 will not check for the division by zero and will return a nan result!
- * Since vec3 is used everywhere in flippy, including in very expensive calculations, I decided to omit the security check
- * for the sake of speed.
- *
- * To keep the external dependencies low, flippy implements it's own 3D vector class with basic functionality like dot product and cross product
- *
- * Example:
- * ```c++
- * fp::vec3<double> v1{1,0,0};
- * fp::vec3<double> v2{0,0,1};
- *
- *  assert(v1.dot(v2)==0);
- *  assert(v1.cross(v2).norm()==1);
- *  assert(((v1-v2)==fp::vec3<double>{1.,0.,-1.}));
- * ```
+#ifndef FLIPPY_UTILS_H
+#define FLIPPY_UTILS_H
+/** @file
+ *  @brief This file contains helper functions that are used throughout flippy, but are not specific to any given class.
  */
-template<floating_point_number Real>
-class vec3
-{
-public:
-    Real x, y, z;
 
-    void add(vec3<Real> const& v)
-    {
-        x += v.x;
-        y += v.y;
-        z += v.z;
-    }
-
-    void subtract(vec3<Real> const& v)
-    {
-        x -= v.x;
-        y -= v.y;
-        z -= v.z;
-    }
-
-    void scale(Real s)
-    {
-        /**
-         * scale the vector by a real number s
-         */
-        x = s*x;
-        y = s*y;
-        z = s*z;
-    }
-
-    Real dot(vec3<Real> const& v) const
-    {
-        Real res = x*v.x + y*v.y + z*v.z;
-        return res;
-    }
-
-    [[nodiscard]] constexpr std::size_t size() const { return 3; }
-
-    static inline vec3<Real> cross(vec3<Real> const& a, vec3<Real> const& b)
-    {
-        vec3<Real> res;
-        res.x = a.y*b.z - a.z*b.y;
-        res.y = a.z*b.x - a.x*b.z;
-        res.z = a.x*b.y - a.y*b.x;
-        return res;
-    }
-
-    vec3<Real> cross(vec3<Real> const& other) const { return cross(*this, other); }
-
-    Real norm() const { return std::sqrt(this->dot(*this)); }
-
-    Real norm_square() const { return this->dot(*this); }
-
-    vec3<Real>const& normalize(){
-        /**
-         * normalize vector in place. And return a reference.
-         *
-         * IMPORTANT: if you normalize a zero length vector, you effectively
-         * demand to divide by zero! this function will not do a security check
-         * for you and will just return nan!
-         */
-        *this= *this/this->norm();
-        return *this;
-    }
-
-    friend std::ostream& operator<<(std::ostream& os, const vec3<Real>& obj)
-    {
-        os << "{" << obj.x << ',' << obj.y << ',' << obj.z << '}';
-        return os;
-    }
-
-    bool operator==(vec3<Real> const& other) const =default;
-
-
-    // mathematical operations
-    friend vec3<Real> operator+(vec3<Real> lhs, vec3<Real> const& rhs)
-    {
-        lhs+=rhs;
-        return lhs;
-    }
-
-    friend void operator+=(vec3<Real>& lhs, vec3<Real> const& rhs)
-    {
-        lhs.add(rhs);
-    }
-
-    friend vec3<Real> operator-(vec3<Real> lhs, vec3<Real> const& rhs)
-    {
-        lhs-=rhs;
-        return lhs;
-    }
-
-    friend void operator-=(vec3<Real>& lhs, vec3<Real> const& rhs)
-    {
-        lhs.subtract(rhs);
-    }
-
-    friend vec3<Real> operator*(Real const& lhs, vec3<Real> rhs)
-    {
-        rhs.scale(lhs);
-        return rhs;
-    }
-
-    friend vec3<Real> operator*(vec3<Real> lhs, Real const& rhs)
-    {
-        lhs.scale(rhs);
-        return lhs;
-    }
-
-    friend void operator/=(vec3<Real>& lhs, Real const& rhs){
-        lhs.scale((Real)1/rhs);
-    }
-    friend vec3<Real> operator/(vec3<Real> lhs, Real const& rhs)
-    {
-        lhs/=rhs;
-        return lhs;
-    }
-
-    template<typename Index>
-    requires std::is_integral_v<Index>
-    Real& operator[](Index idx)
-    {
-        switch (idx) {
-            case 0:return x;
-            case 1:return y;
-            case 2:return z;
-            default:std::cerr << idx << "is out of range for as vec3 index";
-            exit(12);
-        }
-    }
-
-    template<typename Index>
-    requires std::is_integral_v<Index>
-    const Real& operator[](Index idx) const
-    {
-        switch (idx) {
-            case 0:return x;
-            case 1:return y;
-            case 2:return z;
-            default:std::cerr << idx << "is out of range for as vec3 index";
-                exit(12);
-        }
-    }
-
-    friend vec3<Real> operator-(vec3<Real> v)
-    {
-        v.x = -v.x;
-        v.y = -v.y;
-        v.z = -v.z;
-        return v;
-    }
-
-    friend vec3<Real>& operator-(vec3<Real>&& v)
-    {
-        v.x = -v.x;
-        v.y = -v.y;
-        v.z = -v.z;
-        return v;
-    }
-
-};
-}
-
-#endif //FLIPPY_VEC3_HPP
-
-
-// end --- vec3.hpp --- 
-
-
+#include <iostream>
+#include <fstream>
+#include <utility>
+#include <filesystem>
+#include <type_traits>
 
 namespace fp {
+/**
+ * @GlobalsStub
+ * @{
+ */
+//! shortening of the nlohmann::json namespace, which is an [external open source library](https://github.com/nlohmann/json) bundled by flippy.
 using Json = nlohmann::json;
 
 /**
-   * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data that it contains.
-   * I.e. it will never check if the curvature is the norm of the curvature vector or if the nn_ids and nn_distances are in the correct order.
-   * However it does check the data for consistency. It will match the length of nn_ids and nn_distances. And pop and add both of them together.
-   */
-template<floating_point_number Real, integer_number Index>
+ * @brief Simple wrapper function around Json objects built in dump() method.
+ * @param file_name @FileNameOrPathFileNameStub
+ * @param data json data object that is supposed to be stored.
+ */
+[[maybe_unused]] static inline void json_dump(std::string const& file_name, const Json& data)
+{
+    std::ofstream o(file_name + ".json");
+    o << data.dump();
+    o.close();
+}
+
+/**
+ * @brief Simple wrapper function  that reads the content of a text file into a json object.
+ *
+ * The file name onb the disk needs to end in '.json' for this function to work.
+ * @param file_name @FileNameOrPathFileNameStub
+ * @return Json object that was parsed from the provided file.
+ *
+ * @warning This function will stream any file into the json object.
+ * If the provided file is not a valid json file this will cause runtime errors.
+ */
+[[maybe_unused]] static Json inline json_read(std::string file_name)
+{
+    auto pos_json = file_name.find_last_of(".json");
+    auto not_json = (file_name.size() - 1!=pos_json);
+    if (not_json) { file_name = file_name + ".json"; }
+    std::ifstream o(file_name);
+    Json data;
+    o >> data;
+    o.close();
+    return data;
+}
+
+/**
+ * @brief Convenient wrapper around std::find, which only works for std::vectors.
+ *
+ * @tparam T type of the vector elements.
+ * @param v std::vector in which we want to search.
+ * @param el the value of the element that we want to check for.
+ * @return The function returns `true` if `el` is contained in vector `v` (at least once), otherwise it returns `false`.
+ */
+template<typename T>
+[[maybe_unused]] static bool is_member(std::vector<T> const& v, T const& el){
+    return (std::find(v.begin(),v.end(), el) != v.end());
+}
+
+[[maybe_unused]] static bool is_dir(std::string const& path){
+    std::filesystem::path dir(path);
+    return std::filesystem::is_directory(dir);
+}
+
+[[maybe_unused]] static void make_dir(std::string const& path){
+    std::filesystem::path dir(path);
+    std::filesystem::create_directories(dir);
+}
+ /**@}*/
+}
+#endif
+
+// end --- utils.hpp --- 
+
+
+
+// begin --- Nodes.hpp --- 
+
+#ifndef FLIPPY_NODES_HPP
+#define FLIPPY_NODES_HPP
+
+#include <vector>
+#include <unordered_set>
+
+namespace fp {
+using Json = nlohmann::json;
+//! Data structure containing  all geometric and topological information associated to a node.
+/**
+ * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data that it contains.
+ * For performance reasons methods associated to Node struct will never check if the Node::curvature is the norm of the
+ * Node::curvature_vector or if the Node::nn_ids and Node::nn_distances are in the correct order.
+ * It is the responsibility of higher order structures like Nodes and Triangulation to check that correct data is stored and updated correctly.
+ * However it does check the data for consistency.
+ * It will match the length of Node::nn_ids and Node::nn_distances and pop and add both of them together.
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ */
+template<floating_point_number Real, indexing_number Index>
 struct Node
 {
-  //! a number between 0 and max number of nodes - 1
+  //! @NodeIDStub
   Index id;
-  //! voronoi area associated to the node
+  //! Voronoi area associated to the node.
   Real area;
+  //! If the node is part of a closed surface triangulation, then the `volume` contains the volume of the tetrahedron connected to each voronoi cell sub-triangle and the center of the lab coordinate system  as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
   /**
-   * if the node is part of a closed surface triangulation, then the `volume` gives the volume
-   * of the tetrahedron connected to each voronoi cell sub-triangle and the center of the lab coordinate system  as defined in [1].
-   * This means that the volume of an individual node does not have a proper physical interpretation. Only the sum of all node
-   * volumes, which is given by the triangulation is interpretable as a physical volume of an object.
+   * This means that the volume of an individual node does not have a proper physical interpretation.
+   * Only the sum of all node volumes, which is given by the triangulation
+   * is interpretable as a physical volume of an object.
    */
   Real volume;
+  //! `unit_bending_energy` corresponds to the [Helfrich bending energy](https://en.wikipedia.org/wiki/Elasticity_of_cell_membranes) with bending rigidity 1 and gaussian bending stiffness 0.
   /**
-   * unit_bending energy corresponds to the Helfrich bending energy with bending rigidity 1
    * \f[
    *  \mathrm{unit\_bending\_energy} = \frac{1}{2} A_{\mathrm{node}} (2 H_{node})^2
    * \f]
@@ -22847,27 +23105,41 @@ struct Node
    * \f[
    * H_{node}^2 = \frac{\vec{K}_{node}}{2A_{node}} \cdot \frac{\vec{K}_{node}}{2A_{node}}
    * \f],
-   * with  \f$ \vec{K} \f$ denoting the `curvature_vector` member of the node
+   * with  \f$ \vec{K} \f$ denoting the Node::curvature_vector.
+   * @see Node::curvature_vec Triangulation::update_bulk_node_geometry(Index)
    */
   Real unit_bending_energy;
-  //! position of the node in the lab frame
+  //! Position of the node in the lab frame.
   vec3<Real> pos;
-  //! curvature vector of the node as defined in [1]
+  //! Curvature vector of the node as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
   vec3<Real> curvature_vec;
-  //! nn_ids contains the ids of nodes that are connected to this node
+  //! Vector containing the global ids of current node's next neighbours.
+  /**
+   * `nn_ids` contains the ids of nodes that are connected to this node in the triangulation.
+   * The next neighbours that are also mutual neighbours in the triangulation are stored sequentially in the vector.
+   * The last and the first elements are also neighbours, i.e. the nn_ids vector wraps around.
+   * During the calculation this is facilitated through the use of @ref fp::Neighbors.
+   * @note The order of the next neighbours matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
+   */
   std::vector<Index> nn_ids;
-  //! distance vectors pointing from the node to it's next neighbours.
+  //! Distance vectors pointing from the node to it's next neighbours.
   std::vector<vec3<Real>> nn_distances;
-  //! Verlet list contains the ids of nodes that are close to this node
+  //! Verlet list contains the ids of nodes that are close to this node.
   std::vector<Index> verlet_list;
 
   // unit-tested
+  //! Finds the element with the id to_pop_nn_id in the nn_id vector and deletes it.
   void pop_nn(Index to_pop_nn_id)
   {
-      // finds the element with the id to_pop_nn_id in the nn_id vector and deletes it.
-      // this will lead to resizing of the vector!
+      /**
+       * @param to_pop_nn_id @NNIDStub This id is supposed to be removed from the next neighbour id vector.
+       * @see Node::nn_ids
+       * @note this will lead to resizing of the vector, which can be expensive!
+       * @warning if the provided next neighbour id is not part of the Node::nn_ids, this function will fail silently.
+       * It will not delete anything and won't throw any errors or warnings;
+       */
       auto pop_pos = find_nns_loc_pointer(to_pop_nn_id);
-      Index dist = pop_pos - nn_ids.begin();
+      auto dist = pop_pos - nn_ids.begin();
 
       if (pop_pos!=nn_ids.end()) {
           // I checked that this would work on example code on cppreference https://godbolt.org/z/6qf8c9nTz
@@ -22876,28 +23148,63 @@ struct Node
       }
   }
 
-  auto find_nns_loc_pointer(Index to_pop_nn_id){
-      return std::find(nn_ids.begin(), nn_ids.end(), to_pop_nn_id);
+  auto find_nns_loc_pointer(Index nn_id){
+      /**
+       * @brief Given the global id of the next neighbour, this function can be used to locate it in the Node::nn_ids vector.
+       *
+       * This function is just a convenient wrapper around the [std::find](https://en.cppreference.com/w/cpp/algorithm/find) function.
+       * ```
+       * std::find(nn_ids.begin(), nn_ids.end(), to_pop_nn_id);
+       * ```
+       * @param nn_id @NNIDStub
+       * @return if `nn_id` is contained in Node::nn_ids then the pointer to the position of that id in the `nn_ids` vector will be returned.
+       * Otherwise `nn_ids.end()`.
+       * @warning This function is not responsible for graceful handling of `nn_id`'s that are not found in the Node::nn_ids vector.
+       * If the `nn_id` is not contained in Node::nn_ids then the `nn_ids.end()` iterator will be returned.
+       * It is up to the user to perform the necessary checks to avoid undefined behaviour that might result from trying to delete uninitiated memory.
+       */
+      return std::find(nn_ids.begin(), nn_ids.end(), nn_id);
   }
+
   // unit-tested
   void emplace_nn_id(Index to_emplace_nn_id, vec3<Real> const& to_emplace_nn_pos, Index loc_idx)
   {
-      /** this constructs to_emplace_nn_id right before to_emplace_pos
-       * ie if to_emplace_nn_id is 3, to_emplace_nn_id will be constructed right before the
+      /**
+       * @brief This function can be used to add new next neighbours to this node.
+       *
+       * This function constructs `to_emplace_nn_id` right before `to_emplace_pos`,
+       * i.e. if to_emplace_nn_id is 3, to_emplace_nn_id will be constructed right before the
        * 3rd element and will become the new 3rd element.
+       * @param to_emplace_nn_id @NNIDStub This id is supposed to be added to the Node::nn_ids vector of this node.
+       * @param to_emplace_nn_pos const reference to the 3 dimensional position vector (type vec3<Real>) containing the position of the new next neighbour.
+       * This input is used to calculate the correct distance between this node and the new next neighbour, which then will be added to the Node::nn_distances vector.
+       * @param loc_idx @LocNNIndexStub
+       * @note This function causes the resizing of two vectors, which can be costly.
+       * @warning Making next neighbours is a symmetric operation. I.e. if node 1 becomes the next neighbour of node 2 then node two also has to become the next neighbour of node 1.
+       * However this function does is not responsible for this relationship. It only adds a new next neighbour to this node and the higher order structures Like Triangulation is responsible for guaranteeing the reciprocal relationship.
+       * @see Triangulation::emplace_before(Index, Index, Index)
        */
-      if (loc_idx<(Index) nn_ids.size()) {
-          nn_ids.emplace(nn_ids.begin() + loc_idx, to_emplace_nn_id);
-          nn_distances.emplace(nn_distances.begin() + loc_idx, to_emplace_nn_pos - pos);
+      if (loc_idx<nn_ids.size()) {
+          auto signed_loc_idx = static_cast<long long >(loc_idx);
+          nn_ids.emplace(nn_ids.begin() + signed_loc_idx, to_emplace_nn_id);
+          nn_distances.emplace(nn_distances.begin() + signed_loc_idx, to_emplace_nn_pos - pos);
       }
   }
 
   //unit-tested
+  //! This function can provide the stored distance vector to a next neighbour.
   vec3<Real> const& get_distance_vector_to(Index nn_id) const
   {
+      /**
+       * @param nn_id @NNIDStub.
+       * @return returns the distance currently stored in the Node::nn_distances vector, for the requested next neighbour.
+       * If the provided `nn_id` can not be found in the Node::nn_ids vector, then the function writes an error message
+       * to standard error output and terminates the program with exit code 12.
+       * @note @TerminationNoteStub
+       */
       auto id_pos = std::find(nn_ids.begin(), nn_ids.end(), nn_id);
       if (id_pos!=nn_ids.end()) {
-          return nn_distances[(id_pos - nn_ids.begin())];
+          return nn_distances[static_cast<Index>(id_pos - nn_ids.begin())];
       }
       else {
           std::cerr << "nn_id:" << nn_id << " provided to `get_distance_vector_to` is not a next neighbour of the node "
@@ -22906,23 +23213,38 @@ struct Node
       }
   }
 
+  //defaulted operators are not explicitly unit-tested
+  /**
+   * @brief Default equality operator.
+   *
+   * @param other_node constant reference to the other Node.
+   * @return True if both nodes are equal.
+   */
   bool operator==(Node<Real, Index> const& other_node) const = default;
 
-  friend std::ostream& operator<<(std::ostream& os, Node<Real, Index> const& node1)
+  /**
+   * @brief Streaming operator that can print formatted output to standard out with all data fields of the Node.
+   *
+   * @param os This is intended to be std::cout or any other ofstream reference.
+   * @param node The streamed node.
+   * @return return the updated stream.
+   */
+  friend std::ostream& operator<<(std::ostream& os, Node<Real, Index> const& node)
   {
-      os << "node: " << node1.id << '\n'
-         << "area: " << node1.area << '\n'
-         << "volume: " << node1.volume << '\n'
-         << "unit_bending_energy: " << node1.unit_bending_energy << '\n'
-         << "curvature_vec: " << node1.curvature_vec << '\n'
-         << "pos: " << node1.pos << '\n'
+
+      os << "node: " << node.id << '\n'
+         << "area: " << node.area << '\n'
+         << "volume: " << node.volume << '\n'
+         << "unit_bending_energy: " << node.unit_bending_energy << '\n'
+         << "curvature_vec: " << node.curvature_vec << '\n'
+         << "pos: " << node.pos << '\n'
          << "nn_ids: ";
-      for (auto const& nn_id: node1.nn_ids) {
+      for (auto const& nn_id: node.nn_ids) {
           os << nn_id << ' ';
       }
       os << '\n'
          << "nn_distances: ";
-      for (auto const& nn_dist: node1.nn_distances) {
+      for (auto const& nn_dist: node.nn_distances) {
           os << nn_dist << '\n';
       }
       os << '\n';
@@ -22932,24 +23254,41 @@ struct Node
 
 };
 
-template<floating_point_number Real, integer_number Index>
+/**
+ * @brief Data structure containing all nodes of the Triangulation.
+ *
+ * The Nodes struct is capable of reinitializing nodes from a well formed json object or from a simple [std::vector](https://en.cppreference.com/w/cpp/container/vector) that contains all nodes of a triangulation.
+ * The nodes class is basically a wrapper around a vector of nodes i.e. `std::vector<Node<Real, Index>>`, and provides additional functionality to manipulate and query this data structure.
+ * Nodes class is also meant to be the interface with which the end user is manipulating individual nodes.
+ * @tparam Real @RealStub
+ * @tparam Index type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example `unsigned int`.
+ */
+template<floating_point_number Real, indexing_number Index>
 struct Nodes
 {
-    std::vector<Node<Real, Index>> data;
-    Nodes() = default;
-    explicit Nodes(std::vector<Node<Real, Index>> data_inp)
-            :data(data_inp) { }
+    std::vector<Node<Real, Index>> data;    //!< Data member that contains the individual nodes.
+
+    Nodes() = default;    //!< Default constructor.
+    explicit Nodes(std::vector<Node<Real, Index> > data_inp):data(data_inp)
+    {
+    /**
+     * Copies the data from a vector of nodes and creates a new Nodes struct.
+     * @param data_inp a standard vector containing all the nodes that are supposed to create a new Nodes class.
+     */
+    }    //!< Constructor from a vector.
     explicit Nodes(Json const& node_dict)
     {
-        /**
-         * Initiating nodes from a Json of a node collection.
-         * The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1
-         */
+    /**
+     * Initiating nodes from a json object of a node collection.
+     * The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1.
+     * @param node_dict json object that contains a collection of nodes.
+     * @warning If the json object is malformed then the constructor will fail and propagate a runtime error from the json parser.
+     */
         std::vector<Index> nn_ids_temp, verlet_list_temp;
         data.resize((node_dict.size()));
         for (auto const& node: node_dict.items()) {
             auto const& node_id = node.key();
-            Index node_index = std::stol(node_id);
+            fp::indexing_number auto node_index = static_cast<Index>(std::stol(node_id));
             auto const& raw_pos = node.value()["pos"];
             vec3<Real> pos{(Real) raw_pos[0], (Real) raw_pos[1], (Real) raw_pos[2]};
 
@@ -22961,10 +23300,9 @@ struct Nodes
 
             nn_ids_temp = node_dict[node_id]["nn_ids"].get<std::vector<Index>>();
             verlet_list_temp = node_dict[node_id]["verlet_list"].get<std::vector<Index>>();
-            std::vector<vec3<Real>>
-                    nn_distances;
+            std::vector<vec3<Real>> nn_distances;
 
-            data[node_index] = Node<Real, Index>{
+            data[static_cast<size_t>(node_index)] = Node<Real, Index>{
                     .id{node_index},
                     .area{area},
                     .volume{volume},
@@ -22976,59 +23314,265 @@ struct Nodes
                     .verlet_list{verlet_list_temp}
             };
         }
-    }
+    }    //!< Constructor from json.
 
-    typename std::vector<Node<Real, Index>>::iterator begin(){return data.begin();}
-    typename std::vector<Node<Real, Index>>::const_iterator begin() const {return data.begin();}
-    typename std::vector<Node<Real, Index>>::iterator end() {return data.end();}
-    typename std::vector<Node<Real, Index>>::const_iterator end() const {return data.end();}
+    typename std::vector<Node<Real, Index>>::iterator begin()
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops.
+     * @return `data.begin()`
+     */
+     return data.begin();}    //!< Returns an iterator to the beginning of the underlying data member that contains the collection of the nodes.
+    typename std::vector<Node<Real, Index>>::const_iterator begin() const
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * @return a constant iterator `data.begin()`.
+     */
+        return data.begin();
+    }    //!< \overload
+
+    typename std::vector<Node<Real, Index>>::iterator end()
+    {
+        /**
+     * This function allows the Nodes struct to be used in range based for loops.
+     * @return `data.end()`.
+     */
+        return data.end();
+    }    //!< Returns an iterator to the end of the underlying data member that contains the collection of the nodes.
+    typename std::vector<Node<Real, Index>>::const_iterator end() const
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * @return a constant iterator `data.end()`.
+     */
+     return data.end();} //!< \overload
 
     // getters and setters
+
+    // Position block
     //unit-tested
-    const vec3<Real>& pos(Index node_id) const {return data[node_id].pos;}
-    //unit-tested
-    void set_pos(Index node_id, vec3<Real> const& new_pos){data[node_id].pos=new_pos;}
-    void set_pos(Index node_id, vec3<Real> && new_pos){data[node_id].pos=new_pos;}
-    void displace(Index node_id, vec3<Real>const& displ){data[node_id].pos+=displ;}
-    void displace(Index node_id, vec3<Real>&& displ){data[node_id].pos+=displ;}
-
-    const vec3<Real>& curvature_vec(Index node_id) const {return data[node_id].curvature_vec;}
-    void set_curvature_vec(Index node_id, vec3<Real> const& new_cv) {data[node_id].curvature_vec=new_cv;}
-    void set_curvature_vec(Index node_id, vec3<Real> && new_cv) {data[node_id].curvature_vec=new_cv;}
-
-    Real area(Index node_id)const{return data[node_id].area;}
-    void set_area(Index node_id, Real new_area){data[node_id].area = new_area;}
-
-    Real volume(Index node_id)const{return data[node_id].volume;}
-    void set_volume(Index node_id, Real new_volume){data[node_id].volume = new_volume;}
-
-    Real unit_bending_energy(Index node_id)const{return data[node_id].unit_bending_energy;}
-    void set_unit_bending_energy(Index node_id, Real new_sce){data[node_id].unit_bending_energy=new_sce;}
-
-    //unit-tested
-    const auto& nn_ids(Index node_id)const{return data[node_id].nn_ids;}
-    //unit-tested
-    void set_nn_ids(Index node_id, std::vector<Index>const& new_nn_ids){data[node_id].nn_ids = new_nn_ids;}
-    //unit-tested
-    Index nn_id(Index node_id, Index loc_nn_index)const{return data[node_id].nn_ids[loc_nn_index];}
-    //unit-tested
-    void set_nn_id(Index node_id, Index loc_nn_index, Index nn_id){data[node_id].nn_ids[loc_nn_index]=nn_id;}
-    void emplace_nn_id(Index node_id, Index to_emplace_nn_id, Index loc_idx)
-    {data[node_id].emplace_nn_id(to_emplace_nn_id, pos(to_emplace_nn_id), loc_idx);}
-
-    const auto& nn_distances(Index node_id)const{return data[node_id].nn_distances;}
-    const auto& get_nn_distance_vector_between(Index node_id, Index nn_id) const{
-        return data[node_id].get_distance_vector_to(nn_id);
-    }
-    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real>&& dist){data[node_id].nn_distances[loc_nn_index]=dist;}
-    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real> const& dist){data[node_id].nn_distances[loc_nn_index]=dist;}
-
-    [[nodiscard]] Index size() const { return data.size(); }
-    Node<Real, Index>& operator[](Index idx) { return data[idx]; }
-    const Node<Real, Index>& operator[](Index idx) const { return data.at(idx); }
-
-    [[nodiscard]] Json make_data() const
+    [[nodiscard]] const vec3<Real>& pos(Index node_id) const
     {
+        /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the 3D vector of the node position, Node::pos.
+     */
+        return data[node_id].pos;
+    }   //!< Given a node id return the constant reference to the node position.
+    //unit-tested
+    void set_pos(Index node_id, vec3<Real> const& new_pos){
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param new_pos new position of the node to which the node needs to be moved.
+     */
+        data[node_id].pos=new_pos;
+    }   //!< Sets the position of the requested node to a given position.
+    void set_pos(Index node_id, vec3<Real> && new_pos){
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param new_pos new position of the node to which the node needs to be moved.
+     */
+        data[node_id].pos=new_pos;
+    }   //!< \overload
+    void displace(Index node_id, vec3<Real>const& displacement){
+    /**
+    * @param node_id @NodeIDStub This node needs to be moved.
+    * @param displacement displacement vector that will be added to the position vector of the node.
+    */
+        data[node_id].pos+=displacement;
+    }   //!< Changes the position of the requested node by a given displacement.
+    void displace(Index node_id, vec3<Real>&& displacement)
+    {
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param displacement displacement vector that will be added to the position vector of the node.
+     */
+        data[node_id].pos+=displacement;
+    }   //!< \overload
+
+    // Curvature vector block
+    [[nodiscard]] const vec3<Real>& curvature_vec(Index node_id) const {
+    /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the 3D vector of the node curvature, Node::curvature_vec.
+     */
+        return data[node_id].curvature_vec;
+    } //!< Given a node id return the constant reference to the node curvature vector.
+    void set_curvature_vec(Index node_id, vec3<Real> const& new_cv) {
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_cv Constant lvalue reference to the new 3d curvature vector Node::curvature_vec.
+     */
+        data[node_id].curvature_vec=new_cv;
+    } //!< Given a node id and a new curvature vector, reset the nudes current curvature vector.
+    void set_curvature_vec(Index node_id, vec3<Real> && new_cv) {
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_cv rvalue reference to the new 3d curvature vector Node::curvature_vec.
+     */
+        data[node_id].curvature_vec=new_cv;
+    } //!< @overload
+
+    // Area block
+    [[nodiscard]] Real area(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::area.
+     */
+        return data[node_id].area;
+    } //!< Given a node id return node associated area.
+    void set_area(Index node_id, Real new_area){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_area Value for the new node associated area Node::area.
+     *
+     */
+        data[node_id].area = new_area;
+    }    //!< Given a node id and a new area value, reset the current value of the node area.
+
+    // Volume block
+    [[nodiscard]] Real volume(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::volume.
+     */
+        return data[node_id].volume;
+    }    //!< Given a node id return node associated volume.
+    void set_volume(Index node_id, Real new_volume){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_volume Value for the new node associated volume Node::volume.
+     *
+     */
+        data[node_id].volume = new_volume;
+    }   //!< Given a node id and a new volume value, reset the current value of the node volume.
+
+    // Unit bending rigidity block
+    [[nodiscard]] Real unit_bending_energy(Index node_id)const{
+    /**
+     *
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::unit_bending_energy.
+     */
+        return data[node_id].unit_bending_energy;
+    }   //!< Given a node id return node associated unit bending energy.
+    void set_unit_bending_energy(Index node_id, Real new_ube){
+    /**
+     *
+     * @param node_id @NodeIDStub
+     * @param new_ube New value of the unit bending energy (mathematical definition can be found at Node::unit_bending_energy).
+     */
+        data[node_id].unit_bending_energy=new_ube;
+    } //! Given a node id and a new value for the node associated unit bending energy, update the current value of Node::unit_bending_energy.
+
+    // nn_id[s] block
+    //unit-tested
+    [[nodiscard]] const auto& nn_ids(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the std::vector containing next neighbour ids of the node, Node::nn_ids.
+     */
+        return data[node_id].nn_ids;
+    } //!< Given a node id return the constant reference to the nn_ids std::vector.
+    //unit-tested
+    void set_nn_ids(Index node_id, std::vector<Index>const& new_nn_ids){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_nn_ids const reference to the standard vector containing new values of nn_ids
+     * @warning This function does not check the provided `new_nn_ids` vector on correctness.
+     * If the content is wrong in any way (order is wrong or contained id's are not actual next neighbours of the node),
+     * then the update will cause problems with the proper function of flippy later!
+     */
+        data[node_id].nn_ids = new_nn_ids;
+    } //!< For a Node specified by `node_id`, overwrite the entire Node::nn_ids vector.
+    //unit-tested
+    [[nodiscard]] Index nn_id(Index node_id, Index loc_nn_index)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @return The global id of the next neighbour that was stored at the position `loc_nn_index` in the Node::nn_ids vector of the node with the id of `node_id`.
+     */
+        return data[node_id].nn_ids[loc_nn_index];
+    }   //!< Given a node id and the local index in the Node::nn_ids vector, returns the next neighbour id.
+    //unit-tested
+    void set_nn_id(Index node_id, Index loc_nn_index, Index nn_id){
+    /**
+     * @param node_id @NodeIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param nn_id @NNIDStub
+     */
+        data[node_id].nn_ids[loc_nn_index]=nn_id;
+    } //!< For a node specified by `node_id`, resets the value of the requested `nn_id`.
+    void emplace_nn_id(Index node_id, Index to_emplace_nn_id, Index loc_nn_index){
+    /**
+     * This function is a wrapper around Node::emplace_nn_id(Index , vec3<Real> const& , Index).
+     * @param node_id @NodeIDStub
+     * @param to_emplace_nn_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     */
+        data[node_id].emplace_nn_id(to_emplace_nn_id, pos(to_emplace_nn_id), loc_nn_index);
+    } //!< Emplace a the id of a new node in the Node::nn_ids vector, in front of the loc_idx position.
+
+    [[nodiscard]] const auto& nn_distances(Index node_id)const{
+    /**
+     * The order of Node::nn_distances is the same as that of Node::nn_ids, this is guaranteed by Triangulation::update_nn_distance_vectors(Index node_id)
+     * @param node_id @NodeIDStub
+     * @return Associated std::vector containing all vec3 distance vectors from the node to its neighbours, Node::nn_distances.
+     */
+        return data[node_id].nn_distances;
+    }   //!< Given a node id, returns the std::vector containing distance vectors to next neighbours.
+    [[nodiscard]] const auto& get_nn_distance_vector_between(Index node_id, Index nn_id) const{
+    /**
+     * This function is a wrapper around fp::Node::get_distance_vector_to(Index) const.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @return Looks in the Node::nn_distances vector of the node (specified by node_id) for the distance to nn_id. If the two nodes are neighbours a proper distance vector will be returned, otherwise the program will terminate.
+     * @note @TerminationNoteStub
+     */
+        return data[node_id].get_distance_vector_to(nn_id);
+    }   //!< Given two global node id's, returns a distance vector (if the nodes are neighbours).
+    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real>&& dist){
+    /**
+     * @param node_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param dist rvalue reference to a 3D distance vector (that points from node_id to its next neighbour).
+     */
+        data[node_id].nn_distances[loc_nn_index]=dist;
+    }  //!< Overwrite the next neighbour distance with a new 3d vector.
+    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real> const& dist){
+    /**
+     * @param node_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param dist lvalue constant reference to a 3D distance vector (that points from node_id to its next neighbour).
+     */
+        data[node_id].nn_distances[loc_nn_index]=dist;
+    } //!< \overload
+
+    [[nodiscard]] Index size() const { return static_cast<Index>(data.size()); } //!< Size of the Nodes data member. @return The size of the data vector which is the same as the number of the nodes.
+
+    Node<Real, Index>& operator[](Index node_id) {
+    /**
+     * Nodes[node_id] is the same as Nodes.data[node_id].
+     * @param node_id @NodeIDStub
+     * @return Reference to the Node struct with the id corresponding to node_id.
+     */
+        return data[node_id];
+    }   //!< Square bracket operator overload for convenient indexing of the Nodes struct.
+    const Node<Real, Index>& operator[](Index node_id) const {
+    /**
+     * Nodes[node_id] in constant environment is the same as Nodes.data.at(node_id).
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the Node struct with the id corresponding to node_id.
+     */
+        return data.at(node_id);
+    } //!< @overload
+
+    [[nodiscard]] Json make_data() const{
+    /**
+     * @return json object that represents a serialization of the data contained in Nodes.
+     * This json object can later be used to reconstruct the Nodes object.
+     */
         Json json_data;
         for (auto& node : data) {
             json_data[std::to_string(node.id)] = {
@@ -23042,7 +23586,7 @@ struct Nodes
             };
         }
         return json_data;
-    }
+    } //!< Serialize the Nodes struct to a json object.
 };
 }
 #endif //FLIPPY_NODES_HPP
@@ -23052,679 +23596,272 @@ struct Nodes
 
 
 
-// begin --- utils.hpp --- 
+// begin --- Triangulation.hpp --- 
 
-#ifndef FLIPPY_UTILS_H
-#define FLIPPY_UTILS_H
-/*
- *  helper functions for flippy
+#ifndef FLIPPY_TRIANGULATION_HPP
+#define FLIPPY_TRIANGULATION_HPP
+
+#include<optional>
+
+/**
+ * @GlobalsStub
+ * @{
  */
-
-#include <iostream>
-#include <fstream>
-#include <utility>
-#include <filesystem>
-#include <type_traits>
-
-namespace fp {
-
-using Json = nlohmann::json;
-
-[[maybe_unused]] static inline void json_dump(std::string const& file_name, const Json& data)
-{
-    std::ofstream o(file_name + ".json");
-    o << data.dump();
-    o.close();
-}
-[[maybe_unused]] static Json inline json_read(std::string file_name)
-{
-    auto pos_json = file_name.find_last_of(".json");
-    auto not_json = (file_name.size() - 1!=pos_json);
-    if (not_json) { file_name = file_name + ".json"; }
-    std::ifstream o(file_name);
-    Json data;
-    o >> data;
-    o.close();
-    return data;
-}
-
-template<typename T>
-[[maybe_unused]] static bool is_member(std::vector<T> const& v, T const& el){
-    /***
-     * if the function returns true, then el is contained in v (at least once).
-     */
-    return (std::find(v.begin(),v.end(), el) != v.end());
-}
-
-[[maybe_unused]] static bool is_dir(std::string const& path){
-    std::filesystem::path dir(path);
-    return std::filesystem::is_directory(dir);
-}
-
-[[maybe_unused]] static void make_dir(std::string const& path){
-    std::filesystem::path dir(path);
-    std::filesystem::create_directories(dir);
-}
-
-}
-#endif
-
-// end --- utils.hpp --- 
-
-
-
-// begin --- Triangulator.hpp --- 
-
-#ifndef FLIPPY_TRIANGULATOR_HPP
-#define FLIPPY_TRIANGULATOR_HPP
-
-#include <array>
-#include <vector>
-#include <unordered_set>
-#include <unordered_map>
-
-#ifndef M_PI
-#define M_PI 3.14159265358979323846	/* pi */
+//! Redefinition of the `LONG_LONG_MAX` macro, in case a specific compiler does not implement it. Largest number that fits in the `long long` type.
+#ifndef LONG_LONG_MAX
+#define LONG_LONG_MAX 9223372036854775807LL
 #endif
 
 /**
- * The API stability of the functions in the implementation namespace is not guaranteed!
- * Functions that are part of the implementation namespace are not part of the public facing API and are not intended fot the end-user.
- * Since flippy is a headers only library this could not be hidden in source files.
+ * @brief Literal for a very large integral number.
+ *
+ * This number will be used for default instantiation of variables/ data members that hold indices.
+ * This is done to avoid instantiation with 0 which could also be a valid index.
+ * This way one can differentiate between unintentionally default instantiated value and a proper value of an index.
+ * This will also mean that the use of such improperly instantiated indexer variables will cause an easier to identify error during runtime.
+ * @see fp::BondFlipData
+ * fp::Neighbors
+ * fp::Triangulation::two_common_neighbours(Index, Index) const
+ * fp::Triangulation::two_common_neighbour_positions(Index, Index) const
  */
-namespace fp::implementation{
-template<floating_point_number Real, integer_number Index>
-struct SimpleNodeData{
-  std::string hash{};
-  Index id{};
-  vec3<Real> pos{};
-  std::unordered_set<std::string> nn_hashes{};
-};
-
-template<floating_point_number Real, integer_number Index>
-class IcosahedronSubTriangulation
-{
-public:
-    static std::string hash_node(Index c)
-    {
-        /**
-         * returns a unique hash for a corner node, which is just the id of that corner node.
-         */
-        return std::to_string(c);
-    }
-
-    static std::string hash_node(Index c0, Index c1, Index n)
-    {
-        /**
-         * returns a unique hash for a node on one of the sides of the initial triangle.
-         * This hash is determined by the (ordered) corner nodes of the initial edge and the index of the node.
-         */
-        Index a = std::min(c0, c1);
-        Index b = std::max(c0, c1);
-        return std::to_string(a) + "_" + std::to_string(b) + "_" + std::to_string(n);
-    }
-
-    static std::string hash_node(Index c0, Index c1, Index c2, Index i, Index j)
-    {
-        /**
-         * returns a unique hash for a node in the bulk of the subtriangulation.
-         */
-        std::vector<Index> cv{c0, c1, c2};
-        std::sort(cv.begin(), cv.end());
-
-        return std::to_string(cv[0]) + "_" + std::to_string(cv[1]) + "_" + std::to_string(cv[2])
-                + "_" + std::to_string(i) + "_" + std::to_string(j);
-    }
-
-    static vec3<Real> r_S1(Real R, Real t, Real f) {
-        vec3<Real> r{R * std::sin(t) * std::cos(f), R * std::sin(t) * std::sin(f), R * std::cos(t)};
-        return r;
-    }
-
-    static constexpr int N_ICOSA_FACEs = 20;
-    static constexpr int N_ICOSA_EDGEs = 30;
-    static constexpr int N_ICOSA_NODEs = 12;
-
-    static constexpr std::array<int, N_ICOSA_FACEs> FACE_IDs{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
-    static constexpr std::array<int, N_ICOSA_NODEs> NODE_IDs{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-    static constexpr std::array<std::array<int, 3>, N_ICOSA_FACEs> FACE_CORNER_NODES_ = {
-            std::array<int, 3>{NODE_IDs[0], NODE_IDs[5], NODE_IDs[1]},
-            std::array<int, 3>{NODE_IDs[0], NODE_IDs[1], NODE_IDs[2]},
-            std::array<int, 3>{NODE_IDs[0], NODE_IDs[2], NODE_IDs[3]},
-            std::array<int, 3>{NODE_IDs[0], NODE_IDs[3], NODE_IDs[4]},
-            std::array<int, 3>{NODE_IDs[0], NODE_IDs[4], NODE_IDs[5]},
-            std::array<int, 3>{NODE_IDs[10], NODE_IDs[5], NODE_IDs[4]},
-            std::array<int, 3>{NODE_IDs[10], NODE_IDs[6], NODE_IDs[5]},
-            std::array<int, 3>{NODE_IDs[6], NODE_IDs[1], NODE_IDs[5]},
-            std::array<int, 3>{NODE_IDs[6], NODE_IDs[7], NODE_IDs[1]},
-            std::array<int, 3>{NODE_IDs[7], NODE_IDs[2], NODE_IDs[1]},
-            std::array<int, 3>{NODE_IDs[7], NODE_IDs[8], NODE_IDs[2]},
-            std::array<int, 3>{NODE_IDs[8], NODE_IDs[3], NODE_IDs[2]},
-            std::array<int, 3>{NODE_IDs[8], NODE_IDs[9], NODE_IDs[3]},
-            std::array<int, 3>{NODE_IDs[9], NODE_IDs[4], NODE_IDs[3]},
-            std::array<int, 3>{NODE_IDs[9], NODE_IDs[10], NODE_IDs[4]},
-            std::array<int, 3>{NODE_IDs[11], NODE_IDs[10], NODE_IDs[9]},
-            std::array<int, 3>{NODE_IDs[11], NODE_IDs[6], NODE_IDs[10]},
-            std::array<int, 3>{NODE_IDs[11], NODE_IDs[7], NODE_IDs[6]},
-            std::array<int, 3>{NODE_IDs[11], NODE_IDs[8], NODE_IDs[7]},
-            std::array<int, 3>{NODE_IDs[11], NODE_IDs[9], NODE_IDs[8]}
-    };
-
-    static constexpr const std::array<std::array<int, 3>, N_ICOSA_FACEs> FACE_CORNER_NODES = {
-            std::array<int, 3>{0, 5, 1},
-            std::array<int, 3>{0, 1, 2},
-            std::array<int, 3>{0, 2, 3},
-            std::array<int, 3>{0, 3, 4},
-            std::array<int, 3>{0, 4, 5},
-            std::array<int, 3>{10, 5, 4},
-            std::array<int, 3>{10, 6, 5},
-            std::array<int, 3>{6, 1, 5},
-            std::array<int, 3>{6, 7, 1},
-            std::array<int, 3>{7, 2, 1},
-            std::array<int, 3>{7, 8, 2},
-            std::array<int, 3>{8, 3, 2},
-            std::array<int, 3>{8, 9, 3},
-            std::array<int, 3>{9, 4, 3},
-            std::array<int, 3>{9, 10, 4},
-            std::array<int, 3>{11, 10, 9},
-            std::array<int, 3>{11, 6, 10},
-            std::array<int, 3>{11, 7, 6},
-            std::array<int, 3>{11, 8, 7},
-            std::array<int, 3>{11, 9, 8}
-    };
-
-    static std::unordered_map<std::string, SimpleNodeData<Real, Index>> make_corner_nodes()
-    {
-
-        Real R = 1.;
-        std::unordered_map<std::string, SimpleNodeData<Real, Index>> base_nodes(N_ICOSA_NODEs);
-        base_nodes[hash_node(0)] = {.hash=hash_node(0), .id=0, .pos=r_S1(R, 0., 0.)};
-        std::string hash;
-        hash.reserve(2);
-        for (Index i = 1; i<6; ++i) {
-            hash = hash_node(i);
-            base_nodes[hash] = {
-                    .hash=hash,
-                    .id=i,
-                    .pos=r_S1(R, M_PI/2. - std::atan(0.5), 2*M_PI*(i - 1.)/5.)};
-        }
-
-        for (Index i = 6; i<N_ICOSA_NODEs - 1; ++i) {
-            hash = hash_node(i);
-            base_nodes[hash] = {
-                    .hash=hash,
-                    .id=i,
-                    .pos=r_S1(R, M_PI/2. + std::atan(0.5), 2*M_PI*(i - 6.5)/5.)};
-        }
-        hash = hash_node(N_ICOSA_NODEs - 1);
-        base_nodes[hash] = {
-                .hash=hash,
-                .id=static_cast<Index>(N_ICOSA_NODEs - 1),
-                .pos=r_S1(R, M_PI, 0.)};
-        return base_nodes;
-    }
-
-    enum TriangleRegion
-    {
-      TOP_CORNER, BOTTOM_LEFT_CORNER, BOTTOM_RIGHT_CORNER, LEFT_EDGE, BOTTOM_EDGE, DIAGONAL_EDGE, BULK
-    };
-
-    static TriangleRegion get_region(Index i, Index j, Index sizeMinOne)
-    {
-        if (i==0) { return TOP_CORNER; }
-        else if (j==0 && i==sizeMinOne) { return BOTTOM_LEFT_CORNER; }
-        else if (j==sizeMinOne && i==sizeMinOne) { return BOTTOM_RIGHT_CORNER; }
-        else if (j==0) { return LEFT_EDGE; }
-        else if (i==sizeMinOne) { return BOTTOM_EDGE; }
-        else if (i==j) { return DIAGONAL_EDGE; }
-        else { return BULK; }
-    }
-
-    static std::string hash_any(Index c0, Index c1, Index c2, Index i, Index j, Index maxIdx)
-    {
-        switch (get_region(i, j, maxIdx)) {
-            case TOP_CORNER:return hash_node(c0);
-            case BOTTOM_LEFT_CORNER:return hash_node(c1);
-            case BOTTOM_RIGHT_CORNER:return hash_node(c2);
-            case LEFT_EDGE:return hash_node(c0, c1, i);
-            case BOTTOM_EDGE:return hash_node(c1, c2, j);
-            case DIAGONAL_EDGE:return hash_node(c0, c2, j);
-            case BULK:return hash_node(c0, c1, c2, i, j);
-            default:
-                std::cerr<<"something went wrong! provided indices i: "
-                         <<i<<" and j: "
-                         <<j<<" together with the maxIdx: "<<maxIdx
-                         <<" produced a wrong region.\n";
-                exit(12);
-        }
-    }
-
-    static std::vector<std::string> neighbour_hash_vec(Index c0, Index c1, Index c2, Index i, Index j, Index maxIdx)
-    {
-        std::vector<std::string> neighbour_hash;
-        neighbour_hash.reserve(6);
-        switch (get_region(i, j, maxIdx)) {
-
-            case TOP_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, 1, 0, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, 1, 1, maxIdx));
-                return neighbour_hash;
-
-            case BOTTOM_LEFT_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
-                return neighbour_hash;
-
-            case BOTTOM_RIGHT_CORNER:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
-                return neighbour_hash;
-
-            case LEFT_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
-                return neighbour_hash;
-
-            case BOTTOM_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
-                return neighbour_hash;
-
-            case DIAGONAL_EDGE:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
-                return neighbour_hash;
-
-            case BULK:neighbour_hash.push_back(hash_any(c0, c1, c2, i, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j - 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i - 1, j, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i, j + 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j + 1, maxIdx));
-                neighbour_hash.push_back(hash_any(c0, c1, c2, i + 1, j, maxIdx));
-                return neighbour_hash;
-            default:
-                std::cerr<<"something went wrong! provided indices i: "
-                         <<i<<" and j: "
-                         <<j<<" together with the maxIdx: "<<maxIdx
-                         <<" produced a wrong region.\n";
-                exit(12);
-        }
-
-    }
-
-    static Real even_angular_distance_length(Real l, Index k, Index n, Real R = 1.)
-    {
-        /**
-         * The points of the sub-triangulation can not be equally spaced or their angular distances
-         * won't be the same.
-         */
-        if (k==0) {
-            return 0;
-        }
-        else {
-            Real fr = static_cast<Real>(k)/static_cast<Real>(n);
-            Real denominator = l + sqrt(4.*R*R - l*l)/tan(fr*2.*asin(l/(2.*R)));
-            return 2.*R*R/denominator;
-        }
-    }
-
-    static vec3<Real> get_pos(vec3<Real> const& p0, vec3<Real> const& p1, vec3<Real> const& p2, Index i, Index j, Index maxIdx)
-    {
-/**
- * get the position o a node in the sub triangulation of a face of the initial icosahedron.
- * ```{.txt}
- *              p0
- *            /___\
- *     e1   /__\/__\ e2
- *        / \ / \  / \
- *      p1 --------- p3
- *            e3
- * ```
- */
-        vec3<Real> e1 = p1 - p0;
-        vec3<Real> e2 = p2 - p0;
-        auto e = e1.norm();
-        Real wi = even_angular_distance_length(e, i, maxIdx);
-
-        e1.normalize();
-        e2.normalize();
-
-        vec3<Real> li{};
-        Real li_norm{0};
-        vec3<Real> interm_1 = p0 + wi*e1;
-        interm_1.normalize();
-        if (i!=0) {
-            vec3<Real> interm_2 = p0 + wi*e2;
-            interm_2.normalize();
-
-            li = interm_2 - interm_1;
-            li_norm = li.norm();
-            li.normalize();
-        }
-        Real wj = even_angular_distance_length(li_norm, j, i);
-        return interm_1 + wj*li;
-    }
-
-    static std::tuple<Index, Index, Index> get_sorted_face_nodes(std::array<int, 3> face)
-    {
-        std::sort(face.begin(), face.end());
-        return {static_cast<Index>(face[0]),
-                static_cast<Index>(face[1]),
-                static_cast<Index>(face[2])};
-    }
-    static void make_face_nodes(std::unordered_map<std::string, SimpleNodeData<Real, Index>>& node_cache, Index nIter)
-    {
-        vec3<Real> p0, p1, p2, pos;
-        Index nEdge = nIter + 2;// total Number of nodes on an edge
-        Index maxIdx = nIter + 1;// max value i or j can have
-
-        std::string hash;
-        hash.reserve(10);
-
-        std::string c0_h, c1_h, c2_h;
-        for (auto face: FACE_CORNER_NODES) {
-            auto[c0, c1, c2] = get_sorted_face_nodes(face);
-            c0_h = hash_node(c0);
-            c1_h = hash_node(c1);
-            c2_h = hash_node(c2);
-            p0 = node_cache[c0_h].pos;
-            p1 = node_cache[c1_h].pos;
-            p2 = node_cache[c2_h].pos;
-            for (Index i = 0; i<nEdge; ++i) {
-                for (Index j = 0; j<=i; ++j) {
-                    pos = get_pos(p0, p1, p2, i, j, maxIdx);
-                    hash = hash_any(c0, c1, c2, i, j, maxIdx);
-                    node_cache[hash] = {.hash=hash, .pos=pos};
-                }
-            }
-        }
-
-        for (auto face: FACE_CORNER_NODES) {
-//        std::sort(face.begin(),face.end());
-//        auto [c0, c1, c2] = face;
-            auto[c0, c1, c2] = get_sorted_face_nodes(face);
-            for (Index i = 0; i<nEdge; ++i) {
-                for (Index j = 0; j<=i; ++j) {
-                    hash = hash_any(c0, c1, c2, i, j, maxIdx);
-                    std::vector<std::string> neighbour_hashes = neighbour_hash_vec(c0, c1, c2, i, j, maxIdx);
-                    for (auto const& neighbour_hash: neighbour_hashes) {
-                        node_cache[hash].nn_hashes.insert(neighbour_hash);
-                        node_cache[neighbour_hash].nn_hashes.insert(hash);
-                    }
-                }
-            }
-            for (Index idx = 0; auto& nodeEl: node_cache) {
-                nodeEl.second.id = idx;
-                ++idx;
-            }
-
-        }
-
-    }
-};
-
-template<floating_point_number Real, integer_number Index>
-class PlanarTriangulation{
-    Index n_length;
-public:
-    std::vector<std::vector<Index>> nn_ids;
-    std::vector<bool> is_bulk;
-    [[nodiscard]] Index ij_to_id(Index i, Index j){return i*n_length+j;}
-    [[nodiscard]] Index id_to_i(Index id){return id/n_length;}
-    [[nodiscard]] Index id_to_j(Index id){return id%n_length;}
-
-    // TL T TR
-    //  L    R
-    // BL B BR
-
-    [[nodiscard]] Index TL(Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)-1);}
-    [[nodiscard]] Index T (Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)  );}
-    [[nodiscard]] Index TR(Index id){ return ij_to_id(id_to_i(id)-1, id_to_j(id)+1);}
-    [[nodiscard]] Index  L(Index id){ return ij_to_id(id_to_i(id)  , id_to_j(id)-1);}
-    [[nodiscard]] Index  R(Index id){ return ij_to_id(id_to_i(id)  , id_to_j(id)+1);}
-    [[nodiscard]] Index BL(Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)-1);}
-    [[nodiscard]] Index B (Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)  );}
-    [[nodiscard]] Index BR(Index id){ return ij_to_id(id_to_i(id)+1, id_to_j(id)+1);}
-
-    [[nodiscard]] std::vector<Index> bulk_odd_j_neighbor_ids(Index id){
-        return { B(id), R(id), TR(id), T(id), TL(id), L(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> bulk_even_j_neighbor_ids(Index id){
-        return { T(id), L(id), BL(id), B(id), BR(id), R(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> top_boundary_odd_j_neighbor_ids(Index id){
-        return { L(id), B(id), R(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> top_boundary_even_j_neighbor_ids(Index id){
-        return { L(id), BL(id), B(id), BR(id), R(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> bottom_boundary_odd_j_neighbor_ids(Index id){
-        return { R(id), TR(id), T(id), TL(id), L(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> bottom_boundary_even_j_neighbor_ids(Index id){
-        return { T(id), L(id), R(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> left_boundary_neighbor_ids(Index id){
-        return { T(id), B(id), BR(id), R(id)};
-    }
-
-    [[nodiscard]] std::vector<Index> right_boundary_odd_j_neighbor_ids(Index id){
-        return { T(id), TL(id), L(id), B(id) };
-    }
-
-    [[nodiscard]] std::vector<Index> right_boundary_even_j_neighbor_ids(Index id){
-        return { T(id), L(id), BL(id), B(id) };
-    }
-
-    PlanarTriangulation(Index n_length_inp, Index n_width):n_length(n_length_inp){
-        Index N_nodes = n_length*n_width;
-
-        nn_ids.resize(N_nodes);
-        is_bulk.resize(N_nodes,false);
-        for(Index i=0; i<n_width;++i) {
-            for (Index j = 0; j<n_length; ++j) {
-                Index id = ij_to_id(i, j);
-            }
-        }
-        // populate_bulk
-        for(Index i=1; i<n_width-1;++i){
-            for(Index j=1; j<n_length-1;++j){
-                Index bulk_id = ij_to_id(i,j);
-                is_bulk[bulk_id] = true;
-                if(j%2==0){
-                    nn_ids[bulk_id] = bulk_even_j_neighbor_ids(bulk_id);
-                }else{
-                    nn_ids[bulk_id] = bulk_odd_j_neighbor_ids(bulk_id);
-                }
-            }
-        }
-
-        // populate top and bottom boundaries
-        for (Index j = 1; j<n_length-1; ++j) {
-            Index i = 0;
-            Index id = ij_to_id(i,j);
-            if (j%2==0) {
-                nn_ids[id] = top_boundary_even_j_neighbor_ids(id);
-            }else{
-                nn_ids[id] = top_boundary_odd_j_neighbor_ids(id);
-            }
-
-            i = n_width-1;
-            id = ij_to_id(i,j);
-            if (j%2==0) {
-                nn_ids[id] = bottom_boundary_even_j_neighbor_ids(id);
-            }else{
-                nn_ids[id] = bottom_boundary_odd_j_neighbor_ids(id);
-            }
-        }
-
-        // populate left and right boundaries
-        for (Index i = 1; i<n_width-1; ++i) {
-            Index j = 0;
-            Index id = ij_to_id(i,j);
-            nn_ids[id] = left_boundary_neighbor_ids(id);
-
-            j = n_length-1;
-            id = ij_to_id(i,j);
-            if (j%2==0) {
-                nn_ids[id] = right_boundary_even_j_neighbor_ids(id);
-            }else{
-                nn_ids[id] = right_boundary_odd_j_neighbor_ids(id);
-            }
-        }
-
-        // populate top left corner
-        nn_ids[0] = std::vector<Index>{B(0), BR(0), R(0)};
-        // populate bottom left corner
-        Index bottom_left_id = ij_to_id(n_width-1,0);
-        nn_ids[bottom_left_id] = std::vector<Index>{R(bottom_left_id), T(bottom_left_id)}; //Todo this bond will never flip
-        // populate top and bottom right corner
-        Index top_right_id = n_length-1;
-        Index bottom_right_id = N_nodes-1;
-        if((n_length-1)%2==0){
-            nn_ids[top_right_id] = {L(top_right_id), BL(top_right_id), B(top_right_id)};
-            nn_ids[bottom_right_id] = {T(bottom_right_id), L(bottom_right_id)};// Todo this bond will never flip
-        }else{
-            nn_ids[top_right_id] = {L(top_right_id), /*BL(top_right_id),*/ B(top_right_id)}; // Todo this bond will never flip
-            nn_ids[bottom_right_id] = {T(bottom_right_id), TL(bottom_right_id), L(bottom_right_id),};// Todo this bond will never flip
-        }
-
-
-    }
-};
-}
-#endif //FLIPPY_TRIANGULATOR_HPP
-
-
-// end --- Triangulator.hpp --- 
-
-
+#define VERY_LARGE_NUMBER_ LONG_LONG_MAX
+/**@}*/
 
 /**
  * flippy's namespace.
- *
- * All class methods in flippy use similar prefix based nomenclature
- *
- * prefix | description
- * :-----:| :--------
- * calculate_| Indicates that a calculation will happen when the method is called, which might be expensive.
- * [action]_| [action]_ could be move_ or flip_ or any other descriptor. This prefixes indicate a state change and are usually expensive.
- * [no prefix] | usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this).
- * Example: In the triangulation class `mass_center()` returns a const reference to the private member `mass_center.`
  */
 namespace fp {
-
-static constexpr int BOND_DONATION_CUTOFF = 4; // a node needs to have more than the cutoff number of bonds to be allowed to donate one
-
 /**
- * A helper struct; keeps track of bond flips.
- * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges.
- * If the flipp does happen then `common_nn_0` and `common_nn_1` record the ids of nodes that receive new common bond.
+ * @GlobalsStub
+ * @{
+ */
+//! a node needs to have more than the cutoff number of bonds to be allowed to donate one
+static constexpr int BOND_DONATION_CUTOFF = 4;
+/**@}*/
+
+//! A helper struct; keeps track of bond flips.
+/**
+ * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges
+ * (more details on bond flips and how they can fail are provided in the Triangulation.flip_bond(Index, Index, Real, Real) function).
+ * If the flip does happen then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
+ * #common_nn_0 and #common_nn_1 will record the ids of nodes that receive new common bond.
+ * If the flip does not happen then the #common_nn_0 and #common_nn_1 data members will hold a #VERY_LARGE_NUMBER_ with which they were initiated.
+ *
+ * The initiation with #VERY_LARGE_NUMBER_ is done to avoid #common_nn_0 and #common_nn_1 being zero initiated.
+ * This is a mechanism to force errors (instead of silent wrong behaviour) in situations of un-careful usage.
+ * If the end user does not check that the bonds were not flipped and tries to un-flip bonds with a
+ * Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&) function, then #common_nn_0 and #common_nn_1
+ * initiated with zeros will tell the *unflip_bond* function to un-flip a bond between zeros node and itself, which will cause wrong behaviour
+ * but no outright error. However if *unflip_bond* function will try to un-flip a bond between two nodes with the id #VERY_LARGE_NUMBER_, then
+ * the memory access at array location #VERY_LARGE_NUMBER_ will force an error.
  *
  *```txt
- *    common_nn_0
- *     /         \
- *   /            \
- * node -------- nn_id
- *  \             /
- *   \           /
- *   common_nn_1
+ *
+ * State of the triangulation before and after the flip.
+ *  before the flip                  after the flip
+ *
+ *      common nn 0                     common nn 0
+ *      /          \                    /    |    \
+ *     /            \                  /     |     \
+ *   node --------- nn              node     |     nn
+ *     \            /                 \      |     /
+ *      \          /                   \     |    /
+ *     common nn 1                     common nn 1
  *```
  *
- * */
-template<integer_number Index>
+ * @tparam Index @IndexStub
+ * @see Triangulation.flip_bond(Index, Index, Real, Real)
+ * @see Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&)
+ * @see Triangulation.flip_bond_unchecked(Index, Index, Index, Index)
+ */
+template<indexing_number Index>
 struct BondFlipData
 {
-  bool flipped = false;
-  Index common_nn_0 = -1;
-  Index common_nn_1 = -1;
+  bool flipped = false; //!< track if the bond was flipped.
+  Index common_nn_0 = static_cast<Index>(VERY_LARGE_NUMBER_); //!< Global id of a node that is supposed to receive a bond after a flip.
+  Index common_nn_1 = static_cast<Index>(VERY_LARGE_NUMBER_); //!< Global id of a node that is supposed to receive a bond after a flip.
 };
 
 /**
  * A helper struct;  makes addition and subtraction on a ring easier.
- * */
-template<integer_number Index>
+ * Each fp::Node stores its next neighbours in a vector Node.nn_ids,
+ * where the adjacent members in a vector are also next neighbours of each other.
+ * This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary.
+ * @see fp::Node.
+ * @tparam Index @IndexStub
+ */
+template<indexing_number Index>
 struct Neighbors
 {
-  Index j_m_1{-1};  //neighbor j+1
-  Index j_p_1{-1};  //neighbor j-1
+  //! neighbor j+1
+  Index j_m_1{VERY_LARGE_NUMBER_};
+  //! neighbor j-1
+  Index j_p_1{VERY_LARGE_NUMBER_};
 
+  /**
+   *
+   * @param j index of the j-th next neighbour
+   * @param ring_size corresponds to the number of elements of Node.nn_ids
+   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e. if `j` is the index of Node.nn_ids its next neighbour will be stored in `j+1` element, unless `j` is the last element, then its next neighbour will be stored in the 0th element.
+   */
   static Index plus_one(Index j, Index ring_size) { return ((j<ring_size - 1) ? j + 1 : (Index) 0); }
-  static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
-
-};
-/**
- * A helper struct (template) that is used by the triangulation to pass data around in one convenient package.
+  /**
+ *
+ * @param j index of the j-th next neighbour
+ * @param ring_size corresponds to the number of elements of Node.nn_ids
+ * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e. if `j` is the index of Node.nn_ids its previous next neighbour will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbour will be stored in the last element.
  */
-template<floating_point_number Real, integer_number Index>
+  static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
+};
+//! A helper struct that is used by the triangulation to pass data around in one convenient package.
+/**
+ * Geometry is a struct that contains the usually needed geometric data in a triangulation.
+ * This struct can hold such data for a single node, a collection of nodes or the entire triangulation.
+ * In abstract we can say that Geometry contains geometric data associated to some surface patch.
+ * This is useful to have, since we often need to aggregate information for a node and all of its neighbouring nodes.
+ *
+ * The Data members of this struct are public and thus,
+ * it does not guarantee the correctness or consistency of the data it holds,
+ * since it can be changed externally.
+ * The geometry struct also provides overloaded arithmetic operators,
+ * that are usually useful when aggregating geometric data from single nodes over a larger patch of the surface.
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ */
+template<floating_point_number Real, indexing_number Index>
 struct Geometry
 {
-  Real area;
-  Real volume;
-  Real unit_bending_energy; //local area element times the square of the total curvature
-  Geometry()
-          :area(0.), volume(0.), unit_bending_energy(0.) { }
+  Real area; //!< Area of patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
+  Real volume; //!< Volume of patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
+  Real unit_bending_energy; //!< Volume of patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
+  //! Default constructor, that zero initiates all the data members.
+  Geometry() :area(0.), volume(0.), unit_bending_energy(0.) { }
+  //! Construct from a node.
   explicit Geometry(Node<Real, Index> const& node)
-          :area(node.area), volume(node.volume), unit_bending_energy(node.unit_bending_energy) { }
+  :area(node.area), volume(node.volume), unit_bending_energy(node.unit_bending_energy) {
+  /**
+   * @param node Initiates data members of the struct with the geometric values of this single node.
+   */
+  }
+  //! Direct Constructor.
   Geometry(Real area_inp, Real volume_inp, Real unit_bending_energy_inp)
-          :area(area_inp), volume(volume_inp), unit_bending_energy(unit_bending_energy_inp) { }
-  friend Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
-  {
-      return Geometry<Real, Index>(lhs.area + rhs.area, lhs.volume + rhs.volume, lhs.unit_bending_energy + rhs.unit_bending_energy);
+  :area(area_inp), volume(volume_inp), unit_bending_energy(unit_bending_energy_inp) {
+  /**
+   * Initiates data members from directly provided numeric values.
+   * @param area_inp Input area.
+   * @param volume_inp Input volume.
+   * @param unit_bending_energy_inp Input unit bending energy.
+   */
   }
 
+  //! Overloaded addition operator.
+  /**
+   * Implements addition between two Geometries.
+   * Each data member of *lhs* and *rhs* Geometries is added pairwise and
+   * stored in the corresponding data member of the returned struct.
+   * ```c++
+   * //Example
+   * Geometry<float, unsigned int> res = lhs + rhs;
+   *
+   * res.area == lhs.area + rhs.area; // true
+   * res.volume == lhs.volume + rhs.volume; // true
+   * res.unit_bending_energy == lhs.unit_bending_energy + rhs.unit_bending_energy; // true
+   * ```
+   * @param lhs
+   * @param rhs
+   * @return lhs+rhs
+   */
+  friend Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+  {
+
+      return Geometry<Real, Index>(lhs.area + rhs.area, lhs.volume + rhs.volume, lhs.unit_bending_energy + rhs.unit_bending_energy);
+  }
+    //! Overloaded subtraction operator.
+    /**
+     * Implements subtraction between two Geometries.
+     * Each data member of *lhs* and *rhs* Geometries is subtracted pairwise and
+     * stored in the corresponding data member of the returned struct.
+     * ```c++
+     * //Example
+     * Geometry<float, unsigned int> res = lhs - rhs;
+     *
+     * res.area == lhs.area - rhs.area; // true
+     * res.volume == lhs.volume - rhs.volume; // true
+     * res.unit_bending_energy == lhs.unit_bending_energy - rhs.unit_bending_energy; // true
+     * ```
+     * @param lhs
+     * @param rhs
+     * @return lhs-rhs
+     */
   friend Geometry<Real, Index> operator-(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
   {
       return Geometry<Real, Index>(lhs.area - rhs.area, lhs.volume - rhs.volume, lhs.unit_bending_energy - rhs.unit_bending_energy);
   }
 
-  void operator+=(Node<Real, Index> const& node)
-  {
+    //! Overloaded addition and assignment operator.
+    /**
+     * Works through the use of already overloaded addition operator and
+     * simply performs `lhs = lhs + rhs;`.
+     *
+     * @param lhs
+     * @param rhs
+     * @see Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+     */
+    friend void operator+=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
+    {
+        lhs = lhs + rhs;
+    }
+
+    //! Overloaded subtraction and assignment operator.
+    /**
+     * Works through the use of already overloaded subtraction operator and
+     * simply performs `lhs = lhs - rhs;`.
+     *
+     * @param lhs
+     * @param rhs
+     * @see Geometry<Real, Index> operator-(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+     */
+    friend void operator-=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs){
+        lhs = lhs - rhs;
+    }
+
+    //! Overloaded addition and assignment operator.
+    /**
+     * Can accumulate a node onto a Geometry struct.
+     * @param node Geometric data from this node is added to the corresponding data members of the Geometry struct.
+     */
+    void operator+=(Node<Real, Index> const& node){
       area += node.area;
       volume += node.volume;
       unit_bending_energy += node.unit_bending_energy;
-  }
+    }
 
-  friend void operator+=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
-  {
-      lhs = lhs + rhs;
-  }
-
-  friend void operator-=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
-  {
-      lhs = lhs - rhs;
-  }
-};
-
-enum TriangulationType{
-    SPHERICAL_TRIANGULATION, PLANAR_TRIANGULATION
 };
 
 /**
- * Implementation of Triangulation of closed two dimensional surfaces in 3D
- * See throughout the documentation the sources are referred to by numbers which can be looked up int the bibliography.
- *
- *
- * BIBLIOGRAPHY:
- *
- * [1] Guillaume Gueguen, Nicolas Destainville, and Manoel Manghi,
- * ‚ÄòFluctuation Tension and Shape Transition of Vesicles: Renormalisation Calculations and Monte Carlo Simulations‚Äô,
- * Soft Matter, 13.36 (2017), 6100‚Äì6117 <https://doi.org/10.1039/C7SM01272A>.
- *
- * [2] Mark Meyer and others,
- * ‚ÄòDiscrete Differential-Geometry Operators for Triangulated 2-Manifolds‚Äô,
- * in Visualization and Mathematics III, ed. by Hans-Christian Hege and Konrad Polthier,
- * Mathematics and Visualization (Berlin, Heidelberg: Springer, 2003),
- * pp. 35‚Äì57 <https://doi.org/10.1007/978-3-662-05105-4_2>.
- *
+ * @GlobalsStub
+ * @{
  */
-template<floating_point_number Real, integer_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
+
+//! This enum defines named types of triangulations that are implemented in flippy.
+/**
+ * A triangulation type needs to be provided as a template parameter to the Triangulation class during instantiation.
+ * This will tell the class to create appropriate topology of the triangulated Nodes.
+ * The named types tell the triangulation class to...
+ */
+enum TriangulationType{
+
+    //! create a spherical triangulation which is a sub-triangulation of a regular icosahedron
+    SPHERICAL_TRIANGULATION,
+    //! create a triangulation which is a sub-triangulation of a plane square.
+    PLANAR_TRIANGULATION
+};
+/**@}*/
+
+/**
+ * Implementation of Triangulation of a two dimensional surfaces in 3D.
+ */
+template<floating_point_number Real, indexing_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
 class Triangulation
 {
 private:
@@ -23797,7 +23934,7 @@ public:
     {
         vec3<Real> mass_center = vec3<Real>{0., 0., 0.};
         for (auto const& node : nodes_) { mass_center += node.pos; }
-        mass_center = mass_center/nodes_.size();
+        mass_center = mass_center/static_cast<Real>(nodes_.size());
         return mass_center;
     }
 
@@ -23823,15 +23960,38 @@ public:
          */
         auto anchor_pos_ptr = std::find(nodes_[center_node_id].nn_ids.begin(),
                 nodes_[center_node_id].nn_ids.end(), anchor_id);
-        integer_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
+        indexing_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
         nodes_[center_node_id].emplace_nn_id(new_value, nodes_[new_value].pos, anchor_pos);
     }
 
     //unit tested
+    //! Securely flip the bond inside a quadrilateral
+    //! formed by the nodes given by node_id, nn_id and their two common next neighbours,
+    //! if all topological requirements are satisfied.
     BondFlipData<Index> flip_bond(Index node_id, Index nn_id,
                                   Real min_bond_length_square,
-                                  Real max_bond_length_square)
-    {
+                                  Real max_bond_length_square){
+    /**
+     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e. not introduce holes or additional bonds in it.
+     * To this end the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
+     * The information if the flip was allowed and succeeded or not will be encoded in BondFlipData struct, which will be returned by this function.
+     * The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip.
+     * A bond flip can fail if:
+     * - if the provided nodes id's are do not correspond to neighbouring nodes.
+     * - one of the donor nodes have already too few bonds (bonds less then #BOND_DONATION_CUTOFF).
+     * - if a new bond that would be created would be
+     *  - too long (length squared is larger than **max_bond_length_square**)
+     *  - too short (length squared is smaller than **min_bond_length_square**)
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param min_bond_length_square @BondLengthSquareStub{minimal}
+     * @param max_bond_length_square @BondLengthSquareStub{maximal}
+     * @return If the flip was successful the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
+     * The members BondFlipData::common_nn_0 and BondFlipData::common_nn_1 will contain global ids of new end nodes of the flipped bond.
+     * If the flip was not successful then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
+     * @note Regardless of the return values the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.
+     */
         BondFlipData<Index> bfd{};
         if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF) {
             if (nodes_.nn_ids(nn_id).size()>BOND_DONATION_CUTOFF) {
@@ -23859,6 +24019,7 @@ public:
     }
 
     //unit-tested
+    //! unflip a bond that was just flipped.
     void unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns)
     {
         flip_bond_unchecked(common_nns.common_nn_0, common_nns.common_nn_1, nn_id, node_id);
@@ -23867,6 +24028,8 @@ public:
         update_global_geometry(post_update_geometry, pre_update_geometry);
     }
 
+    //! Exchange next neighbourhood between four nodes in a manner that will correspond to
+    //! a bond flip if the provided information was correct.
     BondFlipData<Index> flip_bond_unchecked(Index node_id, Index nn_id,
                                             Index common_nn_j_m_1, Index common_nn_j_p_1)
     {
@@ -23888,7 +24051,7 @@ public:
         Real area_sum = 0.;
         vec3<Real> face_normal_sum{0., 0., 0.}, local_curvature_vec{0., 0., 0.};
         vec3<Real> face_normal;
-        integer_number auto nn_number = (Index) nodes_.nn_ids(node_id).size();
+        indexing_number auto nn_number = (Index) nodes_.nn_ids(node_id).size();
         Index j_p_1;
 
         Real face_area, face_normal_norm;
@@ -23909,7 +24072,7 @@ public:
 
             face_normal = lij.cross(lij_p_1); //nodes_.nn_distances(node_id)[j].cross(nodes_.nn_distances(node_id)[j_p_1]);
             face_normal_norm = face_normal.norm();
-            face_area = mixed_area(lij, lij_p_1, 0.5*face_normal_norm, cot_at_j, cot_at_j_p_1);
+            face_area = mixed_area(lij, lij_p_1, Real(0.5)*face_normal_norm, cot_at_j, cot_at_j_p_1);
             area_sum += face_area;
             face_normal_sum += face_area*face_normal/face_normal_norm;
 
@@ -23945,14 +24108,14 @@ public:
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1){
         if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
             if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
-                return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/8.;
+                return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/Real(8.);
             }
             else {//obtuse at node i.
-                return triangle_area/2.;
+                return triangle_area/Real(2.);
             }
         }
         else {//obtuse at node j or j+1.
-            return triangle_area/4.;
+            return triangle_area/Real(4.);
         }
 
         }
@@ -23973,16 +24136,16 @@ public:
 
         Real cot_at_j = cot_between_vectors(lij, (-1)*ljj_p_1);
         Real cot_at_j_p_1 = cot_between_vectors(lij_p_1, ljj_p_1);
-        if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
-            if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
+        if ((cot_at_j>Real(0.)) && (cot_at_j_p_1>Real(0.))) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
+            if (lij.dot(lij_p_1)>Real(0.)) { // cos at i is positive i.e. angle at i is not obtuse
                 return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/8.;
             }
             else {//obtuse at node i.
-                return triangle_area/2.;
+                return triangle_area/Real(2.);
             }
         }
         else {//obtuse at node j or j+1.
-            return triangle_area/4.;
+            return triangle_area/Real(4.);
         }
 
     }
@@ -24122,18 +24285,17 @@ private:
 
     }
 
+    //! This function calculates distance vectors from a node to all of it's neighbors.
     void update_nn_distance_vectors(Index node_id)
     {
         /**
-         *  This function calculates distance vectors from a node to all of it's neighbors. The directions of the
-         *  distance vectors are (radiating outward) pointing from the node to neighbors.
-         *  The function also preserves the order of neighbors. Meaning that the lilst of distance vectors is in the same
+         *  The directions of the distance vectors are (radiating outward) pointing from the node to neighbors.
+         *  The function also preserves the order of neighbors. Meaning that the order of distance vectors is in the same
          *  order as th provided list of neighbor ids.
+         *  @param node_id Global id of a node.
          */
 
-//        nodes_[node_id].nn_distances.resize(nodes_[node_id].nn_ids.size());
-
-        for (std::size_t i = 0; auto nn_id: nodes_.nn_ids(node_id)) {
+        for (Index i = 0; auto nn_id: nodes_.nn_ids(node_id)) {
             nodes_.set_nn_distance(node_id, i, nodes_.pos(nn_id) - nodes_.pos(node_id));
             ++i;
         }
@@ -24241,7 +24403,8 @@ private:
     //unit tested
     std::array<Index, 2> two_common_neighbours(Index node_id_0, Index node_id_1) const
     {
-        std::array<Index, 2> res{-1, -1};
+        static const Index vln = static_cast<const Index>(VERY_LARGE_NUMBER_);
+        std::array<Index, 2> res{vln, vln};
         //todo safe remove const& in the loop
         for (auto res_p = res.begin(); auto const& n0_nn_id: nodes_[node_id_0].nn_ids) {
             if (res_p==res.end()) { break; }
@@ -24259,7 +24422,7 @@ private:
     {
 
         Index j = nodes_.find_nns_loc_idx(node_id_0, node_id_1);
-        integer_number auto nn_number = (Index)nodes_.nn_ids(node_id_0).size();
+        indexing_number auto nn_number = (Index)nodes_.nn_ids(node_id_0).size();
         Index j_p_1 = Neighbors<Index>::plus_one(j, nn_number);
         Index j_m_1 = Neighbors<Index>::plus_one(j, nn_number);
         std::array<Index, 2> res{nodes_.nn_id(node_id_0,j_m_1),
@@ -24269,7 +24432,8 @@ private:
 
     std::array<Index, 2> two_common_neighbour_positions(Index node_id_0, Index node_id_1) const
     {
-        std::array<Index, 2> res{-1, -1};
+        static const Index vln = static_cast<const Index>(VERY_LARGE_NUMBER_);
+        std::array<Index, 2> res{vln, vln};
         short counter = 0;
         for (auto const& n0_nn_id: nodes_[node_id_0].nn_ids) {
             if (counter==2) { break; }
@@ -24393,53 +24557,6 @@ private:
 
 
 
-// begin --- flippy.hpp --- 
-
-/**
- *```txt
- *
- *  .d888 888 d8b
- * d88P"  888 Y8P
- * 888    888
- * 888888 888 888 88888b.  88888b.  888  888
- * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
- * 888    888 888 888  888 888  888 888  888     dynamically triangulated
- * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
- * 888    888 888 88888P"  88888P"   "Y88888
- *                888      888           888     version 1.0.0
- *                888      888      Y8b d88P
- *                888      888       "Y88P"
- *
- * https://gitlab.tudelft.nl/idema-group/flippy
- *
- *
- * MIT License
- *
- * Copyright (c) 2021 George Dadunashvili
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *```
- */
-
-#ifndef FLIPPY_FLIPPY_HPP
-#define FLIPPY_FLIPPY_HPP
-
 // begin --- MonteCarloUpdater.hpp --- 
 
 #ifndef FLIPPY_MONTECARLOUPDATER_HPP
@@ -24448,7 +24565,16 @@ private:
 
 namespace fp {
 
-template<floating_point_number Real, integer_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
+/**
+ * @brief A helper class for updating of the triangulation, using [Metropolis‚ÄìHastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
+ *
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ * @tparam EnergyFunctionParameters
+ * @tparam RandomNumberEngine
+ * @tparam triangulation_type
+ */
+template<floating_point_number Real, indexing_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
 class MonteCarloUpdater
 {
 private:
@@ -24563,6 +24689,9 @@ public:
 
     void flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids)
     {
+        /**
+         *
+         */
         ++flip_attempt;
         e_old = energy_function(node, triangulation, prms);
         Index number_nn_ids = node.nn_ids.size();
@@ -24575,16 +24704,82 @@ public:
     }
 
 
-    void reset_kBT(Real kBT){kBT_=kBT;}
+    void reset_kBT(Real kBT){
+        /**
+         * @param kBT input value of new temperature.
+         * The internal private data member `kBT_` that contains the current value of temperature will be overwritten
+         * with this input.
+         */
+        kBT_=kBT;
+    }
 
-    Real kBT(){return kBT_;}
-    [[nodiscard]] unsigned long move_attempt_count() const {return move_attempt;}
-    [[nodiscard]] unsigned long bond_length_move_rejection_count() const {return bond_length_move_rejection;}
-    [[nodiscard]] unsigned long move_back_count() const {return move_back;}
-    [[nodiscard]] unsigned long flip_attempt_count() const {return flip_attempt;}
-    [[nodiscard]] unsigned long bond_length_flip_rejection_count() const {return bond_length_flip_rejection;}
-    [[nodiscard]] unsigned long flip_back_count() const {return flip_back;}
-
+    [[nodiscard]] Real kBT(){
+    /**
+     * Monte Carlo Updater requires a kBT value in teh calculation of the rejection probability of a random move.
+     * @return the state of kBT value of the updater.
+     * @see move_needs_undoing()
+     */
+        return kBT_;
+    }
+    [[nodiscard]] unsigned long move_attempt_count() const {
+    /**
+     * Every time a move is attempted, a private internal state variable `move_attempt` is incremented by move_MC_updater().
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `move_attempt`.
+     * @see move_needs_undoing()
+     */
+        return move_attempt;
+    }
+    [[nodiscard]] unsigned long bond_length_move_rejection_count() const {
+    /**
+     * Moves that cause nodes to overlap with their Verlet list neighbours or move them too far away from any of their next neighbours, are rejected. Every time such rejection happens, a private internal state variable `bond_length_move_rejection` is incremented by move_MC_updater().
+     * The specifics of this rejection criteria are calculated in the function new_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node, fp::vec3<Real> const& displacement)
+     * Every time a node move would lead that node to have a bond with one of its next neighbours which is longer than a specified maximal length (max_bond_length()), the move will be rejected.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `bond_length_move_rejection`.
+     * @see move_needs_undoing()
+     */
+        return bond_length_move_rejection;
+    }
+    [[nodiscard]] unsigned long move_back_count() const {
+    /**
+     * Every time a move is rejected, because the energy requirement was not satisfied, a private internal state variable `move_back` is incremented by move_MC_updater().
+     * This variable does not track the rejections resulting from bond length restriction violation.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `move_back`.
+     * @see move_needs_undoing() bond_length_move_rejection_count()
+     */
+        return move_back;
+    }
+    [[nodiscard]] unsigned long flip_attempt_count() const {
+    /**
+     * Every time a flip is attempted, a private internal state variable `flip_attempt` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `flip_attempt`.
+     */
+        return flip_attempt;
+    }
+    [[nodiscard]] unsigned long bond_length_flip_rejection_count() const {
+    /**
+     * If a flip would turn a valid bond into a bond that is too long, the flip is rejected, a private internal state variable `bond_length_flip_rejection` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `bond_length_flip_rejection`.
+     * @see Triangulation::flip_bond(Index, Index, Real, Real) Triangulation::unflip_bond(Index, Index, BondFlipData<Index> const&)
+     */
+        return bond_length_flip_rejection;
+    }
+    [[nodiscard]] unsigned long flip_back_count() const {
+    /**
+     * Every time a flip is rejected, because the energy requirement was not satisfied, a private internal state variable `flip_back` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
+     * This variable does not track the rejections resulting from bond length restriction violation.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `flip_back`.
+     * @see Triangulation:: unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns) bond_length_flip_rejection_count()
+     */
+        return flip_back;
+    }
 
 };
 }
@@ -24599,3 +24794,57 @@ public:
 
 
 // end --- flippy.hpp --- 
+
+
+
+// begin --- flippy.hpp-e --- 
+
+/**
+ *```txt
+ *
+ *  .d888 888 d8b
+ * d88P"  888 Y8P
+ * 888    888
+ * 888888 888 888 88888b.  88888b.  888  888
+ * 888    888 888 888 "88b 888 "88b 888  888     simulating package for
+ * 888    888 888 888  888 888  888 888  888     dynamically triangulated
+ * 888    888 888 888 d88P 888 d88P Y88b 888     surfaces
+ * 888    888 888 88888P"  88888P"   "Y88888
+ *                888      888           888     version 1.0.0
+ *                888      888      Y8b d88P
+ *                888      888       "Y88P"
+ *
+ * https://gitlab.tudelft.nl/idema-group/flippy
+ *
+ *
+ * MIT License
+ *
+ * Copyright (c) 2021 George Dadunashvili
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *```
+ */
+
+#ifndef FLIPPY_FLIPPY_HPP
+#define FLIPPY_FLIPPY_HPP
+
+#endif //FLIPPY_FLIPPY_HPP
+
+
+// end --- flippy.hpp-e --- 
