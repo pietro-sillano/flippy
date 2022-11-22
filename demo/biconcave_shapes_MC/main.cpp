@@ -9,8 +9,8 @@ double sphere_area(double R){return 4. * M_PI *R*R;}
 struct EnergyParameters{double kappa, K_V, K_A, V_t, A_t;};
 
 // This is the energy function that is used by flippy's built in updater to decide if a move was energetically favourable or not
-double surface_energy([[maybe_unused]]fp::Node<double, int> const& node,
-                      fp::Triangulation<double, int> const& trg,
+double surface_energy([[maybe_unused]]fp::Node<double, unsigned int> const& node,
+                      fp::Triangulation<double, unsigned int> const& trg,
                       EnergyParameters const& prms){
     double V = trg.global_geometry().volume;
     double A = trg.global_geometry().area;
@@ -37,8 +37,8 @@ int main(){
     std::mt19937 rng(random_number_generator_seed()); // create a random number generator and seed it with current time
 
     // All the flippy magic is happening on the following two lines
-    fp::Triangulation<double, int> guv(n_triang, R, r_Verlet);
-    fp::MonteCarloUpdater<double, int, EnergyParameters, std::mt19937, fp::SPHERICAL_TRIANGULATION> mc_updater(guv, prms, surface_energy, rng, l_min, l_max);
+    fp::Triangulation<double, unsigned int> guv(n_triang, R, r_Verlet);
+    fp::MonteCarloUpdater<double, unsigned int, EnergyParameters, std::mt19937, fp::SPHERICAL_TRIANGULATION> mc_updater(guv, prms, surface_energy, rng, l_min, l_max);
 
     fp::vec3<double> displ{}; // declaring a 3d vector (using flippy's built in vec3 type) for a later use as a random direction vector
     std::uniform_real_distribution<double> displ_distr(-linear_displ, linear_displ); //define a distribution from which the small displacements in x y and z directions will be drawn

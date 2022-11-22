@@ -18,7 +18,9 @@
  * Since flippy is a headers only library this could not be hidden in source files.
  */
 namespace fp::implementation{
-template<floating_point_number Real, integer_number Index>
+
+//! @private
+template<floating_point_number Real, indexing_number Index>
 struct SimpleNodeData{
   std::string hash{};
   Index id{};
@@ -26,7 +28,8 @@ struct SimpleNodeData{
   std::unordered_set<std::string> nn_hashes{};
 };
 
-template<floating_point_number Real, integer_number Index>
+//! @private
+template<floating_point_number Real, indexing_number Index>
 class IcosahedronSubTriangulation
 {
 public:
@@ -131,7 +134,9 @@ public:
             base_nodes[hash] = {
                     .hash=hash,
                     .id=i,
-                    .pos=r_S1(R, M_PI/2. - std::atan(0.5), 2*M_PI*(i - 1.)/5.)};
+                    .pos=r_S1(R,
+                            static_cast<Real>(M_PI/2. - std::atan(0.5)),
+                            static_cast<Real>(2.*M_PI*(i - 1.)/5.))};
         }
 
         for (Index i = 6; i<N_ICOSA_NODEs - 1; ++i) {
@@ -139,13 +144,15 @@ public:
             base_nodes[hash] = {
                     .hash=hash,
                     .id=i,
-                    .pos=r_S1(R, M_PI/2. + std::atan(0.5), 2*M_PI*(i - 6.5)/5.)};
+                    .pos=r_S1(R,
+                            static_cast<Real>(M_PI/2. + std::atan(0.5)),
+                            static_cast<Real>(2.*M_PI*(i - 6.5)/5.))};
         }
         hash = hash_node(N_ICOSA_NODEs - 1);
         base_nodes[hash] = {
                 .hash=hash,
                 .id=static_cast<Index>(N_ICOSA_NODEs - 1),
-                .pos=r_S1(R, M_PI, 0.)};
+                .pos=r_S1(R, static_cast<Real>(M_PI), static_cast<Real>(0.))};
         return base_nodes;
     }
 
@@ -248,8 +255,8 @@ public:
         }
         else {
             Real fr = static_cast<Real>(k)/static_cast<Real>(n);
-            Real denominator = l + sqrt(4.*R*R - l*l)/tan(fr*2.*asin(l/(2.*R)));
-            return 2.*R*R/denominator;
+            Real denominator = static_cast<Real>(l + std::sqrt(4.*R*R - l*l)/std::tan(fr*2.*asin(l/(2.*R))));
+            return static_cast<Real>(2.)*R*R/denominator;
         }
     }
 
@@ -348,7 +355,8 @@ public:
     }
 };
 
-template<floating_point_number Real, integer_number Index>
+//! @private
+template<floating_point_number Real, indexing_number Index>
 class PlanarTriangulation{
     Index n_length;
 public:

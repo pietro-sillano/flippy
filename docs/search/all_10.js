@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['r_0',['R',['../classfp_1_1implementation_1_1_planar_triangulation.html#adf2f574e5e8025fe7c8d0ac862a858b1',1,'fp::implementation::PlanarTriangulation']]],
-  ['r_5fs1_1',['r_S1',['../classfp_1_1implementation_1_1_icosahedron_sub_triangulation.html#a3af495f2d98210abe5a4e146a6ea5c10',1,'fp::implementation::IcosahedronSubTriangulation']]],
-  ['reset_5fkbt_2',['reset_kBT',['../classfp_1_1_monte_carlo_updater.html#a919b68a956bf4875eecab53dbc950a57',1,'fp::MonteCarloUpdater']]],
-  ['right_5fboundary_5feven_5fj_5fneighbor_5fids_3',['right_boundary_even_j_neighbor_ids',['../classfp_1_1implementation_1_1_planar_triangulation.html#a4b8f41a7f0ba4afb09ced2058da12507',1,'fp::implementation::PlanarTriangulation']]],
-  ['right_5fboundary_5fodd_5fj_5fneighbor_5fids_4',['right_boundary_odd_j_neighbor_ids',['../classfp_1_1implementation_1_1_planar_triangulation.html#aa05e6a573384c213722b1a3e9c4197ac',1,'fp::implementation::PlanarTriangulation']]]
+  ['scale_0',['scale',['../classfp_1_1vec3.html#ab50f5353d9f81d47a0a5b87efc7ad056',1,'fp::vec3']]],
+  ['set_5farea_1',['set_area',['../structfp_1_1_nodes.html#ac77577ce16f2b8ff1feceb217c6853e1',1,'fp::Nodes']]],
+  ['set_5fcurvature_5fvec_2',['set_curvature_vec',['../structfp_1_1_nodes.html#a563539f00c190fb8fd9fedd6a27bc769',1,'fp::Nodes::set_curvature_vec(Index node_id, vec3&lt; Real &gt; const &amp;new_cv)'],['../structfp_1_1_nodes.html#a535f08dde803985251f08b7f02fa043a',1,'fp::Nodes::set_curvature_vec(Index node_id, vec3&lt; Real &gt; &amp;&amp;new_cv)']]],
+  ['set_5fnn_5fdistance_3',['set_nn_distance',['../structfp_1_1_nodes.html#a0019211410eea70cd8a4eecad4498992',1,'fp::Nodes::set_nn_distance(Index node_id, Index loc_nn_index, vec3&lt; Real &gt; &amp;&amp;dist)'],['../structfp_1_1_nodes.html#a7152c3eab97faef371f717aa1f144a5b',1,'fp::Nodes::set_nn_distance(Index node_id, Index loc_nn_index, vec3&lt; Real &gt; const &amp;dist)']]],
+  ['set_5fnn_5fid_4',['set_nn_id',['../structfp_1_1_nodes.html#a14a196ade9731f70eeed6446b32854ca',1,'fp::Nodes']]],
+  ['set_5fnn_5fids_5',['set_nn_ids',['../structfp_1_1_nodes.html#a8aa1bcb4a83a714a2abeaaae500a949a',1,'fp::Nodes']]],
+  ['set_5fpos_6',['set_pos',['../structfp_1_1_nodes.html#ad441e229389a483f2184c9f3ef0647f4',1,'fp::Nodes::set_pos(Index node_id, vec3&lt; Real &gt; const &amp;new_pos)'],['../structfp_1_1_nodes.html#ab0d598ecd535f690a99d81dd4e717d1e',1,'fp::Nodes::set_pos(Index node_id, vec3&lt; Real &gt; &amp;&amp;new_pos)']]],
+  ['set_5funit_5fbending_5fenergy_7',['set_unit_bending_energy',['../structfp_1_1_nodes.html#ae4dcac75731ab83b336c27ded5df8e8d',1,'fp::Nodes']]],
+  ['set_5fvolume_8',['set_volume',['../structfp_1_1_nodes.html#a4431ab5e1cf3dbc768558ae5b9132bef',1,'fp::Nodes']]],
+  ['size_9',['size',['../structfp_1_1_nodes.html#a00b3ff9ae4af9a804478d246a0c8c7a1',1,'fp::Nodes']]],
+  ['special_20concepts_10',['Special concepts',['../group__my_concepts.html',1,'']]],
+  ['spherical_5ftriangulation_11',['SPHERICAL_TRIANGULATION',['../group___globals.html#gga6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703',1,'fp']]],
+  ['subtract_12',['subtract',['../classfp_1_1vec3.html#a61388588fcc141bd691b0c1c25e201a2',1,'fp::vec3']]]
 ];

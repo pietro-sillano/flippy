@@ -8,34 +8,82 @@
 #include "Triangulator.hpp"
 
 /**
+ * @GlobalsStub
+ * @{
+ */
+//! Redefinition of the `LONG_LONG_MAX` macro, in case a specific compiler does not implement it. Largest number that fits in the `long long` type.
+#ifndef LONG_LONG_MAX
+#define LONG_LONG_MAX 9223372036854775807LL
+#endif
+
+/**
+ * @brief Literal for a very large integral number.
+ *
+ * This number will be used for default instantiation of variables/ data members that hold indices.
+ * This is done to avoid instantiation with 0 which could also be a valid index.
+ * This way one can differentiate between unintentionally default instantiated value and a proper value of an index.
+ * This will also mean that the use of such improperly instantiated indexer variables will cause an easier to identify error during runtime.
+ * @see fp::BondFlipData
+ * fp::Neighbors
+ * fp::Triangulation::two_common_neighbours(Index, Index) const
+ * fp::Triangulation::two_common_neighbour_positions(Index, Index) const
+ */
+#define VERY_LARGE_NUMBER_ LONG_LONG_MAX
+/**@}*/
+
+/**
  * flippy's namespace.
  */
 namespace fp {
-
-static constexpr int BOND_DONATION_CUTOFF = 4; // a node needs to have more than the cutoff number of bonds to be allowed to donate one
-
 /**
- * A helper struct; keeps track of bond flips.
- * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges.
- * If the flipp does happen then `common_nn_0` and `common_nn_1` record the ids of nodes that receive new common bond.
+ * @GlobalsStub
+ * @{
+ */
+//! a node needs to have more than the cutoff number of bonds to be allowed to donate one
+static constexpr int BOND_DONATION_CUTOFF = 4;
+/**@}*/
+
+//! A helper struct; keeps track of bond flips.
+/**
+ * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges
+ * (more details on bond flips and how they can fail are provided in the Triangulation.flip_bond(Index, Index, Real, Real) function).
+ * If the flip does happen then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
+ * #common_nn_0 and #common_nn_1 will record the ids of nodes that receive new common bond.
+ * If the flip does not happen then the #common_nn_0 and #common_nn_1 data members will hold a #VERY_LARGE_NUMBER_ with which they were initiated.
+ *
+ * The initiation with #VERY_LARGE_NUMBER_ is done to avoid #common_nn_0 and #common_nn_1 being zero initiated.
+ * This is a mechanism to force errors (instead of silent wrong behaviour) in situations of un-careful usage.
+ * If the end user does not check that the bonds were not flipped and tries to un-flip bonds with a
+ * Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&) function, then #common_nn_0 and #common_nn_1
+ * initiated with zeros will tell the *unflip_bond* function to un-flip a bond between zeros node and itself, which will cause wrong behaviour
+ * but no outright error. However if *unflip_bond* function will try to un-flip a bond between two nodes with the id #VERY_LARGE_NUMBER_, then
+ * the memory access at array location #VERY_LARGE_NUMBER_ will force an error.
  *
  *```txt
- *    common_nn_0
- *     /         \
- *   /            \
- * node -------- nn_id
- *  \             /
- *   \           /
- *   common_nn_1
+ *
+ * State of the triangulation before and after the flip.
+ *  before the flip                  after the flip
+ *
+ *      common nn 0                     common nn 0
+ *      /          \                    /    |    \
+ *     /            \                  /     |     \
+ *   node --------- nn              node     |     nn
+ *     \            /                 \      |     /
+ *      \          /                   \     |    /
+ *     common nn 1                     common nn 1
  *```
  *
- * */
-template<integer_number Index>
+ * @tparam Index @IndexStub
+ * @see Triangulation.flip_bond(Index, Index, Real, Real)
+ * @see Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&)
+ * @see Triangulation.flip_bond_unchecked(Index, Index, Index, Index)
+ */
+template<indexing_number Index>
 struct BondFlipData
 {
-  bool flipped = false;
-  Index common_nn_0 = -1;
-  Index common_nn_1 = -1;
+  bool flipped = false; //!< track if the bond was flipped.
+  Index common_nn_0 = static_cast<Index>(VERY_LARGE_NUMBER_); //!< Global id of a node that is supposed to receive a bond after a flip.
+  Index common_nn_1 = static_cast<Index>(VERY_LARGE_NUMBER_); //!< Global id of a node that is supposed to receive a bond after a flip.
 };
 
 /**
@@ -44,15 +92,15 @@ struct BondFlipData
  * where the adjacent members in a vector are also next neighbours of each other.
  * This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary.
  * @see fp::Node.
- * @tparam Index
+ * @tparam Index @IndexStub
  */
-template<integer_number Index>
+template<indexing_number Index>
 struct Neighbors
 {
   //! neighbor j+1
-  Index j_m_1{-1};
+  Index j_m_1{VERY_LARGE_NUMBER_};
   //! neighbor j-1
-  Index j_p_1{-1};
+  Index j_p_1{VERY_LARGE_NUMBER_};
 
   /**
    *
@@ -68,74 +116,156 @@ struct Neighbors
  * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e. if `j` is the index of Node.nn_ids its previous next neighbour will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbour will be stored in the last element.
  */
   static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
-
 };
+//! A helper struct that is used by the triangulation to pass data around in one convenient package.
 /**
- * A helper struct (template) that is used by the triangulation to pass data around in one convenient package.
+ * Geometry is a struct that contains the usually needed geometric data in a triangulation.
+ * This struct can hold such data for a single node, a collection of nodes or the entire triangulation.
+ * In abstract we can say that Geometry contains geometric data associated to some surface patch.
+ * This is useful to have, since we often need to aggregate information for a node and all of its neighbouring nodes.
+ *
+ * The Data members of this struct are public and thus,
+ * it does not guarantee the correctness or consistency of the data it holds,
+ * since it can be changed externally.
+ * The geometry struct also provides overloaded arithmetic operators,
+ * that are usually useful when aggregating geometric data from single nodes over a larger patch of the surface.
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
  */
-template<floating_point_number Real, integer_number Index>
+template<floating_point_number Real, indexing_number Index>
 struct Geometry
 {
-  Real area;
-  Real volume;
-  Real unit_bending_energy; //local area element times the square of the total curvature
-  Geometry()
-          :area(0.), volume(0.), unit_bending_energy(0.) { }
+  Real area; //!< Area of patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
+  Real volume; //!< Volume of patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
+  Real unit_bending_energy; //!< Volume of patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
+  //! Default constructor, that zero initiates all the data members.
+  Geometry() :area(0.), volume(0.), unit_bending_energy(0.) { }
+  //! Construct from a node.
   explicit Geometry(Node<Real, Index> const& node)
-          :area(node.area), volume(node.volume), unit_bending_energy(node.unit_bending_energy) { }
+  :area(node.area), volume(node.volume), unit_bending_energy(node.unit_bending_energy) {
+  /**
+   * @param node Initiates data members of the struct with the geometric values of this single node.
+   */
+  }
+  //! Direct Constructor.
   Geometry(Real area_inp, Real volume_inp, Real unit_bending_energy_inp)
-          :area(area_inp), volume(volume_inp), unit_bending_energy(unit_bending_energy_inp) { }
-  friend Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
-  {
-      return Geometry<Real, Index>(lhs.area + rhs.area, lhs.volume + rhs.volume, lhs.unit_bending_energy + rhs.unit_bending_energy);
+  :area(area_inp), volume(volume_inp), unit_bending_energy(unit_bending_energy_inp) {
+  /**
+   * Initiates data members from directly provided numeric values.
+   * @param area_inp Input area.
+   * @param volume_inp Input volume.
+   * @param unit_bending_energy_inp Input unit bending energy.
+   */
   }
 
+  //! Overloaded addition operator.
+  /**
+   * Implements addition between two Geometries.
+   * Each data member of *lhs* and *rhs* Geometries is added pairwise and
+   * stored in the corresponding data member of the returned struct.
+   * ```c++
+   * //Example
+   * Geometry<float, unsigned int> res = lhs + rhs;
+   *
+   * res.area == lhs.area + rhs.area; // true
+   * res.volume == lhs.volume + rhs.volume; // true
+   * res.unit_bending_energy == lhs.unit_bending_energy + rhs.unit_bending_energy; // true
+   * ```
+   * @param lhs
+   * @param rhs
+   * @return lhs+rhs
+   */
+  friend Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+  {
+
+      return Geometry<Real, Index>(lhs.area + rhs.area, lhs.volume + rhs.volume, lhs.unit_bending_energy + rhs.unit_bending_energy);
+  }
+    //! Overloaded subtraction operator.
+    /**
+     * Implements subtraction between two Geometries.
+     * Each data member of *lhs* and *rhs* Geometries is subtracted pairwise and
+     * stored in the corresponding data member of the returned struct.
+     * ```c++
+     * //Example
+     * Geometry<float, unsigned int> res = lhs - rhs;
+     *
+     * res.area == lhs.area - rhs.area; // true
+     * res.volume == lhs.volume - rhs.volume; // true
+     * res.unit_bending_energy == lhs.unit_bending_energy - rhs.unit_bending_energy; // true
+     * ```
+     * @param lhs
+     * @param rhs
+     * @return lhs-rhs
+     */
   friend Geometry<Real, Index> operator-(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
   {
       return Geometry<Real, Index>(lhs.area - rhs.area, lhs.volume - rhs.volume, lhs.unit_bending_energy - rhs.unit_bending_energy);
   }
 
-  void operator+=(Node<Real, Index> const& node)
-  {
+    //! Overloaded addition and assignment operator.
+    /**
+     * Works through the use of already overloaded addition operator and
+     * simply performs `lhs = lhs + rhs;`.
+     *
+     * @param lhs
+     * @param rhs
+     * @see Geometry<Real, Index> operator+(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+     */
+    friend void operator+=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
+    {
+        lhs = lhs + rhs;
+    }
+
+    //! Overloaded subtraction and assignment operator.
+    /**
+     * Works through the use of already overloaded subtraction operator and
+     * simply performs `lhs = lhs - rhs;`.
+     *
+     * @param lhs
+     * @param rhs
+     * @see Geometry<Real, Index> operator-(Geometry<Real, Index> const& lhs, Geometry<Real, Index> const& rhs)
+     */
+    friend void operator-=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs){
+        lhs = lhs - rhs;
+    }
+
+    //! Overloaded addition and assignment operator.
+    /**
+     * Can accumulate a node onto a Geometry struct.
+     * @param node Geometric data from this node is added to the corresponding data members of the Geometry struct.
+     */
+    void operator+=(Node<Real, Index> const& node){
       area += node.area;
       volume += node.volume;
       unit_bending_energy += node.unit_bending_energy;
-  }
+    }
 
-  friend void operator+=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
-  {
-      lhs = lhs + rhs;
-  }
-
-  friend void operator-=(Geometry<Real, Index>& lhs, Geometry<Real, Index> const& rhs)
-  {
-      lhs = lhs - rhs;
-  }
-};
-
-enum TriangulationType{
-    SPHERICAL_TRIANGULATION, PLANAR_TRIANGULATION
 };
 
 /**
- * Implementation of Triangulation of closed two dimensional surfaces in 3D
- * See throughout the documentation the sources are referred to by numbers which can be looked up int the bibliography.
- *
- *
- * BIBLIOGRAPHY:
- *
- * [1] Guillaume Gueguen, Nicolas Destainville, and Manoel Manghi,
- * ‘Fluctuation Tension and Shape Transition of Vesicles: Renormalisation Calculations and Monte Carlo Simulations’,
- * Soft Matter, 13.36 (2017), 6100–6117 <https://doi.org/10.1039/C7SM01272A>.
- *
- * [2] Mark Meyer and others,
- * ‘Discrete Differential-Geometry Operators for Triangulated 2-Manifolds’,
- * in Visualization and Mathematics III, ed. by Hans-Christian Hege and Konrad Polthier,
- * Mathematics and Visualization (Berlin, Heidelberg: Springer, 2003),
- * pp. 35–57 <https://doi.org/10.1007/978-3-662-05105-4_2>.
- *
+ * @GlobalsStub
+ * @{
  */
-template<floating_point_number Real, integer_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
+
+//! This enum defines named types of triangulations that are implemented in flippy.
+/**
+ * A triangulation type needs to be provided as a template parameter to the Triangulation class during instantiation.
+ * This will tell the class to create appropriate topology of the triangulated Nodes.
+ * The named types tell the triangulation class to...
+ */
+enum TriangulationType{
+
+    //! create a spherical triangulation which is a sub-triangulation of a regular icosahedron
+    SPHERICAL_TRIANGULATION,
+    //! create a triangulation which is a sub-triangulation of a plane square.
+    PLANAR_TRIANGULATION
+};
+/**@}*/
+
+/**
+ * Implementation of Triangulation of a two dimensional surfaces in 3D.
+ */
+template<floating_point_number Real, indexing_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
 class Triangulation
 {
 private:
@@ -208,7 +338,7 @@ public:
     {
         vec3<Real> mass_center = vec3<Real>{0., 0., 0.};
         for (auto const& node : nodes_) { mass_center += node.pos; }
-        mass_center = mass_center/nodes_.size();
+        mass_center = mass_center/static_cast<Real>(nodes_.size());
         return mass_center;
     }
 
@@ -234,15 +364,38 @@ public:
          */
         auto anchor_pos_ptr = std::find(nodes_[center_node_id].nn_ids.begin(),
                 nodes_[center_node_id].nn_ids.end(), anchor_id);
-        integer_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
+        indexing_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
         nodes_[center_node_id].emplace_nn_id(new_value, nodes_[new_value].pos, anchor_pos);
     }
 
     //unit tested
+    //! Securely flip the bond inside a quadrilateral
+    //! formed by the nodes given by node_id, nn_id and their two common next neighbours,
+    //! if all topological requirements are satisfied.
     BondFlipData<Index> flip_bond(Index node_id, Index nn_id,
                                   Real min_bond_length_square,
-                                  Real max_bond_length_square)
-    {
+                                  Real max_bond_length_square){
+    /**
+     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e. not introduce holes or additional bonds in it.
+     * To this end the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
+     * The information if the flip was allowed and succeeded or not will be encoded in BondFlipData struct, which will be returned by this function.
+     * The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip.
+     * A bond flip can fail if:
+     * - if the provided nodes id's are do not correspond to neighbouring nodes.
+     * - one of the donor nodes have already too few bonds (bonds less then #BOND_DONATION_CUTOFF).
+     * - if a new bond that would be created would be
+     *  - too long (length squared is larger than **max_bond_length_square**)
+     *  - too short (length squared is smaller than **min_bond_length_square**)
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param min_bond_length_square @BondLengthSquareStub{minimal}
+     * @param max_bond_length_square @BondLengthSquareStub{maximal}
+     * @return If the flip was successful the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
+     * The members BondFlipData::common_nn_0 and BondFlipData::common_nn_1 will contain global ids of new end nodes of the flipped bond.
+     * If the flip was not successful then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
+     * @note Regardless of the return values the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.
+     */
         BondFlipData<Index> bfd{};
         if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF) {
             if (nodes_.nn_ids(nn_id).size()>BOND_DONATION_CUTOFF) {
@@ -270,6 +423,7 @@ public:
     }
 
     //unit-tested
+    //! unflip a bond that was just flipped.
     void unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns)
     {
         flip_bond_unchecked(common_nns.common_nn_0, common_nns.common_nn_1, nn_id, node_id);
@@ -278,6 +432,8 @@ public:
         update_global_geometry(post_update_geometry, pre_update_geometry);
     }
 
+    //! Exchange next neighbourhood between four nodes in a manner that will correspond to
+    //! a bond flip if the provided information was correct.
     BondFlipData<Index> flip_bond_unchecked(Index node_id, Index nn_id,
                                             Index common_nn_j_m_1, Index common_nn_j_p_1)
     {
@@ -299,7 +455,7 @@ public:
         Real area_sum = 0.;
         vec3<Real> face_normal_sum{0., 0., 0.}, local_curvature_vec{0., 0., 0.};
         vec3<Real> face_normal;
-        integer_number auto nn_number = (Index) nodes_.nn_ids(node_id).size();
+        indexing_number auto nn_number = (Index) nodes_.nn_ids(node_id).size();
         Index j_p_1;
 
         Real face_area, face_normal_norm;
@@ -320,7 +476,7 @@ public:
 
             face_normal = lij.cross(lij_p_1); //nodes_.nn_distances(node_id)[j].cross(nodes_.nn_distances(node_id)[j_p_1]);
             face_normal_norm = face_normal.norm();
-            face_area = mixed_area(lij, lij_p_1, 0.5*face_normal_norm, cot_at_j, cot_at_j_p_1);
+            face_area = mixed_area(lij, lij_p_1, Real(0.5)*face_normal_norm, cot_at_j, cot_at_j_p_1);
             area_sum += face_area;
             face_normal_sum += face_area*face_normal/face_normal_norm;
 
@@ -356,14 +512,14 @@ public:
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1){
         if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
             if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
-                return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/8.;
+                return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/Real(8.);
             }
             else {//obtuse at node i.
-                return triangle_area/2.;
+                return triangle_area/Real(2.);
             }
         }
         else {//obtuse at node j or j+1.
-            return triangle_area/4.;
+            return triangle_area/Real(4.);
         }
 
         }
@@ -384,16 +540,16 @@ public:
 
         Real cot_at_j = cot_between_vectors(lij, (-1)*ljj_p_1);
         Real cot_at_j_p_1 = cot_between_vectors(lij_p_1, ljj_p_1);
-        if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
-            if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
+        if ((cot_at_j>Real(0.)) && (cot_at_j_p_1>Real(0.))) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
+            if (lij.dot(lij_p_1)>Real(0.)) { // cos at i is positive i.e. angle at i is not obtuse
                 return (cot_at_j_p_1*lij.dot(lij) + cot_at_j*lij_p_1.dot(lij_p_1))/8.;
             }
             else {//obtuse at node i.
-                return triangle_area/2.;
+                return triangle_area/Real(2.);
             }
         }
         else {//obtuse at node j or j+1.
-            return triangle_area/4.;
+            return triangle_area/Real(4.);
         }
 
     }
@@ -533,18 +689,17 @@ private:
 
     }
 
+    //! This function calculates distance vectors from a node to all of it's neighbors.
     void update_nn_distance_vectors(Index node_id)
     {
         /**
-         *  This function calculates distance vectors from a node to all of it's neighbors. The directions of the
-         *  distance vectors are (radiating outward) pointing from the node to neighbors.
-         *  The function also preserves the order of neighbors. Meaning that the lilst of distance vectors is in the same
+         *  The directions of the distance vectors are (radiating outward) pointing from the node to neighbors.
+         *  The function also preserves the order of neighbors. Meaning that the order of distance vectors is in the same
          *  order as th provided list of neighbor ids.
+         *  @param node_id Global id of a node.
          */
 
-//        nodes_[node_id].nn_distances.resize(nodes_[node_id].nn_ids.size());
-
-        for (std::size_t i = 0; auto nn_id: nodes_.nn_ids(node_id)) {
+        for (Index i = 0; auto nn_id: nodes_.nn_ids(node_id)) {
             nodes_.set_nn_distance(node_id, i, nodes_.pos(nn_id) - nodes_.pos(node_id));
             ++i;
         }
@@ -652,7 +807,8 @@ private:
     //unit tested
     std::array<Index, 2> two_common_neighbours(Index node_id_0, Index node_id_1) const
     {
-        std::array<Index, 2> res{-1, -1};
+        static const Index vln = static_cast<const Index>(VERY_LARGE_NUMBER_);
+        std::array<Index, 2> res{vln, vln};
         //todo safe remove const& in the loop
         for (auto res_p = res.begin(); auto const& n0_nn_id: nodes_[node_id_0].nn_ids) {
             if (res_p==res.end()) { break; }
@@ -670,7 +826,7 @@ private:
     {
 
         Index j = nodes_.find_nns_loc_idx(node_id_0, node_id_1);
-        integer_number auto nn_number = (Index)nodes_.nn_ids(node_id_0).size();
+        indexing_number auto nn_number = (Index)nodes_.nn_ids(node_id_0).size();
         Index j_p_1 = Neighbors<Index>::plus_one(j, nn_number);
         Index j_m_1 = Neighbors<Index>::plus_one(j, nn_number);
         std::array<Index, 2> res{nodes_.nn_id(node_id_0,j_m_1),
@@ -680,7 +836,8 @@ private:
 
     std::array<Index, 2> two_common_neighbour_positions(Index node_id_0, Index node_id_1) const
     {
-        std::array<Index, 2> res{-1, -1};
+        static const Index vln = static_cast<const Index>(VERY_LARGE_NUMBER_);
+        std::array<Index, 2> res{vln, vln};
         short counter = 0;
         for (auto const& n0_nn_id: nodes_[node_id_0].nn_ids) {
             if (counter==2) { break; }

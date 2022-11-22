@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -103,7 +104,9 @@ $(document).ready(function(){initNavTree('namespacefp.html',''); initResizable()
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">fp Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -116,16 +119,21 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper struct; keeps track of bond flips.  <a href="structfp_1_1_bond_flip_data.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_geometry.html">Geometry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper struct that is used by the triangulation to pass data around in one convenient package.  <a href="structfp_1_1_geometry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_monte_carlo_updater.html">MonteCarloUpdater</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class for updating of the triangulation, using <a href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">Metropolis–Hastings algorithm</a>.  <a href="classfp_1_1_monte_carlo_updater.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_neighbors.html">Neighbors</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_node.html">Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure containing all geometric and topological information associated to a node.  <a href="structfp_1_1_node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html">Nodes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure containing all nodes of the <a class="el" href="classfp_1_1_triangulation.html">Triangulation</a>.  <a href="structfp_1_1_nodes.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html">Triangulation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,59 +143,56 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptfp_1_1floating__point__number.html">floating_point_number</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here we implement the concepts of a floating point number. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptfp_1_1integer__number.html">integer_number</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptfp_1_1indexing__number.html">indexing_number</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here we implement the concepts of a positive integer number that is used throughout the code for indexing. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0527b166a9415a6e07381ef4e11ed318"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> = nlohmann::json</td></tr>
-<tr class="separator:a0527b166a9415a6e07381ef4e11ed318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0527b166a9415a6e07381ef4e11ed318"><td class="memItemLeft" align="right" valign="top">
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Json</b> = nlohmann::json</td></tr>
+<tr class="memdesc:ga0527b166a9415a6e07381ef4e11ed318"><td class="mdescLeft">&#160;</td><td class="mdescRight">shortening of the nlohmann::json namespace, which is an <a href="https://github.com/nlohmann/json">external open source library</a> bundled by flippy. <br /></td></tr>
+<tr class="separator:ga0527b166a9415a6e07381ef4e11ed318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a6ac3c08b4c402e40a3f270818345078a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> { <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703">SPHERICAL_TRIANGULATION</a>
-, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d">PLANAR_TRIANGULATION</a>
+<tr class="memitem:ga6ac3c08b4c402e40a3f270818345078a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> { <a class="el" href="group___globals.html#gga6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703">SPHERICAL_TRIANGULATION</a>
+, <a class="el" href="group___globals.html#gga6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d">PLANAR_TRIANGULATION</a>
  }</td></tr>
-<tr class="separator:a6ac3c08b4c402e40a3f270818345078a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga6ac3c08b4c402e40a3f270818345078a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum defines named types of triangulations that are implemented in flippy.  <a href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">More...</a><br /></td></tr>
+<tr class="separator:ga6ac3c08b4c402e40a3f270818345078a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga200da317c4ff647b237dad1acec6dcd2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___globals.html#ga200da317c4ff647b237dad1acec6dcd2">json_dump</a> (std::string const &amp;file_name, const <a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a> &amp;data)</td></tr>
+<tr class="memdesc:ga200da317c4ff647b237dad1acec6dcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper function around Json objects built in dump() method.  <a href="group___globals.html#ga200da317c4ff647b237dad1acec6dcd2">More...</a><br /></td></tr>
+<tr class="separator:ga200da317c4ff647b237dad1acec6dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad562f1206f779edba9a0557e41b5a403"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___globals.html#gad562f1206f779edba9a0557e41b5a403">json_read</a> (std::string file_name)</td></tr>
+<tr class="memdesc:gad562f1206f779edba9a0557e41b5a403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper function that reads the content of a text file into a json object.  <a href="group___globals.html#gad562f1206f779edba9a0557e41b5a403">More...</a><br /></td></tr>
+<tr class="separator:gad562f1206f779edba9a0557e41b5a403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42171e60ff447e5c0776969445616702"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga42171e60ff447e5c0776969445616702"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___globals.html#ga42171e60ff447e5c0776969445616702">is_member</a> (std::vector&lt; T &gt; const &amp;v, T const &amp;el)</td></tr>
+<tr class="memdesc:ga42171e60ff447e5c0776969445616702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient wrapper around std::find, which only works for std::vectors.  <a href="group___globals.html#ga42171e60ff447e5c0776969445616702">More...</a><br /></td></tr>
+<tr class="separator:ga42171e60ff447e5c0776969445616702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad25f6bf8c40eadd5da1a25d8dab32614"><td class="memItemLeft" align="right" valign="top">
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_dir</b> (std::string const &amp;path)</td></tr>
+<tr class="separator:gad25f6bf8c40eadd5da1a25d8dab32614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a2c58ca349e4da0efd55ca7f9cda8c4"><td class="memItemLeft" align="right" valign="top">
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>make_dir</b> (std::string const &amp;path)</td></tr>
+<tr class="separator:ga8a2c58ca349e4da0efd55ca7f9cda8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga1f3b45f2b89de3c4508d87fca78f2a16"><td class="memItemLeft" align="right" valign="top">
+static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>BOND_DONATION_CUTOFF</b> = 4</td></tr>
+<tr class="memdesc:ga1f3b45f2b89de3c4508d87fca78f2a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">a node needs to have more than the cutoff number of bonds to be allowed to donate one <br /></td></tr>
+<tr class="separator:ga1f3b45f2b89de3c4508d87fca78f2a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >flippy's namespace. </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a0527b166a9415a6e07381ef4e11ed318" name="a0527b166a9415a6e07381ef4e11ed318"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0527b166a9415a6e07381ef4e11ed318">&#9670;&#160;</a></span>Json</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef nlohmann::json <a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">fp::Json</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a6ac3c08b4c402e40a3f270818345078a" name="a6ac3c08b4c402e40a3f270818345078a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ac3c08b4c402e40a3f270818345078a">&#9670;&#160;</a></span>TriangulationType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">fp::TriangulationType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703" name="a6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703"></a>SPHERICAL_TRIANGULATION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d" name="a6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d"></a>PLANAR_TRIANGULATION&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

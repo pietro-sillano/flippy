@@ -34,6 +34,16 @@ class vec3
 public:
     Real x, y, z;
 
+    //! In place addition method.
+    /**
+     * Example:
+     * ```c++
+     * fp::vec3<double> v1{1,0,0};
+     * fp::vec3<double> v2{0,0,1};
+     * v1.add(v2);  // v1 will contain {1, 0, 1}
+     * ```
+     * @param v add this vector elementwise to the vector that is calling the *add* method.
+     */
     void add(vec3<Real> const& v)
     {
         x += v.x;
@@ -41,6 +51,16 @@ public:
         z += v.z;
     }
 
+    //! In place subtraction method.
+    /**
+     * Example:
+     * ```c++
+     * fp::vec3<double> v1{2,0,0};
+     * fp::vec3<double> v2{1,0,1};
+     * v1.subtract(v2);  // v1 will contain {1, 0, -1}
+     * ```
+     * @param v subtract this vector elementwise from the vector that is calling the *subtract* method.
+     */
     void subtract(vec3<Real> const& v)
     {
         x -= v.x;

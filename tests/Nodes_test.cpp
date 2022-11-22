@@ -23,14 +23,14 @@ fp::Json const ICOSA_DATA =
 
 TEST_CASE("Correct Read of Icosa Data"){
 
-  Nodes<double, short> icosa_nodes(ICOSA_DATA);
-  for (int i = 0; i < 12; ++i) {
-    CHECK(icosa_nodes.data[i].id==i );
+  Nodes<double, unsigned short> icosa_nodes(ICOSA_DATA);
+  for (size_t i = 0; i < 12; ++i) {
+    CHECK(icosa_nodes.data[i].id==static_cast<short>(i) );
 
-    for (int j = 0; j < 3; ++j) {
+    for (size_t j = 0; j < 3; ++j) {
 	  CHECK(icosa_nodes.data[i].pos[j]==ICOSA_DATA[std::to_string(i)]["pos"][j]);
 	}
-	for (int j = 0; j < 5; ++j) {
+	for (size_t j = 0; j < 5; ++j) {
 	  CHECK(icosa_nodes.data[i].nn_ids[j]==ICOSA_DATA[std::to_string(i)]["nn_ids"][j]);
 	}
   }
@@ -38,7 +38,7 @@ TEST_CASE("Correct Read of Icosa Data"){
 
 TEST_CASE("pop emplace test"){
     using real = double;
-    using idx = short;
+    using idx = unsigned short;
     Node<real, idx> single_node{.id=1, .pos={1,1,1}, .nn_ids={1,3,2}, .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}}};
     SECTION("simple pop test 1"){
         single_node.pop_nn(3);
@@ -61,7 +61,7 @@ TEST_CASE("pop emplace test"){
 
 TEST_CASE("get_distance_to test"){
     using real = double;
-    using idx = short;
+    using idx = unsigned short;
     Node<real, idx> single_node{.id=1, .pos={1,1,1}, .nn_ids={1,3,2}, .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}}};
     SECTION("simple get test 1"){
         auto exp_dist = vec3<real>{1,0,0};
@@ -86,7 +86,7 @@ TEST_CASE("get_distance_to test"){
 }
 
 TEST_CASE("getter and setter tests for Nodes"){
-    using idx = short;
+    using idx = unsigned short;
     using real = double;
     Nodes<real, idx> icosa_nodes(ICOSA_DATA);
 
@@ -106,8 +106,8 @@ TEST_CASE("getter and setter tests for Nodes"){
     }
 
     SECTION("nn_id"){
-        for(int i = 0; i<12;++i){
-            for (int j = 0; j < 5; ++j) {
+        for(unsigned short i = 0; i<12;++i){
+            for (unsigned short j = 0; j < 5; ++j) {
                 CHECK(icosa_nodes.nn_id(i, j)==icosa_nodes.nn_ids(i)[j]);
             }
         }
@@ -151,23 +151,23 @@ TEST_CASE("getter and setter tests for Nodes"){
 
 
     SECTION("set_nn_ids"){
-        Nodes<double, int> icosa_nodes_loc(ICOSA_DATA);
-        for(int i = 0; i<12;++i){
-            for (int j = 0; j<5; ++j) {
+        Nodes<double, unsigned int> icosa_nodes_loc(ICOSA_DATA);
+        for(unsigned int i = 0; i<12;++i){
+            for (unsigned int j = 0; j<5; ++j) {
                 icosa_nodes_loc.set_nn_id(i, j, 120);
             }
         }
-        for(int i = 0; i<12;++i){
-            for (int j = 0; j<5; ++j) {
+        for(unsigned int i = 0; i<12;++i){
+            for (unsigned int j = 0; j<5; ++j) {
                 CHECK(icosa_nodes_loc.nn_id(i,j) == 120);
             }
         }
 
-        for(int i = 0; i<12;++i){
-            icosa_nodes_loc.set_nn_ids(i, std::vector<int>{120,12,11});
+        for(unsigned int i = 0; i<12;++i){
+            icosa_nodes_loc.set_nn_ids(i, std::vector<unsigned int>{120,12,11});
         }
-        for(int i = 0; i<12;++i){
-            CHECK(icosa_nodes_loc.nn_ids(i)==std::vector<int>{120,12,11});
+        for(unsigned int i = 0; i<12;++i){
+            CHECK(icosa_nodes_loc.nn_ids(i)==std::vector<unsigned int>{120,12,11});
         }
     }
 }

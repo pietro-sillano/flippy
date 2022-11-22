@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -105,79 +106,59 @@ $(document).ready(function(){initNavTree('structfp_1_1_bond_flip_data.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>A helper struct; keeps track of bond flips.  
+ <a href="structfp_1_1_bond_flip_data.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_triangulation_8hpp_source.html">Triangulation.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for fp::BondFlipData&lt; Index &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_bond_flip_data__coll__graph.svg" width="211" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7723f26e8083b2d90c3e13e2dde08245"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245">flipped</a> = false</td></tr>
+<tr class="memitem:a7723f26e8083b2d90c3e13e2dde08245"><td class="memItemLeft" align="right" valign="top"><a id="a7723f26e8083b2d90c3e13e2dde08245" name="a7723f26e8083b2d90c3e13e2dde08245"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>flipped</b> = false</td></tr>
+<tr class="memdesc:a7723f26e8083b2d90c3e13e2dde08245"><td class="mdescLeft">&#160;</td><td class="mdescRight">track if the bond was flipped. <br /></td></tr>
 <tr class="separator:a7723f26e8083b2d90c3e13e2dde08245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28b1b0fb90fcd3bf5a0363bf89569a9"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9">common_nn_0</a> = -1</td></tr>
+<tr class="memitem:af28b1b0fb90fcd3bf5a0363bf89569a9"><td class="memItemLeft" align="right" valign="top"><a id="af28b1b0fb90fcd3bf5a0363bf89569a9" name="af28b1b0fb90fcd3bf5a0363bf89569a9"></a>
+Index&#160;</td><td class="memItemRight" valign="bottom"><b>common_nn_0</b> = static_cast&lt;Index&gt;(<a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1">VERY_LARGE_NUMBER_</a>)</td></tr>
+<tr class="memdesc:af28b1b0fb90fcd3bf5a0363bf89569a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global id of a node that is supposed to receive a bond after a flip. <br /></td></tr>
 <tr class="separator:af28b1b0fb90fcd3bf5a0363bf89569a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5792fe8f43d65f6aba3d0acd22dabf57"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57">common_nn_1</a> = -1</td></tr>
+<tr class="memitem:a5792fe8f43d65f6aba3d0acd22dabf57"><td class="memItemLeft" align="right" valign="top"><a id="a5792fe8f43d65f6aba3d0acd22dabf57" name="a5792fe8f43d65f6aba3d0acd22dabf57"></a>
+Index&#160;</td><td class="memItemRight" valign="bottom"><b>common_nn_1</b> = static_cast&lt;Index&gt;(<a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1">VERY_LARGE_NUMBER_</a>)</td></tr>
+<tr class="memdesc:a5792fe8f43d65f6aba3d0acd22dabf57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global id of a node that is supposed to receive a bond after a flip. <br /></td></tr>
 <tr class="separator:a5792fe8f43d65f6aba3d0acd22dabf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;integer_number Index&gt;<br />
-struct fp::BondFlipData&lt; Index &gt;</div><p >A helper struct; keeps track of bond flips. A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges. If the flipp does happen then <code>common_nn_0</code> and <code>common_nn_1</code> record the ids of nodes that receive new common bond.</p>
-<div class="fragment"><div class="line">   <a class="code hl_variable" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9">common_nn_0</a></div>
-<div class="line">    /         \</div>
-<div class="line">  /            \</div>
-<div class="line">node -------- nn_id</div>
-<div class="line"> \             /</div>
-<div class="line">  \           /</div>
-<div class="line">  <a class="code hl_variable" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57">common_nn_1</a></div>
-<div class="ttc" id="astructfp_1_1_bond_flip_data_html_a5792fe8f43d65f6aba3d0acd22dabf57"><div class="ttname"><a href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57">fp::BondFlipData::common_nn_1</a></div><div class="ttdeci">Index common_nn_1</div><div class="ttdef"><b>Definition:</b> Triangulation.hpp:38</div></div>
-<div class="ttc" id="astructfp_1_1_bond_flip_data_html_af28b1b0fb90fcd3bf5a0363bf89569a9"><div class="ttname"><a href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9">fp::BondFlipData::common_nn_0</a></div><div class="ttdeci">Index common_nn_0</div><div class="ttdef"><b>Definition:</b> Triangulation.hpp:37</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="af28b1b0fb90fcd3bf5a0363bf89569a9" name="af28b1b0fb90fcd3bf5a0363bf89569a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af28b1b0fb90fcd3bf5a0363bf89569a9">&#9670;&#160;</a></span>common_nn_0</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">Index <a class="el" href="structfp_1_1_bond_flip_data.html">fp::BondFlipData</a>&lt; Index &gt;::common_nn_0 = -1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5792fe8f43d65f6aba3d0acd22dabf57" name="a5792fe8f43d65f6aba3d0acd22dabf57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5792fe8f43d65f6aba3d0acd22dabf57">&#9670;&#160;</a></span>common_nn_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">Index <a class="el" href="structfp_1_1_bond_flip_data.html">fp::BondFlipData</a>&lt; Index &gt;::common_nn_1 = -1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7723f26e8083b2d90c3e13e2dde08245" name="a7723f26e8083b2d90c3e13e2dde08245"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7723f26e8083b2d90c3e13e2dde08245">&#9670;&#160;</a></span>flipped</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="structfp_1_1_bond_flip_data.html">fp::BondFlipData</a>&lt; Index &gt;::flipped = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><div class="compoundTemplParams">template&lt;indexing_number Index&gt;<br />
+struct fp::BondFlipData&lt; Index &gt;</div><p >A helper struct; keeps track of bond flips. </p>
+<p >A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges (more details on bond flips and how they can fail are provided in the <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267">Triangulation.flip_bond(Index, Index, Real, Real)</a> function). If the flip does happen then <a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245" title="track if the bond was flipped.">flipped</a> will be changed to true by the <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267">Triangulation.flip_bond(Index, Index, Real, Real)</a> function and <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_1</a> will record the ids of nodes that receive new common bond. If the flip does not happen then the <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_1</a> data members will hold a <a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1" title="Literal for a very large integral number.">VERY_LARGE_NUMBER_</a> with which they were initiated.</p>
+<p >The initiation with <a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1" title="Literal for a very large integral number.">VERY_LARGE_NUMBER_</a> is done to avoid <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_1</a> being zero initiated. This is a mechanism to force errors (instead of silent wrong behaviour) in situations of un-careful usage. If the end user does not check that the bonds were not flipped and tries to un-flip bonds with a <a class="el" href="classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa" title="unflip a bond that was just flipped.">Triangulation.unflip_bond(Index, Index, BondFlipData&lt;Index&gt; const&amp;)</a> function, then <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">common_nn_1</a> initiated with zeros will tell the <em>unflip_bond</em> function to un-flip a bond between zeros node and itself, which will cause wrong behaviour but no outright error. However if <em>unflip_bond</em> function will try to un-flip a bond between two nodes with the id <a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1" title="Literal for a very large integral number.">VERY_LARGE_NUMBER_</a>, then the memory access at array location <a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1" title="Literal for a very large integral number.">VERY_LARGE_NUMBER_</a> will force an error.</p>
+<div class="fragment"><div class="line">State of the triangulation before and after the flip.</div>
+<div class="line"> before the flip                  after the flip</div>
+<div class="line"> </div>
+<div class="line">     common nn 0                     common nn 0</div>
+<div class="line">     /          \                    /    |    \</div>
+<div class="line">    /            \                  /     |     \</div>
+<div class="line">  node --------- nn              node     |     nn</div>
+<div class="line">    \            /                 \      |     /</div>
+<div class="line">     \          /                   \     |    /</div>
+<div class="line">    common nn 1                     common nn 1</div>
+</div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267">Triangulation.flip_bond(Index, Index, Real, Real)</a> </dd>
+<dd>
+<a class="el" href="classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa" title="unflip a bond that was just flipped.">Triangulation.unflip_bond(Index, Index, BondFlipData&lt;Index&gt; const&amp;)</a> </dd>
+<dd>
+<a class="el" href="classfp_1_1_triangulation.html#a077d1be6c31f16241e9035c5a0f93652">Triangulation.flip_bond_unchecked(Index, Index, Index, Index)</a> </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>flippy/<a class="el" href="_triangulation_8hpp_source.html">Triangulation.hpp</a></li>
 </ul>
 </div><!-- contents -->

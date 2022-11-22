@@ -8,14 +8,15 @@
 namespace fp {
 
 /**
- * A helper class for updating of the triangulation, using [Metropolis–Hastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
- * @tparam Real type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the fp::floating_point_number concept is allowed, for example `float`.
- * @tparam Index type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the fp::integer_number concept is allowed, for example `int`.
+ * @brief A helper class for updating of the triangulation, using [Metropolis–Hastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
+ *
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
  * @tparam EnergyFunctionParameters
  * @tparam RandomNumberEngine
  * @tparam triangulation_type
  */
-template<floating_point_number Real, integer_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
+template<floating_point_number Real, indexing_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
 class MonteCarloUpdater
 {
 private:
@@ -130,6 +131,9 @@ public:
 
     void flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids)
     {
+        /**
+         *
+         */
         ++flip_attempt;
         e_old = energy_function(node, triangulation, prms);
         Index number_nn_ids = node.nn_ids.size();
@@ -142,16 +146,82 @@ public:
     }
 
 
-    void reset_kBT(Real kBT){kBT_=kBT;}
+    void reset_kBT(Real kBT){
+        /**
+         * @param kBT input value of new temperature.
+         * The internal private data member `kBT_` that contains the current value of temperature will be overwritten
+         * with this input.
+         */
+        kBT_=kBT;
+    }
 
-    Real kBT(){return kBT_;}
-    [[nodiscard]] unsigned long move_attempt_count() const {return move_attempt;}
-    [[nodiscard]] unsigned long bond_length_move_rejection_count() const {return bond_length_move_rejection;}
-    [[nodiscard]] unsigned long move_back_count() const {return move_back;}
-    [[nodiscard]] unsigned long flip_attempt_count() const {return flip_attempt;}
-    [[nodiscard]] unsigned long bond_length_flip_rejection_count() const {return bond_length_flip_rejection;}
-    [[nodiscard]] unsigned long flip_back_count() const {return flip_back;}
-
+    [[nodiscard]] Real kBT(){
+    /**
+     * Monte Carlo Updater requires a kBT value in teh calculation of the rejection probability of a random move.
+     * @return the state of kBT value of the updater.
+     * @see move_needs_undoing()
+     */
+        return kBT_;
+    }
+    [[nodiscard]] unsigned long move_attempt_count() const {
+    /**
+     * Every time a move is attempted, a private internal state variable `move_attempt` is incremented by move_MC_updater().
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `move_attempt`.
+     * @see move_needs_undoing()
+     */
+        return move_attempt;
+    }
+    [[nodiscard]] unsigned long bond_length_move_rejection_count() const {
+    /**
+     * Moves that cause nodes to overlap with their Verlet list neighbours or move them too far away from any of their next neighbours, are rejected. Every time such rejection happens, a private internal state variable `bond_length_move_rejection` is incremented by move_MC_updater().
+     * The specifics of this rejection criteria are calculated in the function new_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node, fp::vec3<Real> const& displacement)
+     * Every time a node move would lead that node to have a bond with one of its next neighbours which is longer than a specified maximal length (max_bond_length()), the move will be rejected.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `bond_length_move_rejection`.
+     * @see move_needs_undoing()
+     */
+        return bond_length_move_rejection;
+    }
+    [[nodiscard]] unsigned long move_back_count() const {
+    /**
+     * Every time a move is rejected, because the energy requirement was not satisfied, a private internal state variable `move_back` is incremented by move_MC_updater().
+     * This variable does not track the rejections resulting from bond length restriction violation.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `move_back`.
+     * @see move_needs_undoing() bond_length_move_rejection_count()
+     */
+        return move_back;
+    }
+    [[nodiscard]] unsigned long flip_attempt_count() const {
+    /**
+     * Every time a flip is attempted, a private internal state variable `flip_attempt` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `flip_attempt`.
+     */
+        return flip_attempt;
+    }
+    [[nodiscard]] unsigned long bond_length_flip_rejection_count() const {
+    /**
+     * If a flip would turn a valid bond into a bond that is too long, the flip is rejected, a private internal state variable `bond_length_flip_rejection` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `bond_length_flip_rejection`.
+     * @see Triangulation::flip_bond(Index, Index, Real, Real) Triangulation::unflip_bond(Index, Index, BondFlipData<Index> const&)
+     */
+        return bond_length_flip_rejection;
+    }
+    [[nodiscard]] unsigned long flip_back_count() const {
+    /**
+     * Every time a flip is rejected, because the energy requirement was not satisfied, a private internal state variable `flip_back` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
+     * This variable does not track the rejections resulting from bond length restriction violation.
+     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * @return current state of `flip_back`.
+     * @see Triangulation:: unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns) bond_length_flip_rejection_count()
+     */
+        return flip_back;
+    }
 
 };
 }

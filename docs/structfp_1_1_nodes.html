@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -106,119 +107,147 @@ $(document).ready(function(){initNavTree('structfp_1_1_nodes.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
+<p>Data structure containing all nodes of the <a class="el" href="classfp_1_1_triangulation.html">Triangulation</a>.  
+ <a href="structfp_1_1_nodes.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_nodes_8hpp_source.html">Nodes.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for fp::Nodes&lt; Real, Index &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes__coll__graph.svg" width="182" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab29b1bbd7bae02bdda2a0a94581235bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ab29b1bbd7bae02bdda2a0a94581235bb">Nodes</a> ()=default</td></tr>
+<tr class="memitem:ab29b1bbd7bae02bdda2a0a94581235bb"><td class="memItemLeft" align="right" valign="top"><a id="ab29b1bbd7bae02bdda2a0a94581235bb" name="ab29b1bbd7bae02bdda2a0a94581235bb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Nodes</b> ()=default</td></tr>
+<tr class="memdesc:ab29b1bbd7bae02bdda2a0a94581235bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
 <tr class="separator:ab29b1bbd7bae02bdda2a0a94581235bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcdc1fecf1c86ee26bd4a04e3126dcc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#afcdc1fecf1c86ee26bd4a04e3126dcc8">Nodes</a> (std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt; data_inp)</td></tr>
+<tr class="memdesc:afcdc1fecf1c86ee26bd4a04e3126dcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a vector.  <a href="structfp_1_1_nodes.html#afcdc1fecf1c86ee26bd4a04e3126dcc8">More...</a><br /></td></tr>
 <tr class="separator:afcdc1fecf1c86ee26bd4a04e3126dcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeab72aa27fd66417ac8d5d0c9d000be6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aeab72aa27fd66417ac8d5d0c9d000be6">Nodes</a> (<a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;node_dict)</td></tr>
+<tr class="memitem:aeab72aa27fd66417ac8d5d0c9d000be6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aeab72aa27fd66417ac8d5d0c9d000be6">Nodes</a> (<a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;node_dict)</td></tr>
+<tr class="memdesc:aeab72aa27fd66417ac8d5d0c9d000be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from json.  <a href="structfp_1_1_nodes.html#aeab72aa27fd66417ac8d5d0c9d000be6">More...</a><br /></td></tr>
 <tr class="separator:aeab72aa27fd66417ac8d5d0c9d000be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d3d31a706daef6476a29f69903680b2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a9d3d31a706daef6476a29f69903680b2">begin</a> ()</td></tr>
+<tr class="memdesc:a9d3d31a706daef6476a29f69903680b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the beginning of the underlying data member that contains the collection of the nodes.  <a href="structfp_1_1_nodes.html#a9d3d31a706daef6476a29f69903680b2">More...</a><br /></td></tr>
 <tr class="separator:a9d3d31a706daef6476a29f69903680b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe2daadebb5cbc9a793542609cde6980"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#afe2daadebb5cbc9a793542609cde6980">begin</a> () const</td></tr>
+<tr class="memdesc:afe2daadebb5cbc9a793542609cde6980"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#afe2daadebb5cbc9a793542609cde6980">More...</a><br /></td></tr>
 <tr class="separator:afe2daadebb5cbc9a793542609cde6980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac67b161f99d11ae61df2fe05fa3d46e0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ac67b161f99d11ae61df2fe05fa3d46e0">end</a> ()</td></tr>
+<tr class="memdesc:ac67b161f99d11ae61df2fe05fa3d46e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the end of the underlying data member that contains the collection of the nodes.  <a href="structfp_1_1_nodes.html#ac67b161f99d11ae61df2fe05fa3d46e0">More...</a><br /></td></tr>
 <tr class="separator:ac67b161f99d11ae61df2fe05fa3d46e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad90ef5ea66c12a63a491fe15497e4f6e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ad90ef5ea66c12a63a491fe15497e4f6e">end</a> () const</td></tr>
+<tr class="memdesc:ad90ef5ea66c12a63a491fe15497e4f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#ad90ef5ea66c12a63a491fe15497e4f6e">More...</a><br /></td></tr>
 <tr class="separator:ad90ef5ea66c12a63a491fe15497e4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44304df70878d39c9c55ce6cba0cec3d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a44304df70878d39c9c55ce6cba0cec3d">pos</a> (Index node_id) const</td></tr>
+<tr class="memdesc:a44304df70878d39c9c55ce6cba0cec3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id return the constant reference to the node position.  <a href="structfp_1_1_nodes.html#a44304df70878d39c9c55ce6cba0cec3d">More...</a><br /></td></tr>
 <tr class="separator:a44304df70878d39c9c55ce6cba0cec3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad441e229389a483f2184c9f3ef0647f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ad441e229389a483f2184c9f3ef0647f4">set_pos</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;new_pos)</td></tr>
+<tr class="memdesc:ad441e229389a483f2184c9f3ef0647f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position of the requested node to a given position.  <a href="structfp_1_1_nodes.html#ad441e229389a483f2184c9f3ef0647f4">More...</a><br /></td></tr>
 <tr class="separator:ad441e229389a483f2184c9f3ef0647f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0d598ecd535f690a99d81dd4e717d1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ab0d598ecd535f690a99d81dd4e717d1e">set_pos</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;new_pos)</td></tr>
+<tr class="memdesc:ab0d598ecd535f690a99d81dd4e717d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#ab0d598ecd535f690a99d81dd4e717d1e">More...</a><br /></td></tr>
 <tr class="separator:ab0d598ecd535f690a99d81dd4e717d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e69338285ca7ea8fc5403257056c771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a3e69338285ca7ea8fc5403257056c771">displace</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;const &amp;displ)</td></tr>
-<tr class="separator:a3e69338285ca7ea8fc5403257056c771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a634e188045ee2c254e096f34e33da5ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a634e188045ee2c254e096f34e33da5ba">displace</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;displ)</td></tr>
-<tr class="separator:a634e188045ee2c254e096f34e33da5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af206c67619617f5e4d99ea67be94a7d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#af206c67619617f5e4d99ea67be94a7d6">displace</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;const &amp;displacement)</td></tr>
+<tr class="memdesc:af206c67619617f5e4d99ea67be94a7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the position of the requested node by a given displacement.  <a href="structfp_1_1_nodes.html#af206c67619617f5e4d99ea67be94a7d6">More...</a><br /></td></tr>
+<tr class="separator:af206c67619617f5e4d99ea67be94a7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c703086e73c0a1d2b5ff1d8b482c384"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a9c703086e73c0a1d2b5ff1d8b482c384">displace</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;displacement)</td></tr>
+<tr class="memdesc:a9c703086e73c0a1d2b5ff1d8b482c384"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#a9c703086e73c0a1d2b5ff1d8b482c384">More...</a><br /></td></tr>
+<tr class="separator:a9c703086e73c0a1d2b5ff1d8b482c384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8eaef6c3fa8679dfafcb4018573233"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aac8eaef6c3fa8679dfafcb4018573233">curvature_vec</a> (Index node_id) const</td></tr>
+<tr class="memdesc:aac8eaef6c3fa8679dfafcb4018573233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id return the constant reference to the node curvature vector.  <a href="structfp_1_1_nodes.html#aac8eaef6c3fa8679dfafcb4018573233">More...</a><br /></td></tr>
 <tr class="separator:aac8eaef6c3fa8679dfafcb4018573233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a563539f00c190fb8fd9fedd6a27bc769"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a563539f00c190fb8fd9fedd6a27bc769">set_curvature_vec</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;new_cv)</td></tr>
+<tr class="memdesc:a563539f00c190fb8fd9fedd6a27bc769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id and a new curvature vector, reset the nudes current curvature vector.  <a href="structfp_1_1_nodes.html#a563539f00c190fb8fd9fedd6a27bc769">More...</a><br /></td></tr>
 <tr class="separator:a563539f00c190fb8fd9fedd6a27bc769"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a535f08dde803985251f08b7f02fa043a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a535f08dde803985251f08b7f02fa043a">set_curvature_vec</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;new_cv)</td></tr>
+<tr class="memdesc:a535f08dde803985251f08b7f02fa043a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#a535f08dde803985251f08b7f02fa043a">More...</a><br /></td></tr>
 <tr class="separator:a535f08dde803985251f08b7f02fa043a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab863d48ecbce98b85747961bbaae82a9"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ab863d48ecbce98b85747961bbaae82a9">area</a> (Index node_id) const</td></tr>
+<tr class="memdesc:ab863d48ecbce98b85747961bbaae82a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id return node associated area.  <a href="structfp_1_1_nodes.html#ab863d48ecbce98b85747961bbaae82a9">More...</a><br /></td></tr>
 <tr class="separator:ab863d48ecbce98b85747961bbaae82a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac77577ce16f2b8ff1feceb217c6853e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ac77577ce16f2b8ff1feceb217c6853e1">set_area</a> (Index node_id, Real new_area)</td></tr>
+<tr class="memdesc:ac77577ce16f2b8ff1feceb217c6853e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id and a new area value, reset the current value of the node area.  <a href="structfp_1_1_nodes.html#ac77577ce16f2b8ff1feceb217c6853e1">More...</a><br /></td></tr>
 <tr class="separator:ac77577ce16f2b8ff1feceb217c6853e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d791117fddd2490c8223a74de6f9109"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a0d791117fddd2490c8223a74de6f9109">volume</a> (Index node_id) const</td></tr>
+<tr class="memdesc:a0d791117fddd2490c8223a74de6f9109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id return node associated volume.  <a href="structfp_1_1_nodes.html#a0d791117fddd2490c8223a74de6f9109">More...</a><br /></td></tr>
 <tr class="separator:a0d791117fddd2490c8223a74de6f9109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4431ab5e1cf3dbc768558ae5b9132bef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a4431ab5e1cf3dbc768558ae5b9132bef">set_volume</a> (Index node_id, Real new_volume)</td></tr>
+<tr class="memdesc:a4431ab5e1cf3dbc768558ae5b9132bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id and a new volume value, reset the current value of the node volume.  <a href="structfp_1_1_nodes.html#a4431ab5e1cf3dbc768558ae5b9132bef">More...</a><br /></td></tr>
 <tr class="separator:a4431ab5e1cf3dbc768558ae5b9132bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65c2e5dd4f3b43b2445b62c400107e9"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ab65c2e5dd4f3b43b2445b62c400107e9">unit_bending_energy</a> (Index node_id) const</td></tr>
+<tr class="memdesc:ab65c2e5dd4f3b43b2445b62c400107e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id return node associated unit bending energy.  <a href="structfp_1_1_nodes.html#ab65c2e5dd4f3b43b2445b62c400107e9">More...</a><br /></td></tr>
 <tr class="separator:ab65c2e5dd4f3b43b2445b62c400107e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0a579cae0746fc412180b0897b20ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a3e0a579cae0746fc412180b0897b20ca">set_unit_bending_energy</a> (Index node_id, Real new_sce)</td></tr>
-<tr class="separator:a3e0a579cae0746fc412180b0897b20ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4dcac75731ab83b336c27ded5df8e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ae4dcac75731ab83b336c27ded5df8e8d">set_unit_bending_energy</a> (Index node_id, Real new_ube)</td></tr>
+<tr class="separator:ae4dcac75731ab83b336c27ded5df8e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa149044ed9e33aa0560311362cd2c660"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aa149044ed9e33aa0560311362cd2c660">nn_ids</a> (Index node_id) const</td></tr>
+<tr class="memdesc:aa149044ed9e33aa0560311362cd2c660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id and a new value for the node associated unit bending energy, update the current value of <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a>.  <a href="structfp_1_1_nodes.html#aa149044ed9e33aa0560311362cd2c660">More...</a><br /></td></tr>
 <tr class="separator:aa149044ed9e33aa0560311362cd2c660"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa1bcb4a83a714a2abeaaae500a949a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a8aa1bcb4a83a714a2abeaaae500a949a">set_nn_ids</a> (Index node_id, std::vector&lt; Index &gt;const &amp;new_nn_ids)</td></tr>
+<tr class="memdesc:a8aa1bcb4a83a714a2abeaaae500a949a"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> specified by <code>node_id</code>, overwrite the entire <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector.  <a href="structfp_1_1_nodes.html#a8aa1bcb4a83a714a2abeaaae500a949a">More...</a><br /></td></tr>
 <tr class="separator:a8aa1bcb4a83a714a2abeaaae500a949a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c0fd75105d0110c204b2b9c2af5640"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a65c0fd75105d0110c204b2b9c2af5640">nn_id</a> (Index node_id, Index loc_nn_index) const</td></tr>
+<tr class="memdesc:a65c0fd75105d0110c204b2b9c2af5640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id and the local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, returns the next neighbour id.  <a href="structfp_1_1_nodes.html#a65c0fd75105d0110c204b2b9c2af5640">More...</a><br /></td></tr>
 <tr class="separator:a65c0fd75105d0110c204b2b9c2af5640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a196ade9731f70eeed6446b32854ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a14a196ade9731f70eeed6446b32854ca">set_nn_id</a> (Index node_id, Index loc_nn_index, Index <a class="el" href="structfp_1_1_nodes.html#a65c0fd75105d0110c204b2b9c2af5640">nn_id</a>)</td></tr>
+<tr class="memdesc:a14a196ade9731f70eeed6446b32854ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a node specified by <code>node_id</code>, resets the value of the requested <code>nn_id</code>.  <a href="structfp_1_1_nodes.html#a14a196ade9731f70eeed6446b32854ca">More...</a><br /></td></tr>
 <tr class="separator:a14a196ade9731f70eeed6446b32854ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab734722953f4615191c6d3aeab81781a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#ab734722953f4615191c6d3aeab81781a">emplace_nn_id</a> (Index node_id, Index to_emplace_nn_id, Index loc_idx)</td></tr>
-<tr class="separator:ab734722953f4615191c6d3aeab81781a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ecc9a931522c8f339dadb2232a528a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a53ecc9a931522c8f339dadb2232a528a">emplace_nn_id</a> (Index node_id, Index to_emplace_nn_id, Index loc_nn_index)</td></tr>
+<tr class="memdesc:a53ecc9a931522c8f339dadb2232a528a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplace a the id of a new node in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, in front of the loc_idx position.  <a href="structfp_1_1_nodes.html#a53ecc9a931522c8f339dadb2232a528a">More...</a><br /></td></tr>
+<tr class="separator:a53ecc9a931522c8f339dadb2232a528a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaac33789677da84759647308c5f25da"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aeaac33789677da84759647308c5f25da">nn_distances</a> (Index node_id) const</td></tr>
+<tr class="memdesc:aeaac33789677da84759647308c5f25da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a node id, returns the std::vector containing distance vectors to next neighbours.  <a href="structfp_1_1_nodes.html#aeaac33789677da84759647308c5f25da">More...</a><br /></td></tr>
 <tr class="separator:aeaac33789677da84759647308c5f25da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8efb079f96664cee5698ccdf9e6bc080"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a8efb079f96664cee5698ccdf9e6bc080">get_nn_distance_vector_between</a> (Index node_id, Index <a class="el" href="structfp_1_1_nodes.html#a65c0fd75105d0110c204b2b9c2af5640">nn_id</a>) const</td></tr>
+<tr class="memdesc:a8efb079f96664cee5698ccdf9e6bc080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two global node id's, returns a distance vector (if the nodes are neighbours).  <a href="structfp_1_1_nodes.html#a8efb079f96664cee5698ccdf9e6bc080">More...</a><br /></td></tr>
 <tr class="separator:a8efb079f96664cee5698ccdf9e6bc080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0019211410eea70cd8a4eecad4498992"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a0019211410eea70cd8a4eecad4498992">set_nn_distance</a> (Index node_id, Index loc_nn_index, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;dist)</td></tr>
+<tr class="memdesc:a0019211410eea70cd8a4eecad4498992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite the next neighbour distance with a new 3d vector.  <a href="structfp_1_1_nodes.html#a0019211410eea70cd8a4eecad4498992">More...</a><br /></td></tr>
 <tr class="separator:a0019211410eea70cd8a4eecad4498992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7152c3eab97faef371f717aa1f144a5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a7152c3eab97faef371f717aa1f144a5b">set_nn_distance</a> (Index node_id, Index loc_nn_index, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;dist)</td></tr>
+<tr class="memdesc:a7152c3eab97faef371f717aa1f144a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#a7152c3eab97faef371f717aa1f144a5b">More...</a><br /></td></tr>
 <tr class="separator:a7152c3eab97faef371f717aa1f144a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00b3ff9ae4af9a804478d246a0c8c7a1"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a00b3ff9ae4af9a804478d246a0c8c7a1">size</a> () const</td></tr>
+<tr class="memdesc:a00b3ff9ae4af9a804478d246a0c8c7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> data member.  <a href="structfp_1_1_nodes.html#a00b3ff9ae4af9a804478d246a0c8c7a1">More...</a><br /></td></tr>
 <tr class="separator:a00b3ff9ae4af9a804478d246a0c8c7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26bde4d93f2a2c2ef43fac0b6c072cd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a26bde4d93f2a2c2ef43fac0b6c072cd8">operator[]</a> (Index idx)</td></tr>
-<tr class="separator:a26bde4d93f2a2c2ef43fac0b6c072cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f944cccd3823f7672b194e2012c0e83"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a4f944cccd3823f7672b194e2012c0e83">operator[]</a> (Index idx) const</td></tr>
-<tr class="separator:a4f944cccd3823f7672b194e2012c0e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9d0a78ec3fc2f687a3731662619ab44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aa9d0a78ec3fc2f687a3731662619ab44">make_data</a> () const</td></tr>
+<tr class="memitem:a093e30bf91fecce01cb2a963cdad6415"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#a093e30bf91fecce01cb2a963cdad6415">operator[]</a> (Index node_id)</td></tr>
+<tr class="memdesc:a093e30bf91fecce01cb2a963cdad6415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square bracket operator overload for convenient indexing of the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct.  <a href="structfp_1_1_nodes.html#a093e30bf91fecce01cb2a963cdad6415">More...</a><br /></td></tr>
+<tr class="separator:a093e30bf91fecce01cb2a963cdad6415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfaa815fd0dacc7d85fd75a011fbebdc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#abfaa815fd0dacc7d85fd75a011fbebdc">operator[]</a> (Index node_id) const</td></tr>
+<tr class="memdesc:abfaa815fd0dacc7d85fd75a011fbebdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.  <a href="structfp_1_1_nodes.html#abfaa815fd0dacc7d85fd75a011fbebdc">More...</a><br /></td></tr>
+<tr class="separator:abfaa815fd0dacc7d85fd75a011fbebdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d0a78ec3fc2f687a3731662619ab44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#aa9d0a78ec3fc2f687a3731662619ab44">make_data</a> () const</td></tr>
+<tr class="memdesc:aa9d0a78ec3fc2f687a3731662619ab44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to a json object.  <a href="structfp_1_1_nodes.html#aa9d0a78ec3fc2f687a3731662619ab44">More...</a><br /></td></tr>
 <tr class="separator:aa9d0a78ec3fc2f687a3731662619ab44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af791310b96e308cbf01b4b76143de337"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_nodes.html#af791310b96e308cbf01b4b76143de337">data</a></td></tr>
+<tr class="memitem:af791310b96e308cbf01b4b76143de337"><td class="memItemLeft" align="right" valign="top"><a id="af791310b96e308cbf01b4b76143de337" name="af791310b96e308cbf01b4b76143de337"></a>
+std::vector&lt; <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:af791310b96e308cbf01b4b76143de337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data member that contains the individual nodes. <br /></td></tr>
 <tr class="separator:af791310b96e308cbf01b4b76143de337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab29b1bbd7bae02bdda2a0a94581235bb" name="ab29b1bbd7bae02bdda2a0a94581235bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab29b1bbd7bae02bdda2a0a94581235bb">&#9670;&#160;</a></span>Nodes() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::Nodes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;floating_point_number Real, indexing_number Index&gt;<br />
+struct fp::Nodes&lt; Real, Index &gt;</div><p >Data structure containing all nodes of the <a class="el" href="classfp_1_1_triangulation.html">Triangulation</a>. </p>
+<p >The <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct is capable of reinitializing nodes from a well formed json object or from a simple <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a> that contains all nodes of a triangulation. The nodes class is basically a wrapper around a vector of nodes i.e. <code>std::vector&lt;<a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a>&lt;Real, Index&gt;&gt;</code>, and provides additional functionality to manipulate and query this data structure. <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> class is also meant to be the interface with which the end user is manipulating individual nodes. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Real</td><td>type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example <code>float</code>. </td></tr>
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afcdc1fecf1c86ee26bd4a04e3126dcc8" name="afcdc1fecf1c86ee26bd4a04e3126dcc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcdc1fecf1c86ee26bd4a04e3126dcc8">&#9670;&#160;</a></span>Nodes() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdc1fecf1c86ee26bd4a04e3126dcc8">&#9670;&#160;</a></span>Nodes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -238,15 +267,23 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor from a vector. </p>
+<p >Copies the data from a vector of nodes and creates a new <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_inp</td><td>a standard vector containing all the nodes that are supposed to create a new <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> class.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aeab72aa27fd66417ac8d5d0c9d000be6" name="aeab72aa27fd66417ac8d5d0c9d000be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeab72aa27fd66417ac8d5d0c9d000be6">&#9670;&#160;</a></span>Nodes() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab72aa27fd66417ac8d5d0c9d000be6">&#9670;&#160;</a></span>Nodes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -254,7 +291,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::Nodes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;&#160;</td>
           <td class="paramname"><em>node_dict</em></td><td>)</td>
           <td></td>
         </tr>
@@ -265,46 +302,32 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Initiating nodes from a Json of a node collection. The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1</p>
+
+<p>Constructor from json. </p>
+<p >Initiating nodes from a json object of a node collection. The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_dict</td><td>json object that contains a collection of nodes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the json object is malformed then the constructor will fail and propagate a runtime error from the json parser.</dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_aeab72aa27fd66417ac8d5d0c9d000be6_cgraph.svg" width="354" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab863d48ecbce98b85747961bbaae82a9" name="ab863d48ecbce98b85747961bbaae82a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab863d48ecbce98b85747961bbaae82a9">&#9670;&#160;</a></span>area()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::area </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9d3d31a706daef6476a29f69903680b2" name="a9d3d31a706daef6476a29f69903680b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d3d31a706daef6476a29f69903680b2">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -323,6 +346,9 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns an iterator to the beginning of the underlying data member that contains the collection of the nodes. </p>
+<p >This function allows the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to be used in range based for loops. </p><dl class="section return"><dt>Returns</dt><dd><code>data.begin()</code></dd></dl>
+
 </div>
 </div>
 <a id="afe2daadebb5cbc9a793542609cde6980" name="afe2daadebb5cbc9a793542609cde6980"></a>
@@ -331,7 +357,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -350,153 +376,8 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="aac8eaef6c3fa8679dfafcb4018573233" name="aac8eaef6c3fa8679dfafcb4018573233"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac8eaef6c3fa8679dfafcb4018573233">&#9670;&#160;</a></span>curvature_vec()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::curvature_vec </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a634e188045ee2c254e096f34e33da5ba" name="a634e188045ee2c254e096f34e33da5ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a634e188045ee2c254e096f34e33da5ba">&#9670;&#160;</a></span>displace() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::displace </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>displ</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e69338285ca7ea8fc5403257056c771" name="a3e69338285ca7ea8fc5403257056c771"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e69338285ca7ea8fc5403257056c771">&#9670;&#160;</a></span>displace() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::displace </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;const &amp;&#160;</td>
-          <td class="paramname"><em>displ</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab734722953f4615191c6d3aeab81781a" name="ab734722953f4615191c6d3aeab81781a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab734722953f4615191c6d3aeab81781a">&#9670;&#160;</a></span>emplace_nn_id()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::emplace_nn_id </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>to_emplace_nn_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>loc_idx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p >This function allows the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to be used in range based for loops, in constant environments. </p><dl class="section return"><dt>Returns</dt><dd>a constant iterator <code>data.begin()</code>.</dd></dl>
 
 </div>
 </div>
@@ -506,7 +387,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -525,6 +406,9 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns an iterator to the end of the underlying data member that contains the collection of the nodes. </p>
+<p >This function allows the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to be used in range based for loops. </p><dl class="section return"><dt>Returns</dt><dd><code>data.end()</code>.</dd></dl>
+
 </div>
 </div>
 <a id="ad90ef5ea66c12a63a491fe15497e4f6e" name="ad90ef5ea66c12a63a491fe15497e4f6e"></a>
@@ -533,7 +417,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -552,220 +436,8 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8efb079f96664cee5698ccdf9e6bc080" name="a8efb079f96664cee5698ccdf9e6bc080"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8efb079f96664cee5698ccdf9e6bc080">&#9670;&#160;</a></span>get_nn_distance_vector_between()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::get_nn_distance_vector_between </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>nn_id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa9d0a78ec3fc2f687a3731662619ab44" name="aa9d0a78ec3fc2f687a3731662619ab44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9d0a78ec3fc2f687a3731662619ab44">&#9670;&#160;</a></span>make_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::make_data </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeaac33789677da84759647308c5f25da" name="aeaac33789677da84759647308c5f25da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeaac33789677da84759647308c5f25da">&#9670;&#160;</a></span>nn_distances()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_distances </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a65c0fd75105d0110c204b2b9c2af5640" name="a65c0fd75105d0110c204b2b9c2af5640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65c0fd75105d0110c204b2b9c2af5640">&#9670;&#160;</a></span>nn_id()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Index <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_id </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>loc_nn_index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa149044ed9e33aa0560311362cd2c660" name="aa149044ed9e33aa0560311362cd2c660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa149044ed9e33aa0560311362cd2c660">&#9670;&#160;</a></span>nn_ids()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_ids </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26bde4d93f2a2c2ef43fac0b6c072cd8" name="a26bde4d93f2a2c2ef43fac0b6c072cd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26bde4d93f2a2c2ef43fac0b6c072cd8">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4f944cccd3823f7672b194e2012c0e83" name="a4f944cccd3823f7672b194e2012c0e83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f944cccd3823f7672b194e2012c0e83">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p >This function allows the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to be used in range based for loops, in constant environments. </p><dl class="section return"><dt>Returns</dt><dd>a constant iterator <code>data.end()</code>.</dd></dl>
 
 </div>
 </div>
@@ -775,7 +447,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -795,6 +467,389 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Given a node id return the constant reference to the node position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the 3D vector of the node position, <a class="el" href="structfp_1_1_node.html#a10be91bc755ce112845d1f0a0b96c976" title="Position of the node in the lab frame.">Node::pos</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a44304df70878d39c9c55ce6cba0cec3d_icgraph.svg" width="303" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad441e229389a483f2184c9f3ef0647f4" name="ad441e229389a483f2184c9f3ef0647f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad441e229389a483f2184c9f3ef0647f4">&#9670;&#160;</a></span>set_pos() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_pos </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>new_pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the position of the requested node to a given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. This node needs to be moved. </td></tr>
+    <tr><td class="paramname">new_pos</td><td>new position of the node to which the node needs to be moved.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0d598ecd535f690a99d81dd4e717d1e" name="ab0d598ecd535f690a99d81dd4e717d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d598ecd535f690a99d81dd4e717d1e">&#9670;&#160;</a></span>set_pos() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_pos </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>new_pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. This node needs to be moved. </td></tr>
+    <tr><td class="paramname">new_pos</td><td>new position of the node to which the node needs to be moved.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af206c67619617f5e4d99ea67be94a7d6" name="af206c67619617f5e4d99ea67be94a7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af206c67619617f5e4d99ea67be94a7d6">&#9670;&#160;</a></span>displace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::displace </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;const &amp;&#160;</td>
+          <td class="paramname"><em>displacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes the position of the requested node by a given displacement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. This node needs to be moved. </td></tr>
+    <tr><td class="paramname">displacement</td><td>displacement vector that will be added to the position vector of the node.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c703086e73c0a1d2b5ff1d8b482c384" name="a9c703086e73c0a1d2b5ff1d8b482c384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c703086e73c0a1d2b5ff1d8b482c384">&#9670;&#160;</a></span>displace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::displace </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>displacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. This node needs to be moved. </td></tr>
+    <tr><td class="paramname">displacement</td><td>displacement vector that will be added to the position vector of the node.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aac8eaef6c3fa8679dfafcb4018573233" name="aac8eaef6c3fa8679dfafcb4018573233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8eaef6c3fa8679dfafcb4018573233">&#9670;&#160;</a></span>curvature_vec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::curvature_vec </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id return the constant reference to the node curvature vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the 3D vector of the node curvature, <a class="el" href="structfp_1_1_node.html#a2b801251ab545ad8d931d09583920537" title="Curvature vector of the node as defined in Gueguen et al. 2017.">Node::curvature_vec</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_aac8eaef6c3fa8679dfafcb4018573233_icgraph.svg" width="354" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a563539f00c190fb8fd9fedd6a27bc769" name="a563539f00c190fb8fd9fedd6a27bc769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563539f00c190fb8fd9fedd6a27bc769">&#9670;&#160;</a></span>set_curvature_vec() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_curvature_vec </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>new_cv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id and a new curvature vector, reset the nudes current curvature vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_cv</td><td>Constant lvalue reference to the new 3d curvature vector <a class="el" href="structfp_1_1_node.html#a2b801251ab545ad8d931d09583920537" title="Curvature vector of the node as defined in Gueguen et al. 2017.">Node::curvature_vec</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a535f08dde803985251f08b7f02fa043a" name="a535f08dde803985251f08b7f02fa043a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535f08dde803985251f08b7f02fa043a">&#9670;&#160;</a></span>set_curvature_vec() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_curvature_vec </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>new_cv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_cv</td><td>rvalue reference to the new 3d curvature vector <a class="el" href="structfp_1_1_node.html#a2b801251ab545ad8d931d09583920537" title="Curvature vector of the node as defined in Gueguen et al. 2017.">Node::curvature_vec</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab863d48ecbce98b85747961bbaae82a9" name="ab863d48ecbce98b85747961bbaae82a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab863d48ecbce98b85747961bbaae82a9">&#9670;&#160;</a></span>area()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::area </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id return node associated area. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Area associated to the node, <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated to the node.">Node::area</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_ab863d48ecbce98b85747961bbaae82a9_icgraph.svg" width="296" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="ac77577ce16f2b8ff1feceb217c6853e1" name="ac77577ce16f2b8ff1feceb217c6853e1"></a>
@@ -803,7 +858,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -833,21 +888,73 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Given a node id and a new area value, reset the current value of the node area. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_area</td><td>Value for the new node associated area <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated to the node.">Node::area</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a535f08dde803985251f08b7f02fa043a" name="a535f08dde803985251f08b7f02fa043a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a535f08dde803985251f08b7f02fa043a">&#9670;&#160;</a></span>set_curvature_vec() <span class="overload">[1/2]</span></h2>
+<a id="a0d791117fddd2490c8223a74de6f9109" name="a0d791117fddd2490c8223a74de6f9109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d791117fddd2490c8223a74de6f9109">&#9670;&#160;</a></span>volume()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_curvature_vec </td>
+          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::volume </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id return node associated volume. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Area associated to the node, <a class="el" href="structfp_1_1_node.html#ae0618b10496535a019b5a99cdc721dca" title="If the node is part of a closed surface triangulation, then the volume contains the volume of the tet...">Node::volume</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a0d791117fddd2490c8223a74de6f9109_icgraph.svg" width="314" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4431ab5e1cf3dbc768558ae5b9132bef" name="a4431ab5e1cf3dbc768558ae5b9132bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4431ab5e1cf3dbc768558ae5b9132bef">&#9670;&#160;</a></span>set_volume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_volume </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
@@ -855,8 +962,8 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>new_cv</em>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>new_volume</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -871,21 +978,73 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Given a node id and a new volume value, reset the current value of the node volume. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_volume</td><td>Value for the new node associated volume <a class="el" href="structfp_1_1_node.html#ae0618b10496535a019b5a99cdc721dca" title="If the node is part of a closed surface triangulation, then the volume contains the volume of the tet...">Node::volume</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a563539f00c190fb8fd9fedd6a27bc769" name="a563539f00c190fb8fd9fedd6a27bc769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a563539f00c190fb8fd9fedd6a27bc769">&#9670;&#160;</a></span>set_curvature_vec() <span class="overload">[2/2]</span></h2>
+<a id="ab65c2e5dd4f3b43b2445b62c400107e9" name="ab65c2e5dd4f3b43b2445b62c400107e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab65c2e5dd4f3b43b2445b62c400107e9">&#9670;&#160;</a></span>unit_bending_energy()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_curvature_vec </td>
+          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::unit_bending_energy </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id return node associated unit bending energy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Area associated to the node, <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_ab65c2e5dd4f3b43b2445b62c400107e9_icgraph.svg" width="344" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae4dcac75731ab83b336c27ded5df8e8d" name="ae4dcac75731ab83b336c27ded5df8e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4dcac75731ab83b336c27ded5df8e8d">&#9670;&#160;</a></span>set_unit_bending_energy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_unit_bending_energy </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
@@ -893,8 +1052,91 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>new_cv</em>&#160;</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>new_ube</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_ube</td><td>New value of the unit bending energy (mathematical definition can be found at <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a>).</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa149044ed9e33aa0560311362cd2c660" name="aa149044ed9e33aa0560311362cd2c660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa149044ed9e33aa0560311362cd2c660">&#9670;&#160;</a></span>nn_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_ids </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id and a new value for the node associated unit bending energy, update the current value of <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a>. </p>
+<p >Given a node id return the constant reference to the nn_ids std::vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the std::vector containing next neighbour ids of the node, <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a>.</dd></dl>
+
+</div>
+</div>
+<a id="a8aa1bcb4a83a714a2abeaaae500a949a" name="a8aa1bcb4a83a714a2abeaaae500a949a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa1bcb4a83a714a2abeaaae500a949a">&#9670;&#160;</a></span>set_nn_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_ids </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Index &gt;const &amp;&#160;</td>
+          <td class="paramname"><em>new_nn_ids</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -909,21 +1151,31 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>For a <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> specified by <code>node_id</code>, overwrite the entire <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">new_nn_ids</td><td>const reference to the standard vector containing new values of nn_ids </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function does not check the provided <code>new_nn_ids</code> vector on correctness. If the content is wrong in any way (order is wrong or contained id's are not actual next neighbours of the node), then the update will cause problems with the proper function of flippy later!</dd></dl>
+
 </div>
 </div>
-<a id="a0019211410eea70cd8a4eecad4498992" name="a0019211410eea70cd8a4eecad4498992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0019211410eea70cd8a4eecad4498992">&#9670;&#160;</a></span>set_nn_distance() <span class="overload">[1/2]</span></h2>
+<a id="a65c0fd75105d0110c204b2b9c2af5640" name="a65c0fd75105d0110c204b2b9c2af5640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c0fd75105d0110c204b2b9c2af5640">&#9670;&#160;</a></span>nn_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_distance </td>
+          <td class="memname">Index <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_id </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
@@ -932,18 +1184,12 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>loc_nn_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>dist</em>&#160;</td>
+          <td class="paramname"><em>loc_nn_index</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -953,49 +1199,21 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Given a node id and the local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, returns the next neighbour id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">loc_nn_index</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The global id of the next neighbour that was stored at the position <code>loc_nn_index</code> in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector of the node with the id of <code>node_id</code>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a65c0fd75105d0110c204b2b9c2af5640_icgraph.svg" width="360" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="a7152c3eab97faef371f717aa1f144a5b" name="a7152c3eab97faef371f717aa1f144a5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7152c3eab97faef371f717aa1f144a5b">&#9670;&#160;</a></span>set_nn_distance() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_distance </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>loc_nn_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>dist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1005,7 +1223,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1041,21 +1259,37 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>For a node specified by <code>node_id</code>, resets the value of the requested <code>nn_id</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">loc_nn_index</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a14a196ade9731f70eeed6446b32854ca_cgraph.svg" width="320" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="a8aa1bcb4a83a714a2abeaaae500a949a" name="a8aa1bcb4a83a714a2abeaaae500a949a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aa1bcb4a83a714a2abeaaae500a949a">&#9670;&#160;</a></span>set_nn_ids()</h2>
+
+</div>
+</div>
+<a id="a53ecc9a931522c8f339dadb2232a528a" name="a53ecc9a931522c8f339dadb2232a528a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ecc9a931522c8f339dadb2232a528a">&#9670;&#160;</a></span>emplace_nn_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_ids </td>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::emplace_nn_id </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
@@ -1063,8 +1297,14 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; Index &gt;const &amp;&#160;</td>
-          <td class="paramname"><em>new_nn_ids</em>&#160;</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>to_emplace_nn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>loc_nn_index</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1079,30 +1319,150 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Emplace a the id of a new node in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, in front of the loc_idx position. </p>
+<p >This function is a wrapper around <a class="el" href="structfp_1_1_node.html#aefc063b2ef6645bfea2e258260a5236a">Node::emplace_nn_id(Index , vec3&lt;Real&gt; const&amp; , Index)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">to_emplace_nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">loc_nn_index</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a53ecc9a931522c8f339dadb2232a528a_cgraph.svg" width="303" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="ab0d598ecd535f690a99d81dd4e717d1e" name="ab0d598ecd535f690a99d81dd4e717d1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0d598ecd535f690a99d81dd4e717d1e">&#9670;&#160;</a></span>set_pos() <span class="overload">[1/2]</span></h2>
+
+</div>
+</div>
+<a id="aeaac33789677da84759647308c5f25da" name="aeaac33789677da84759647308c5f25da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaac33789677da84759647308c5f25da">&#9670;&#160;</a></span>nn_distances()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_pos </td>
+          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::nn_distances </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a node id, returns the std::vector containing distance vectors to next neighbours. </p>
+<p >The order of <a class="el" href="structfp_1_1_node.html#a7d7b5f362addd1bb5249f573b16d0a90" title="Distance vectors pointing from the node to it&#39;s next neighbours.">Node::nn_distances</a> is the same as that of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a>, this is guaranteed by Triangulation::update_nn_distance_vectors(Index node_id) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Associated std::vector containing all <a class="el" href="classfp_1_1vec3.html">vec3</a> distance vectors from the node to its neighbours, <a class="el" href="structfp_1_1_node.html#a7d7b5f362addd1bb5249f573b16d0a90" title="Distance vectors pointing from the node to it&#39;s next neighbours.">Node::nn_distances</a>.</dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_aeaac33789677da84759647308c5f25da_icgraph.svg" width="348" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8efb079f96664cee5698ccdf9e6bc080" name="a8efb079f96664cee5698ccdf9e6bc080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efb079f96664cee5698ccdf9e6bc080">&#9670;&#160;</a></span>get_nn_distance_vector_between()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::get_nn_distance_vector_between </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>nn_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given two global node id's, returns a distance vector (if the nodes are neighbours). </p>
+<p >This function is a wrapper around <a class="el" href="structfp_1_1_node.html#aa9bf52cc0dc958fca2868f640cdbcb21" title="This function can provide the stored distance vector to a next neighbour.">fp::Node::get_distance_vector_to(Index) const</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Looks in the <a class="el" href="structfp_1_1_node.html#a7d7b5f362addd1bb5249f573b16d0a90" title="Distance vectors pointing from the node to it&#39;s next neighbours.">Node::nn_distances</a> vector of the node (specified by node_id) for the distance to nn_id. If the two nodes are neighbours a proper distance vector will be returned, otherwise the program will terminate. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Calling this function with a wrong argument will cause the termination of the program.</dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_nodes_a8efb079f96664cee5698ccdf9e6bc080_cgraph.svg" width="360" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0019211410eea70cd8a4eecad4498992" name="a0019211410eea70cd8a4eecad4498992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0019211410eea70cd8a4eecad4498992">&#9670;&#160;</a></span>set_nn_distance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_distance </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>loc_nn_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>new_pos</em>&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1117,30 +1477,46 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Overwrite the next neighbour distance with a new 3d vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">loc_nn_index</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1. </td></tr>
+    <tr><td class="paramname">dist</td><td>rvalue reference to a 3D distance vector (that points from node_id to its next neighbour).</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad441e229389a483f2184c9f3ef0647f4" name="ad441e229389a483f2184c9f3ef0647f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad441e229389a483f2184c9f3ef0647f4">&#9670;&#160;</a></span>set_pos() <span class="overload">[2/2]</span></h2>
+<a id="a7152c3eab97faef371f717aa1f144a5b" name="a7152c3eab97faef371f717aa1f144a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7152c3eab97faef371f717aa1f144a5b">&#9670;&#160;</a></span>set_nn_distance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_pos </td>
+          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_nn_distance </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>loc_nn_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>new_pos</em>&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1155,81 +1531,15 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a3e0a579cae0746fc412180b0897b20ca" name="a3e0a579cae0746fc412180b0897b20ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e0a579cae0746fc412180b0897b20ca">&#9670;&#160;</a></span>set_unit_bending_energy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_unit_bending_energy </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>new_sce</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4431ab5e1cf3dbc768558ae5b9132bef" name="a4431ab5e1cf3dbc768558ae5b9132bef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4431ab5e1cf3dbc768558ae5b9132bef">&#9670;&#160;</a></span>set_volume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::set_volume </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>new_volume</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">loc_nn_index</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1. </td></tr>
+    <tr><td class="paramname">dist</td><td>lvalue constant reference to a 3D distance vector (that points from node_id to its next neighbour).</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1239,7 +1549,7 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1258,21 +1568,61 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Size of the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> data member. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the data vector which is the same as the number of the nodes. </dd></dl>
+
 </div>
 </div>
-<a id="ab65c2e5dd4f3b43b2445b62c400107e9" name="ab65c2e5dd4f3b43b2445b62c400107e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab65c2e5dd4f3b43b2445b62c400107e9">&#9670;&#160;</a></span>unit_bending_energy()</h2>
+<a id="a093e30bf91fecce01cb2a963cdad6415" name="a093e30bf91fecce01cb2a963cdad6415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093e30bf91fecce01cb2a963cdad6415">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::unit_bending_energy </td>
+          <td class="memname"><a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Square bracket operator overload for convenient indexing of the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct. </p>
+<p ><a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a>[node_id] is the same as <a class="el" href="structfp_1_1_nodes.html#af791310b96e308cbf01b4b76143de337" title="Data member that contains the individual nodes.">Nodes.data</a>[node_id]. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> struct with the id corresponding to node_id.</dd></dl>
+
+</div>
+</div>
+<a id="abfaa815fd0dacc7d85fd75a011fbebdc" name="abfaa815fd0dacc7d85fd75a011fbebdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfaa815fd0dacc7d85fd75a011fbebdc">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
           <td class="paramname"><em>node_id</em></td><td>)</td>
@@ -1286,24 +1636,32 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+<p ><a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a>[node_id] in constant environment is the same as Nodes.data.at(node_id). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> struct with the id corresponding to node_id.</dd></dl>
+
 </div>
 </div>
-<a id="a0d791117fddd2490c8223a74de6f9109" name="a0d791117fddd2490c8223a74de6f9109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d791117fddd2490c8223a74de6f9109">&#9670;&#160;</a></span>volume()</h2>
+<a id="aa9d0a78ec3fc2f687a3731662619ab44" name="aa9d0a78ec3fc2f687a3731662619ab44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d0a78ec3fc2f687a3731662619ab44">&#9670;&#160;</a></span>make_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Real <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::volume </td>
+          <td class="memname"><a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a> <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::make_data </td>
           <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1314,22 +1672,8 @@ template&lt;floating_point_number Real, integer_number Index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="af791310b96e308cbf01b4b76143de337" name="af791310b96e308cbf01b4b76143de337"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af791310b96e308cbf01b4b76143de337">&#9670;&#160;</a></span>data</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structfp_1_1_node.html">Node</a>&lt;Real, Index&gt; &gt; <a class="el" href="structfp_1_1_nodes.html">fp::Nodes</a>&lt; Real, Index &gt;::data</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Serialize the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> struct to a json object. </p>
+<dl class="section return"><dt>Returns</dt><dd>json object that represents a serialization of the data contained in <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a>. This json object can later be used to reconstruct the <a class="el" href="structfp_1_1_nodes.html" title="Data structure containing all nodes of the Triangulation.">Nodes</a> object.</dd></dl>
 
 </div>
 </div>

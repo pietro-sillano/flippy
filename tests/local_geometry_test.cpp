@@ -35,7 +35,7 @@ void rescale_triangulation(Real R, Triangulation<Real,Index, SPHERICAL_TRIANGULA
 TEST_CASE("Icosa geometry check test")
 {
     double R = 20.;
-    Triangulation<double, short, SPHERICAL_TRIANGULATION> icosahedron(ICOSA_DATA(),  0);
+    Triangulation<double, unsigned short, SPHERICAL_TRIANGULATION> icosahedron(ICOSA_DATA(),  0);
     rescale_triangulation(R, icosahedron);
 
     double sin_ = sin(2*M_PI/5.);
@@ -59,7 +59,7 @@ TEST_CASE("Test Geometry Container")
 
     SECTION("uninitiated") {
         struct GeometryWrapper {
-          Geometry<long double, short> geo;
+          Geometry<long double, unsigned short> geo;
         };
         GeometryWrapper gw;
         CHECK(gw.geo.area==0.);
@@ -68,7 +68,7 @@ TEST_CASE("Test Geometry Container")
     }
 
     SECTION("default initiator") {
-        Geometry<long double, short> geo{};
+        Geometry<long double, unsigned short> geo{};
         CHECK(geo.area==0.);
         CHECK(geo.volume==0.);
         CHECK(geo.unit_bending_energy==0.);
@@ -80,7 +80,7 @@ TEST_CASE("Sphere geometry test")
 {
     double R = 1000.;
     auto all_data = json_read("../../tests/init_files/egg_init.json");
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> sphere(all_data["nodes"], 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> sphere(all_data["nodes"], 0);
     rescale_triangulation(R, sphere);
     auto ACCEPTABLE_ERROR = 0.01;
 
@@ -93,9 +93,9 @@ TEST_CASE("Sphere geometry test")
     auto UNIT_BENDING_ENERGY_SPHERE = 8*M_PI;
     auto UNIT_BENDING_ENERGY_SPHERE_target = Approx(UNIT_BENDING_ENERGY_SPHERE).epsilon(ACCEPTABLE_ERROR);
 
-    Geometry<double, long> lg{};
+    Geometry<double, unsigned long> lg{};
     for (auto const& node : sphere.nodes().data) {
-        lg += Geometry<double, long>(node);
+        lg += Geometry<double, unsigned long>(node);
     }
 
     SECTION("externally calculated global geometry") {
@@ -113,9 +113,9 @@ TEST_CASE("Sphere geometry test")
     vec3<double> displacement{1200., 2329., -12.901};
     sphere.translate_all_nodes(displacement);
 
-    Geometry<double, long> lg_translated{};
+    Geometry<double, unsigned long> lg_translated{};
     for (auto const& node : sphere.nodes().data) {
-        lg_translated += Geometry<double, long>(node);
+        lg_translated += Geometry<double, unsigned long>(node);
     }
 
     SECTION("checking translational invariance") {
@@ -136,7 +136,7 @@ TEST_CASE("Ellipse geometry test")
     double R = 2.;
     auto all_data = json_read("../../tests/init_files/egg_init.json");
     double x_stretch = 1.4;
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> ellipse(all_data["nodes"], 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> ellipse(all_data["nodes"], 0);
     rescale_triangulation(R, ellipse);
     ellipse.scale_node_coordinates(x_stretch);
 
@@ -178,7 +178,7 @@ TEST_CASE("Ellipse geometry test for triangulator mesh")
 {
     double R = 2.;
     double x_stretch = 1.4;
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> ellipse(15, R, 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> ellipse(15, R, 0);
     ellipse.scale_node_coordinates(x_stretch);
 
     auto ACCEPTABLE_ERROR = 0.01;
@@ -242,7 +242,7 @@ static fp::Json BRICK_DATA()
 
 TEST_CASE("cube geometry test")
 {
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> cube(CUBE_DATA(), 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> cube(CUBE_DATA(), 0);
     double ACCEPTABLE_ERROR = 0.01;
     auto A_square = Approx(24.).margin(ACCEPTABLE_ERROR);
     auto V_square = Approx(8).margin(ACCEPTABLE_ERROR);
@@ -261,7 +261,7 @@ TEST_CASE("cube geometry test")
 
 TEST_CASE("Brick geometry test")
 {
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> brick(BRICK_DATA(), 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> brick(BRICK_DATA(), 0);
     double ACCEPTABLE_ERROR = 0.01;
     auto A_square = Approx(32.).margin(ACCEPTABLE_ERROR);
     auto V_square = Approx(12).margin(ACCEPTABLE_ERROR);
@@ -307,7 +307,7 @@ static fp::Json HYPER_SQUEEZED_BRICK_DATA(){
 
 TEST_CASE("Hyperstretch geometry test")
 {
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> brick(HYPERBRICK_DATA(), 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> brick(HYPERBRICK_DATA(), 0);
     double ACCEPTABLE_ERROR = 0.01;
     auto A_square = Approx(2408.).margin(ACCEPTABLE_ERROR);
     auto V_square = Approx(1200).margin(ACCEPTABLE_ERROR);
@@ -325,7 +325,7 @@ TEST_CASE("Hyperstretch geometry test")
 
 TEST_CASE("Hyperqueeze geometry test")
 {
-    Triangulation<double, long, SPHERICAL_TRIANGULATION> brick(HYPER_SQUEEZED_BRICK_DATA(), 0);
+    Triangulation<double, unsigned long, SPHERICAL_TRIANGULATION> brick(HYPER_SQUEEZED_BRICK_DATA(), 0);
     double ACCEPTABLE_ERROR = 0.01;
     auto A_square = Approx(8.24).margin(ACCEPTABLE_ERROR);
     auto V_square = Approx(0.12).margin(ACCEPTABLE_ERROR);

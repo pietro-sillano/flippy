@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -107,32 +108,46 @@ $(document).ready(function(){initNavTree('classfp_1_1_triangulation.html',''); i
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_triangulation_8hpp_source.html">Triangulation.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for fp::Triangulation&lt; Real, Index, triangulation_type &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation__inherit__graph.svg" width="258" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0042d491088b1c815667db8b19df168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#ac0042d491088b1c815667db8b19df168">Triangulation</a> ()=default</td></tr>
-<tr class="separator:ac0042d491088b1c815667db8b19df168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab21e803940915dca4750bb5bd86cd659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#ab21e803940915dca4750bb5bd86cd659">Triangulation</a> (<a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;nodes_input, Real verlet_radius_inp)</td></tr>
+<tr class="memitem:ab21e803940915dca4750bb5bd86cd659"><td class="memItemLeft" align="right" valign="top"><a id="ab21e803940915dca4750bb5bd86cd659" name="ab21e803940915dca4750bb5bd86cd659"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Triangulation</b> (<a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;nodes_input, Real verlet_radius_inp)</td></tr>
 <tr class="separator:ab21e803940915dca4750bb5bd86cd659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a758e5f3e3f31aeef799219932b639ded"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a758e5f3e3f31aeef799219932b639ded">Triangulation</a> (Index n_nodes_iter, Real R_initial_input, Real verlet_radius_inp)</td></tr>
+<tr class="memitem:a758e5f3e3f31aeef799219932b639ded"><td class="memItemLeft" align="right" valign="top"><a id="a758e5f3e3f31aeef799219932b639ded" name="a758e5f3e3f31aeef799219932b639ded"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Triangulation</b> (Index n_nodes_iter, Real R_initial_input, Real verlet_radius_inp)</td></tr>
 <tr class="separator:a758e5f3e3f31aeef799219932b639ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411d76190690d29b6f7040e8367b95ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a411d76190690d29b6f7040e8367b95ec">Triangulation</a> (Index n_length, Index n_width, Real length, Real width, Real verlet_radius_inp)</td></tr>
+<tr class="memitem:a411d76190690d29b6f7040e8367b95ec"><td class="memItemLeft" align="right" valign="top"><a id="a411d76190690d29b6f7040e8367b95ec" name="a411d76190690d29b6f7040e8367b95ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Triangulation</b> (Index n_length, Index n_width, Real length, Real width, Real verlet_radius_inp)</td></tr>
 <tr class="separator:a411d76190690d29b6f7040e8367b95ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81049b0ca1f364f3b6a7fa498d0a5523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a81049b0ca1f364f3b6a7fa498d0a5523">set_verlet_radius</a> (Real R)</td></tr>
+<tr class="memitem:a81049b0ca1f364f3b6a7fa498d0a5523"><td class="memItemLeft" align="right" valign="top"><a id="a81049b0ca1f364f3b6a7fa498d0a5523" name="a81049b0ca1f364f3b6a7fa498d0a5523"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_verlet_radius</b> (Real R)</td></tr>
 <tr class="separator:a81049b0ca1f364f3b6a7fa498d0a5523"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4162ec7ad98f342eeae67ee9451b02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a7a4162ec7ad98f342eeae67ee9451b02">make_verlet_list</a> ()</td></tr>
+<tr class="memitem:a7a4162ec7ad98f342eeae67ee9451b02"><td class="memItemLeft" align="right" valign="top"><a id="a7a4162ec7ad98f342eeae67ee9451b02" name="a7a4162ec7ad98f342eeae67ee9451b02"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>make_verlet_list</b> ()</td></tr>
 <tr class="separator:a7a4162ec7ad98f342eeae67ee9451b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaef436fe4758c409b21a135b329edc17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#aaef436fe4758c409b21a135b329edc17">translate_all_nodes</a> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;translation_vector)</td></tr>
+<tr class="memitem:aaef436fe4758c409b21a135b329edc17"><td class="memItemLeft" align="right" valign="top"><a id="aaef436fe4758c409b21a135b329edc17" name="aaef436fe4758c409b21a135b329edc17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>translate_all_nodes</b> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;translation_vector)</td></tr>
 <tr class="separator:aaef436fe4758c409b21a135b329edc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28b60961d8f8404a796b33b4a769c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#af28b60961d8f8404a796b33b4a769c02">calculate_mass_center</a> () const</td></tr>
+<tr class="memitem:af28b60961d8f8404a796b33b4a769c02"><td class="memItemLeft" align="right" valign="top"><a id="af28b60961d8f8404a796b33b4a769c02" name="af28b60961d8f8404a796b33b4a769c02"></a>
+<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_mass_center</b> () const</td></tr>
 <tr class="separator:af28b60961d8f8404a796b33b4a769c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8102adbe7dab80cda3209844a939e30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#ad8102adbe7dab80cda3209844a939e30">move_node</a> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;displacement_vector)</td></tr>
+<tr class="memitem:ad8102adbe7dab80cda3209844a939e30"><td class="memItemLeft" align="right" valign="top"><a id="ad8102adbe7dab80cda3209844a939e30" name="ad8102adbe7dab80cda3209844a939e30"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>move_node</b> (Index node_id, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;displacement_vector)</td></tr>
 <tr class="separator:ad8102adbe7dab80cda3209844a939e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11ee6051e9db388def8aaed68b1841d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a11ee6051e9db388def8aaed68b1841d4">emplace_before</a> (Index center_node_id, Index anchor_id, Index new_value)</td></tr>
 <tr class="separator:a11ee6051e9db388def8aaed68b1841d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6833f13e1fd24b039ca1ad2969b8d267"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267">flip_bond</a> (Index node_id, Index nn_id, Real min_bond_length_square, Real max_bond_length_square)</td></tr>
 <tr class="separator:a6833f13e1fd24b039ca1ad2969b8d267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d1ec431a7a0040d7963e4297a80faaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa">unflip_bond</a> (Index node_id, Index nn_id, <a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; const &amp;common_nns)</td></tr>
+<tr class="memitem:a5d1ec431a7a0040d7963e4297a80faaa"><td class="memItemLeft" align="right" valign="top"><a id="a5d1ec431a7a0040d7963e4297a80faaa" name="a5d1ec431a7a0040d7963e4297a80faaa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>unflip_bond</b> (Index node_id, Index nn_id, <a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; const &amp;common_nns)</td></tr>
+<tr class="memdesc:a5d1ec431a7a0040d7963e4297a80faaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">unflip a bond that was just flipped. <br /></td></tr>
 <tr class="separator:a5d1ec431a7a0040d7963e4297a80faaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a077d1be6c31f16241e9035c5a0f93652"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a077d1be6c31f16241e9035c5a0f93652">flip_bond_unchecked</a> (Index node_id, Index nn_id, Index common_nn_j_m_1, Index common_nn_j_p_1)</td></tr>
 <tr class="separator:a077d1be6c31f16241e9035c5a0f93652"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,136 +157,77 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3c660cb2bec69afe055843975698cfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d7b2a1e57f742d1d401eeb09b057beb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a1d7b2a1e57f742d1d401eeb09b057beb">update_two_ring_geometry</a> (Index node_id)</td></tr>
 <tr class="separator:a1d7b2a1e57f742d1d401eeb09b057beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a692685c96cd6a0cdba72b50adf3fb49b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a692685c96cd6a0cdba72b50adf3fb49b">scale_node_coordinates</a> (Real x_stretch, Real y_stretch=1, Real z_stretch=1)</td></tr>
+<tr class="memitem:a692685c96cd6a0cdba72b50adf3fb49b"><td class="memItemLeft" align="right" valign="top"><a id="a692685c96cd6a0cdba72b50adf3fb49b" name="a692685c96cd6a0cdba72b50adf3fb49b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>scale_node_coordinates</b> (Real x_stretch, Real y_stretch=1, Real z_stretch=1)</td></tr>
 <tr class="separator:a692685c96cd6a0cdba72b50adf3fb49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde5fe59e2fae6494d38f5e957404a70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#acde5fe59e2fae6494d38f5e957404a70">calculate_diamond_geometry</a> (Index node_id, Index nn_id, Index cnn_0, Index cnn_1) const</td></tr>
 <tr class="separator:acde5fe59e2fae6494d38f5e957404a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a762c6430c00d719a8ea5a4a3e89715a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a762c6430c00d719a8ea5a4a3e89715a8">update_diamond_geometry</a> (Index node_id, Index nn_id, Index cnn_0, Index cnn_1)</td></tr>
 <tr class="separator:a762c6430c00d719a8ea5a4a3e89715a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6622782e18f9333c65cfc2403d8a5bfe"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a6622782e18f9333c65cfc2403d8a5bfe">size</a> () const</td></tr>
+<tr class="memitem:a6622782e18f9333c65cfc2403d8a5bfe"><td class="memItemLeft" align="right" valign="top"><a id="a6622782e18f9333c65cfc2403d8a5bfe" name="a6622782e18f9333c65cfc2403d8a5bfe"></a>
+Index&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
 <tr class="separator:a6622782e18f9333c65cfc2403d8a5bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49a847019900dc667e873d9510ff402a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a49a847019900dc667e873d9510ff402a">operator[]</a> (Index idx) const</td></tr>
+<tr class="memitem:a49a847019900dc667e873d9510ff402a"><td class="memItemLeft" align="right" valign="top"><a id="a49a847019900dc667e873d9510ff402a" name="a49a847019900dc667e873d9510ff402a"></a>
+const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (Index idx) const</td></tr>
 <tr class="separator:a49a847019900dc667e873d9510ff402a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb65b7f5974560fc57e20b50cf73b41"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfp_1_1_nodes.html">Nodes</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">nodes</a> () const</td></tr>
+<tr class="memitem:aeeb65b7f5974560fc57e20b50cf73b41"><td class="memItemLeft" align="right" valign="top"><a id="aeeb65b7f5974560fc57e20b50cf73b41" name="aeeb65b7f5974560fc57e20b50cf73b41"></a>
+const <a class="el" href="structfp_1_1_nodes.html">Nodes</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nodes</b> () const</td></tr>
 <tr class="separator:aeeb65b7f5974560fc57e20b50cf73b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca161d492a4ba155d41000e382a95555"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#aca161d492a4ba155d41000e382a95555">make_egg_data</a> () const</td></tr>
+<tr class="memitem:aca161d492a4ba155d41000e382a95555"><td class="memItemLeft" align="right" valign="top"><a id="aca161d492a4ba155d41000e382a95555" name="aca161d492a4ba155d41000e382a95555"></a>
+<a class="el" href="group___globals.html#ga0527b166a9415a6e07381ef4e11ed318">Json</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_egg_data</b> () const</td></tr>
 <tr class="separator:aca161d492a4ba155d41000e382a95555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9890d90831a7a834e8fffa1c432200d3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a9890d90831a7a834e8fffa1c432200d3">global_geometry</a> () const</td></tr>
+<tr class="memitem:a9890d90831a7a834e8fffa1c432200d3"><td class="memItemLeft" align="right" valign="top"><a id="a9890d90831a7a834e8fffa1c432200d3" name="a9890d90831a7a834e8fffa1c432200d3"></a>
+const <a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>global_geometry</b> () const</td></tr>
 <tr class="separator:a9890d90831a7a834e8fffa1c432200d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1afce8afd92f1b88fb15ce7d9cb31edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a1afce8afd92f1b88fb15ce7d9cb31edd">make_global_geometry</a> ()</td></tr>
+<tr class="memitem:a1afce8afd92f1b88fb15ce7d9cb31edd"><td class="memItemLeft" align="right" valign="top"><a id="a1afce8afd92f1b88fb15ce7d9cb31edd" name="a1afce8afd92f1b88fb15ce7d9cb31edd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>make_global_geometry</b> ()</td></tr>
 <tr class="separator:a1afce8afd92f1b88fb15ce7d9cb31edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ad51f097deab1674fce1800d2f2cf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a6ad51f097deab1674fce1800d2f2cf31">update_boundary_node_geometry</a> (Index node_id)</td></tr>
+<tr class="memitem:a6ad51f097deab1674fce1800d2f2cf31"><td class="memItemLeft" align="right" valign="top"><a id="a6ad51f097deab1674fce1800d2f2cf31" name="a6ad51f097deab1674fce1800d2f2cf31"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update_boundary_node_geometry</b> (Index node_id)</td></tr>
 <tr class="separator:a6ad51f097deab1674fce1800d2f2cf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a75e93af077cc8434bb76a1a4a39f3adf"><td class="memItemLeft" align="right" valign="top">static std::tuple&lt; Real, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a75e93af077cc8434bb76a1a4a39f3adf">partial_voronoi_area_and_face_normal_of_node_in_a_triangle</a> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij_p_1)</td></tr>
 <tr class="separator:a75e93af077cc8434bb76a1a4a39f3adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e43dfd4b4c9cfd10c5bf4174f2a85d1"><td class="memItemLeft" align="right" valign="top">static Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a3e43dfd4b4c9cfd10c5bf4174f2a85d1">mixed_area</a> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1)</td></tr>
+<tr class="memitem:a3e43dfd4b4c9cfd10c5bf4174f2a85d1"><td class="memItemLeft" align="right" valign="top"><a id="a3e43dfd4b4c9cfd10c5bf4174f2a85d1" name="a3e43dfd4b4c9cfd10c5bf4174f2a85d1"></a>
+static Real&#160;</td><td class="memItemRight" valign="bottom"><b>mixed_area</b> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1)</td></tr>
 <tr class="separator:a3e43dfd4b4c9cfd10c5bf4174f2a85d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a847fc218cc1807b7027b069a4239c7db"><td class="memItemLeft" align="right" valign="top">static Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfp_1_1_triangulation.html#a847fc218cc1807b7027b069a4239c7db">mixed_area</a> (<a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;lij_p_1, Real const &amp;triangle_area)</td></tr>
 <tr class="separator:a847fc218cc1807b7027b069a4239c7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt;<br />
-class fp::Triangulation&lt; Real, Index, triangulation_type &gt;</div><p >Implementation of <a class="el" href="classfp_1_1_triangulation.html">Triangulation</a> of closed two dimensional surfaces in 3D See throughout the documentation the sources are referred to by numbers which can be looked up int the bibliography.</p>
-<p >BIBLIOGRAPHY:</p>
-<p >[1] Guillaume Gueguen, Nicolas Destainville, and Manoel Manghi, ‘Fluctuation Tension and Shape Transition of Vesicles: Renormalisation Calculations and Monte Carlo Simulations’, Soft Matter, 13.36 (2017), 6100–6117 <a href="https://doi.org/10.1039/C7SM01272A">https://doi.org/10.1039/C7SM01272A</a>.</p>
-<p >[2] Mark Meyer and others, ‘Discrete Differential-Geometry Operators for Triangulated 2-Manifolds’, in Visualization and Mathematics III, ed. by Hans-Christian Hege and Konrad Polthier, Mathematics and Visualization (Berlin, Heidelberg: Springer, 2003), pp. 35–57 <a href="https://doi.org/10.1007/978-3-662-05105-4_2">https://doi.org/10.1007/978-3-662-05105-4_2</a>. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac0042d491088b1c815667db8b19df168" name="ac0042d491088b1c815667db8b19df168"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0042d491088b1c815667db8b19df168">&#9670;&#160;</a></span>Triangulation() <span class="overload">[1/4]</span></h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt;<br />
+class fp::Triangulation&lt; Real, Index, triangulation_type &gt;</div><p >Implementation of <a class="el" href="classfp_1_1_triangulation.html">Triangulation</a> of a two dimensional surfaces in 3D. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a11ee6051e9db388def8aaed68b1841d4" name="a11ee6051e9db388def8aaed68b1841d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ee6051e9db388def8aaed68b1841d4">&#9670;&#160;</a></span>emplace_before()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::Triangulation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab21e803940915dca4750bb5bd86cd659" name="ab21e803940915dca4750bb5bd86cd659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab21e803940915dca4750bb5bd86cd659">&#9670;&#160;</a></span>Triangulation() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::Triangulation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> const &amp;&#160;</td>
-          <td class="paramname"><em>nodes_input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>verlet_radius_inp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a758e5f3e3f31aeef799219932b639ded" name="a758e5f3e3f31aeef799219932b639ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a758e5f3e3f31aeef799219932b639ded">&#9670;&#160;</a></span>Triangulation() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::Triangulation </td>
+          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::emplace_before </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>n_nodes_iter</em>, </td>
+          <td class="paramname"><em>center_node_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>R_initial_input</em>, </td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>anchor_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>verlet_radius_inp</em>&#160;</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>new_value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -285,49 +241,50 @@ template&lt;floating_point_number Real, integer_number Index, <a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
+<p >this method finds the anchor node in the nn_ids vector of the center_node and uses <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> classes own method emplace_nn_id to emplace the new_value there (together with its distance to the center_node). The body of this fuction looks like it does not guard against find returning end() pointer, but this is taken care of in the emplace_nn_id method.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a11ee6051e9db388def8aaed68b1841d4_icgraph.svg" width="496" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
-<a id="a411d76190690d29b6f7040e8367b95ec" name="a411d76190690d29b6f7040e8367b95ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a411d76190690d29b6f7040e8367b95ec">&#9670;&#160;</a></span>Triangulation() <span class="overload">[4/4]</span></h2>
+<a id="a6833f13e1fd24b039ca1ad2969b8d267" name="a6833f13e1fd24b039ca1ad2969b8d267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6833f13e1fd24b039ca1ad2969b8d267">&#9670;&#160;</a></span>flip_bond()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::Triangulation </td>
+          <td class="memname"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::flip_bond </td>
           <td>(</td>
           <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>n_length</em>, </td>
+          <td class="paramname"><em>node_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>n_width</em>, </td>
+          <td class="paramname"><em>nn_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>length</em>, </td>
+          <td class="paramname"><em>min_bond_length_square</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>verlet_radius_inp</em>&#160;</td>
+          <td class="paramname"><em>max_bond_length_square</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -341,17 +298,296 @@ template&lt;floating_point_number Real, integer_number Index, <a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Securely flip the bond inside a quadrilateral formed by the nodes given by node_id, nn_id and their two common next neighbours, if all topological requirements are satisfied. </p>
+<p ><em>flip_bond</em> function takes a lot of care to keep the triangulation intact, i.e. not introduce holes or additional bonds in it. To this end the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology. The information if the flip was allowed and succeeded or not will be encoded in <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct, which will be returned by this function. The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip. A bond flip can fail if:</p><ul>
+<li>if the provided nodes id's are do not correspond to neighbouring nodes.</li>
+<li>one of the donor nodes have already too few bonds (bonds less then <a class="el" href="group___globals.html#ga1f3b45f2b89de3c4508d87fca78f2a16" title="a node needs to have more than the cutoff number of bonds to be allowed to donate one">BOND_DONATION_CUTOFF</a>).</li>
+<li>if a new bond that would be created would be<ul>
+<li>too long (length squared is larger than <b>max_bond_length_square</b>)</li>
+<li>too short (length squared is smaller than <b>min_bond_length_square</b>)</li>
+</ul>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">min_bond_length_square</td><td>Square of the <b>minimal</b> allowed bond length, in the triangulation. </td></tr>
+    <tr><td class="paramname">max_bond_length_square</td><td>Square of the <b>maximal</b> allowed bond length, in the triangulation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If the flip was successful the returned <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct will contain a boolean state variable <a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245" title="track if the bond was flipped.">BondFlipData::flipped</a> = <b>true</b>. The members <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">BondFlipData::common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">BondFlipData::common_nn_1</a> will contain global ids of new end nodes of the flipped bond. If the flip was not successful then a default initialized <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct will be returned with <a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245" title="track if the bond was flipped.">BondFlipData::flipped</a> = <b>false</b>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Regardless of the return values the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.</dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a6833f13e1fd24b039ca1ad2969b8d267_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a077d1be6c31f16241e9035c5a0f93652" name="a077d1be6c31f16241e9035c5a0f93652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077d1be6c31f16241e9035c5a0f93652">&#9670;&#160;</a></span>flip_bond_unchecked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::flip_bond_unchecked </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>nn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>common_nn_j_m_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>common_nn_j_p_1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Exchange next neighbourhood between four nodes in a manner that will correspond to a bond flip if the provided information was correct. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a077d1be6c31f16241e9035c5a0f93652_cgraph.svg" width="326" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a077d1be6c31f16241e9035c5a0f93652_icgraph.svg" width="326" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5d5763865ac706a2e800ed306d070d68" name="a5d5763865ac706a2e800ed306d070d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d5763865ac706a2e800ed306d070d68">&#9670;&#160;</a></span>update_bulk_node_geometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::update_bulk_node_geometry </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >calculates area volume and squared curvature integrated over the area, for the voronoi cell associated to the node</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a5d5763865ac706a2e800ed306d070d68_cgraph.svg" width="407" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a5d5763865ac706a2e800ed306d070d68_icgraph.svg" width="596" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a75e93af077cc8434bb76a1a4a39f3adf" name="a75e93af077cc8434bb76a1a4a39f3adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e93af077cc8434bb76a1a4a39f3adf">&#9670;&#160;</a></span>partial_voronoi_area_and_face_normal_of_node_in_a_triangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::tuple&lt; Real, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::partial_voronoi_area_and_face_normal_of_node_in_a_triangle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lij</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lij_p_1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >This function returns values of eqn.'s (82) &amp; (84) from the paper [1] Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are associated to each triangle that the node is part of. This function returns that sub-area and the face normal of that triangle.</p>
+
+</div>
+</div>
+<a id="a847fc218cc1807b7027b069a4239c7db" name="a847fc218cc1807b7027b069a4239c7db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847fc218cc1807b7027b069a4239c7db">&#9670;&#160;</a></span>mixed_area()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Real <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::mixed_area </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lij</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lij_p_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real const &amp;&#160;</td>
+          <td class="paramname"><em>triangle_area</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >This function returns values of eqn.'s (82) (and two unnamed formulas in the following paragraph) from [1]</p>
+<p >Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are associated to each triangle that the node is part of. This function returns that sub-area. If the large triangle (that the voronoi sub element is part of), is not obtuse. If it is obtuse, then the return value is either half, or quarter of the large triangle. Depending where it is obtuse.</p>
+
+</div>
+</div>
+<a id="a3c660cb2bec69afe055843975698cfd0" name="a3c660cb2bec69afe055843975698cfd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c660cb2bec69afe055843975698cfd0">&#9670;&#160;</a></span>get_two_ring_geometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::get_two_ring_geometry </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >calculates area volume and squared curvature integrated over the area, for the two-ring of the associated to the node, using the stored current_node_geometry</p>
+
+</div>
+</div>
+<a id="a1d7b2a1e57f742d1d401eeb09b057beb" name="a1d7b2a1e57f742d1d401eeb09b057beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d7b2a1e57f742d1d401eeb09b057beb">&#9670;&#160;</a></span>update_two_ring_geometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::update_two_ring_geometry </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>node_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >calculates area volume and squared curvature integrated over the area, for the two-ring of the associated to the node</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a1d7b2a1e57f742d1d401eeb09b057beb_cgraph.svg" width="634" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="acde5fe59e2fae6494d38f5e957404a70" name="acde5fe59e2fae6494d38f5e957404a70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acde5fe59e2fae6494d38f5e957404a70">&#9670;&#160;</a></span>calculate_diamond_geometry()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -393,777 +629,12 @@ template&lt;floating_point_number Real, integer_number Index, <a class="el" href
 </table>
 </div><div class="memdoc">
 <p >calculates area volume and squared curvature integrated over the area, for the diamond configuration of nodes associated with a bond-flip from existing current_node_geometry</p>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_acde5fe59e2fae6494d38f5e957404a70_icgraph.svg" width="372" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="af28b60961d8f8404a796b33b4a769c02" name="af28b60961d8f8404a796b33b4a769c02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af28b60961d8f8404a796b33b4a769c02">&#9670;&#160;</a></span>calculate_mass_center()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::calculate_mass_center </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a11ee6051e9db388def8aaed68b1841d4" name="a11ee6051e9db388def8aaed68b1841d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11ee6051e9db388def8aaed68b1841d4">&#9670;&#160;</a></span>emplace_before()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::emplace_before </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>center_node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>anchor_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>new_value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >this method finds the anchor node in the nn_ids vector of the center_node and uses <a class="el" href="structfp_1_1_node.html">Node</a> classes own method emplace_nn_id to emplace the new_value there (together with its distance to the center_node). The body of this fuction looks like it does not guard against find returning end() pointer, but this is taken care of in the emplace_nn_id method.</p>
-
-</div>
-</div>
-<a id="a6833f13e1fd24b039ca1ad2969b8d267" name="a6833f13e1fd24b039ca1ad2969b8d267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6833f13e1fd24b039ca1ad2969b8d267">&#9670;&#160;</a></span>flip_bond()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::flip_bond </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>nn_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>min_bond_length_square</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>max_bond_length_square</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a077d1be6c31f16241e9035c5a0f93652" name="a077d1be6c31f16241e9035c5a0f93652"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a077d1be6c31f16241e9035c5a0f93652">&#9670;&#160;</a></span>flip_bond_unchecked()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::flip_bond_unchecked </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>nn_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>common_nn_j_m_1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>common_nn_j_p_1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3c660cb2bec69afe055843975698cfd0" name="a3c660cb2bec69afe055843975698cfd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c660cb2bec69afe055843975698cfd0">&#9670;&#160;</a></span>get_two_ring_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::get_two_ring_geometry </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >calculates area volume and squared curvature integrated over the area, for the two-ring of the associated to the node, using the stored current_node_geometry</p>
-
-</div>
-</div>
-<a id="a9890d90831a7a834e8fffa1c432200d3" name="a9890d90831a7a834e8fffa1c432200d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9890d90831a7a834e8fffa1c432200d3">&#9670;&#160;</a></span>global_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structfp_1_1_geometry.html">Geometry</a>&lt; Real, Index &gt; &amp; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::global_geometry </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aca161d492a4ba155d41000e382a95555" name="aca161d492a4ba155d41000e382a95555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca161d492a4ba155d41000e382a95555">&#9670;&#160;</a></span>make_egg_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacefp.html#a0527b166a9415a6e07381ef4e11ed318">Json</a> <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::make_egg_data </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1afce8afd92f1b88fb15ce7d9cb31edd" name="a1afce8afd92f1b88fb15ce7d9cb31edd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1afce8afd92f1b88fb15ce7d9cb31edd">&#9670;&#160;</a></span>make_global_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::make_global_geometry </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7a4162ec7ad98f342eeae67ee9451b02" name="a7a4162ec7ad98f342eeae67ee9451b02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a4162ec7ad98f342eeae67ee9451b02">&#9670;&#160;</a></span>make_verlet_list()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::make_verlet_list </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a847fc218cc1807b7027b069a4239c7db" name="a847fc218cc1807b7027b069a4239c7db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a847fc218cc1807b7027b069a4239c7db">&#9670;&#160;</a></span>mixed_area() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Real <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::mixed_area </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij_p_1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real const &amp;&#160;</td>
-          <td class="paramname"><em>triangle_area</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >This function returns values of eqn.'s (82) (and two unnamed formulas in the following paragraph) from [1]</p>
-<p >Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are associated to each triangle that the node is part of. This function returns that sub-area. If the large triangle (that the voronoi sub element is part of), is not obtuse. If it is obtuse, then the return value is either half, or quarter of the large triangle. Depending where it is obtuse.</p>
-
-</div>
-</div>
-<a id="a3e43dfd4b4c9cfd10c5bf4174f2a85d1" name="a3e43dfd4b4c9cfd10c5bf4174f2a85d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e43dfd4b4c9cfd10c5bf4174f2a85d1">&#9670;&#160;</a></span>mixed_area() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Real <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::mixed_area </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij_p_1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>triangle_area</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>cot_at_j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>cot_at_j_p_1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad8102adbe7dab80cda3209844a939e30" name="ad8102adbe7dab80cda3209844a939e30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8102adbe7dab80cda3209844a939e30">&#9670;&#160;</a></span>move_node()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::move_node </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>displacement_vector</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeeb65b7f5974560fc57e20b50cf73b41" name="aeeb65b7f5974560fc57e20b50cf73b41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb65b7f5974560fc57e20b50cf73b41">&#9670;&#160;</a></span>nodes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structfp_1_1_nodes.html">Nodes</a>&lt; Real, Index &gt; &amp; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::nodes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a49a847019900dc667e873d9510ff402a" name="a49a847019900dc667e873d9510ff402a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49a847019900dc667e873d9510ff402a">&#9670;&#160;</a></span>operator[]()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structfp_1_1_node.html">Node</a>&lt; Real, Index &gt; &amp; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a75e93af077cc8434bb76a1a4a39f3adf" name="a75e93af077cc8434bb76a1a4a39f3adf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75e93af077cc8434bb76a1a4a39f3adf">&#9670;&#160;</a></span>partial_voronoi_area_and_face_normal_of_node_in_a_triangle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::tuple&lt; Real, <a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; &gt; <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::partial_voronoi_area_and_face_normal_of_node_in_a_triangle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>lij_p_1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >This function returns values of eqn.'s (82) &amp; (84) from the paper [1] Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are associated to each triangle that the node is part of. This function returns that sub-area and the face normal of that triangle.</p>
-
-</div>
-</div>
-<a id="a692685c96cd6a0cdba72b50adf3fb49b" name="a692685c96cd6a0cdba72b50adf3fb49b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a692685c96cd6a0cdba72b50adf3fb49b">&#9670;&#160;</a></span>scale_node_coordinates()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::scale_node_coordinates </td>
-          <td>(</td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>x_stretch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>y_stretch</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>z_stretch</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a81049b0ca1f364f3b6a7fa498d0a5523" name="a81049b0ca1f364f3b6a7fa498d0a5523"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81049b0ca1f364f3b6a7fa498d0a5523">&#9670;&#160;</a></span>set_verlet_radius()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::set_verlet_radius </td>
-          <td>(</td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>R</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6622782e18f9333c65cfc2403d8a5bfe" name="a6622782e18f9333c65cfc2403d8a5bfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6622782e18f9333c65cfc2403d8a5bfe">&#9670;&#160;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Index <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaef436fe4758c409b21a135b329edc17" name="aaef436fe4758c409b21a135b329edc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaef436fe4758c409b21a135b329edc17">&#9670;&#160;</a></span>translate_all_nodes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::translate_all_nodes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfp_1_1vec3.html">vec3</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>translation_vector</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5d1ec431a7a0040d7963e4297a80faaa" name="a5d1ec431a7a0040d7963e4297a80faaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d1ec431a7a0040d7963e4297a80faaa">&#9670;&#160;</a></span>unflip_bond()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::unflip_bond </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>nn_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structfp_1_1_bond_flip_data.html">BondFlipData</a>&lt; Index &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>common_nns</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6ad51f097deab1674fce1800d2f2cf31" name="a6ad51f097deab1674fce1800d2f2cf31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ad51f097deab1674fce1800d2f2cf31">&#9670;&#160;</a></span>update_boundary_node_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::update_boundary_node_geometry </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5d5763865ac706a2e800ed306d070d68" name="a5d5763865ac706a2e800ed306d070d68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d5763865ac706a2e800ed306d070d68">&#9670;&#160;</a></span>update_bulk_node_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::update_bulk_node_geometry </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >calculates area volume and squared curvature integrated over the area, for the voronoi cell associated to the node</p>
 
 </div>
 </div>
@@ -1173,7 +644,7 @@ template&lt;floating_point_number Real, integer_number Index, <a class="el" href
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
+template&lt;floating_point_number Real, indexing_number Index, <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1215,35 +686,18 @@ template&lt;floating_point_number Real, integer_number Index, <a class="el" href
 </table>
 </div><div class="memdoc">
 <p >updates area volume and squared curvature integrated over the area, for the diamond configuration of nodes associated with a bondflip</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a762c6430c00d719a8ea5a4a3e89715a8_cgraph.svg" width="634" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-<a id="a1d7b2a1e57f742d1d401eeb09b057beb" name="a1d7b2a1e57f742d1d401eeb09b057beb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d7b2a1e57f742d1d401eeb09b057beb">&#9670;&#160;</a></span>update_two_ring_geometry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;floating_point_number Real, integer_number Index, <a class="el" href="namespacefp.html#a6ac3c08b4c402e40a3f270818345078a">TriangulationType</a> triangulation_type = SPHERICAL_TRIANGULATION&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classfp_1_1_triangulation.html">fp::Triangulation</a>&lt; Real, Index, triangulation_type &gt;::update_two_ring_geometry </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>node_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p >calculates area volume and squared curvature integrated over the area, for the two-ring of the associated to the node</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classfp_1_1_triangulation_a762c6430c00d719a8ea5a4a3e89715a8_icgraph.svg" width="360" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

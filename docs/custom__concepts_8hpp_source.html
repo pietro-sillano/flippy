@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -101,27 +102,27 @@ $(document).ready(function(){initNavTree('custom__concepts_8hpp_source.html','')
   <div class="headertitle"><div class="title">custom_concepts.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="custom__concepts_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FLIPPY_CUSTOM_CONCEPTS_HPP</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FLIPPY_CUSTOM_CONCEPTS_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FLIPPY_CUSTOM_CONCEPTS_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespacefp.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefp.html">fp</a>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="conceptfp_1_1floating__point__number.html">   14</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">concept </span><a class="code hl_concept" href="conceptfp_1_1floating__point__number.html">floating_point_number</a> = std::is_floating_point_v&lt;T&gt;;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="conceptfp_1_1integer__number.html">   24</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">concept </span><a class="code hl_concept" href="conceptfp_1_1integer__number.html">integer_number</a> = std::is_integral_v&lt;T&gt;;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">//FLIPPY_CUSTOM_CONCEPTS_HPP</span></div>
-<div class="ttc" id="aconceptfp_1_1floating__point__number_html"><div class="ttname"><a href="conceptfp_1_1floating__point__number.html">fp::floating_point_number</a></div><div class="ttdef"><b>Definition:</b> custom_concepts.hpp:14</div></div>
-<div class="ttc" id="aconceptfp_1_1integer__number_html"><div class="ttname"><a href="conceptfp_1_1integer__number.html">fp::integer_number</a></div><div class="ttdef"><b>Definition:</b> custom_concepts.hpp:24</div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="conceptfp_1_1floating__point__number.html">   21</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">concept </span><a class="code hl_concept" href="conceptfp_1_1floating__point__number.html">floating_point_number</a> = std::is_floating_point_v&lt;T&gt;;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="conceptfp_1_1indexing__number.html">   28</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">concept </span><a class="code hl_concept" href="conceptfp_1_1indexing__number.html">indexing_number</a> = std::is_unsigned_v&lt;T&gt; &amp;&amp; std::is_integral_v&lt;T&gt;;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">//FLIPPY_CUSTOM_CONCEPTS_HPP</span></div>
+<div class="ttc" id="aconceptfp_1_1floating__point__number_html"><div class="ttname"><a href="conceptfp_1_1floating__point__number.html">fp::floating_point_number</a></div><div class="ttdoc">Here we implement the concepts of a floating point number.</div><div class="ttdef"><b>Definition:</b> custom_concepts.hpp:21</div></div>
+<div class="ttc" id="aconceptfp_1_1indexing__number_html"><div class="ttname"><a href="conceptfp_1_1indexing__number.html">fp::indexing_number</a></div><div class="ttdoc">Here we implement the concepts of a positive integer number that is used throughout the code for inde...</div><div class="ttdef"><b>Definition:</b> custom_concepts.hpp:28</div></div>
 <div class="ttc" id="anamespacefp_html"><div class="ttname"><a href="namespacefp.html">fp</a></div><div class="ttdef"><b>Definition:</b> custom_concepts.hpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6b186b4a3fa96a5ae1faf2feaa17366f.html">flippy</a></li><li class="navelem"><a class="el" href="custom__concepts_8hpp.html">custom_concepts.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_6b186b4a3fa96a5ae1faf2feaa17366f.html">flippy</a></li><li class="navelem"><b>custom_concepts.hpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

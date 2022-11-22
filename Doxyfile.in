@@ -8,17 +8,44 @@ GENERATE_TREEVIEW       = YES # optional. Also works without treeview
 DISABLE_INDEX           = NO
 FULL_SIDEBAR            = YES
 EXTRACT_PRIVATE         = NO
-EXTRACT_STATIC          = NO
+EXTRACT_STATIC          = YES
 HTML_EXTRA_STYLESHEET   = assets/doxygen-awesome-css-2.1.0/doxygen-awesome.css
-PROJECT_SYNOPSIS        = a c++20 package for dynamically triangulated membrane simulations.
+PROJECT_BRIEF           = a c++20 package for dynamically triangulated membrane simulations.
 RECURSIVE               = YES
-EXTRACT_ALL             = YES
+SORT_MEMBER_DOCS        = NO
+EXTRACT_ALL             = NO
+WARN_LOGFILE            = doxygen_warnings.log
+WARN_FORMAT             = "$text <---| $line: $file"
+WARNINGS                = YES
+WARN_NO_PARAMDOC        = YES
+WARN_IF_UNDOCUMENTED    = YES
+#WARN_AS_ERROR           = FAIL_ON_WARNINGS
+HIDE_UNDOC_RELATIONS    = NO
+HAVE_DOT                = YES
+DOT_IMAGE_FORMAT        = svg
+INTERACTIVE_SVG         = YES
+TEMPLATE_RELATIONS      = YES
+COLLABORATION_GRAPH     = YES
+CALLER_GRAPH            = YES
+CALL_GRAPH              = YES
 MARKDOWN_SUPPORT        = YES
 TOC_INCLUDE_HEADINGS    = 3
 BINARY_TOC              = YES
-HIDE_UNDOC_MEMBERS      = YES
+HIDE_UNDOC_MEMBERS      = NO
 GENERATE_LATEX          = NO
 GENERATE_HTML           = YES
     HTML_DYNAMIC_MENUS  = YES
 GENERATE_XML            = NO
 USE_MATHJAX             = YES
+###### aliases for repeated variables and stuff
+ALIASES  = "IndexStub=type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example `unsigned int`."
+ALIASES += "RealStub=type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example `float`."
+ALIASES += "NodeIDStub=Global id of the Node which is a number between 0 and max_number_of_nodes - 1."
+ALIASES += "NNIDStub=Global id of the next neighbour Node which is a number between 0 and max_number_of_nodes - 1."
+ALIASES += "LocNNIndexStub=Local index in the Node::nn_ids vector, which is a number between 0 and Node::nn_ids.size() - 1."
+ALIASES += "FileNameOrPathFileNameStub = File name or a string containing the path and the file name."
+ALIASES += "GlobalsTitleStub = Globally defined functions constants and such"
+ALIASES += "GlobalsBriefStub = this is the grouped documentation of global objects that are not part of any specific class."
+ALIASES += "GlobalsStub = @addtogroup Globals @GlobalsTitleStub ^^ @brief @GlobalsBriefStub"
+ALIASES += "TerminationNoteStub = Calling this function with a wrong argument will cause the termination of the program."
+ALIASES += BondLengthSquareStub{1}="Square of the \b \1 allowed bond length, in the triangulation."

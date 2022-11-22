@@ -10,28 +10,33 @@
 
 namespace fp {
 using Json = nlohmann::json;
-
+//! Data structure containing  all geometric and topological information associated to a node.
 /**
-   * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data that it contains.
-   * I.e. it will never check if the curvature is the norm of the curvature vector or if the nn_ids and nn_distances are in the correct order.
-   * However it does check the data for consistency. It will match the length of nn_ids and nn_distances. And pop and add both of them together.
-   */
-template<floating_point_number Real, integer_number Index>
+ * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data that it contains.
+ * For performance reasons methods associated to Node struct will never check if the Node::curvature is the norm of the
+ * Node::curvature_vector or if the Node::nn_ids and Node::nn_distances are in the correct order.
+ * It is the responsibility of higher order structures like Nodes and Triangulation to check that correct data is stored and updated correctly.
+ * However it does check the data for consistency.
+ * It will match the length of Node::nn_ids and Node::nn_distances and pop and add both of them together.
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ */
+template<floating_point_number Real, indexing_number Index>
 struct Node
 {
-  //! a number between 0 and max number of nodes - 1
+  //! @NodeIDStub
   Index id;
-  //! voronoi area associated to the node
+  //! Voronoi area associated to the node.
   Real area;
+  //! If the node is part of a closed surface triangulation, then the `volume` contains the volume of the tetrahedron connected to each voronoi cell sub-triangle and the center of the lab coordinate system  as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
   /**
-   * if the node is part of a closed surface triangulation, then the `volume` gives the volume
-   * of the tetrahedron connected to each voronoi cell sub-triangle and the center of the lab coordinate system  as defined in [1].
-   * This means that the volume of an individual node does not have a proper physical interpretation. Only the sum of all node
-   * volumes, which is given by the triangulation is interpretable as a physical volume of an object.
+   * This means that the volume of an individual node does not have a proper physical interpretation.
+   * Only the sum of all node volumes, which is given by the triangulation
+   * is interpretable as a physical volume of an object.
    */
   Real volume;
+  //! `unit_bending_energy` corresponds to the [Helfrich bending energy](https://en.wikipedia.org/wiki/Elasticity_of_cell_membranes) with bending rigidity 1 and gaussian bending stiffness 0.
   /**
-   * `unit_bending_energy` corresponds to the [Helfrich bending energy](https://en.wikipedia.org/wiki/Elasticity_of_cell_membranes) with bending rigidity 1 and gaussian bending stiffness 0
    * \f[
    *  \mathrm{unit\_bending\_energy} = \frac{1}{2} A_{\mathrm{node}} (2 H_{node})^2
    * \f]
@@ -39,31 +44,41 @@ struct Node
    * \f[
    * H_{node}^2 = \frac{\vec{K}_{node}}{2A_{node}} \cdot \frac{\vec{K}_{node}}{2A_{node}}
    * \f],
-   * with  \f$ \vec{K} \f$ denoting the `curvature_vector` member of the node
+   * with  \f$ \vec{K} \f$ denoting the Node::curvature_vector.
+   * @see Node::curvature_vec Triangulation::update_bulk_node_geometry(Index)
    */
   Real unit_bending_energy;
-  //! position of the node in the lab frame
+  //! Position of the node in the lab frame.
   vec3<Real> pos;
-  //! curvature vector of the node as defined in [1]
+  //! Curvature vector of the node as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
   vec3<Real> curvature_vec;
-  //! nn_ids contains the ids of nodes that are connected to this node.
-  //! The next neighbours that are also neighbours in the triangulation are stored sequentially in the vector.
-  //! The last and the first elements are also neighbours, i.e. the nn_ids vector wraps around.
-  //! During the calculation this is facilitated through the use of @ref fp::Neighbors.
-  //! @note The order of the next neighbours matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
+  //! Vector containing the global ids of current node's next neighbours.
+  /**
+   * `nn_ids` contains the ids of nodes that are connected to this node in the triangulation.
+   * The next neighbours that are also mutual neighbours in the triangulation are stored sequentially in the vector.
+   * The last and the first elements are also neighbours, i.e. the nn_ids vector wraps around.
+   * During the calculation this is facilitated through the use of @ref fp::Neighbors.
+   * @note The order of the next neighbours matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
+   */
   std::vector<Index> nn_ids;
-  //! distance vectors pointing from the node to it's next neighbours.
+  //! Distance vectors pointing from the node to it's next neighbours.
   std::vector<vec3<Real>> nn_distances;
-  //! Verlet list contains the ids of nodes that are close to this node
+  //! Verlet list contains the ids of nodes that are close to this node.
   std::vector<Index> verlet_list;
 
   // unit-tested
+  //! Finds the element with the id to_pop_nn_id in the nn_id vector and deletes it.
   void pop_nn(Index to_pop_nn_id)
   {
-      // finds the element with the id to_pop_nn_id in the nn_id vector and deletes it.
-      // this will lead to resizing of the vector!
+      /**
+       * @param to_pop_nn_id @NNIDStub This id is supposed to be removed from the next neighbour id vector.
+       * @see Node::nn_ids
+       * @note this will lead to resizing of the vector, which can be expensive!
+       * @warning if the provided next neighbour id is not part of the Node::nn_ids, this function will fail silently.
+       * It will not delete anything and won't throw any errors or warnings;
+       */
       auto pop_pos = find_nns_loc_pointer(to_pop_nn_id);
-      Index dist = pop_pos - nn_ids.begin();
+      auto dist = pop_pos - nn_ids.begin();
 
       if (pop_pos!=nn_ids.end()) {
           // I checked that this would work on example code on cppreference https://godbolt.org/z/6qf8c9nTz
@@ -72,28 +87,63 @@ struct Node
       }
   }
 
-  auto find_nns_loc_pointer(Index to_pop_nn_id){
-      return std::find(nn_ids.begin(), nn_ids.end(), to_pop_nn_id);
+  auto find_nns_loc_pointer(Index nn_id){
+      /**
+       * @brief Given the global id of the next neighbour, this function can be used to locate it in the Node::nn_ids vector.
+       *
+       * This function is just a convenient wrapper around the [std::find](https://en.cppreference.com/w/cpp/algorithm/find) function.
+       * ```
+       * std::find(nn_ids.begin(), nn_ids.end(), to_pop_nn_id);
+       * ```
+       * @param nn_id @NNIDStub
+       * @return if `nn_id` is contained in Node::nn_ids then the pointer to the position of that id in the `nn_ids` vector will be returned.
+       * Otherwise `nn_ids.end()`.
+       * @warning This function is not responsible for graceful handling of `nn_id`'s that are not found in the Node::nn_ids vector.
+       * If the `nn_id` is not contained in Node::nn_ids then the `nn_ids.end()` iterator will be returned.
+       * It is up to the user to perform the necessary checks to avoid undefined behaviour that might result from trying to delete uninitiated memory.
+       */
+      return std::find(nn_ids.begin(), nn_ids.end(), nn_id);
   }
+
   // unit-tested
   void emplace_nn_id(Index to_emplace_nn_id, vec3<Real> const& to_emplace_nn_pos, Index loc_idx)
   {
-      /** this constructs to_emplace_nn_id right before to_emplace_pos
-       * ie if to_emplace_nn_id is 3, to_emplace_nn_id will be constructed right before the
+      /**
+       * @brief This function can be used to add new next neighbours to this node.
+       *
+       * This function constructs `to_emplace_nn_id` right before `to_emplace_pos`,
+       * i.e. if to_emplace_nn_id is 3, to_emplace_nn_id will be constructed right before the
        * 3rd element and will become the new 3rd element.
+       * @param to_emplace_nn_id @NNIDStub This id is supposed to be added to the Node::nn_ids vector of this node.
+       * @param to_emplace_nn_pos const reference to the 3 dimensional position vector (type vec3<Real>) containing the position of the new next neighbour.
+       * This input is used to calculate the correct distance between this node and the new next neighbour, which then will be added to the Node::nn_distances vector.
+       * @param loc_idx @LocNNIndexStub
+       * @note This function causes the resizing of two vectors, which can be costly.
+       * @warning Making next neighbours is a symmetric operation. I.e. if node 1 becomes the next neighbour of node 2 then node two also has to become the next neighbour of node 1.
+       * However this function does is not responsible for this relationship. It only adds a new next neighbour to this node and the higher order structures Like Triangulation is responsible for guaranteeing the reciprocal relationship.
+       * @see Triangulation::emplace_before(Index, Index, Index)
        */
-      if (loc_idx<(Index) nn_ids.size()) {
-          nn_ids.emplace(nn_ids.begin() + loc_idx, to_emplace_nn_id);
-          nn_distances.emplace(nn_distances.begin() + loc_idx, to_emplace_nn_pos - pos);
+      if (loc_idx<nn_ids.size()) {
+          auto signed_loc_idx = static_cast<long long >(loc_idx);
+          nn_ids.emplace(nn_ids.begin() + signed_loc_idx, to_emplace_nn_id);
+          nn_distances.emplace(nn_distances.begin() + signed_loc_idx, to_emplace_nn_pos - pos);
       }
   }
 
   //unit-tested
+  //! This function can provide the stored distance vector to a next neighbour.
   vec3<Real> const& get_distance_vector_to(Index nn_id) const
   {
+      /**
+       * @param nn_id @NNIDStub.
+       * @return returns the distance currently stored in the Node::nn_distances vector, for the requested next neighbour.
+       * If the provided `nn_id` can not be found in the Node::nn_ids vector, then the function writes an error message
+       * to standard error output and terminates the program with exit code 12.
+       * @note @TerminationNoteStub
+       */
       auto id_pos = std::find(nn_ids.begin(), nn_ids.end(), nn_id);
       if (id_pos!=nn_ids.end()) {
-          return nn_distances[(id_pos - nn_ids.begin())];
+          return nn_distances[static_cast<Index>(id_pos - nn_ids.begin())];
       }
       else {
           std::cerr << "nn_id:" << nn_id << " provided to `get_distance_vector_to` is not a next neighbour of the node "
@@ -102,23 +152,38 @@ struct Node
       }
   }
 
+  //defaulted operators are not explicitly unit-tested
+  /**
+   * @brief Default equality operator.
+   *
+   * @param other_node constant reference to the other Node.
+   * @return True if both nodes are equal.
+   */
   bool operator==(Node<Real, Index> const& other_node) const = default;
 
-  friend std::ostream& operator<<(std::ostream& os, Node<Real, Index> const& node1)
+  /**
+   * @brief Streaming operator that can print formatted output to standard out with all data fields of the Node.
+   *
+   * @param os This is intended to be std::cout or any other ofstream reference.
+   * @param node The streamed node.
+   * @return return the updated stream.
+   */
+  friend std::ostream& operator<<(std::ostream& os, Node<Real, Index> const& node)
   {
-      os << "node: " << node1.id << '\n'
-         << "area: " << node1.area << '\n'
-         << "volume: " << node1.volume << '\n'
-         << "unit_bending_energy: " << node1.unit_bending_energy << '\n'
-         << "curvature_vec: " << node1.curvature_vec << '\n'
-         << "pos: " << node1.pos << '\n'
+
+      os << "node: " << node.id << '\n'
+         << "area: " << node.area << '\n'
+         << "volume: " << node.volume << '\n'
+         << "unit_bending_energy: " << node.unit_bending_energy << '\n'
+         << "curvature_vec: " << node.curvature_vec << '\n'
+         << "pos: " << node.pos << '\n'
          << "nn_ids: ";
-      for (auto const& nn_id: node1.nn_ids) {
+      for (auto const& nn_id: node.nn_ids) {
           os << nn_id << ' ';
       }
       os << '\n'
          << "nn_distances: ";
-      for (auto const& nn_dist: node1.nn_distances) {
+      for (auto const& nn_dist: node.nn_distances) {
           os << nn_dist << '\n';
       }
       os << '\n';
@@ -128,24 +193,41 @@ struct Node
 
 };
 
-template<floating_point_number Real, integer_number Index>
+/**
+ * @brief Data structure containing all nodes of the Triangulation.
+ *
+ * The Nodes struct is capable of reinitializing nodes from a well formed json object or from a simple [std::vector](https://en.cppreference.com/w/cpp/container/vector) that contains all nodes of a triangulation.
+ * The nodes class is basically a wrapper around a vector of nodes i.e. `std::vector<Node<Real, Index>>`, and provides additional functionality to manipulate and query this data structure.
+ * Nodes class is also meant to be the interface with which the end user is manipulating individual nodes.
+ * @tparam Real @RealStub
+ * @tparam Index type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example `unsigned int`.
+ */
+template<floating_point_number Real, indexing_number Index>
 struct Nodes
 {
-    std::vector<Node<Real, Index>> data;
-    Nodes() = default;
-    explicit Nodes(std::vector<Node<Real, Index>> data_inp)
-            :data(data_inp) { }
+    std::vector<Node<Real, Index>> data;    //!< Data member that contains the individual nodes.
+
+    Nodes() = default;    //!< Default constructor.
+    explicit Nodes(std::vector<Node<Real, Index> > data_inp):data(data_inp)
+    {
+    /**
+     * Copies the data from a vector of nodes and creates a new Nodes struct.
+     * @param data_inp a standard vector containing all the nodes that are supposed to create a new Nodes class.
+     */
+    }    //!< Constructor from a vector.
     explicit Nodes(Json const& node_dict)
     {
-        /**
-         * Initiating nodes from a Json of a node collection.
-         * The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1
-         */
+    /**
+     * Initiating nodes from a json object of a node collection.
+     * The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1.
+     * @param node_dict json object that contains a collection of nodes.
+     * @warning If the json object is malformed then the constructor will fail and propagate a runtime error from the json parser.
+     */
         std::vector<Index> nn_ids_temp, verlet_list_temp;
         data.resize((node_dict.size()));
         for (auto const& node: node_dict.items()) {
             auto const& node_id = node.key();
-            Index node_index = std::stol(node_id);
+            fp::indexing_number auto node_index = static_cast<Index>(std::stol(node_id));
             auto const& raw_pos = node.value()["pos"];
             vec3<Real> pos{(Real) raw_pos[0], (Real) raw_pos[1], (Real) raw_pos[2]};
 
@@ -157,10 +239,9 @@ struct Nodes
 
             nn_ids_temp = node_dict[node_id]["nn_ids"].get<std::vector<Index>>();
             verlet_list_temp = node_dict[node_id]["verlet_list"].get<std::vector<Index>>();
-            std::vector<vec3<Real>>
-                    nn_distances;
+            std::vector<vec3<Real>> nn_distances;
 
-            data[node_index] = Node<Real, Index>{
+            data[static_cast<size_t>(node_index)] = Node<Real, Index>{
                     .id{node_index},
                     .area{area},
                     .volume{volume},
@@ -172,59 +253,265 @@ struct Nodes
                     .verlet_list{verlet_list_temp}
             };
         }
-    }
+    }    //!< Constructor from json.
 
-    typename std::vector<Node<Real, Index>>::iterator begin(){return data.begin();}
-    typename std::vector<Node<Real, Index>>::const_iterator begin() const {return data.begin();}
-    typename std::vector<Node<Real, Index>>::iterator end() {return data.end();}
-    typename std::vector<Node<Real, Index>>::const_iterator end() const {return data.end();}
+    typename std::vector<Node<Real, Index>>::iterator begin()
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops.
+     * @return `data.begin()`
+     */
+     return data.begin();}    //!< Returns an iterator to the beginning of the underlying data member that contains the collection of the nodes.
+    typename std::vector<Node<Real, Index>>::const_iterator begin() const
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * @return a constant iterator `data.begin()`.
+     */
+        return data.begin();
+    }    //!< \overload
+
+    typename std::vector<Node<Real, Index>>::iterator end()
+    {
+        /**
+     * This function allows the Nodes struct to be used in range based for loops.
+     * @return `data.end()`.
+     */
+        return data.end();
+    }    //!< Returns an iterator to the end of the underlying data member that contains the collection of the nodes.
+    typename std::vector<Node<Real, Index>>::const_iterator end() const
+    {
+    /**
+     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * @return a constant iterator `data.end()`.
+     */
+     return data.end();} //!< \overload
 
     // getters and setters
+
+    // Position block
     //unit-tested
-    const vec3<Real>& pos(Index node_id) const {return data[node_id].pos;}
-    //unit-tested
-    void set_pos(Index node_id, vec3<Real> const& new_pos){data[node_id].pos=new_pos;}
-    void set_pos(Index node_id, vec3<Real> && new_pos){data[node_id].pos=new_pos;}
-    void displace(Index node_id, vec3<Real>const& displ){data[node_id].pos+=displ;}
-    void displace(Index node_id, vec3<Real>&& displ){data[node_id].pos+=displ;}
-
-    const vec3<Real>& curvature_vec(Index node_id) const {return data[node_id].curvature_vec;}
-    void set_curvature_vec(Index node_id, vec3<Real> const& new_cv) {data[node_id].curvature_vec=new_cv;}
-    void set_curvature_vec(Index node_id, vec3<Real> && new_cv) {data[node_id].curvature_vec=new_cv;}
-
-    Real area(Index node_id)const{return data[node_id].area;}
-    void set_area(Index node_id, Real new_area){data[node_id].area = new_area;}
-
-    Real volume(Index node_id)const{return data[node_id].volume;}
-    void set_volume(Index node_id, Real new_volume){data[node_id].volume = new_volume;}
-
-    Real unit_bending_energy(Index node_id)const{return data[node_id].unit_bending_energy;}
-    void set_unit_bending_energy(Index node_id, Real new_sce){data[node_id].unit_bending_energy=new_sce;}
-
-    //unit-tested
-    const auto& nn_ids(Index node_id)const{return data[node_id].nn_ids;}
-    //unit-tested
-    void set_nn_ids(Index node_id, std::vector<Index>const& new_nn_ids){data[node_id].nn_ids = new_nn_ids;}
-    //unit-tested
-    Index nn_id(Index node_id, Index loc_nn_index)const{return data[node_id].nn_ids[loc_nn_index];}
-    //unit-tested
-    void set_nn_id(Index node_id, Index loc_nn_index, Index nn_id){data[node_id].nn_ids[loc_nn_index]=nn_id;}
-    void emplace_nn_id(Index node_id, Index to_emplace_nn_id, Index loc_idx)
-    {data[node_id].emplace_nn_id(to_emplace_nn_id, pos(to_emplace_nn_id), loc_idx);}
-
-    const auto& nn_distances(Index node_id)const{return data[node_id].nn_distances;}
-    const auto& get_nn_distance_vector_between(Index node_id, Index nn_id) const{
-        return data[node_id].get_distance_vector_to(nn_id);
-    }
-    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real>&& dist){data[node_id].nn_distances[loc_nn_index]=dist;}
-    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real> const& dist){data[node_id].nn_distances[loc_nn_index]=dist;}
-
-    [[nodiscard]] Index size() const { return data.size(); }
-    Node<Real, Index>& operator[](Index idx) { return data[idx]; }
-    const Node<Real, Index>& operator[](Index idx) const { return data.at(idx); }
-
-    [[nodiscard]] Json make_data() const
+    [[nodiscard]] const vec3<Real>& pos(Index node_id) const
     {
+        /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the 3D vector of the node position, Node::pos.
+     */
+        return data[node_id].pos;
+    }   //!< Given a node id return the constant reference to the node position.
+    //unit-tested
+    void set_pos(Index node_id, vec3<Real> const& new_pos){
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param new_pos new position of the node to which the node needs to be moved.
+     */
+        data[node_id].pos=new_pos;
+    }   //!< Sets the position of the requested node to a given position.
+    void set_pos(Index node_id, vec3<Real> && new_pos){
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param new_pos new position of the node to which the node needs to be moved.
+     */
+        data[node_id].pos=new_pos;
+    }   //!< \overload
+    void displace(Index node_id, vec3<Real>const& displacement){
+    /**
+    * @param node_id @NodeIDStub This node needs to be moved.
+    * @param displacement displacement vector that will be added to the position vector of the node.
+    */
+        data[node_id].pos+=displacement;
+    }   //!< Changes the position of the requested node by a given displacement.
+    void displace(Index node_id, vec3<Real>&& displacement)
+    {
+    /**
+     * @param node_id @NodeIDStub This node needs to be moved.
+     * @param displacement displacement vector that will be added to the position vector of the node.
+     */
+        data[node_id].pos+=displacement;
+    }   //!< \overload
+
+    // Curvature vector block
+    [[nodiscard]] const vec3<Real>& curvature_vec(Index node_id) const {
+    /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the 3D vector of the node curvature, Node::curvature_vec.
+     */
+        return data[node_id].curvature_vec;
+    } //!< Given a node id return the constant reference to the node curvature vector.
+    void set_curvature_vec(Index node_id, vec3<Real> const& new_cv) {
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_cv Constant lvalue reference to the new 3d curvature vector Node::curvature_vec.
+     */
+        data[node_id].curvature_vec=new_cv;
+    } //!< Given a node id and a new curvature vector, reset the nudes current curvature vector.
+    void set_curvature_vec(Index node_id, vec3<Real> && new_cv) {
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_cv rvalue reference to the new 3d curvature vector Node::curvature_vec.
+     */
+        data[node_id].curvature_vec=new_cv;
+    } //!< @overload
+
+    // Area block
+    [[nodiscard]] Real area(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::area.
+     */
+        return data[node_id].area;
+    } //!< Given a node id return node associated area.
+    void set_area(Index node_id, Real new_area){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_area Value for the new node associated area Node::area.
+     *
+     */
+        data[node_id].area = new_area;
+    }    //!< Given a node id and a new area value, reset the current value of the node area.
+
+    // Volume block
+    [[nodiscard]] Real volume(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::volume.
+     */
+        return data[node_id].volume;
+    }    //!< Given a node id return node associated volume.
+    void set_volume(Index node_id, Real new_volume){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_volume Value for the new node associated volume Node::volume.
+     *
+     */
+        data[node_id].volume = new_volume;
+    }   //!< Given a node id and a new volume value, reset the current value of the node volume.
+
+    // Unit bending rigidity block
+    [[nodiscard]] Real unit_bending_energy(Index node_id)const{
+    /**
+     *
+     * @param node_id @NodeIDStub
+     * @return Area associated to the node, Node::unit_bending_energy.
+     */
+        return data[node_id].unit_bending_energy;
+    }   //!< Given a node id return node associated unit bending energy.
+    void set_unit_bending_energy(Index node_id, Real new_ube){
+    /**
+     *
+     * @param node_id @NodeIDStub
+     * @param new_ube New value of the unit bending energy (mathematical definition can be found at Node::unit_bending_energy).
+     */
+        data[node_id].unit_bending_energy=new_ube;
+    } //! Given a node id and a new value for the node associated unit bending energy, update the current value of Node::unit_bending_energy.
+
+    // nn_id[s] block
+    //unit-tested
+    [[nodiscard]] const auto& nn_ids(Index node_id)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the std::vector containing next neighbour ids of the node, Node::nn_ids.
+     */
+        return data[node_id].nn_ids;
+    } //!< Given a node id return the constant reference to the nn_ids std::vector.
+    //unit-tested
+    void set_nn_ids(Index node_id, std::vector<Index>const& new_nn_ids){
+    /**
+     * @param node_id @NodeIDStub
+     * @param new_nn_ids const reference to the standard vector containing new values of nn_ids
+     * @warning This function does not check the provided `new_nn_ids` vector on correctness.
+     * If the content is wrong in any way (order is wrong or contained id's are not actual next neighbours of the node),
+     * then the update will cause problems with the proper function of flippy later!
+     */
+        data[node_id].nn_ids = new_nn_ids;
+    } //!< For a Node specified by `node_id`, overwrite the entire Node::nn_ids vector.
+    //unit-tested
+    [[nodiscard]] Index nn_id(Index node_id, Index loc_nn_index)const{
+    /**
+     * @param node_id @NodeIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @return The global id of the next neighbour that was stored at the position `loc_nn_index` in the Node::nn_ids vector of the node with the id of `node_id`.
+     */
+        return data[node_id].nn_ids[loc_nn_index];
+    }   //!< Given a node id and the local index in the Node::nn_ids vector, returns the next neighbour id.
+    //unit-tested
+    void set_nn_id(Index node_id, Index loc_nn_index, Index nn_id){
+    /**
+     * @param node_id @NodeIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param nn_id @NNIDStub
+     */
+        data[node_id].nn_ids[loc_nn_index]=nn_id;
+    } //!< For a node specified by `node_id`, resets the value of the requested `nn_id`.
+    void emplace_nn_id(Index node_id, Index to_emplace_nn_id, Index loc_nn_index){
+    /**
+     * This function is a wrapper around Node::emplace_nn_id(Index , vec3<Real> const& , Index).
+     * @param node_id @NodeIDStub
+     * @param to_emplace_nn_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     */
+        data[node_id].emplace_nn_id(to_emplace_nn_id, pos(to_emplace_nn_id), loc_nn_index);
+    } //!< Emplace a the id of a new node in the Node::nn_ids vector, in front of the loc_idx position.
+
+    [[nodiscard]] const auto& nn_distances(Index node_id)const{
+    /**
+     * The order of Node::nn_distances is the same as that of Node::nn_ids, this is guaranteed by Triangulation::update_nn_distance_vectors(Index node_id)
+     * @param node_id @NodeIDStub
+     * @return Associated std::vector containing all vec3 distance vectors from the node to its neighbours, Node::nn_distances.
+     */
+        return data[node_id].nn_distances;
+    }   //!< Given a node id, returns the std::vector containing distance vectors to next neighbours.
+    [[nodiscard]] const auto& get_nn_distance_vector_between(Index node_id, Index nn_id) const{
+    /**
+     * This function is a wrapper around fp::Node::get_distance_vector_to(Index) const.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @return Looks in the Node::nn_distances vector of the node (specified by node_id) for the distance to nn_id. If the two nodes are neighbours a proper distance vector will be returned, otherwise the program will terminate.
+     * @note @TerminationNoteStub
+     */
+        return data[node_id].get_distance_vector_to(nn_id);
+    }   //!< Given two global node id's, returns a distance vector (if the nodes are neighbours).
+    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real>&& dist){
+    /**
+     * @param node_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param dist rvalue reference to a 3D distance vector (that points from node_id to its next neighbour).
+     */
+        data[node_id].nn_distances[loc_nn_index]=dist;
+    }  //!< Overwrite the next neighbour distance with a new 3d vector.
+    void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real> const& dist){
+    /**
+     * @param node_id @NNIDStub
+     * @param loc_nn_index @LocNNIndexStub
+     * @param dist lvalue constant reference to a 3D distance vector (that points from node_id to its next neighbour).
+     */
+        data[node_id].nn_distances[loc_nn_index]=dist;
+    } //!< \overload
+
+    [[nodiscard]] Index size() const { return static_cast<Index>(data.size()); } //!< Size of the Nodes data member. @return The size of the data vector which is the same as the number of the nodes.
+
+    Node<Real, Index>& operator[](Index node_id) {
+    /**
+     * Nodes[node_id] is the same as Nodes.data[node_id].
+     * @param node_id @NodeIDStub
+     * @return Reference to the Node struct with the id corresponding to node_id.
+     */
+        return data[node_id];
+    }   //!< Square bracket operator overload for convenient indexing of the Nodes struct.
+    const Node<Real, Index>& operator[](Index node_id) const {
+    /**
+     * Nodes[node_id] in constant environment is the same as Nodes.data.at(node_id).
+     * @param node_id @NodeIDStub
+     * @return Constant reference to the Node struct with the id corresponding to node_id.
+     */
+        return data.at(node_id);
+    } //!< @overload
+
+    [[nodiscard]] Json make_data() const{
+    /**
+     * @return json object that represents a serialization of the data contained in Nodes.
+     * This json object can later be used to reconstruct the Nodes object.
+     */
         Json json_data;
         for (auto& node : data) {
             json_data[std::to_string(node.id)] = {
@@ -238,7 +525,7 @@ struct Nodes
             };
         }
         return json_data;
-    }
+    } //!< Serialize the Nodes struct to a json object.
 };
 }
 #endif //FLIPPY_NODES_HPP

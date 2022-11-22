@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -107,6 +108,12 @@ $(document).ready(function(){initNavTree('structfp_1_1_neighbors.html',''); init
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_triangulation_8hpp_source.html">Triangulation.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for fp::Neighbors&lt; Index &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfp_1_1_neighbors__coll__graph.svg" width="167" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -117,76 +124,32 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a78c69e6e87ac732d788d662274eeb492"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_neighbors.html#a78c69e6e87ac732d788d662274eeb492">j_m_1</a> {-1}</td></tr>
-<tr class="memdesc:a78c69e6e87ac732d788d662274eeb492"><td class="mdescLeft">&#160;</td><td class="mdescRight">neighbor j+1  <a href="structfp_1_1_neighbors.html#a78c69e6e87ac732d788d662274eeb492">More...</a><br /></td></tr>
+<tr class="memitem:a78c69e6e87ac732d788d662274eeb492"><td class="memItemLeft" align="right" valign="top"><a id="a78c69e6e87ac732d788d662274eeb492" name="a78c69e6e87ac732d788d662274eeb492"></a>
+Index&#160;</td><td class="memItemRight" valign="bottom"><b>j_m_1</b> {<a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1">VERY_LARGE_NUMBER_</a>}</td></tr>
+<tr class="memdesc:a78c69e6e87ac732d788d662274eeb492"><td class="mdescLeft">&#160;</td><td class="mdescRight">neighbor j+1 <br /></td></tr>
 <tr class="separator:a78c69e6e87ac732d788d662274eeb492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a089ec17c7edaa1ed1fad07f703ee8368"><td class="memItemLeft" align="right" valign="top">Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfp_1_1_neighbors.html#a089ec17c7edaa1ed1fad07f703ee8368">j_p_1</a> {-1}</td></tr>
-<tr class="memdesc:a089ec17c7edaa1ed1fad07f703ee8368"><td class="mdescLeft">&#160;</td><td class="mdescRight">neighbor j-1  <a href="structfp_1_1_neighbors.html#a089ec17c7edaa1ed1fad07f703ee8368">More...</a><br /></td></tr>
+<tr class="memitem:a089ec17c7edaa1ed1fad07f703ee8368"><td class="memItemLeft" align="right" valign="top"><a id="a089ec17c7edaa1ed1fad07f703ee8368" name="a089ec17c7edaa1ed1fad07f703ee8368"></a>
+Index&#160;</td><td class="memItemRight" valign="bottom"><b>j_p_1</b> {<a class="el" href="group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1">VERY_LARGE_NUMBER_</a>}</td></tr>
+<tr class="memdesc:a089ec17c7edaa1ed1fad07f703ee8368"><td class="mdescLeft">&#160;</td><td class="mdescRight">neighbor j-1 <br /></td></tr>
 <tr class="separator:a089ec17c7edaa1ed1fad07f703ee8368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;integer_number Index&gt;<br />
-struct fp::Neighbors&lt; Index &gt;</div><p >A helper struct; makes addition and subtraction on a ring easier. Each <a class="el" href="structfp_1_1_node.html">fp::Node</a> stores its next neighbours in a vector <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">Node.nn_ids</a>, where the adjacent members in a vector are also next neighbours of each other. This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html">fp::Node</a>. </dd></dl>
+<div class="textblock"><div class="compoundTemplParams">template&lt;indexing_number Index&gt;<br />
+struct fp::Neighbors&lt; Index &gt;</div><p >A helper struct; makes addition and subtraction on a ring easier. Each <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">fp::Node</a> stores its next neighbours in a vector <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a>, where the adjacent members in a vector are also next neighbours of each other. This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">fp::Node</a>. </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Index</td><td></td></tr>
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4fd046f13a1a7c640a2a01e1d0585497" name="a4fd046f13a1a7c640a2a01e1d0585497"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fd046f13a1a7c640a2a01e1d0585497">&#9670;&#160;</a></span>minus_one()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Index <a class="el" href="structfp_1_1_neighbors.html">fp::Neighbors</a>&lt; Index &gt;::minus_one </td>
-          <td>(</td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Index&#160;</td>
-          <td class="paramname"><em>ring_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">j</td><td>index of the j-th next neighbour </td></tr>
-    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">Node.nn_ids</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>j-1</code> if <code>j &gt; 0</code> and <code>ring_size - 1</code> otherwise. I.e. if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">Node.nn_ids</a> its previous next neighbour will be stored in <code>j-1</code> element, unless <code>j</code> is the 0th element, then its previous next neighbour will be stored in the last element. </dd></dl>
-
-</div>
-</div>
 <a id="a59501864ac7f34bd676aa97d9faf68cc" name="a59501864ac7f34bd676aa97d9faf68cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59501864ac7f34bd676aa97d9faf68cc">&#9670;&#160;</a></span>plus_one()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
+template&lt;indexing_number Index&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -218,48 +181,63 @@ template&lt;integer_number Index&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">j</td><td>index of the j-th next neighbour </td></tr>
-    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">Node.nn_ids</a> </td></tr>
+    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>j+1</code> if <code>j &lt; ring_size - 1</code> and <code>0</code> otherwise. I.e. if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">Node.nn_ids</a> its next neighbour will be stored in <code>j+1</code> element, unless <code>j</code> is the last element, then its next neighbour will be stored in the 0th element. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>j+1</code> if <code>j &lt; ring_size - 1</code> and <code>0</code> otherwise. I.e. if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> its next neighbour will be stored in <code>j+1</code> element, unless <code>j</code> is the last element, then its next neighbour will be stored in the 0th element. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structfp_1_1_neighbors_a59501864ac7f34bd676aa97d9faf68cc_icgraph.svg" width="100%" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a78c69e6e87ac732d788d662274eeb492" name="a78c69e6e87ac732d788d662274eeb492"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78c69e6e87ac732d788d662274eeb492">&#9670;&#160;</a></span>j_m_1</h2>
+<a id="a4fd046f13a1a7c640a2a01e1d0585497" name="a4fd046f13a1a7c640a2a01e1d0585497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd046f13a1a7c640a2a01e1d0585497">&#9670;&#160;</a></span>minus_one()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
+template&lt;indexing_number Index&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Index <a class="el" href="structfp_1_1_neighbors.html">fp::Neighbors</a>&lt; Index &gt;::j_m_1 {-1}</td>
+          <td class="memname">static Index <a class="el" href="structfp_1_1_neighbors.html">fp::Neighbors</a>&lt; Index &gt;::minus_one </td>
+          <td>(</td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>neighbor j+1 </p>
-
-</div>
-</div>
-<a id="a089ec17c7edaa1ed1fad07f703ee8368" name="a089ec17c7edaa1ed1fad07f703ee8368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a089ec17c7edaa1ed1fad07f703ee8368">&#9670;&#160;</a></span>j_p_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_number Index&gt; </div>
-      <table class="memname">
         <tr>
-          <td class="memname">Index <a class="el" href="structfp_1_1_neighbors.html">fp::Neighbors</a>&lt; Index &gt;::j_p_1 {-1}</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>ring_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>neighbor j-1 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">j</td><td>index of the j-th next neighbour </td></tr>
+    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>j-1</code> if <code>j &gt; 0</code> and <code>ring_size - 1</code> otherwise. I.e. if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> its previous next neighbour will be stored in <code>j-1</code> element, unless <code>j</code> is the 0th element, then its previous next neighbour will be stored in the last element. </dd></dl>
 
 </div>
 </div>

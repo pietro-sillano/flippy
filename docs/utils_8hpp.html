@@ -36,6 +36,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">flippy
    </div>
+   <div id="projectbrief">a c++20 package for dynamically triangulated membrane simulations.</div>
   </td>
  </tr>
  </tbody>
@@ -99,15 +100,31 @@ $(document).ready(function(){initNavTree('utils_8hpp.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">utils.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file contains helper functions that are used throughout flippy, but are not specific to any given class.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for utils.hpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="utils_8hpp__incl.svg" width="464" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="utils_8hpp__dep__incl.svg" width="311" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 </div>
 <p><a href="utils_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -115,8 +132,29 @@ $(document).ready(function(){initNavTree('utils_8hpp.html',''); initResizable();
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefp.html">fp</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga200da317c4ff647b237dad1acec6dcd2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___globals.html#ga200da317c4ff647b237dad1acec6dcd2">fp::json_dump</a> (std::string const &amp;file_name, const Json &amp;data)</td></tr>
+<tr class="memdesc:ga200da317c4ff647b237dad1acec6dcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper function around Json objects built in dump() method.  <a href="group___globals.html#ga200da317c4ff647b237dad1acec6dcd2">More...</a><br /></td></tr>
+<tr class="separator:ga200da317c4ff647b237dad1acec6dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad562f1206f779edba9a0557e41b5a403"><td class="memItemLeft" align="right" valign="top">static Json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___globals.html#gad562f1206f779edba9a0557e41b5a403">fp::json_read</a> (std::string file_name)</td></tr>
+<tr class="memdesc:gad562f1206f779edba9a0557e41b5a403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper function that reads the content of a text file into a json object.  <a href="group___globals.html#gad562f1206f779edba9a0557e41b5a403">More...</a><br /></td></tr>
+<tr class="separator:gad562f1206f779edba9a0557e41b5a403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42171e60ff447e5c0776969445616702"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga42171e60ff447e5c0776969445616702"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___globals.html#ga42171e60ff447e5c0776969445616702">fp::is_member</a> (std::vector&lt; T &gt; const &amp;v, T const &amp;el)</td></tr>
+<tr class="memdesc:ga42171e60ff447e5c0776969445616702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient wrapper around std::find, which only works for std::vectors.  <a href="group___globals.html#ga42171e60ff447e5c0776969445616702">More...</a><br /></td></tr>
+<tr class="separator:ga42171e60ff447e5c0776969445616702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad25f6bf8c40eadd5da1a25d8dab32614"><td class="memItemLeft" align="right" valign="top">
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>fp::is_dir</b> (std::string const &amp;path)</td></tr>
+<tr class="separator:gad25f6bf8c40eadd5da1a25d8dab32614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a2c58ca349e4da0efd55ca7f9cda8c4"><td class="memItemLeft" align="right" valign="top">
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>fp::make_dir</b> (std::string const &amp;path)</td></tr>
+<tr class="separator:ga8a2c58ca349e4da0efd55ca7f9cda8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This file contains helper functions that are used throughout flippy, but are not specific to any given class. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

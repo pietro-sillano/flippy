@@ -1,18 +1,6 @@
 var searchData=
 [
-  ['scale_0',['scale',['../classfp_1_1vec3.html#ab50f5353d9f81d47a0a5b87efc7ad056',1,'fp::vec3']]],
-  ['scale_5fnode_5fcoordinates_1',['scale_node_coordinates',['../classfp_1_1_triangulation.html#a692685c96cd6a0cdba72b50adf3fb49b',1,'fp::Triangulation']]],
-  ['set_5farea_2',['set_area',['../structfp_1_1_nodes.html#ac77577ce16f2b8ff1feceb217c6853e1',1,'fp::Nodes']]],
-  ['set_5fcurvature_5fvec_3',['set_curvature_vec',['../structfp_1_1_nodes.html#a563539f00c190fb8fd9fedd6a27bc769',1,'fp::Nodes::set_curvature_vec(Index node_id, vec3&lt; Real &gt; const &amp;new_cv)'],['../structfp_1_1_nodes.html#a535f08dde803985251f08b7f02fa043a',1,'fp::Nodes::set_curvature_vec(Index node_id, vec3&lt; Real &gt; &amp;&amp;new_cv)']]],
-  ['set_5fnn_5fdistance_4',['set_nn_distance',['../structfp_1_1_nodes.html#a0019211410eea70cd8a4eecad4498992',1,'fp::Nodes::set_nn_distance(Index node_id, Index loc_nn_index, vec3&lt; Real &gt; &amp;&amp;dist)'],['../structfp_1_1_nodes.html#a7152c3eab97faef371f717aa1f144a5b',1,'fp::Nodes::set_nn_distance(Index node_id, Index loc_nn_index, vec3&lt; Real &gt; const &amp;dist)']]],
-  ['set_5fnn_5fid_5',['set_nn_id',['../structfp_1_1_nodes.html#a14a196ade9731f70eeed6446b32854ca',1,'fp::Nodes']]],
-  ['set_5fnn_5fids_6',['set_nn_ids',['../structfp_1_1_nodes.html#a8aa1bcb4a83a714a2abeaaae500a949a',1,'fp::Nodes']]],
-  ['set_5fpos_7',['set_pos',['../structfp_1_1_nodes.html#ad441e229389a483f2184c9f3ef0647f4',1,'fp::Nodes::set_pos(Index node_id, vec3&lt; Real &gt; const &amp;new_pos)'],['../structfp_1_1_nodes.html#ab0d598ecd535f690a99d81dd4e717d1e',1,'fp::Nodes::set_pos(Index node_id, vec3&lt; Real &gt; &amp;&amp;new_pos)']]],
-  ['set_5funit_5fbending_5fenergy_8',['set_unit_bending_energy',['../structfp_1_1_nodes.html#a3e0a579cae0746fc412180b0897b20ca',1,'fp::Nodes']]],
-  ['set_5fverlet_5fradius_9',['set_verlet_radius',['../classfp_1_1_triangulation.html#a81049b0ca1f364f3b6a7fa498d0a5523',1,'fp::Triangulation']]],
-  ['set_5fvolume_10',['set_volume',['../structfp_1_1_nodes.html#a4431ab5e1cf3dbc768558ae5b9132bef',1,'fp::Nodes']]],
-  ['simplenodedata_11',['SimpleNodeData',['../structfp_1_1implementation_1_1_simple_node_data.html',1,'fp::implementation']]],
-  ['size_12',['size',['../structfp_1_1_nodes.html#a00b3ff9ae4af9a804478d246a0c8c7a1',1,'fp::Nodes::size()'],['../classfp_1_1_triangulation.html#a6622782e18f9333c65cfc2403d8a5bfe',1,'fp::Triangulation::size()'],['../classfp_1_1vec3.html#a19f1aaf1e61b599d434aaa89e0e58351',1,'fp::vec3::size()']]],
-  ['spherical_5ftriangulation_13',['SPHERICAL_TRIANGULATION',['../namespacefp.html#a6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703',1,'fp']]],
-  ['subtract_14',['subtract',['../classfp_1_1vec3.html#a61388588fcc141bd691b0c1c25e201a2',1,'fp::vec3']]]
+  ['triangulation_0',['Triangulation',['../classfp_1_1_triangulation.html',1,'fp']]],
+  ['triangulation_3c_20real_2c_20index_2c_20triangulation_5ftype_20_3e_1',['Triangulation&lt; Real, Index, triangulation_type &gt;',['../classfp_1_1_triangulation.html',1,'fp']]],
+  ['triangulationtype_2',['TriangulationType',['../group___globals.html#ga6ac3c08b4c402e40a3f270818345078a',1,'fp']]]
 ];

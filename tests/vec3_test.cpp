@@ -187,8 +187,8 @@ TEST_CASE("propper arithmetic for vec3"){
 }
 
 TEST_CASE("check -v correctness"){
-    auto v = fp::vec3<float>{1.3, 6.8, 2.4};
-    auto v_min = fp::vec3<float>{-1.3, -6.8, -2.4};
+    auto v = fp::vec3<float>{1.3f, 6.8f, 2.4f};
+    auto v_min = fp::vec3<float>{-1.3f, -6.8f, -2.4f};
     CHECK(-v==v_min);
 
 }
