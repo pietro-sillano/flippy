@@ -11,7 +11,7 @@ This is the full API documentation provides the full description the public API 
 
 Information on how to get flippy and incorporate it in your project can be found in the readme of the [GitHub repository](https://github.com/flippy-software-package/flippy) under the heading **How to get it**.
 
-| \image html structure_of_flippy.png                                                                                                                                                                                                                                                                                                       |
+| \image html assets/structure_of_flippy.png                                                                                                                                                                                                                                                                                                            |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Fig. 1. `flippy`'s highest level interfaces are the `Triangulation` and the `MonteCarloUpdater` classes. The `Triangulation` class is composed of many data structures, and provides an interface to them for the user, or uses them internally for its own function. Classes named in gray with dotted outlines are not implemented but are planned. |
 
