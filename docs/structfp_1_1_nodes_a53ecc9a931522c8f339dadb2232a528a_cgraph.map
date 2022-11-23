@@ -1,0 +1,4 @@
+<map id="fp::Nodes::emplace_nn_id" name="fp::Nodes::emplace_nn_id">
+<area shape="rect" id="node1" title="Emplace a the id of a new node in the Node::nn_ids vector, in front of the loc_idx position." alt="" coords="5,5,141,45"/>
+<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#a44304df70878d39c9c55ce6cba0cec3d" title="Given a node id return the constant reference to the node position." alt="" coords="189,13,297,38"/>
+</map>
