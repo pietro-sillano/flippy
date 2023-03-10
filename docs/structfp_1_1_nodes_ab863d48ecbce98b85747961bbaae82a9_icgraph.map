@@ -1,4 +1,4 @@
 <map id="fp::Nodes::area" name="fp::Nodes::area">
-<area shape="rect" id="node1" title="Given a node id return node associated area." alt="" coords="179,5,291,31"/>
-<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#aeab72aa27fd66417ac8d5d0c9d000be6" title="Constructor from json." alt="" coords="5,5,131,31"/>
+<area shape="rect" id="node1" title="Given a node id, return node associated area." alt="" coords="179,5,291,31"/>
+<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#aeab72aa27fd66417ac8d5d0c9d000be6" title="Constructor from JSON." alt="" coords="5,5,131,31"/>
 </map>

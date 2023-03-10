@@ -138,10 +138,10 @@ Index&#160;</td><td class="memItemRight" valign="bottom"><b>j_p_1</b> {<a class=
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;indexing_number Index&gt;<br />
-struct fp::Neighbors&lt; Index &gt;</div><p>A helper struct; makes addition and subtraction on a ring easier. Each <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">fp::Node</a> stores its next neighbors in a vector <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a>, where the adjacent members in a vector are also next neighbors of each other. This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">fp::Node</a>. </dd></dl>
+struct fp::Neighbors&lt; Index &gt;</div><p>A helper struct; makes addition and subtraction on a ring easier. Each <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">fp::Node</a> stores its next neighbors in a vector <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a>, where the adjacent members in a vector are also next neighbors of each other. This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">fp::Node</a>. </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example, <code>unsigned int</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,11 +184,11 @@ template&lt;indexing_number Index&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">j</td><td>index of the j-th next neighbor </td></tr>
-    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> </td></tr>
+    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>j+1</code> if <code>j &lt; ring_size - 1</code> and <code>0</code> otherwise. I.e., if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a>, its next neighbor will be stored in <code>j+1</code> element, unless <code>j</code> is the last element, then its next neighbor will be stored in the 0th element. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>j+1</code> if <code>j &lt; ring_size - 1</code> and <code>0</code> otherwise. I.e., if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a>, its next neighbor will be stored in <code>j+1</code> element, unless <code>j</code> is the last element, then its next neighbor will be stored in the 0th element. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -249,11 +249,11 @@ template&lt;indexing_number Index&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">j</td><td>index of the j-th next neighbor </td></tr>
-    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> </td></tr>
+    <tr><td class="paramname">ring_size</td><td>corresponds to the number of elements of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>j-1</code> if <code>j &gt; 0</code> and <code>ring_size - 1</code> otherwise. I.e., if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a>, its previous next neighbor will be stored in <code>j-1</code> element, unless <code>j</code> is the 0th element, then its previous next neighbor will be stored in the last element. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>j-1</code> if <code>j &gt; 0</code> and <code>ring_size - 1</code> otherwise. I.e., if <code>j</code> is the index of <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a>, its previous next neighbor will be stored in <code>j-1</code> element, unless <code>j</code> is the 0th element, then its previous next neighbor will be stored in the last element. </dd></dl>
 
 </div>
 </div>

@@ -1,0 +1,8 @@
+<map id="flippy/vec3.hpp" name="flippy/vec3.hpp">
+<area shape="rect" id="node1" title="Header file containing the definition and implementation a 3 dimensional vector class,..." alt="" coords="121,5,232,31"/>
+<area shape="rect" id="node2" href="$_nodes_8hpp.html" title="This file contains the fp::Node and fp::Nodes classes, data structures that represent a single node o..." alt="" coords="196,79,316,104"/>
+<area shape="rect" id="node4" href="$_triangulation_8hpp.html" title="This file contains the fp::Triangulation class and several related helper classes...." alt="" coords="36,152,192,177"/>
+<area shape="rect" id="node5" href="$flippy_8hpp.html" title="This header file exists for convenience. Including this header will automatically include all parts o..." alt="" coords="236,225,346,251"/>
+<area shape="rect" id="node6" href="$_triangulator_8hpp.html" title="This file contains internal implementation details and is not part of the stable public api...." alt="" coords="23,79,172,104"/>
+<area shape="rect" id="node3" href="$_monte_carlo_updater_8hpp.html" title="This file contains the MonteCarloUpdater class template. Together with Triangulation...." alt="" coords="16,225,211,251"/>
+</map>

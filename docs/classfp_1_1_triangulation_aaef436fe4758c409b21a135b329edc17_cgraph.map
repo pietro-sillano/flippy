@@ -1,0 +1,12 @@
+<map id="fp::Triangulation::translate_all_nodes" name="fp::Triangulation::translate_all_nodes">
+<area shape="rect" id="node1" title="Adds the same 3D vector to the positions of each node of the triangulation." alt="" coords="5,53,140,93"/>
+<area shape="rect" id="node2" href="$classfp_1_1_triangulation.html#ad8102adbe7dab80cda3209844a939e30" title="Move an individual node of the triangulation and update all the geometric quantities of the triangula..." alt="" coords="188,53,311,93"/>
+<area shape="rect" id="node3" href="$classfp_1_1_triangulation.html#a3c660cb2bec69afe055843975698cfd0" title="Aggregates and Returns the geometric quantities of the center node and its next neighbor nodes." alt="" coords="369,21,527,61"/>
+<area shape="rect" id="node4" href="$classfp_1_1_triangulation.html#a1d7b2a1e57f742d1d401eeb09b057beb" title="Updates the geometric quantities of the center node and its next neighbor nodes." alt="" coords="359,85,537,125"/>
+<area shape="rect" id="node5" href="$classfp_1_1_triangulation.html#a5d5763865ac706a2e800ed306d070d68" title="Update the geometric quantities associated with the given node." alt="" coords="585,85,773,125"/>
+<area shape="rect" id="node6" href="$classfp_1_1vec3.html#ae64d6fa0ceec87d5a26cac17560f1d7c" title="Calculate cross product between two vectors." alt="" coords="847,5,956,31"/>
+<area shape="rect" id="node7" href="$classfp_1_1_triangulation.html#a3e43dfd4b4c9cfd10c5bf4174f2a85d1" title="The node&#45;associated area inside a triangle." alt="" coords="840,55,963,95"/>
+<area shape="rect" id="node9" href="$classfp_1_1vec3.html#a8568d337f067bd43b63508174f047df2" title="Returns the norm of the vector." alt="" coords="848,120,955,145"/>
+<area shape="rect" id="node10" href="$structfp_1_1_neighbors.html#a59501864ac7f34bd676aa97d9faf68cc" title=" " alt="" coords="821,169,981,195"/>
+<area shape="rect" id="node8" href="$classfp_1_1vec3.html#a3097ff5c62f8bb0da1c5e87fb9384da9" title="Calculate dot product with another vector." alt="" coords="1029,92,1124,117"/>
+</map>

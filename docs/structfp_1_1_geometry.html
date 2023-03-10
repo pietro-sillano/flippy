@@ -142,7 +142,7 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a261444235eb423476167d8185b59cd67"><td class="memItemLeft" align="right" valign="top"><a id="a261444235eb423476167d8185b59cd67" name="a261444235eb423476167d8185b59cd67"></a>
 Real&#160;</td><td class="memItemRight" valign="bottom"><b>area</b></td></tr>
-<tr class="memdesc:a261444235eb423476167d8185b59cd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Area of the patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated to the node.">Node::area</a>). <br /></td></tr>
+<tr class="memdesc:a261444235eb423476167d8185b59cd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Area of the patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated with the node.">Node::area</a>). <br /></td></tr>
 <tr class="separator:a261444235eb423476167d8185b59cd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04eb3d9d41651703001ab4601a1fd353"><td class="memItemLeft" align="right" valign="top"><a id="a04eb3d9d41651703001ab4601a1fd353" name="a04eb3d9d41651703001ab4601a1fd353"></a>
 Real&#160;</td><td class="memItemRight" valign="bottom"><b>volume</b></td></tr>
@@ -172,8 +172,8 @@ struct fp::Geometry&lt; Real, Index &gt;</div><p>A helper struct. Used by the tr
 <p><a class="el" href="structfp_1_1_geometry.html" title="A helper struct. Used by the triangulation class to pass data around in one convenient package.">Geometry</a> is a struct that contains the usually needed geometric data in a triangulation. This struct can hold such data for a single node, a collection of nodes, or the entire triangulation. In the abstract, the <a class="el" href="structfp_1_1_geometry.html" title="A helper struct. Used by the triangulation class to pass data around in one convenient package.">fp::Geometry</a> struct contains geometric data associated with some surface patch. This is useful since we often need to aggregate information for a node and its neighboring nodes.</p>
 <p>The Data members of this struct are public, and thus, it does not guarantee the correctness or consistency of the data it holds, since it can be changed externally. The geometry struct also provides overloaded arithmetic operators, that are usually useful when aggregating geometric data from single nodes over a larger patch of the surface. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Real</td><td>type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example <code>float</code>. </td></tr>
-    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
+    <tr><td class="paramname">Real</td><td>type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example, <code>float</code>. </td></tr>
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example, <code>unsigned int</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -457,7 +457,7 @@ template&lt;floating_point_number Real, indexing_number Index&gt; </div>
 </div><div class="memdoc">
 
 <p>Overloaded addition and assignment operator. </p>
-<p>Works through the use of already overloaded addition operator and simply performs <code>lhs = lhs + rhs;</code>.</p>
+<p>Works through the use of an already overloaded addition operator and simply performs <code>lhs = lhs + rhs;</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lhs</td><td></td></tr>

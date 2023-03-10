@@ -1,0 +1,6 @@
+<map id="fp::Triangulation::move_node" name="fp::Triangulation::move_node">
+<area shape="rect" id="node1" title="Move an individual node of the triangulation and update all the geometric quantities of the triangula..." alt="" coords="216,69,339,109"/>
+<area shape="rect" id="node2" href="$classfp_1_1_monte_carlo_updater.html#ac3e40c3b93bf2bf6f2b08291357503be" title="Attempt a move Monte Carlo Step." alt="" coords="9,5,164,45"/>
+<area shape="rect" id="node3" href="$classfp_1_1_triangulation.html#a692685c96cd6a0cdba72b50adf3fb49b" title="Method for stretching or squeezing the initial triangulation shape." alt="" coords="5,69,168,109"/>
+<area shape="rect" id="node4" href="$classfp_1_1_triangulation.html#aaef436fe4758c409b21a135b329edc17" title="Adds the same 3D vector to the positions of each node of the triangulation." alt="" coords="19,133,154,173"/>
+</map>

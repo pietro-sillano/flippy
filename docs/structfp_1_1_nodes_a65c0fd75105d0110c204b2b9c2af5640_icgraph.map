@@ -1,5 +1,5 @@
 <map id="fp::Nodes::nn_id" name="fp::Nodes::nn_id">
 <area shape="rect" id="node1" title="Given a node id and the local index in the Node::nn_ids vector, returns the next neighbour id." alt="" coords="236,42,355,67"/>
-<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#a8efb079f96664cee5698ccdf9e6bc080" title="Given two global node id&#39;s, returns a distance vector (if the nodes are neighbours)." alt="" coords="5,5,188,45"/>
+<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#a8efb079f96664cee5698ccdf9e6bc080" title="Given two global node ids, returns a distance vector (if the nodes are neighbors)." alt="" coords="5,5,188,45"/>
 <area shape="rect" id="node3" href="$structfp_1_1_nodes.html#a14a196ade9731f70eeed6446b32854ca" title="For a node specified by node_id, resets the value of the requested nn_id." alt="" coords="25,70,168,95"/>
 </map>

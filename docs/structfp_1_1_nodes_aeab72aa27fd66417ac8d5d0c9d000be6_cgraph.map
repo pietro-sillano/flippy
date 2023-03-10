@@ -1,9 +1,9 @@
 <map id="fp::Nodes::Nodes" name="fp::Nodes::Nodes">
-<area shape="rect" id="node1" title="Constructor from json." alt="" coords="5,129,131,155"/>
-<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#ab863d48ecbce98b85747961bbaae82a9" title="Given a node id return node associated area." alt="" coords="207,5,319,31"/>
-<area shape="rect" id="node3" href="$structfp_1_1_nodes.html#aac8eaef6c3fa8679dfafcb4018573233" title="Given a node id return the constant reference to the node curvature vector." alt="" coords="179,55,348,80"/>
+<area shape="rect" id="node1" title="Constructor from JSON." alt="" coords="5,129,131,155"/>
+<area shape="rect" id="node2" href="$structfp_1_1_nodes.html#ab863d48ecbce98b85747961bbaae82a9" title="Given a node id, return node associated area." alt="" coords="207,5,319,31"/>
+<area shape="rect" id="node3" href="$structfp_1_1_nodes.html#aac8eaef6c3fa8679dfafcb4018573233" title="Given a node id, return the constant reference to the node curvature vector." alt="" coords="179,55,348,80"/>
 <area shape="rect" id="node4" href="$structfp_1_1_nodes.html#aeaac33789677da84759647308c5f25da" title="Given a node id, returns the std::vector containing distance vectors to next neighbours." alt="" coords="181,104,345,129"/>
-<area shape="rect" id="node5" href="$structfp_1_1_nodes.html#a44304df70878d39c9c55ce6cba0cec3d" title="Given a node id return the constant reference to the node position." alt="" coords="209,153,317,179"/>
-<area shape="rect" id="node6" href="$structfp_1_1_nodes.html#ab65c2e5dd4f3b43b2445b62c400107e9" title="Given a node id return node associated unit bending energy." alt="" coords="183,203,343,243"/>
-<area shape="rect" id="node7" href="$structfp_1_1_nodes.html#a0d791117fddd2490c8223a74de6f9109" title="Given a node id return node associated volume." alt="" coords="199,268,328,293"/>
+<area shape="rect" id="node5" href="$structfp_1_1_nodes.html#a44304df70878d39c9c55ce6cba0cec3d" title="Given a node id, return the constant reference to the node position." alt="" coords="209,153,317,179"/>
+<area shape="rect" id="node6" href="$structfp_1_1_nodes.html#ab65c2e5dd4f3b43b2445b62c400107e9" title="Given a node id, return node&#45;associated unit bending energy." alt="" coords="183,203,343,243"/>
+<area shape="rect" id="node7" href="$structfp_1_1_nodes.html#a0d791117fddd2490c8223a74de6f9109" title="Given a node id, return node associated volume." alt="" coords="199,268,328,293"/>
 </map>

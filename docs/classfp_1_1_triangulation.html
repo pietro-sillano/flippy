@@ -223,11 +223,11 @@ class fp::Triangulation&lt; Real, Index, triangulation_type &gt;</div><p>Impleme
 <img src="triangulation.png" alt="" width="500px"/>
 <div class="caption">
 Figure tr 1. Visualization of the triangulation.</div></div>
-<p> <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \(N_{\mathrm{nodes}}=2252\). Black edges highlight the local neighborhood of a node. Circular arrows show the counterclockwise orientation of the nodes. This choice guarantees that all normal vectors point to the outside of the sphere. B: An arbitrary node \(i\), with its curvature vector \(\vec{K}_{i}\) and a highlighted angle \(\alpha^j_{i,j+1}\) at neighbour \(j\) opposite to the edge \(i, j+1\). Superscript \(j\) denotes the neighboring node to which the angle belongs and subscript \(i,j+1\) denotes the edge opposite of the angle. <b>C</b>: <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> \(i\) with its associated Voronoi area \(A_i\) highlighted in red. The node has an associated area inside each triangle it is part of. We also highlight the triangle \(i,j,j+1\) (light red with stripes) with the face normal \(\vec{n}_{i,j,j+1}\) and the area \(A_{i,j,j+1}\). The part of this triangle that is associated with node \(i\) is highlighted in dark red and has the area \(A_{ij}\). The convention is to use the central and rightmost nodes in the subscript. Since the nodes are ordered counterclockwise, this convention is unambiguous. <b>D</b>: Volume associated with node \(i\) is made up of tetrahedrons that have as their base the triangles that make up the Voronoi cell of the node. The head of the tetrahedron points to some lab frame origin \(\cal{O}\). \(V_{ij}\) is the part of the volume associated to node \(i\) that has its base in the triangle \(i,j,j+1\).</p>
+<p> <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \(N_{\mathrm{nodes}}=2252\). Black edges highlight the local neighborhood of a node. Circular arrows show the counterclockwise orientation of the nodes. This choice guarantees that all normal vectors point to the outside of the sphere. B: An arbitrary node \(i\), with its curvature vector \(\vec{K}_{i}\) and a highlighted angle \(\alpha^j_{i,j+1}\) at neighbour \(j\) opposite to the edge \(i, j+1\). Superscript \(j\) denotes the neighboring node to which the angle belongs and subscript \(i,j+1\) denotes the edge opposite of the angle. <b>C</b>: <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a> \(i\) with its associated Voronoi area \(A_i\) highlighted in red. The node has an associated area inside each triangle it is part of. We also highlight the triangle \(i,j,j+1\) (light red with stripes) with the face normal \(\vec{n}_{i,j,j+1}\) and the area \(A_{i,j,j+1}\). The part of this triangle that is associated with node \(i\) is highlighted in dark red and has the area \(A_{ij}\). The convention is to use the central and rightmost nodes in the subscript. Since the nodes are ordered counterclockwise, this convention is unambiguous. <b>D</b>: Volume associated with node \(i\) is made up of tetrahedrons that have as their base the triangles that make up the Voronoi cell of the node. The head of the tetrahedron points to some lab frame origin \(\cal{O}\). \(V_{ij}\) is the part of the volume associated to node \(i\) that has its base in the triangle \(i,j,j+1\).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Real</td><td>type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example <code>float</code>. </td></tr>
-    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example <code>unsigned int</code>. </td></tr>
+    <tr><td class="paramname">Real</td><td>type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example, <code>float</code>. </td></tr>
+    <tr><td class="paramname">Index</td><td>type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example, <code>unsigned int</code>. </td></tr>
     <tr><td class="paramname">triangulation_type</td><td>Template parameter that specifies the type of triangulation to be created. This parameter must be chosen from the <a class="el" href="group___globals.html#ga6ac3c08b4c402e40a3f270818345078a" title="This enum defines named types of triangulations that are implemented in flippy.">fp::TriangulationType</a> <code>enum</code>. Defaulted to <a class="el" href="group___globals.html#gga6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703" title="Create a spherical triangulation which is a sub-triangulation of a regular icosahedron.">fp::SPHERICAL_TRIANGULATION</a>. </td></tr>
   </table>
   </dd>
@@ -430,7 +430,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Create a <a href="https://en.wikipedia.org/wiki/Verlet_list">Verlet list</a>. </p>
-<p>This method creates a Verlet list for each node of the triangulation. All nodes that are inside the <code>verlet_radius</code>, of a given node, are included in its Verlet list (<a class="el" href="structfp_1_1_node.html#aff4450fcb2eb2524fcb0c9025b69bc6a" title="Verlet list contains the ids of nodes that are close to this node.">Node.verlet_list</a>), </p>
+<p>This method creates a Verlet list for each node of the triangulation. All nodes that are inside the <code>verlet_radius</code>, of a given node, are included in its Verlet list (<a class="el" href="structfp_1_1_node.html#aff4450fcb2eb2524fcb0c9025b69bc6a" title="The Verlet list contains the ids of nodes that are close to this node.">Node.verlet_list</a>), </p>
 
 </div>
 </div>
@@ -556,7 +556,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <p>Move an individual node of the triangulation and update all the geometric quantities of the triangulation that changed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
     <tr><td class="paramname">displacement_vector</td><td>3D vector by which the chosen node is to be displaced. </td></tr>
   </table>
   </dd>
@@ -635,11 +635,11 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 
 <p>Adds a new node to the next neighbor list of a given node and calculates their mutual distance. </p>
 <dl class="section note"><dt>Note</dt><dd>The direct use of this method is discouraged unless a very specific type of edge flipping is required. <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation::flip_bond</a> is a more high-level method, suitable for most basic bond-flipping needs.</dd></dl>
-<p>This method finds the anchor node in the <a class="el" href="structfp_1_1_nodes.html#aa149044ed9e33aa0560311362cd2c660" title="Given a node id and a new value for the node associated unit bending energy, update the current value...">Nodes::nn_ids</a> vector of the center_node and uses <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> classes own method <a class="el" href="structfp_1_1_node.html#aefc063b2ef6645bfea2e258260a5236a">Node::emplace_nn_id</a> to emplace the new_value there (together with its distance to the center_node). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This method finds the anchor node in the <a class="el" href="structfp_1_1_nodes.html#aa149044ed9e33aa0560311362cd2c660" title="Given a node id and a new value for the node-associated unit bending energy, update the current value...">Nodes::nn_ids</a> vector of the center_node and uses <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a> classes own method <a class="el" href="structfp_1_1_node.html#aefc063b2ef6645bfea2e258260a5236a">Node::emplace_nn_id</a> to emplace the new_value there (together with its distance to the center_node). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">center_node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. The new node is emplaced in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node.nn_ids</a> vector of this node. </td></tr>
-    <tr><td class="paramname">anchor_id</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector, which is a number between 0 and Node::nn_ids.size() - 1. This is the index of the next neighbor (inside <code>nn_ids</code> vector of the node <code>center_node_id</code>), before which the new node id is emplaced. </td></tr>
-    <tr><td class="paramname">new_value</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. The id of the new node. </td></tr>
+    <tr><td class="paramname">center_node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. The new node is emplaced in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node.nn_ids</a> vector of this node. </td></tr>
+    <tr><td class="paramname">anchor_id</td><td>Local index in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node::nn_ids</a> vector, a number between 0 and Node::nn_ids.size() - 1. This is the index of the next neighbor (inside <code>nn_ids</code> vector of the node <code>center_node_id</code>), before which the new node id is emplaced. </td></tr>
+    <tr><td class="paramname">new_value</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. The id of the new node. </td></tr>
   </table>
   </dd>
 </dl>
@@ -707,7 +707,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Securely flip the bond inside a quadrilateral formed by the nodes given by node_id, nn_id and their two common next neighbors, if all topological requirements are satisfied. </p>
-<p><em>flip_bond</em> function takes a lot of care to keep the triangulation intact, i.e., not introduce holes or additional bonds in it. To this end, the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology. The information if the flip was allowed and succeeded or not will be encoded in <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct, which this function will return. The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip. A bond flip can fail if:</p><ul>
+<p><em>flip_bond</em> function takes a lot of care to keep the triangulation intact, i.e., not introduce holes or additional bonds in it. To this end, the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology. The information if the flip was allowed and succeeded or not will be encoded in the <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct, which this function will return. The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip. A bond flip can fail if:</p><ul>
 <li>if the provided nodes id's do not correspond to neighboring nodes.</li>
 <li>one of the donor nodes have already too few bonds (bonds less than <a class="el" href="group___globals.html#ga1f3b45f2b89de3c4508d87fca78f2a16" title="a node needs to have more than the cutoff number of bonds to be allowed to donate one">BOND_DONATION_CUTOFF</a>).</li>
 <li>if a new bond that would be created, would be<ul>
@@ -718,15 +718,15 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbor <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
     <tr><td class="paramname">min_bond_length_square</td><td>Square of the <b>minimal</b> allowed bond length, in the triangulation. </td></tr>
     <tr><td class="paramname">max_bond_length_square</td><td>Square of the <b>maximal</b> allowed bond length, in the triangulation. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If the flip was successful, the returned <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct will contain a boolean state variable <a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245" title="track if the bond was flipped.">BondFlipData::flipped</a> = <b>true</b>. The members <a class="el" href="structfp_1_1_bond_flip_data.html#af28b1b0fb90fcd3bf5a0363bf89569a9" title="Global id of a node that is supposed to receive a bond after a flip.">BondFlipData::common_nn_0</a> and <a class="el" href="structfp_1_1_bond_flip_data.html#a5792fe8f43d65f6aba3d0acd22dabf57" title="Global id of a node that is supposed to receive a bond after a flip.">BondFlipData::common_nn_1</a> will contain global ids of new end nodes of the flipped bond. If the flip was not successful, then a default initialized <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> struct will be returned with <a class="el" href="structfp_1_1_bond_flip_data.html#a7723f26e8083b2d90c3e13e2dde08245" title="track if the bond was flipped.">BondFlipData::flipped</a> = <b>false</b>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Regardless of the return values, the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Regardless of the return values, the primary purpose of the function, that of flipping a bond, is accomplished as a side-effect.</dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -803,7 +803,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <p>This method reverses a flip between two nodes that used to be connected and had their node just flipped away, provided their id's and the <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> that holds the information on the current bond holders.</p>
 <p>This means that <code>node_id</code> and <code>nn_id</code> are (pre-flip) owners of the bond. And <code>common_nns</code> contains the id's of the current bond owners (to which the bond was flipped to). The edge will be taken away from the current two neighbors and added to the previous owners. All geometric information of the triangulation will be updated.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This method only works correctly if there were no bond flips after that flip which is being reversed. I.e., this method can only reverse the last flip. Furthermore, the method assumes that the arguments are provided correctly and will result in an illegal triangulation if this is not the case.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This method does not check the validity of its input to provide a fast way of flip reversal. It relies on the fact that the user usually has the exact knowledge of all four node id's that participated in a flipp and can provide those id's in the correct order. For a safer way of un-fliping the <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation::flip_bond</a> method can be used twice, with interchanged order of arguments.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method does not check the validity of its input to provide a fast way of flip reversal. It relies on the fact that the user usually has the exact knowledge of all four node id's that participated in a flip and can provide those id's in the correct order. For a safer way of un-fliping, the <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation::flip_bond</a> method can be used twice, with interchanged order of arguments.</dd></dl>
 <p>The following example implementation of a Monte Carlo flip update method shows the proper way to use the <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation.flip_bond</a> and <a class="el" href="classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa" title="Un-flip a bond that was just flipped.">Triangulation.unflip_bond</a> methods.</p>
 <div class="fragment"><div class="line">{c++}</div>
 <div class="line"> <span class="comment">// `e_old`, `e_new`, `triangulation and `parameters` are data members of the updater</span></div>
@@ -818,14 +818,14 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <div class="line">          <span class="keywordflow">if</span> (move_needs_undoing()) { triangulation.unflip_bond(node.<a class="code hl_variable" href="structfp_1_1_node.html#a4743d523ce7d4e1ea613d685af1da9be">id</a>, nn_id, bond_flip_data); }</div>
 <div class="line">      }</div>
 <div class="line">  }</div>
-<div class="ttc" id="astructfp_1_1_node_html"><div class="ttname"><a href="structfp_1_1_node.html">fp::Node</a></div><div class="ttdoc">Data structure containing all geometric and topological information associated to a node.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:30</div></div>
-<div class="ttc" id="astructfp_1_1_node_html_a4743d523ce7d4e1ea613d685af1da9be"><div class="ttname"><a href="structfp_1_1_node.html#a4743d523ce7d4e1ea613d685af1da9be">fp::Node::id</a></div><div class="ttdeci">Index id</div><div class="ttdoc">Global id of the Node which is a number between 0 and max_number_of_nodes - 1.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:32</div></div>
-<div class="ttc" id="astructfp_1_1_node_html_ae2e0c5a97ae4f47cff41a692ac6ce79a"><div class="ttname"><a href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">fp::Node::nn_ids</a></div><div class="ttdeci">std::vector&lt; Index &gt; nn_ids</div><div class="ttdoc">Vector containing the global ids of current node's next neighbours.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:93</div></div>
+<div class="ttc" id="astructfp_1_1_node_html"><div class="ttname"><a href="structfp_1_1_node.html">fp::Node</a></div><div class="ttdoc">A data structure containing all geometric and topological information associated with a node.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:30</div></div>
+<div class="ttc" id="astructfp_1_1_node_html_a4743d523ce7d4e1ea613d685af1da9be"><div class="ttname"><a href="structfp_1_1_node.html#a4743d523ce7d4e1ea613d685af1da9be">fp::Node::id</a></div><div class="ttdeci">Index id</div><div class="ttdoc">Global id of the Node, which is a number between 0 and max_number_of_nodes - 1.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:32</div></div>
+<div class="ttc" id="astructfp_1_1_node_html_ae2e0c5a97ae4f47cff41a692ac6ce79a"><div class="ttname"><a href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a">fp::Node::nn_ids</a></div><div class="ttdeci">std::vector&lt; Index &gt; nn_ids</div><div class="ttdoc">A vector containing the global ids of the current node's next neighbors.</div><div class="ttdef"><b>Definition:</b> Nodes.hpp:93</div></div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation.flip_bond</a> <a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbor <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
     <tr><td class="paramname">common_nns</td><td><a class="el" href="structfp_1_1_bond_flip_data.html" title="A helper struct; keeps track of bond flips.">BondFlipData</a> containing information on the common next neighbor ids. </td></tr>
   </table>
   </dd>
@@ -908,10 +908,10 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 <p>Exchange the next neighborhood between four nodes in a manner that will correspond to a bond flip if the provided information was correct. </p><dl class="section warning"><dt>Warning</dt><dd>This method may lead to an unphysical state (broken lattice that no longer represents a triangulation) if the provided arguments are not correct. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>For most use-cases the high level methods <a class="el" href="classfp_1_1_triangulation.html#a6833f13e1fd24b039ca1ad2969b8d267" title="Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,...">Triangulation::flip_bond</a> and Triangulation::unflilp_bond are recommended. They guarantee that the performed flips result in a legal triangulation and reject the flip otherwise. This method should only be used by advanced users that have very specific needs for a flip updater.</dd></dl>
-<p>The correct functioning of this method requires that, <code>node_id</code> and <code>nn_id</code> need to be next neighbours, and <code>common_nn_j_m_1</code> and <code>common_nn_j_p_1</code> need to be common next neighbors of both <code>node_id</code> and <code>nn_id</code>. Moreover, the nodes need to be ordered in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="Vector containing the global ids of current node&#39;s next neighbours.">Node::nn_ids</a> vector of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> represented by <code>node_id</code> as follows: <code>... common_nn_j_m_1, node_id, common_nn_j_p_1 ...</code>, or a cyclic permutation thereof. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The correct functioning of this method requires that, <code>node_id</code> and <code>nn_id</code> need to be next neighbours, and <code>common_nn_j_m_1</code> and <code>common_nn_j_p_1</code> need to be common next neighbors of both <code>node_id</code> and <code>nn_id</code>. Moreover, the nodes need to be ordered in the <a class="el" href="structfp_1_1_node.html#ae2e0c5a97ae4f47cff41a692ac6ce79a" title="A vector containing the global ids of the current node&#39;s next neighbors.">Node::nn_ids</a> vector of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a> represented by <code>node_id</code> as follows: <code>... common_nn_j_m_1, node_id, common_nn_j_p_1 ...</code>, or a cyclic permutation thereof. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbour <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the next neighbor <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
     <tr><td class="paramname">common_nn_j_m_1</td><td></td></tr>
     <tr><td class="paramname">common_nn_j_p_1</td><td></td></tr>
   </table>
@@ -969,10 +969,10 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 
 <p>Update the geometric quantities associated with the given node. </p>
 <p>This is the core update function of the triangulation. It updates the geometric quantities of the given node after its position in the triangulation has been changed through a node move, or its neighborhood structure has been changed through a bond flip. Calculate and update the local curvature, area, volume, and unit bending energy of the node (See Figure tr1 B, C and D).</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html#a2b801251ab545ad8d931d09583920537" title="Curvature vector of the node.">Node::curvature_vec</a>, <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated to the node.">Node::area</a>, <a class="el" href="structfp_1_1_node.html#ae0618b10496535a019b5a99cdc721dca" title="If the node is part of a closed surface triangulation, then the volume contains the volume of the tet...">Node::volume</a>, <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structfp_1_1_node.html#a2b801251ab545ad8d931d09583920537" title="Curvature vector of the node.">Node::curvature_vec</a>, <a class="el" href="structfp_1_1_node.html#a740dc7b51916c9ac29674b7c6dae5dbc" title="Voronoi area associated with the node.">Node::area</a>, <a class="el" href="structfp_1_1_node.html#ae0618b10496535a019b5a99cdc721dca" title="If the node is part of a closed surface triangulation, then the volume contains the volume of the tet...">Node::volume</a>, <a class="el" href="structfp_1_1_node.html#a65a475a50241308f3dd99313c2760f26" title="unit_bending_energy corresponds to the Helfrich bending energy with bending rigidity 1 and gaussian b...">Node::unit_bending_energy</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1262,7 +1262,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Aggregates and Returns the geometric quantities of the center node and its next neighbor nodes. </p>
-<p>This function aggregates area volume and squared curvature integrated over the area for the two-ring of the associated with the node, using the stored quantities. Two ring refers to the second concentric ring of next nearest neighbour nodes, surrounding the center node.</p>
+<p>This function aggregates area volume and squared curvature integrated over the area for the two-ring of the associated with the node, using the stored quantities. Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node_id</td><td></td></tr>
@@ -1312,9 +1312,9 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Updates the geometric quantities of the center node and its next neighbor nodes. </p>
-<p>This function calculates and updates the area volume and squared curvature integrated over the area for the two-ring of the associated with the node. Two ring refers to the second concentric ring of next nearest neighbour nodes, surrounding the center node. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This function calculates and updates the area volume and squared curvature integrated over the area for the two-ring of the associated with the node. Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1470,7 +1470,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Aggregates the geometric quantities of the diamond configuration of nodes associated with a bond flip. </p>
-<div class="fragment"><div class="line">State of the diamond which contains all <span class="keywordflow">for</span> <a class="code hl_function" href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">nodes</a> that participate in a bond flip.</div>
+<div class="fragment"><div class="line">State of the diamond, which contains all <a class="code hl_function" href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">nodes</a> that participate in a bond flip.</div>
 <div class="line"> before the flip</div>
 <div class="line"> </div>
 <div class="line">     common nn 1</div>
@@ -1483,10 +1483,10 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <div class="ttc" id="aclassfp_1_1_triangulation_html_aeeb65b7f5974560fc57e20b50cf73b41"><div class="ttname"><a href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">fp::Triangulation::nodes</a></div><div class="ttdeci">const Nodes&lt; Real, Index &gt; &amp; nodes() const</div><div class="ttdoc">Returns a constant reference to the underlying Nodes container.</div><div class="ttdef"><b>Definition:</b> Triangulation.hpp:875</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">nn_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">cnn_0</td><td>Global id of th common next nearest neighbour of node_id and nn_id. </td></tr>
-    <tr><td class="paramname">cnn_1</td><td>Global id of th common next nearest neighbour of node_id and nn_id. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">cnn_0</td><td>Global id of the common next nearest neighbor of node_id and nn_id. </td></tr>
+    <tr><td class="paramname">cnn_1</td><td>Global id of the common next nearest neighbor of node_id and nn_id. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1553,7 +1553,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Calculates and updates the geometric quantities of the diamond configuration of nodes associated with a bond flip. </p>
-<div class="fragment"><div class="line">State of the diamond which contains all <span class="keywordflow">for</span> <a class="code hl_function" href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">nodes</a> that participate in a bond flip.</div>
+<div class="fragment"><div class="line">State of the diamond, which contains all <a class="code hl_function" href="classfp_1_1_triangulation.html#aeeb65b7f5974560fc57e20b50cf73b41">nodes</a> that participate in a bond flip.</div>
 <div class="line"> before the flip</div>
 <div class="line"> </div>
 <div class="line">     common nn 1</div>
@@ -1565,10 +1565,10 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <div class="line">    common nn 0</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">nn_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
-    <tr><td class="paramname">cnn_0</td><td>Global id of th common next nearest neighbour of node_id and nn_id. </td></tr>
-    <tr><td class="paramname">cnn_1</td><td>Global id of th common next nearest neighbour of node_id and nn_id. </td></tr>
+    <tr><td class="paramname">node_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">nn_id</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">cnn_0</td><td>Global id of the common next nearest neighbor of node_id and nn_id. </td></tr>
+    <tr><td class="paramname">cnn_1</td><td>Global id of the common next nearest neighbor of node_id and nn_id. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1659,7 +1659,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 <p>Returns a constant reference to the node with the given id. </p>
 <p><a class="el" href="classfp_1_1_triangulation.html" title="Implementation of Triangulation of two-dimensional surfaces in 3D.">Triangulation</a> will never give non-constant access to a node. In order to change a node, one has to use the methods of the <a class="el" href="classfp_1_1_triangulation.html" title="Implementation of Triangulation of two-dimensional surfaces in 3D.">Triangulation</a> class. This guarantees that the triangulation is always in a consistent state. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">idx</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="Data structure containing all geometric and topological information associated to a node.">Node</a> which is a number between 0 and max_number_of_nodes - 1. </td></tr>
+    <tr><td class="paramname">idx</td><td>Global id of the <a class="el" href="structfp_1_1_node.html" title="A data structure containing all geometric and topological information associated with a node.">Node</a>, which is a number between 0 and max_number_of_nodes - 1. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1754,7 +1754,7 @@ template&lt;floating_point_number Real, indexing_number Index, <a class="el" hre
 </div><div class="memdoc">
 
 <p>Information about the global geometric quantities of the triangulation, like global area, volume, and total unit bending energy. </p>
-<dl class="section return"><dt>Returns</dt><dd>Geometric quantities of the triangulation, aggregated over all nodes. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Geometric quantities of the triangulation aggregated over all nodes. </dd></dl>
 
 </div>
 </div>

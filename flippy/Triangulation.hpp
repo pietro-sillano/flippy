@@ -265,23 +265,23 @@ enum TriangulationType{
 /**
  * \brief Implementation of Triangulation of two-dimensional surfaces in 3D.
  * \image html assets/triangulation.png "Figure tr 1. Visualization of the triangulation."  width=500px
- <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \f$N_{\mathrm{nodes}}=2252\f$. Black edges highlight the local neighborhood of a node.
-Circular arrows show the counterclockwise orientation of the nodes.
-This choice guarantees that all normal vectors point to the outside of the sphere.
-B: An arbitrary node \f$i\f$, with its curvature vector \f$\vec{K}_{i}\f$ and a highlighted angle \f$\alpha^j_{i,j+1}\f$
-at neighbour \f$j\f$ opposite to the edge \f$i, j+1\f$. Superscript \f$j\f$ denotes the neighboring node to which the angle
-belongs and subscript \f$i,j+1\f$ denotes the edge opposite of the angle.
-<b>C</b>: Node \f$i\f$ with its associated Voronoi area \f$A_i\f$ highlighted in red.
-The node has an associated area inside each triangle it is part of.
-We also highlight the triangle \f$i,j,j+1\f$ (light red with stripes) with the
-face normal \f$\vec{n}_{i,j,j+1}\f$ and the area \f$A_{i,j,j+1}\f$.
-The part of this triangle that is associated with node \f$i\f$ is highlighted in dark red and has the area \f$A_{ij}\f$.
-The convention is to use the central and rightmost nodes in the subscript.
-Since the nodes are ordered counterclockwise, this convention is unambiguous.
-<b>D</b>: Volume associated with node \f$i\f$ is made up of tetrahedrons
-that have as their base the triangles that make up the Voronoi cell of the node.
-The head of the tetrahedron points to some lab frame origin \f$\cal{O}\f$. \f$V_{ij}\f$ is the part of the volume
-associated to node \f$i\f$ that has its base in the triangle \f$i,j,j+1\f$.
+ * <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \f$N_{\mathrm{nodes}}=2252\f$. Black edges highlight the local neighborhood of a node.
+ * Circular arrows show the counterclockwise orientation of the nodes.
+ * This choice guarantees that all normal vectors point to the outside of the sphere.
+ * B: An arbitrary node \f$i\f$, with its curvature vector \f$\vec{K}_{i}\f$ and a highlighted angle \f$\alpha^j_{i,j+1}\f$
+ * at neighbour \f$j\f$ opposite to the edge \f$i, j+1\f$. Superscript \f$j\f$ denotes the neighboring node to which the angle
+ * belongs and subscript \f$i,j+1\f$ denotes the edge opposite of the angle.
+ * <b>C</b>: Node \f$i\f$ with its associated Voronoi area \f$A_i\f$ highlighted in red.
+ * The node has an associated area inside each triangle it is part of.
+ * We also highlight the triangle \f$i,j,j+1\f$ (light red with stripes) with the
+ * face normal \f$\vec{n}_{i,j,j+1}\f$ and the area \f$A_{i,j,j+1}\f$.
+ * The part of this triangle that is associated with node \f$i\f$ is highlighted in dark red and has the area \f$A_{ij}\f$.
+ * The convention is to use the central and rightmost nodes in the subscript.
+ * Since the nodes are ordered counterclockwise, this convention is unambiguous.
+ * <b>D</b>: Volume associated with node \f$i\f$ is made up of tetrahedrons
+ * that have as their base the triangles that make up the Voronoi cell of the node.
+ * The head of the tetrahedron points to some lab frame origin \f$\cal{O}\f$. \f$V_{ij}\f$ is the part of the volume
+ * associated to node \f$i\f$ that has its base in the triangle \f$i,j,j+1\f$.
  *
  *
  * @tparam Real @RealStub
