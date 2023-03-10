@@ -148,7 +148,7 @@ public:
                     .id=i,
                     .pos=r_S1(R,
                             static_cast<Real>(M_PI/2. - std::atan(0.5)),
-                            static_cast<Real>(2.*M_PI*(i - 1.)/5.))};
+                            static_cast<Real>(2.*M_PI*(static_cast<Real>(i) - 1.)/5.))};
         }
 
         for (Index i = 6; i<N_ICOSA_NODEs - 1; ++i) {
@@ -158,7 +158,7 @@ public:
                     .id=i,
                     .pos=r_S1(R,
                             static_cast<Real>(M_PI/2. + std::atan(0.5)),
-                            static_cast<Real>(2.*M_PI*(i - 6.5)/5.))};
+                            static_cast<Real>(2.*M_PI*(static_cast<Real>(i) - 6.5)/5.))};
         }
         hash = hash_node(N_ICOSA_NODEs - 1);
         base_nodes[hash] = {
