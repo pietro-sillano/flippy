@@ -1,4 +1,4 @@
-/**
+/*
  *```txt
  *
  *  .d888 888 d8b
@@ -13,7 +13,7 @@
  *                888      888      Y8b d88P
  *                888      888       "Y88P"
  *
- * https://gitlab.tudelft.nl/idema-group/flippy
+ * https://github.com/flippy-software-package/flippy
  *
  *
  * MIT License
@@ -42,14 +42,6 @@
 
 
 
-// begin --- .DS_Store --- 
-
-Bud1	itiesbw	utilitiesbwspblob∫bplist00÷	]ShowStatusBar[ShowToolbar[ShowTabView_ContainerShowSidebar\WindowBounds[ShowSidebar			_{{2052, 465}, {1393, 777}}	#/;R_klmnoåç	utilitiesvSrnlong @Ä @Ä @Ä @E	DSDB `Ä @Ä @Ä @
-
-// end --- .DS_Store --- 
-
-
-
 // begin --- utilities --- 
 
 
@@ -70,6 +62,11 @@
 
 #ifndef FLIPPY_TRIANGULATOR_HPP
 #define FLIPPY_TRIANGULATOR_HPP
+/**
+ * @file
+ * @brief This file contains internal implementation details and is not part of the stable public api.
+ * The classes and methods implemented here are responsible for creating the intitial triangulations.
+ */
 
 #include <array>
 #include <vector>
@@ -81,7 +78,10 @@
 #ifndef FLIPPY_CUSTOM_CONCEPTS_HPP
 #define FLIPPY_CUSTOM_CONCEPTS_HPP
 #include <concepts>
-
+/**
+ * @file
+ * @brief This file contains the concepts that are costomly defined for the flippy class templates.
+ */
 namespace fp{
 /**
  * @defgroup myConcepts Special concepts
@@ -121,6 +121,12 @@ template<class T> concept indexing_number = std::is_unsigned_v<T> && std::is_int
 
 #ifndef FLIPPY_VEC3_HPP
 #define FLIPPY_VEC3_HPP
+/**
+ * @file
+ * @brief Header file containing the definition and implementation a 3 dimensional vector class, with useful
+ * mathematical operations like cross and dot products as member methods.
+ */
+
 
 #include <ostream>
 #include <iostream>
@@ -128,8 +134,9 @@ template<class T> concept indexing_number = std::is_unsigned_v<T> && std::is_int
 
 
 namespace fp{
+
 /**
- * Internal implementation of a 3D vector.
+ * \brief Internal implementation of a 3D vector.
  *
  * !!! vec3 does not throw !!! This means that if you ask vec3 to divide a vector by 0 or more realistically if you
  * normalize a zero length vector vec3 will not check for the division by zero and will return a nan result!
@@ -147,12 +154,18 @@ namespace fp{
  *  assert(v1.cross(v2).norm()==1);
  *  assert(((v1-v2)==fp::vec3<double>{1.,0.,-1.}));
  * ```
+ *
+ * @tparam Real @RealStub
  */
+
 template<floating_point_number Real>
 class vec3
 {
 public:
-    Real x, y, z;
+
+    Real x; //!< The x component of the vector.
+    Real y; //!< The y component of the vector.
+    Real z; //!< The z component of the vector.
 
     //! In place addition method.
     /**
@@ -187,25 +200,56 @@ public:
         y -= v.y;
         z -= v.z;
     }
-
+    //! Scale the vector by a real number s.
+    /**
+     * This function scales the vector in-place by the provided number `s`.
+     * @param s multiplicative prefactor.
+     */
     void scale(Real s)
     {
-        /**
-         * scale the vector by a real number s
-         */
         x = s*x;
         y = s*y;
         z = s*z;
     }
 
+    //! Calculate dot product with another vector.
+    /**
+     * Example:
+     * @code{c++}
+     * fp::vec3<double> v1{1,0,0};
+     * fp::vec3<double> v2{2,0,1};
+     * double res = v1.dot(v2);  // res will contain 2*1 + 0*0 + 0*1=2
+     * @endcode
+     * @param v the other vec3 vector
+     * @return result of the dot product between the original vector and `v`.
+     */
     Real dot(vec3<Real> const& v) const
     {
         Real res = x*v.x + y*v.y + z*v.z;
         return res;
     }
 
+    //! Always returns 3.
+    /**
+     * This function always returns 3 since vec3 can only have three elements.
+     * It was implemented for completeness, to make it more easy for vec3 to be used as a drop-in replacement for other vector types.
+     * @return Size (number of elements) of vec3.
+     */
     [[nodiscard]] constexpr std::size_t size() const { return 3; }
 
+    //! Calculate cross product between two vectors.
+    /**
+     * A static method to calculate cross product between two vectors.
+     * Example:
+     * @code{c++}
+     * fp::vec3<double> v1{1,0,0};
+     * fp::vec3<double> v2{0,1,0};
+     * fp::vec3<double> v3 = cross(v1, v2);  // v3 will contain {0,0,1}
+     * @endcode
+     * @param a first vector of the cross product
+     * @param b second vector of the cross product
+     * @return result of the cross product between the original vector and `v`.
+     */
     static inline vec3<Real> cross(vec3<Real> const& a, vec3<Real> const& b)
     {
         vec3<Real> res;
@@ -215,77 +259,175 @@ public:
         return res;
     }
 
+    //! Calculate cross product with another vector.
+    /**
+     * Example:
+     * @code{c++}
+     * fp::vec3<double> v1{1,0,0};
+     * fp::vec3<double> v2{0,1,0};
+     * fp::vec3<double> v3 = v1.cross(v2);  // v3 will contain {0,0,1}
+     * @endcode
+     * @param other the other vec3 vector.
+     * @return result of the cross product between the original vector and `other`.
+     */
     vec3<Real> cross(vec3<Real> const& other) const { return cross(*this, other); }
 
+    //! Returns the norm of the vector.
+    /**
+     * Example:
+     * @code{c++}
+     * fp::vec3<double> v{1,0,1};
+     * double res = v.norm();  // res will contain 1,4142135624... i.e. sqrt(2)
+     * @endcode
+     * @return The euclidian norm of the vector.
+     */
     Real norm() const { return std::sqrt(this->dot(*this)); }
 
+    //! Returns the square of the norm of the vector.
+    /**
+     * Example:
+     * @code{c++}
+     * fp::vec3<double> v{1,0,1};
+     * double res = v.norm_square();  // res will contain 2
+     * @endcode
+     * @return Square of the euclidian norm of the vector.
+     */
     Real norm_square() const { return this->dot(*this); }
 
+    //! Normalize the vector in place. And return a reference to the new normalized vector.
+    /**
+     * @warning If you normalize a zero length vector, you effectively
+     * demand to divide by zero! this function will not do a security check
+     * for you and will just return nan!
+     * @return Reference to the normalized vector.
+     */
     vec3<Real>const& normalize(){
-        /**
-         * normalize vector in place. And return a reference.
-         *
-         * IMPORTANT: if you normalize a zero length vector, you effectively
-         * demand to divide by zero! this function will not do a security check
-         * for you and will just return nan!
-         */
         *this= *this/this->norm();
         return *this;
     }
 
+    //! Streaming operator for easy printing of the vector.
     friend std::ostream& operator<<(std::ostream& os, const vec3<Real>& obj)
     {
         os << "{" << obj.x << ',' << obj.y << ',' << obj.z << '}';
         return os;
     }
 
+    //! default equality operator.
+    /**
+     * @param other  vec3 on the right hand side of the comparison operator.
+     * @return `true` if all elements of the compared vectors are equal and to `false` otherwise.
+     */
     bool operator==(vec3<Real> const& other) const =default;
 
 
-    // mathematical operations
+    //! Overloaded operator defined in terms of vec2::add.
+    /**
+     *
+     * @param lhs left hand side of the `+` operator
+     * @param rhs right hand side oif the `+` operator
+     * @return equivalent to a new copy of `lhs.add(rhs)`.
+     */
     friend vec3<Real> operator+(vec3<Real> lhs, vec3<Real> const& rhs)
     {
         lhs+=rhs;
         return lhs;
     }
 
+    //! Overloaded operator defined in terms of vec3::add.
+    /**
+     * Equivalent to `lhs.add(rhs)`.
+     * @param lhs left hand side of the `+=` operator
+     * @param rhs right hand side oif the `+=` operator
+     */
     friend void operator+=(vec3<Real>& lhs, vec3<Real> const& rhs)
     {
         lhs.add(rhs);
     }
 
+    //! Overloaded operator defined in terms of vec3::subtract.
+    /**
+     *
+     * @param lhs left hand side of the `-` operator
+     * @param rhs right hand side oif the `-` operator
+     * @return equivalent to a new copy of `lhs.subtract(rhs)`.
+     */
     friend vec3<Real> operator-(vec3<Real> lhs, vec3<Real> const& rhs)
     {
         lhs-=rhs;
         return lhs;
     }
 
+    //! Overloaded operator defined in terms of vec3::subtract.
+    /**
+     * Equivalent to `lhs.subtract(rhs)`.
+     * @param lhs left hand side of the `-=` operator
+     * @param rhs right hand side oif the `-=` operator
+     */
     friend void operator-=(vec3<Real>& lhs, vec3<Real> const& rhs)
     {
         lhs.subtract(rhs);
     }
 
+    //! Overloaded operator defined in terms of vec3::scale.
+    /**
+     * Left multiplication by a scalar `s*v`.
+     * @param lhs left hand side of the `*` operator
+     * @param rhs right hand side oif the `*` operator
+     * @return equivalent to a new copy of `rhs.scale(lhs)`.
+     */
     friend vec3<Real> operator*(Real const& lhs, vec3<Real> rhs)
     {
         rhs.scale(lhs);
         return rhs;
     }
 
+    //! Overloaded operator defined in terms of vec3::scale.
+    /**
+     * Right multiplication by a scalar `v*s`.
+     * @param lhs left hand side of the `*` operator
+     * @param rhs right hand side oif the `*` operator
+     * @return equivalent to a new copy of `lhs.scale(rhs)`.
+     */
     friend vec3<Real> operator*(vec3<Real> lhs, Real const& rhs)
     {
         lhs.scale(rhs);
         return lhs;
     }
 
+    //! Overloaded operator defined in terms of vec3::scale.
+    /**
+     * In place division by a scalar `v/s`,  equivalent to `lhs.scale(1/rhs)`.
+     * @param lhs left hand side of the `/=` operator
+     * @param rhs right hand side oif the `/=` operator
+     * @warning for performance reasons, this function will not check for zero division!
+     */
     friend void operator/=(vec3<Real>& lhs, Real const& rhs){
         lhs.scale((Real)1/rhs);
     }
+
+    //! Overloaded operator defined in terms of vec3::scale.
+    /**
+     * Division by a scalar `v/s`.
+     * @param lhs left hand side of the `/` operator
+     * @param rhs right hand side oif the `/` operator
+     * @return equivalent to a new copu of `lhs.scale(1/rhs)`.
+     * @warning for performance reasons, this function will not check for zero division!
+     */
     friend vec3<Real> operator/(vec3<Real> lhs, Real const& rhs)
     {
         lhs/=rhs;
         return lhs;
     }
 
+    //! element access operator.
+    /**
+     * @tparam Index automatically deduced type of the index.
+     * @param idx can only be 0 1 or 2. Any other number will cause the program to exit with an error.
+     * @return for a vec3 v: v[1] returns v.x, v[2] returns v.y and v[3] returns v.z.
+     *
+     * @note: The use of the subscription operator might be slower than the direct access of the data member.
+     */
     template<typename Index>
     requires std::is_integral_v<Index>
     Real& operator[](Index idx)
@@ -299,6 +441,14 @@ public:
         }
     }
 
+    //! element access operator for constant environments.
+    /**
+     * @tparam Index automatically deduced type of the index.
+     * @param idx can only be 0 1 or 2. Any other number will cause the program to exit with an error.
+     * @return for a vec3 v: v[1] returns a constant reference to v.x, v[2] returns a constant reference to v.y and v[3] returns a constant reference to v.z.
+     *
+     * @note: The use of the subscription operator might be slower than the direct access of the data member.
+     */
     template<typename Index>
     requires std::is_integral_v<Index>
     const Real& operator[](Index idx) const
@@ -312,6 +462,12 @@ public:
         }
     }
 
+    //! Unary minus operator.
+    /**
+     *
+     * @param v original vector.
+     * @return A copy of -v the vector v itself stays unaffected.
+     */
     friend vec3<Real> operator-(vec3<Real> v)
     {
         v.x = -v.x;
@@ -320,7 +476,13 @@ public:
         return v;
     }
 
-    friend vec3<Real>& operator-(vec3<Real>&& v)
+    //! Unary minus operator for rvalues.
+    /**
+     *
+     * @param v an rvalue vec3 vector.
+     * @return The rvalue vector `v` is moved into the function and `-v` is returned.
+     */
+    friend vec3<Real> operator-(vec3<Real>&& v)
     {
         v.x = -v.x;
         v.y = -v.y;
@@ -338,9 +500,16 @@ public:
 
 
 
+
+/**
+ * @GlobalsStub
+ * @{
+ */
+//! The M_PI macro is not defined on for all compilers, so it is defined here (if a definition does not already exist).
 #ifndef M_PI
 #define M_PI 3.14159265358979323846	/* pi */
 #endif
+/**@}*/
 
 /**
  * The API stability of the functions in the implementation namespace is not guaranteed!
@@ -831,7 +1000,7 @@ public:
 
 // begin --- flippy.hpp --- 
 
-/**
+/*
  *```txt
  *
  *  .d888 888 d8b
@@ -846,7 +1015,7 @@ public:
  *                888      888      Y8b d88P
  *                888      888       "Y88P"
  *
- * https://gitlab.tudelft.nl/idema-group/flippy
+ * https://github.com/flippy-software-package/flippy
  *
  *
  * MIT License
@@ -873,6 +1042,11 @@ public:
  *```
  */
 
+
+/**
+ * @file
+ * @brief This header file exists for convenience. Including this header will automatically include all parts of flippy in the project.
+ */
 #ifndef FLIPPY_FLIPPY_HPP
 #define FLIPPY_FLIPPY_HPP
 
@@ -23002,7 +23176,7 @@ using Json = nlohmann::json;
  * @param file_name @FileNameOrPathFileNameStub
  * @param data json data object that is supposed to be stored.
  */
-[[maybe_unused]] static inline void json_dump(std::string const& file_name, const Json& data)
+static inline void json_dump(std::string const& file_name, const Json& data)
 {
     std::ofstream o(file_name + ".json");
     o << data.dump();
@@ -23019,7 +23193,7 @@ using Json = nlohmann::json;
  * @warning This function will stream any file into the json object.
  * If the provided file is not a valid json file this will cause runtime errors.
  */
-[[maybe_unused]] static Json inline json_read(std::string file_name)
+static Json inline json_read(std::string file_name)
 {
     auto pos_json = file_name.find_last_of(".json");
     auto not_json = (file_name.size() - 1!=pos_json);
@@ -23043,16 +23217,6 @@ template<typename T>
 [[maybe_unused]] static bool is_member(std::vector<T> const& v, T const& el){
     return (std::find(v.begin(),v.end(), el) != v.end());
 }
-
-[[maybe_unused]] static bool is_dir(std::string const& path){
-    std::filesystem::path dir(path);
-    return std::filesystem::is_directory(dir);
-}
-
-[[maybe_unused]] static void make_dir(std::string const& path){
-    std::filesystem::path dir(path);
-    std::filesystem::create_directories(dir);
-}
  /**@}*/
 }
 #endif
@@ -23065,19 +23229,23 @@ template<typename T>
 
 #ifndef FLIPPY_NODES_HPP
 #define FLIPPY_NODES_HPP
-
+/**
+ * @file
+ * @brief This file contains the fp::Node and fp::Nodes classes, data structures that represent a single node of the triangulation
+ * and the collection of all nodes of the triangulation, respectively.
+ */
 #include <vector>
 #include <unordered_set>
 
 namespace fp {
 using Json = nlohmann::json;
-//! Data structure containing  all geometric and topological information associated to a node.
+//! A data structure containing all geometric and topological information associated with a node.
 /**
- * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data that it contains.
- * For performance reasons methods associated to Node struct will never check if the Node::curvature is the norm of the
+ * This is a DUMB DATA STRUCTURE, meaning that it is not responsible for the coherence of the data it contains.
+ * For performance reasons, methods associated with Node struct will never check if the Node::curvature is the norm of the
  * Node::curvature_vector or if the Node::nn_ids and Node::nn_distances are in the correct order.
- * It is the responsibility of higher order structures like Nodes and Triangulation to check that correct data is stored and updated correctly.
- * However it does check the data for consistency.
+ * It is the responsibility of higher-order structures like Nodes and Triangulation to check that correct data is stored and updated correctly.
+ * However, it does check the data for consistency.
  * It will match the length of Node::nn_ids and Node::nn_distances and pop and add both of them together.
  * @tparam Real @RealStub
  * @tparam Index @IndexStub
@@ -23087,13 +23255,30 @@ struct Node
 {
   //! @NodeIDStub
   Index id;
-  //! Voronoi area associated to the node.
+  //! Voronoi area associated with the node.
+  /**
+   * The Voronoi area is the sum of (mixed) Voronoi areas inside the triangles, incident to the node.
+   * Definition follows [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
+   * \f[
+   * A_{i} = \sum_{j} A'_{ij}.
+   * \f]
+   *
+   * @see Triangulation::mixed_area
+   * See Figure tr1. C in Triangulation.
+   * @see Node::curvature_vec Triangulation::update_bulk_node_geometry(Index)
+   */
   Real area;
   //! If the node is part of a closed surface triangulation, then the `volume` contains the volume of the tetrahedron connected to each voronoi cell sub-triangle and the center of the lab coordinate system  as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
   /**
    * This means that the volume of an individual node does not have a proper physical interpretation.
    * Only the sum of all node volumes, which is given by the triangulation
    * is interpretable as a physical volume of an object.
+   * The definition follows [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
+   * \f[
+   * V_{ij} = A_{ij} \vec{x}_{i}\cdot \frac{\vec{n}_{ij,j+1}}{\| \vec{n}_{ij,j+1} \|}.
+   * \f]
+   * See Figure tr1. D in Triangulation.
+   * @see Node::curvature_vec Triangulation::update_bulk_node_geometry(Index)
    */
   Real volume;
   //! `unit_bending_energy` corresponds to the [Helfrich bending energy](https://en.wikipedia.org/wiki/Elasticity_of_cell_membranes) with bending rigidity 1 and gaussian bending stiffness 0.
@@ -23111,31 +23296,40 @@ struct Node
   Real unit_bending_energy;
   //! Position of the node in the lab frame.
   vec3<Real> pos;
-  //! Curvature vector of the node as defined in [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
+  //! Curvature vector of the node.
+  /**
+   * The definition of the curvature vector follows [Meyer et al. 2003](https://doi.org/10.1007/978-3-662-05105-4_2).
+   * \f[
+   * \vec{K}_i = \frac{1}{2A_i}\sum_{j(i)} \left( \cot\left(\alpha_{ij}^{j+1}\right) + \cot\left(\alpha_{ij}^{j-1}\right) \right)\vec{\ell}_{ij}
+   * \f]
+   * See Figure tr1. B in Triangulation.
+   * @see Node::curvature_vec Triangulation::update_bulk_node_geometry(Index)
+   */
   vec3<Real> curvature_vec;
-  //! Vector containing the global ids of current node's next neighbours.
+  //! A vector containing the global ids of the current node's next neighbors.
   /**
    * `nn_ids` contains the ids of nodes that are connected to this node in the triangulation.
-   * The next neighbours that are also mutual neighbours in the triangulation are stored sequentially in the vector.
-   * The last and the first elements are also neighbours, i.e. the nn_ids vector wraps around.
-   * During the calculation this is facilitated through the use of @ref fp::Neighbors.
-   * @note The order of the next neighbours matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
+   * The next neighbors that are also mutual neighbors in the triangulation are stored sequentially in the vector.
+   * The last and the first elements are also neighbors, i.e., the nn_ids vector wraps around.
+   * During the calculation, this is facilitated through the use of @ref fp::Neighbors.
+   * @note The order of the next neighbors matters for the proper function of fp::Triangulation but is not guaranteed by this data structure.
+   * See Figure tr1. A, in Triangulation.
    */
   std::vector<Index> nn_ids;
-  //! Distance vectors pointing from the node to it's next neighbours.
+  //! Distance vectors pointing from the node to its next neighbors.
   std::vector<vec3<Real>> nn_distances;
-  //! Verlet list contains the ids of nodes that are close to this node.
+  //! The Verlet list contains the ids of nodes that are close to this node.
   std::vector<Index> verlet_list;
 
   // unit-tested
-  //! Finds the element with the id to_pop_nn_id in the nn_id vector and deletes it.
+  //! Find and deletes the element with the id `to_pop_nn_id` in the `nn_id` vector.
   void pop_nn(Index to_pop_nn_id)
   {
       /**
-       * @param to_pop_nn_id @NNIDStub This id is supposed to be removed from the next neighbour id vector.
+       * @param to_pop_nn_id @NNIDStub This id is supposed to be removed from the next neighbor id vector.
        * @see Node::nn_ids
        * @note this will lead to resizing of the vector, which can be expensive!
-       * @warning if the provided next neighbour id is not part of the Node::nn_ids, this function will fail silently.
+       * @warning If the provided next neighbor id is not part of the Node::nn_ids, this function will fail silently.
        * It will not delete anything and won't throw any errors or warnings;
        */
       auto pop_pos = find_nns_loc_pointer(to_pop_nn_id);
@@ -23150,7 +23344,7 @@ struct Node
 
   auto find_nns_loc_pointer(Index nn_id){
       /**
-       * @brief Given the global id of the next neighbour, this function can be used to locate it in the Node::nn_ids vector.
+       * @brief Given the global id of the next neighbor, this function can be used to locate it in the Node::nn_ids vector.
        *
        * This function is just a convenient wrapper around the [std::find](https://en.cppreference.com/w/cpp/algorithm/find) function.
        * ```
@@ -23161,7 +23355,7 @@ struct Node
        * Otherwise `nn_ids.end()`.
        * @warning This function is not responsible for graceful handling of `nn_id`'s that are not found in the Node::nn_ids vector.
        * If the `nn_id` is not contained in Node::nn_ids then the `nn_ids.end()` iterator will be returned.
-       * It is up to the user to perform the necessary checks to avoid undefined behaviour that might result from trying to delete uninitiated memory.
+       * It is up to the user to perform the necessary checks to avoid undefined behavior that might result from trying to delete uninitiated memory.
        */
       return std::find(nn_ids.begin(), nn_ids.end(), nn_id);
   }
@@ -23170,18 +23364,18 @@ struct Node
   void emplace_nn_id(Index to_emplace_nn_id, vec3<Real> const& to_emplace_nn_pos, Index loc_idx)
   {
       /**
-       * @brief This function can be used to add new next neighbours to this node.
+       * @brief This function can be used to add new next neighbors to this node.
        *
        * This function constructs `to_emplace_nn_id` right before `to_emplace_pos`,
        * i.e. if to_emplace_nn_id is 3, to_emplace_nn_id will be constructed right before the
        * 3rd element and will become the new 3rd element.
        * @param to_emplace_nn_id @NNIDStub This id is supposed to be added to the Node::nn_ids vector of this node.
        * @param to_emplace_nn_pos const reference to the 3 dimensional position vector (type vec3<Real>) containing the position of the new next neighbour.
-       * This input is used to calculate the correct distance between this node and the new next neighbour, which then will be added to the Node::nn_distances vector.
+       * This input is used to calculate the correct distance between this node and the new next neighbor, which will then be added to the Node::nn_distances vector.
        * @param loc_idx @LocNNIndexStub
        * @note This function causes the resizing of two vectors, which can be costly.
-       * @warning Making next neighbours is a symmetric operation. I.e. if node 1 becomes the next neighbour of node 2 then node two also has to become the next neighbour of node 1.
-       * However this function does is not responsible for this relationship. It only adds a new next neighbour to this node and the higher order structures Like Triangulation is responsible for guaranteeing the reciprocal relationship.
+       * @warning Making next neighbors is a symmetric operation. I.e., if node one becomes the next neighbor of node two, node two also has to become the next neighbor of node one.
+       * However, this function is not responsible for this relationship. It only adds a new next neighbor to this node, and the higher-order structures, like Triangulation, are responsible for guaranteeing the reciprocal relationship.
        * @see Triangulation::emplace_before(Index, Index, Index)
        */
       if (loc_idx<nn_ids.size()) {
@@ -23192,12 +23386,12 @@ struct Node
   }
 
   //unit-tested
-  //! This function can provide the stored distance vector to a next neighbour.
+  //! This function can provide the stored distance vector to the next neighbor.
   vec3<Real> const& get_distance_vector_to(Index nn_id) const
   {
       /**
        * @param nn_id @NNIDStub.
-       * @return returns the distance currently stored in the Node::nn_distances vector, for the requested next neighbour.
+       * @return returns the distance currently stored in the Node::nn_distances vector for the requested next neighbor.
        * If the provided `nn_id` can not be found in the Node::nn_ids vector, then the function writes an error message
        * to standard error output and terminates the program with exit code 12.
        * @note @TerminationNoteStub
@@ -23223,11 +23417,11 @@ struct Node
   bool operator==(Node<Real, Index> const& other_node) const = default;
 
   /**
-   * @brief Streaming operator that can print formatted output to standard out with all data fields of the Node.
+   * @brief Streaming operator that can print formatted output to standard out with all Node data fields.
    *
-   * @param os This is intended to be std::cout or any other ofstream reference.
+   * @param os This is intended to be std::cout or any other std::ofstream reference.
    * @param node The streamed node.
-   * @return return the updated stream.
+   * @return Updated stream.
    */
   friend std::ostream& operator<<(std::ostream& os, Node<Real, Index> const& node)
   {
@@ -23257,11 +23451,11 @@ struct Node
 /**
  * @brief Data structure containing all nodes of the Triangulation.
  *
- * The Nodes struct is capable of reinitializing nodes from a well formed json object or from a simple [std::vector](https://en.cppreference.com/w/cpp/container/vector) that contains all nodes of a triangulation.
- * The nodes class is basically a wrapper around a vector of nodes i.e. `std::vector<Node<Real, Index>>`, and provides additional functionality to manipulate and query this data structure.
+ * The Nodes struct is capable of reinitializing nodes from a well-formed JSON object or from a simple [std::vector](https://en.cppreference.com/w/cpp/container/vector) that contains all nodes of a triangulation.
+ * The nodes class is basically a wrapper around a vector of nodes, i.e., `std::vector<Node<Real, Index>>`, and provides additional functionality to manipulate and query this data structure.
  * Nodes class is also meant to be the interface with which the end user is manipulating individual nodes.
  * @tparam Real @RealStub
- * @tparam Index type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example `unsigned int`.
+ * @tparam Index @IndexStub
  */
 template<floating_point_number Real, indexing_number Index>
 struct Nodes
@@ -23273,16 +23467,16 @@ struct Nodes
     {
     /**
      * Copies the data from a vector of nodes and creates a new Nodes struct.
-     * @param data_inp a standard vector containing all the nodes that are supposed to create a new Nodes class.
+     * @param data_inp A standard vector containing all the nodes that are supposed to create a new Nodes class.
      */
     }    //!< Constructor from a vector.
     explicit Nodes(Json const& node_dict)
     {
     /**
-     * Initiating nodes from a json object of a node collection.
-     * The nodes in the json file must be sequentially numbered from 0 to Number_of_nodes - 1.
-     * @param node_dict json object that contains a collection of nodes.
-     * @warning If the json object is malformed then the constructor will fail and propagate a runtime error from the json parser.
+     * Initiating nodes from a JSON object of a node collection.
+     * The nodes in the JSON file must be sequentially numbered from 0 to Number_of_nodes - 1.
+     * @param node_dict JSON object that contains a collection of nodes.
+     * @warning If the JSON object is malformed, then the constructor will fail and propagate a runtime error from the JSON parser.
      */
         std::vector<Index> nn_ids_temp, verlet_list_temp;
         data.resize((node_dict.size()));
@@ -23314,19 +23508,19 @@ struct Nodes
                     .verlet_list{verlet_list_temp}
             };
         }
-    }    //!< Constructor from json.
+    }    //!< Constructor from JSON.
 
     typename std::vector<Node<Real, Index>>::iterator begin()
     {
     /**
-     * This function allows the Nodes struct to be used in range based for loops.
+     * This function allows the Nodes struct to be used in range-based `for` loops.
      * @return `data.begin()`
      */
      return data.begin();}    //!< Returns an iterator to the beginning of the underlying data member that contains the collection of the nodes.
     typename std::vector<Node<Real, Index>>::const_iterator begin() const
     {
     /**
-     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * This function allows the Nodes struct to be used in range-based `for` loops in constant environments.
      * @return a constant iterator `data.begin()`.
      */
         return data.begin();
@@ -23335,7 +23529,7 @@ struct Nodes
     typename std::vector<Node<Real, Index>>::iterator end()
     {
         /**
-     * This function allows the Nodes struct to be used in range based for loops.
+     * This function allows the Nodes struct to be used in range-based `for` loops.
      * @return `data.end()`.
      */
         return data.end();
@@ -23343,7 +23537,7 @@ struct Nodes
     typename std::vector<Node<Real, Index>>::const_iterator end() const
     {
     /**
-     * This function allows the Nodes struct to be used in range based for loops, in constant environments.
+     * This function allows the Nodes struct to be used in range-based `for` loops in constant environments.
      * @return a constant iterator `data.end()`.
      */
      return data.end();} //!< \overload
@@ -23359,7 +23553,7 @@ struct Nodes
      * @return Constant reference to the 3D vector of the node position, Node::pos.
      */
         return data[node_id].pos;
-    }   //!< Given a node id return the constant reference to the node position.
+    }   //!< Given a node id, return the constant reference to the node position.
     //unit-tested
     void set_pos(Index node_id, vec3<Real> const& new_pos){
     /**
@@ -23378,7 +23572,7 @@ struct Nodes
     void displace(Index node_id, vec3<Real>const& displacement){
     /**
     * @param node_id @NodeIDStub This node needs to be moved.
-    * @param displacement displacement vector that will be added to the position vector of the node.
+    * @param displacement The displacement vector that will be added to the position vector of the node.
     */
         data[node_id].pos+=displacement;
     }   //!< Changes the position of the requested node by a given displacement.
@@ -23386,7 +23580,7 @@ struct Nodes
     {
     /**
      * @param node_id @NodeIDStub This node needs to be moved.
-     * @param displacement displacement vector that will be added to the position vector of the node.
+     * @param displacement The displacement vector that will be added to the position vector of the node.
      */
         data[node_id].pos+=displacement;
     }   //!< \overload
@@ -23398,14 +23592,14 @@ struct Nodes
      * @return Constant reference to the 3D vector of the node curvature, Node::curvature_vec.
      */
         return data[node_id].curvature_vec;
-    } //!< Given a node id return the constant reference to the node curvature vector.
+    } //!< Given a node id, return the constant reference to the node curvature vector.
     void set_curvature_vec(Index node_id, vec3<Real> const& new_cv) {
     /**
      * @param node_id @NodeIDStub
      * @param new_cv Constant lvalue reference to the new 3d curvature vector Node::curvature_vec.
      */
         data[node_id].curvature_vec=new_cv;
-    } //!< Given a node id and a new curvature vector, reset the nudes current curvature vector.
+    } //!< Given a node id and a new curvature vector, reset the node's current curvature vector.
     void set_curvature_vec(Index node_id, vec3<Real> && new_cv) {
     /**
      * @param node_id @NodeIDStub
@@ -23418,10 +23612,10 @@ struct Nodes
     [[nodiscard]] Real area(Index node_id)const{
     /**
      * @param node_id @NodeIDStub
-     * @return Area associated to the node, Node::area.
+     * @return Area associated with the node, Node::area.
      */
         return data[node_id].area;
-    } //!< Given a node id return node associated area.
+    } //!< Given a node id, return node associated area.
     void set_area(Index node_id, Real new_area){
     /**
      * @param node_id @NodeIDStub
@@ -23438,7 +23632,7 @@ struct Nodes
      * @return Area associated to the node, Node::volume.
      */
         return data[node_id].volume;
-    }    //!< Given a node id return node associated volume.
+    }    //!< Given a node id, return node associated volume.
     void set_volume(Index node_id, Real new_volume){
     /**
      * @param node_id @NodeIDStub
@@ -23456,7 +23650,7 @@ struct Nodes
      * @return Area associated to the node, Node::unit_bending_energy.
      */
         return data[node_id].unit_bending_energy;
-    }   //!< Given a node id return node associated unit bending energy.
+    }   //!< Given a node id, return node-associated unit bending energy.
     void set_unit_bending_energy(Index node_id, Real new_ube){
     /**
      *
@@ -23464,7 +23658,7 @@ struct Nodes
      * @param new_ube New value of the unit bending energy (mathematical definition can be found at Node::unit_bending_energy).
      */
         data[node_id].unit_bending_energy=new_ube;
-    } //! Given a node id and a new value for the node associated unit bending energy, update the current value of Node::unit_bending_energy.
+    } //! Given a node id and a new value for the node-associated unit bending energy, update the current value of Node::unit_bending_energy.
 
     // nn_id[s] block
     //unit-tested
@@ -23474,14 +23668,14 @@ struct Nodes
      * @return Constant reference to the std::vector containing next neighbour ids of the node, Node::nn_ids.
      */
         return data[node_id].nn_ids;
-    } //!< Given a node id return the constant reference to the nn_ids std::vector.
+    } //!< Given a node id, return the constant reference to the nn_ids std::vector.
     //unit-tested
     void set_nn_ids(Index node_id, std::vector<Index>const& new_nn_ids){
     /**
      * @param node_id @NodeIDStub
      * @param new_nn_ids const reference to the standard vector containing new values of nn_ids
      * @warning This function does not check the provided `new_nn_ids` vector on correctness.
-     * If the content is wrong in any way (order is wrong or contained id's are not actual next neighbours of the node),
+     * If the content is wrong in any way (order is wrong or contained ids are not actual next neighbors of the node),
      * then the update will cause problems with the proper function of flippy later!
      */
         data[node_id].nn_ids = new_nn_ids;
@@ -23491,7 +23685,7 @@ struct Nodes
     /**
      * @param node_id @NodeIDStub
      * @param loc_nn_index @LocNNIndexStub
-     * @return The global id of the next neighbour that was stored at the position `loc_nn_index` in the Node::nn_ids vector of the node with the id of `node_id`.
+     * @return The global id of the next neighbor that was stored at the position `loc_nn_index` in the Node::nn_ids vector of the node with the id of `node_id`.
      */
         return data[node_id].nn_ids[loc_nn_index];
     }   //!< Given a node id and the local index in the Node::nn_ids vector, returns the next neighbour id.
@@ -23518,7 +23712,7 @@ struct Nodes
     /**
      * The order of Node::nn_distances is the same as that of Node::nn_ids, this is guaranteed by Triangulation::update_nn_distance_vectors(Index node_id)
      * @param node_id @NodeIDStub
-     * @return Associated std::vector containing all vec3 distance vectors from the node to its neighbours, Node::nn_distances.
+     * @return Associated std::vector containing all vec3 distance vectors from the node to its neighbors, Node::nn_distances.
      */
         return data[node_id].nn_distances;
     }   //!< Given a node id, returns the std::vector containing distance vectors to next neighbours.
@@ -23527,11 +23721,11 @@ struct Nodes
      * This function is a wrapper around fp::Node::get_distance_vector_to(Index) const.
      * @param node_id @NodeIDStub
      * @param nn_id @NNIDStub
-     * @return Looks in the Node::nn_distances vector of the node (specified by node_id) for the distance to nn_id. If the two nodes are neighbours a proper distance vector will be returned, otherwise the program will terminate.
+     * @return Looks in the Node::nn_distances vector of the node (specified by node_id) for the distance to nn_id. A proper distance vector will be returned if the two nodes are neighbors. Otherwise, the program will terminate.
      * @note @TerminationNoteStub
      */
         return data[node_id].get_distance_vector_to(nn_id);
-    }   //!< Given two global node id's, returns a distance vector (if the nodes are neighbours).
+    }   //!< Given two global node ids, returns a distance vector (if the nodes are neighbors).
     void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real>&& dist){
     /**
      * @param node_id @NNIDStub
@@ -23539,7 +23733,7 @@ struct Nodes
      * @param dist rvalue reference to a 3D distance vector (that points from node_id to its next neighbour).
      */
         data[node_id].nn_distances[loc_nn_index]=dist;
-    }  //!< Overwrite the next neighbour distance with a new 3d vector.
+    }  //!< Overwrite the next neighbor distance with a new 3d vector.
     void set_nn_distance(Index node_id, Index loc_nn_index, vec3<Real> const& dist){
     /**
      * @param node_id @NNIDStub
@@ -23549,7 +23743,7 @@ struct Nodes
         data[node_id].nn_distances[loc_nn_index]=dist;
     } //!< \overload
 
-    [[nodiscard]] Index size() const { return static_cast<Index>(data.size()); } //!< Size of the Nodes data member. @return The size of the data vector which is the same as the number of the nodes.
+    [[nodiscard]] Index size() const { return static_cast<Index>(data.size()); } //!< Size of the Nodes data member. @return Size of the data vector, same as the number of nodes.
 
     Node<Real, Index>& operator[](Index node_id) {
     /**
@@ -23561,7 +23755,7 @@ struct Nodes
     }   //!< Square bracket operator overload for convenient indexing of the Nodes struct.
     const Node<Real, Index>& operator[](Index node_id) const {
     /**
-     * Nodes[node_id] in constant environment is the same as Nodes.data.at(node_id).
+     * Nodes[node_id] in the constant environment is the same as Nodes.data.at(node_id).
      * @param node_id @NodeIDStub
      * @return Constant reference to the Node struct with the id corresponding to node_id.
      */
@@ -23570,8 +23764,8 @@ struct Nodes
 
     [[nodiscard]] Json make_data() const{
     /**
-     * @return json object that represents a serialization of the data contained in Nodes.
-     * This json object can later be used to reconstruct the Nodes object.
+     * @return JSON object that represents a serialization of the data contained in Nodes.
+     * This JSON object can later be used to reconstruct the Nodes object.
      */
         Json json_data;
         for (auto& node : data) {
@@ -23586,7 +23780,7 @@ struct Nodes
             };
         }
         return json_data;
-    } //!< Serialize the Nodes struct to a json object.
+    } //!< Serialize the Nodes struct to a JSON object.
 };
 }
 #endif //FLIPPY_NODES_HPP
@@ -23600,14 +23794,17 @@ struct Nodes
 
 #ifndef FLIPPY_TRIANGULATION_HPP
 #define FLIPPY_TRIANGULATION_HPP
-
+/**
+ * @file
+ * @brief This file contains the fp::Triangulation class and several related helper classes. This is the core of flippy.
+ */
 #include<optional>
 
 /**
  * @GlobalsStub
  * @{
  */
-//! Redefinition of the `LONG_LONG_MAX` macro, in case a specific compiler does not implement it. Largest number that fits in the `long long` type.
+//! Redefinition of the `LONG_LONG_MAX` macro in case a specific compiler does not implement it. The largest number that fits in the `long long` type.
 #ifndef LONG_LONG_MAX
 #define LONG_LONG_MAX 9223372036854775807LL
 #endif
@@ -23615,10 +23812,10 @@ struct Nodes
 /**
  * @brief Literal for a very large integral number.
  *
- * This number will be used for default instantiation of variables/ data members that hold indices.
- * This is done to avoid instantiation with 0 which could also be a valid index.
- * This way one can differentiate between unintentionally default instantiated value and a proper value of an index.
- * This will also mean that the use of such improperly instantiated indexer variables will cause an easier to identify error during runtime.
+ * This number will be used for the default instantiation of variables/ data members that hold indices.
+ * This is done to avoid instantiation with 0, which could also be a valid index.
+ * This way, one can differentiate between unintentionally default instantiated value and a proper value of an index.
+ * This will also mean that the use of such improperly instantiated indexer variables will cause an easier-to-identify error during runtime.
  * @see fp::BondFlipData
  * fp::Neighbors
  * fp::Triangulation::two_common_neighbours(Index, Index) const
@@ -23641,32 +23838,28 @@ static constexpr int BOND_DONATION_CUTOFF = 4;
 
 //! A helper struct; keeps track of bond flips.
 /**
- * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges
+ * A bond flip can be unsuccessful, e.g., if the requested two nodes that are donating an edge already have too few edges
  * (more details on bond flips and how they can fail are provided in the Triangulation.flip_bond(Index, Index, Real, Real) function).
- * If the flip does happen then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
+ * If the flip does happen, then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
  * #common_nn_0 and #common_nn_1 will record the ids of nodes that receive new common bond.
  * If the flip does not happen then the #common_nn_0 and #common_nn_1 data members will hold a #VERY_LARGE_NUMBER_ with which they were initiated.
  *
  * The initiation with #VERY_LARGE_NUMBER_ is done to avoid #common_nn_0 and #common_nn_1 being zero initiated.
- * This is a mechanism to force errors (instead of silent wrong behaviour) in situations of un-careful usage.
- * If the end user does not check that the bonds were not flipped and tries to un-flip bonds with a
- * Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&) function, then #common_nn_0 and #common_nn_1
- * initiated with zeros will tell the *unflip_bond* function to un-flip a bond between zeros node and itself, which will cause wrong behaviour
- * but no outright error. However if *unflip_bond* function will try to un-flip a bond between two nodes with the id #VERY_LARGE_NUMBER_, then
- * the memory access at array location #VERY_LARGE_NUMBER_ will force an error.
+ * This mechanism will lead to wrong behavior that is easier to identify during debugging in situations of un-careful usage.
+ * Example of such un-careful usage is if the end-user does not check that the bonds were not flipped and tries to un-flip bonds.
  *
  *```txt
  *
  * State of the triangulation before and after the flip.
  *  before the flip                  after the flip
  *
- *      common nn 0                     common nn 0
+ *      common nn 1                     common nn 1
  *      /          \                    /    |    \
  *     /            \                  /     |     \
  *   node --------- nn              node     |     nn
  *     \            /                 \      |     /
  *      \          /                   \     |    /
- *     common nn 1                     common nn 1
+ *     common nn 0                     common nn 0
  *```
  *
  * @tparam Index @IndexStub
@@ -23684,8 +23877,8 @@ struct BondFlipData
 
 /**
  * A helper struct;  makes addition and subtraction on a ring easier.
- * Each fp::Node stores its next neighbours in a vector Node.nn_ids,
- * where the adjacent members in a vector are also next neighbours of each other.
+ * Each fp::Node stores its next neighbors in a vector Node.nn_ids,
+ * where the adjacent members in a vector are also next neighbors of each other.
  * This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary.
  * @see fp::Node.
  * @tparam Index @IndexStub
@@ -23700,27 +23893,27 @@ struct Neighbors
 
   /**
    *
-   * @param j index of the j-th next neighbour
+   * @param j index of the j-th next neighbor
    * @param ring_size corresponds to the number of elements of Node.nn_ids
-   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e. if `j` is the index of Node.nn_ids its next neighbour will be stored in `j+1` element, unless `j` is the last element, then its next neighbour will be stored in the 0th element.
+   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e., if `j` is the index of Node.nn_ids, its next neighbor will be stored in `j+1` element, unless `j` is the last element, then its next neighbor will be stored in the 0th element.
    */
   static Index plus_one(Index j, Index ring_size) { return ((j<ring_size - 1) ? j + 1 : (Index) 0); }
   /**
  *
- * @param j index of the j-th next neighbour
+ * @param j index of the j-th next neighbor
  * @param ring_size corresponds to the number of elements of Node.nn_ids
- * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e. if `j` is the index of Node.nn_ids its previous next neighbour will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbour will be stored in the last element.
+ * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e., if `j` is the index of Node.nn_ids, its previous next neighbor will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbor will be stored in the last element.
  */
   static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
 };
-//! A helper struct that is used by the triangulation to pass data around in one convenient package.
+//! A helper struct. Used by the triangulation class to pass data around in one convenient package.
 /**
  * Geometry is a struct that contains the usually needed geometric data in a triangulation.
- * This struct can hold such data for a single node, a collection of nodes or the entire triangulation.
- * In abstract we can say that Geometry contains geometric data associated to some surface patch.
- * This is useful to have, since we often need to aggregate information for a node and all of its neighbouring nodes.
+ * This struct can hold such data for a single node, a collection of nodes, or the entire triangulation.
+ * In the abstract, the fp::Geometry struct contains geometric data associated with some surface patch.
+ * This is useful since we often need to aggregate information for a node and its neighboring nodes.
  *
- * The Data members of this struct are public and thus,
+ * The Data members of this struct are public, and thus,
  * it does not guarantee the correctness or consistency of the data it holds,
  * since it can be changed externally.
  * The geometry struct also provides overloaded arithmetic operators,
@@ -23731,9 +23924,9 @@ struct Neighbors
 template<floating_point_number Real, indexing_number Index>
 struct Geometry
 {
-  Real area; //!< Area of patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
-  Real volume; //!< Volume of patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
-  Real unit_bending_energy; //!< Volume of patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
+  Real area; //!< Area of the patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
+  Real volume; //!< Volume of the patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
+  Real unit_bending_energy; //!< Volume of the patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
   //! Default constructor, that zero initiates all the data members.
   Geometry() :area(0.), volume(0.), unit_bending_energy(0.) { }
   //! Construct from a node.
@@ -23800,7 +23993,7 @@ struct Geometry
 
     //! Overloaded addition and assignment operator.
     /**
-     * Works through the use of already overloaded addition operator and
+     * Works through the use of an already overloaded addition operator and
      * simply performs `lhs = lhs + rhs;`.
      *
      * @param lhs
@@ -23814,7 +24007,7 @@ struct Geometry
 
     //! Overloaded subtraction and assignment operator.
     /**
-     * Works through the use of already overloaded subtraction operator and
+     * Works through the use of an already overloaded subtraction operator and
      * simply performs `lhs = lhs - rhs;`.
      *
      * @param lhs
@@ -23846,20 +24039,46 @@ struct Geometry
 //! This enum defines named types of triangulations that are implemented in flippy.
 /**
  * A triangulation type needs to be provided as a template parameter to the Triangulation class during instantiation.
- * This will tell the class to create appropriate topology of the triangulated Nodes.
+ * This will tell the class to create an appropriate topology of the triangulated Nodes.
  * The named types tell the triangulation class to...
  */
 enum TriangulationType{
 
-    //! create a spherical triangulation which is a sub-triangulation of a regular icosahedron
+    //! Create a spherical triangulation which is a sub-triangulation of a regular icosahedron
     SPHERICAL_TRIANGULATION,
-    //! create a triangulation which is a sub-triangulation of a plane square.
+    //! Create a triangulation which is a sub-triangulation of a plane square.
     PLANAR_TRIANGULATION
 };
 /**@}*/
 
+
 /**
- * Implementation of Triangulation of a two dimensional surfaces in 3D.
+ * \brief Implementation of Triangulation of two-dimensional surfaces in 3D.
+ * \image html assets/triangulation.png "Figure tr 1. Visualization of the triangulation."  width=500px
+ <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \f$N_{\mathrm{nodes}}=2252\f$. Black edges highlight the local neighborhood of a node.
+Circular arrows show the counterclockwise orientation of the nodes.
+This choice guarantees that all normal vectors point to the outside of the sphere.
+B: An arbitrary node \f$i\f$, with its curvature vector \f$\vec{K}_{i}\f$ and a highlighted angle \f$\alpha^j_{i,j+1}\f$
+at neighbour \f$j\f$ opposite to the edge \f$i, j+1\f$. Superscript \f$j\f$ denotes the neighboring node to which the angle
+belongs and subscript \f$i,j+1\f$ denotes the edge opposite of the angle.
+<b>C</b>: Node \f$i\f$ with its associated Voronoi area \f$A_i\f$ highlighted in red.
+The node has an associated area inside each triangle it is part of.
+We also highlight the triangle \f$i,j,j+1\f$ (light red with stripes) with the
+face normal \f$\vec{n}_{i,j,j+1}\f$ and the area \f$A_{i,j,j+1}\f$.
+The part of this triangle that is associated with node \f$i\f$ is highlighted in dark red and has the area \f$A_{ij}\f$.
+The convention is to use the central and rightmost nodes in the subscript.
+Since the nodes are ordered counterclockwise, this convention is unambiguous.
+<b>D</b>: Volume associated with node \f$i\f$ is made up of tetrahedrons
+that have as their base the triangles that make up the Voronoi cell of the node.
+The head of the tetrahedron points to some lab frame origin \f$\cal{O}\f$. \f$V_{ij}\f$ is the part of the volume
+associated to node \f$i\f$ that has its base in the triangle \f$i,j,j+1\f$.
+ *
+ *
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ * @tparam triangulation_type Template parameter that specifies the type of triangulation to be created.
+ * This parameter must be chosen from the fp::TriangulationType `enum`.
+ * Defaulted to fp::SPHERICAL_TRIANGULATION.
  */
 template<floating_point_number Real, indexing_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
 class Triangulation
@@ -23870,7 +24089,13 @@ private:
 public:
     Triangulation() = default;
     //unit tested
-    explicit Triangulation(Json const& nodes_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
+    //! Constructor that can re-initiate a triangulation from the stored data.
+    /**
+     *
+     * @param nodes_input json object that contains data generated by make_egg_data() function, or similarly structured data.
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
+    Triangulation(Json const& nodes_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         if constexpr(triangulation_type==SPHERICAL_TRIANGULATION) {
             nodes_ = Nodes<Real, Index>(nodes_input);
@@ -23883,6 +24108,13 @@ public:
 
     }
 
+    //! Constructor that can initiate a spherical triangulation from scratch.
+    /**
+     *
+     * @param n_nodes_iter Number of sub-triangulations.
+     * @param R_initial_input Initial radius of the spherical triangulation.
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
     Triangulation(Index n_nodes_iter, Real R_initial_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         static_assert(triangulation_type==SPHERICAL_TRIANGULATION, "This initialization is intended for spherical triangulations");
@@ -23894,6 +24126,17 @@ public:
         initiate_advanced_geometry();
     }
 
+    //! Constructor that can initiate a planar triangulation from scratch.
+    /**
+     * This overload initiates a planar triangulation with fixed (non-periodic boundaries).
+     * Corresponding tua clamped rectangular patch of a membrane.
+     * @warning @linearTriangulationWarningStub
+     * @param n_length Number of nodes along the length of the triangulation (at the boundary).
+     * @param n_width Number of nodes along the width of the triangulation (at the boundary).
+     * @param length Length of the planar membrane.
+     * @param width Width of the planar membrane
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
     Triangulation(Index n_length, Index n_width, Real length, Real width, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         static_assert(triangulation_type==PLANAR_TRIANGULATION, "This initialization is intended for planar triangulations");
@@ -23901,12 +24144,22 @@ public:
         initiate_advanced_geometry();
     }
 
+    //! Set the radius of the Verlet list to a new value.
+    /**
+     * @param R new radius
+     * @related Triangulation::make_verlet_list()
+     */
     void set_verlet_radius(Real R){
         verlet_radius = R;
         verlet_radius_squared = R*R;
     }
 
     //todo unittest
+    //! Create a [Verlet list](https://en.wikipedia.org/wiki/Verlet_list).
+    /**
+     * This method creates a Verlet list for each node of the triangulation. All nodes that are inside the `verlet_radius`, of a given node,
+     * are included in its Verlet list (Node.verlet_list),
+     */
     void make_verlet_list()
     {
         for (auto& node: nodes_) {
@@ -23924,12 +24177,25 @@ public:
         }
     }
 
+    //! Adds the same 3D vector to the positions of each node of the triangulation.
+    /**
+     * This method is most helpful in shifting a triangulation after its initiation.
+     * For example, to set up initial conditions for a simulation where several triangulated vesicles interact.
+     * @param translation_vector A fixed 3D vector by which the triangulation is to be shifted.
+     */
     void translate_all_nodes(vec3<Real> const& translation_vector)
     {
         for (Index i = 0; i<nodes_.size(); ++i) { move_node(i, translation_vector); }
     }
 
     //unit tested
+    //! Calculate the area-weighted average of node positions.
+    /**
+     * This method calculates the average position of the mass center of the triangulation,
+     * by averaging the positions of each node of the triangulation.
+     * The average is weighted by the area associated with each node.
+     * @return position of the mass center.
+     */
     vec3<Real> calculate_mass_center() const
     {
         vec3<Real> mass_center = vec3<Real>{0., 0., 0.};
@@ -23939,6 +24205,11 @@ public:
     }
 
     //unit tested
+    //! Move an individual node of the triangulation and update all the geometric quantities of the triangulation that changed.
+    /**
+     * @param node_id @NodeIDStub
+     * @param displacement_vector 3D vector by which the chosen node is to be displaced.
+     */
     void move_node(Index node_id, vec3<Real> const& displacement_vector)
     {
         pre_update_geometry = get_two_ring_geometry(node_id);
@@ -23949,15 +24220,22 @@ public:
     }
 
     // unit-tested
+    //! Adds a new node to the next neighbor list of a given node and calculates their mutual distance.
+    /**
+     * @note The direct use of this method is discouraged unless a very specific type of edge flipping is required.
+     * Triangulation::flip_bond is a more high-level method, suitable for most basic bond-flipping needs.
+     *
+     * This method finds the anchor node in the Nodes::nn_ids vector of the center_node
+     * and uses Node classes own method Node::emplace_nn_id to emplace the new_value
+     * there (together with its distance to the center_node).
+     * @param center_node_id @NodeIDStub The new node is emplaced in the Node.nn_ids vector of this node.
+     * @param anchor_id @LocNNIndexStub This is the index of the next neighbor (inside `nn_ids` vector of the node `center_node_id`), before which the new node id is emplaced.
+     * @param new_value @NodeIDStub The id of the new node.
+     */
     void emplace_before(Index center_node_id, Index anchor_id, Index new_value)
     {
-        /**
-         * this method finds the anchor node in the nn_ids vector of the center_node
-         * and uses Node classes own method emplace_nn_id to emplace the new_value
-         * there (together with its distance to the center_node).
-         * The body of this fuction looks like it does not guard against find returning
-         * end() pointer, but this is taken care of in the emplace_nn_id method.
-         */
+        // The body of this function looks like it does not guard against find returning
+        // end() pointer, but this is taken care of in the emplace_nn_id method.
         auto anchor_pos_ptr = std::find(nodes_[center_node_id].nn_ids.begin(),
                 nodes_[center_node_id].nn_ids.end(), anchor_id);
         indexing_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
@@ -23965,21 +24243,21 @@ public:
     }
 
     //unit tested
-    //! Securely flip the bond inside a quadrilateral
-    //! formed by the nodes given by node_id, nn_id and their two common next neighbours,
-    //! if all topological requirements are satisfied.
+    /** \brief Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,
+     * nn_id and their two common next neighbors, if all topological requirements are satisfied.
+     */
     BondFlipData<Index> flip_bond(Index node_id, Index nn_id,
                                   Real min_bond_length_square,
                                   Real max_bond_length_square){
     /**
-     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e. not introduce holes or additional bonds in it.
-     * To this end the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
-     * The information if the flip was allowed and succeeded or not will be encoded in BondFlipData struct, which will be returned by this function.
+     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e., not introduce holes or additional bonds in it.
+     * To this end, the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
+     * The information if the flip was allowed and succeeded or not will be encoded in the BondFlipData struct, which this function will return.
      * The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip.
      * A bond flip can fail if:
-     * - if the provided nodes id's are do not correspond to neighbouring nodes.
-     * - one of the donor nodes have already too few bonds (bonds less then #BOND_DONATION_CUTOFF).
-     * - if a new bond that would be created would be
+     * - if the provided nodes id's do not correspond to neighboring nodes.
+     * - one of the donor nodes have already too few bonds (bonds less than #BOND_DONATION_CUTOFF).
+     * - if a new bond that would be created, would be
      *  - too long (length squared is larger than **max_bond_length_square**)
      *  - too short (length squared is smaller than **min_bond_length_square**)
      *
@@ -23987,10 +24265,10 @@ public:
      * @param nn_id @NNIDStub
      * @param min_bond_length_square @BondLengthSquareStub{minimal}
      * @param max_bond_length_square @BondLengthSquareStub{maximal}
-     * @return If the flip was successful the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
+     * @return If the flip was successful, the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
      * The members BondFlipData::common_nn_0 and BondFlipData::common_nn_1 will contain global ids of new end nodes of the flipped bond.
-     * If the flip was not successful then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
-     * @note Regardless of the return values the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.
+     * If the flip was not successful, then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
+     * @note Regardless of the return values, the primary purpose of the function, that of flipping a bond, is accomplished as a side-effect.
      */
         BondFlipData<Index> bfd{};
         if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF) {
@@ -24019,17 +24297,75 @@ public:
     }
 
     //unit-tested
-    //! unflip a bond that was just flipped.
+    //! Un-flip a bond that was just flipped.
+    /**
+     * This method reverses a flip between two nodes that used to be connected and had their node just flipped away,
+     * provided their id's and the BondFlipData that holds the information on the current bond holders.
+     *
+     *
+     * This means that `node_id` and `nn_id` are (pre-flip) owners of the bond. And `common_nns` contains the id's of the
+     * current bond owners (to which the bond was flipped to).
+     * The edge will be taken away from the current two neighbors and added to the previous owners. All geometric information of the triangulation will be updated.
+     *
+     * @warning This method only works correctly if there were no bond flips after that flip which is being reversed.
+     * I.e., this method can only reverse the last flip. Furthermore, the method assumes that the arguments are provided correctly and
+     * will result in an illegal triangulation if this is not the case.
+     *
+     * @note This method does not check the validity of its input to provide a fast way of flip reversal. It relies on the fact that
+     * the user usually has the exact knowledge of all four node id's that participated in a flip and can provide those id's
+     * in the correct order. For a safer way of un-fliping, the Triangulation::flip_bond method can be used twice, with interchanged order
+     * of arguments.
+     *
+     * The following example implementation of a Monte Carlo flip update method shows the proper way to use
+     * the Triangulation.flip_bond and Triangulation.unflip_bond methods.
+     *
+     * ```c++
+     *  // `e_old`, `e_new`, `triangulation and `parameters` are data members of the updater
+     *  void mc_flipp_update(fp::Node<Real, Index> const& node)
+     *  {
+     *       e_old = energy_function(node, triangulation, parameters);
+     *       Index number_nn_ids = node.nn_ids.size();
+     *       Index nn_id = node.nn_ids[std::uniform_int_distribution<Index>(0, number_nn_ids-1)(rng)];
+     *       auto bond_flip_data = triangulation.flip_bond(node.id, nn_id, min_bond_length_square, max_bond_length_square);
+     *       if (bond_flip_data.flipped) {
+     *           e_new = energy_function(node, triangulation, parameters);
+     *           if (move_needs_undoing()) { triangulation.unflip_bond(node.id, nn_id, bond_flip_data); }
+     *       }
+     *   }
+     *```
+     *@see Triangulation.flip_bond BondFlipData
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param common_nns BondFlipData containing information on the common next neighbor ids.
+     */
     void unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns)
     {
         flip_bond_unchecked(common_nns.common_nn_0, common_nns.common_nn_1, nn_id, node_id);
-//        copy_diamond_back(node_id, nn_id, cnn0_id, cnn1_id);
         update_diamond_geometry(node_id, nn_id, common_nns.common_nn_0, common_nns.common_nn_1);
         update_global_geometry(post_update_geometry, pre_update_geometry);
     }
 
-    //! Exchange next neighbourhood between four nodes in a manner that will correspond to
+    //! Exchange the next neighborhood between four nodes in a manner that will correspond to
     //! a bond flip if the provided information was correct.
+    /**
+     * @warning This method may lead to an unphysical state (broken lattice that no longer represents a triangulation) if the provided
+     * arguments are not correct.
+     * @note For most use-cases the high level methods Triangulation::flip_bond and Triangulation::unflilp_bond are recommended.
+     * They guarantee that the performed flips result in a legal triangulation and reject the flip otherwise.
+     * This method should only be used by advanced users that have very specific needs for a flip updater.
+     *
+     * The correct functioning of this method requires that, `node_id` and `nn_id` need to be next neighbours, and `common_nn_j_m_1` and `common_nn_j_p_1`
+     * need to be common next neighbors of both `node_id` and `nn_id`.
+     * Moreover, the nodes need to be ordered in the Node::nn_ids vector of the Node represented by `node_id` as follows:
+     * `... common_nn_j_m_1, node_id, common_nn_j_p_1 ...`,
+     * or a cyclic permutation thereof.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param common_nn_j_m_1
+     * @param common_nn_j_p_1
+     * @return BondFlipData, where the flipped field is always set to `True`.
+     */
     BondFlipData<Index> flip_bond_unchecked(Index node_id, Index nn_id,
                                             Index common_nn_j_m_1, Index common_nn_j_p_1)
     {
@@ -24040,12 +24376,18 @@ public:
     }
 
     // unit-tested
+    //! Update the geometric quantities associated with the given node.
+    /**
+     * This is the core update function of the triangulation.
+     * It updates the geometric quantities of the given node after its position in the triangulation has been changed
+     * through a node move, or its neighborhood structure has been changed through a bond flip.
+     * Calculate and update the local curvature, area, volume, and unit bending energy of the node (See Figure tr1 B, C and D).
+     *
+     * @see Node::curvature_vec, Node::area, Node::volume, Node::unit_bending_energy
+     * @param node_id @NodeIDStub
+     */
     void update_bulk_node_geometry(Index node_id)
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the voronoi cell
-         * associated to the node
-         */
         update_nn_distance_vectors(node_id);
 
         Real area_sum = 0.;
@@ -24087,17 +24429,24 @@ public:
     };
 
 
+    //! This function is deprecated!
+    /**
+     * @warning This function is here for legacy reasons! It is deprecated and will be removed in future minor updates.
+     * This function returns values of eqn.'s (82) & (84) from the paper [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
+     * Every node has its associated Voronoi area, and each Voronoi area can be subdivided into parts that are
+     * associated with each triangle that the node is part of. This function returns that sub-area and the face normal
+     * of that triangle.
+     * @param lij distance between a node and its jth next neighbor
+     * @param lij_p_1 distance between a node and its j+1th next neighbor
+     * @return tuple of the area associated with the node inside the triangle (i,j,j+1) and the face normal of the triangle.
+     */
+    [[deprecated("This function is deprecated and will be removed in a future release. It uses expensive function calls and is not recommended for use.")]]
     static std::tuple<Real, vec3<Real>> partial_voronoi_area_and_face_normal_of_node_in_a_triangle(vec3<Real> const& lij,
                                                                                                    vec3<Real> const& lij_p_1)
     {
-        /** This function returns values of eqn.'s (82) & (84) from the paper [1]
-         * Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are
-         * associated to each triangle that the node is part of. This function returns that sub-area and the face normal
-         * of that triangle.
-         */
         Real area, face_normal_norm;
         vec3<Real> un_noremd_face_normal;
-        //precalculating this normal and its norm, will be needed in area calc. If all triangles are oriented as
+        //precalculating this normal and its norm will be needed in area calc. If all triangles are oriented as
         // right-handed, then this normal will point outwards
         un_noremd_face_normal = lij.cross(lij_p_1);
         face_normal_norm = un_noremd_face_normal.norm();
@@ -24105,6 +24454,25 @@ public:
         return std::make_tuple(area, un_noremd_face_normal);
     }
 
+    //! The node-associated area inside a triangle.
+    /**
+     * This function is calculating the area associated with a node inside a triangle. As depicted in Figure tr1. A.
+     * This can be found in the description of the Triangulation class.
+     *
+     * Every node of the triangulation has its own associated area.
+     * In the simplest case, the area associated with a node is the area of the Voronoi cell of that node. Where the Voronoi tessellation of the surface is the dual lattice of the triangulation.
+     * This function returns the area associated with a node inside a triangle. If that triangle is not obtuse, then this area is simply
+     * the area of the Voronoi cell of the node that is inside the triangle.
+     * This Voronoi area becomes negative for obtuse triangles, and thus an exception has to be made.
+     * If the triangle has an obtuse angle at the node, then the area associated with the node inside the triangle is half of the triangle area,
+     * otherwise, it is the quarter of the triangle area. This procedure is described in detail by [Meyer et al. 2003](https://doi.org/10.1007/978-3-662-05105-4_2)
+     * @param lij Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule. See Figure tr1. A and C)
+     * @param lij_p_1 Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule)
+     * @param triangle_area area of the triangle i,j,j+1. See Area \f$A_{i,j,j+1}\f$ in Figure tr1. C.
+     * @param cot_at_j Cotangent of the angle at the node j, opposite to the edge i,j+1. See Figure tr1. B.
+     * @param cot_at_j_p_1 Cotangent of the angle at the node j+1, opposite to the edge i,j. See Figure tr1. B.
+     * @return Area associated with the node inside the triangle. See Area \f$A_{ij}\f$ in Figure tr1. C.
+     */
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1){
         if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
             if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
@@ -24120,18 +24488,20 @@ public:
 
         }
 
-//    unit tested
-    [[deprecated("This function is deprecated and will be removed in a future release. mixed_area which does not take precalculated cotangents is performs expensive calculations use the use the alternative mixed_area function!")]]
+    //unit tested
+    //! This function is deprecated!
+    /**
+     * @warning This function is here for legacy reasons! It is deprecated and will be removed in future minor updates.
+     * Use the alternative mixed_area function instead!
+     *
+     * @param lij Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule. See Figure tr1. A and C)
+     * @param lij_p_1 Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule)
+     * @param triangle_area area of the triangle \f$i,j,j+1\f$. See Area \f$A_{i,j,j+1}\f$ in Figure tr1. C.
+     * @return Area associated with the node inside the triangle. See Area \f$A_{ij}\f$ in Figure tr1. C.
+     */
+    [[deprecated("This function is deprecated and will be removed in a future release. mixed_area, which does not take precalculated cotangents, performs expensive calculations! Use the alternative mixed_area function!")]]
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real const& triangle_area)
     {
-        /** This function returns values of eqn.'s (82) (and two unnamed formulas in the following paragraph) from [1]
-         *
-         * Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are
-         * associated to each triangle that the node is part of. This function returns that sub-area. If the large triangle
-         * (that the voronoi sub element is part of), is not obtuse. If it is obtuse, then the return value is either half,
-         * or quarter of the large triangle. Depending where it is obtuse.
-         *
-         */
         vec3<Real> ljj_p_1 = lij_p_1 - lij;
 
         Real cot_at_j = cot_between_vectors(lij, (-1)*ljj_p_1);
@@ -24150,12 +24520,18 @@ public:
 
     }
 
+    //! Aggregates and Returns the geometric quantities of the center node and its next neighbor nodes.
+    /**
+     * This function aggregates area volume and squared curvature integrated over the area for the  two-ring of the
+     * associated with the node, using the stored quantities.
+     * Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node.
+     *
+     * @param node_id
+     * @return Geometry<Real, Index> object containing the geometric quantities of the center node and its next neighbor nodes.
+     */
     [[nodiscard]] Geometry<Real, Index> get_two_ring_geometry(Index node_id) const
     {
-        /**
-        * calculates area volume and squared curvature integrated over the area, for the  two-ring of the
-        * associated to the node, using the stored current_node_geometry
-        */
+
         Geometry<Real, Index> trg(nodes_[node_id]);
         for (auto const& nn_id: nodes_[node_id].nn_ids) {
             trg += nodes_[nn_id];
@@ -24163,12 +24539,16 @@ public:
         return trg;
     }
 
+    //! Updates the geometric quantities of the center node and its next neighbor nodes.
+    /**
+     * This function calculates and updates the area volume and squared curvature integrated over the area for the  two-ring of the
+     * associated with the node.
+     * Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node.
+     * @param node_id @NodeIDStub
+     */
     void update_two_ring_geometry(Index node_id)
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the  two-ring of the
-         * associated to the node
-         */
+
         update_bulk_node_geometry(node_id);
         for (auto nn_id: nodes_.nn_ids(node_id)) {
             update_bulk_node_geometry(nn_id);
@@ -24176,6 +24556,21 @@ public:
     };
 
     // unit-tested
+    //! Method for stretching or squeezing the initial triangulation shape.
+    /**
+     * This method is most useful for transforming a spherical triangulation into an ellipse.
+     *
+     * The method stretches `x`, `y`, and `z` components of each node by a factor provided in the function argument.
+     * Triangulation's local and global geometric properties are updated after the stretch.
+     *
+     * @note The stretch will happen with respect to the lab frame and not the mass center of the triangulation.
+     * Thus, to get the intended results, the stretch is most likely desired,
+     * when the triangulation is centered around the origin of the lab frame, This is the case right after the initiation.
+     *
+     * @param x_stretch Stretching factor of the `x` component of the position of the triangulation nodes.
+     * @param y_stretch Stretching factor of the `y` component of the position of the triangulation nodes.
+     * @param z_stretch Stretching factor of the `z` component of the position of the triangulation nodes.
+     */
     void scale_node_coordinates(Real x_stretch, Real y_stretch = 1, Real z_stretch = 1)
     {
         vec3<Real> displ = {0, 0, 0};
@@ -24188,13 +24583,30 @@ public:
     }
 
     //Todo unittest
+    //! Aggregates the geometric quantities of the diamond configuration of nodes associated with a bond flip.
+    /**
+     *```txt
+     * State of the diamond, which contains all nodes that participate in a bond flip.
+     *  before the flip
+     *
+     *      common nn 1
+     *      /          \
+     *     /            \
+     *   node --------- nn
+     *     \            /
+     *      \          /
+     *     common nn 0
+     *```
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NodeIDStub
+     * @param cnn_0 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @param cnn_1 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @return Geometric quantities aggregated over the diamond configuration of nodes associated with a bond flip.
+     */
     [[nodiscard]] Geometry<Real, Index> calculate_diamond_geometry(Index node_id, Index nn_id,
                                                              Index cnn_0, Index cnn_1) const
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the diamond configuration of nodes
-         * associated with a bond-flip from existing current_node_geometry
-         */
         Geometry<Real, Index> diamond_geometry(nodes_[node_id]);
         diamond_geometry += nodes_[nn_id];
         diamond_geometry += nodes_[cnn_0];
@@ -24203,12 +24615,28 @@ public:
     };
 
     //Todo unittest
+    //! Calculates and updates the geometric quantities of the diamond configuration of nodes associated with a bond flip.
+    /**
+     *```txt
+     * State of the diamond, which contains all nodes that participate in a bond flip.
+     *  before the flip
+     *
+     *      common nn 1
+     *      /          \
+     *     /            \
+     *   node --------- nn
+     *     \            /
+     *      \          /
+     *     common nn 0
+     *```
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NodeIDStub
+     * @param cnn_0 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @param cnn_1 Global id of the common next nearest neighbor of node_id and nn_id.
+     */
     void update_diamond_geometry(Index node_id, Index nn_id, Index cnn_0, Index cnn_1)
     {
-        /**
-         * updates area volume and squared curvature integrated over the area, for the diamond configuration of nodes
-         * associated with a bondflip
-         */
         update_bulk_node_geometry(node_id);
         update_bulk_node_geometry(nn_id);
         update_bulk_node_geometry(cnn_0);
@@ -24216,13 +24644,45 @@ public:
     };
 
     // Const Viewer Functions
+    //! Returns the number of nodes in the triangulation.
+    /**
+     * @return Number of the nodes in the triangulation.
+     */
     [[nodiscard]] Index size() const { return nodes_.size(); }
+    //! Returns a constant reference to the node with the given id.
+    /**
+     * Triangulation will never give non-constant access to a node.
+     * In order to change a node, one has to use the methods of the Triangulation class.
+     * This guarantees that the triangulation is always in a consistent state.
+     * @param idx @NodeIDStub
+     * @return Constant reference to the node with the given id.
+     */
     const Node<Real, Index>& operator[](Index idx) const { return nodes_.data.at(idx); }
+    //! Returns a constant reference to the underlying Nodes container.
+    /**
+     * @return Constant reference to the underlying Nodes container.
+     */
     const Nodes<Real, Index>& nodes() const { return nodes_; }
+    //! Creates a JSON object with the data of the triangulation.
+    /**
+     * Egg refers to the fact that the data can be used to recreate the triangulation using the Triangulation(Json const& nodes_input, Real verlet_radius_inp) constructor.
+     * @note The Triangulation(Json const& nodes_input, Real verlet_radius_inp) constructor is currently only implemented for a spherical Triangulation!
+     *
+     * @return Triangulation data in JSON format.
+     */
     [[nodiscard]] Json make_egg_data() const { return nodes_.make_data(); }
+    //! Information about the global geometric quantities of the triangulation, like global area, volume, and total unit bending energy.
+    /**
+     * @return Geometric quantities of the triangulation aggregated over all nodes.
+     */
     [[nodiscard]] const Geometry<Real, Index>& global_geometry() const { return global_geometry_; }
 
     //Todo unittest
+    //! Initiates the global geometry of the triangulation.
+    /**
+     * The global geometry is calculated by summing up the local geometries of all nodes.
+     *
+     */
     void make_global_geometry()
     {
         const Geometry<Real, Index> empty{};
@@ -24239,6 +24699,13 @@ public:
     }
 
     //Todo unittest
+    //! Updates the local geometry of a boundary node (for triangulation types that have a boundary).
+    /**
+     * @warning @linearTriangulationWarningStub
+     * Boundary nodes need to be treated differently, depending on the boundary conditions.
+     * Right now, flippy is only handling fixed boundary conditions, where all geometric quantities of boundary nodes are set to zero.
+     * @param node_id Id of a boundary node.
+     */
     void update_boundary_node_geometry(Index node_id){
         nodes_.set_area(node_id, 0.);
         nodes_.set_volume(node_id, 0.);
@@ -24285,13 +24752,13 @@ private:
 
     }
 
-    //! This function calculates distance vectors from a node to all of it's neighbors.
+    //! This function calculates distance vectors from a node to all of its neighbors.
     void update_nn_distance_vectors(Index node_id)
     {
         /**
          *  The directions of the distance vectors are (radiating outward) pointing from the node to neighbors.
          *  The function also preserves the order of neighbors. Meaning that the order of distance vectors is in the same
-         *  order as th provided list of neighbor ids.
+         *  order as the provided list of neighbor ids.
          *  @param node_id Global id of a node.
          */
 
@@ -24301,13 +24768,21 @@ private:
         }
     }
 
+    /**
+     * given a node `i` and its neighbor `j`, they will share two common neighbor nodes, `p` and `m`.
+     * This function finds the angles at `p` & `m` opposite of `i-j` link.
+     * This function implements the cot(alpha_ij) + cot(beta_ij) from fig. (6c) from [.
+     * The order of these neighbors does not matter for the correct sign of the angles.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param cnn_0 common neighbor node 0
+     * @param cnn_1 common neighbor node 1
+     * @return cot(alpha_ij_jm1) + cot(alpha_ij_jp1)
+     */
     Real cot_alphas_sum(Index node_id, Index nn_id, Index cnn_0, Index cnn_1) const
     {
-        /**
-         * given a node i and its neighbor j, they will share two common neighbor nodes p and m.
-         * This function finds the angles at p & m opposite of i-j link.
-         * This function implements the cot(alpha_ij) + cot(beta_ij) from fig. (6c) from [1].
-         * The order of these neighbours does not matter for the correct sign of the angles.
+        /**	
+         *
          */
 
         l0_ = nodes_[node_id].pos - nodes_[cnn_0].pos;
@@ -24458,8 +24933,8 @@ private:
          *     i-----j
          *     \    /
          *     	j-1
-         *     	given i and j this function finds the local ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
-         *     	This function relies on the fact that i & j are neighbours and will throw a nasty runtime error if they are
+         *     	given i and j, this function finds the local ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
+         *     	This function relies on the fact that i & j are neighbors and will throw a nasty runtime error if they are
          *     	not
          */
         auto const& nn_ids_view = nodes_[node_id].nn_ids;
@@ -24479,8 +24954,8 @@ private:
          *     i-----j
          *     \    /
          *     	j-1
-         *     	given i and j this function finds the global ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
-         *     	This function relies on the fact that i & j are neighbours and will throw a nasty runtime error if they are
+         *     	given i and j, this function finds the global ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
+         *     	This function relies on the fact that i & j are neighbors and will throw a nasty runtime error if they are
          *     	not
          */
         auto const& nn_ids_view = nodes_[node_id].nn_ids;
@@ -24561,18 +25036,28 @@ private:
 
 #ifndef FLIPPY_MONTECARLOUPDATER_HPP
 #define FLIPPY_MONTECARLOUPDATER_HPP
+/**
+ * @file
+ * @brief This file contains the MonteCarloUpdater class template. Together with Triangulation.hpp, this file contains flippy's most important high-level interfaces.
+ */
 #include <random>
 
 namespace fp {
 
 /**
- * @brief A helper class for updating of the triangulation, using [Metropolis‚ÄìHastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
+ * @brief A helper class for updating the triangulation, using
+ * [Metropolis‚ÄìHastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
+ * This is a high-level interface intended to implement a basic Monte-Carlo updating scheme, which should be sufficient
+ * for a lot of simple situations.
  *
  * @tparam Real @RealStub
  * @tparam Index @IndexStub
- * @tparam EnergyFunctionParameters
- * @tparam RandomNumberEngine
- * @tparam triangulation_type
+ * @tparam EnergyFunctionParameters A user-defined struct type. An instance of this struct will be part of the input of the energy function.
+ * Energy function provided during instantiation must have a third argument of type EnergyFunctionParameters const&.
+ * @tparam RandomNumberEngine type of the random number engine that will be provided during the instantiation of the class.
+ * For example [std::mt19937_64](https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine).
+ * @tparam triangulation_type One of the types specified by the TriangulationType enum.
+ * This must match the type of triangulation provided during the class instantiation.
  */
 template<floating_point_number Real, indexing_number Index, typename EnergyFunctionParameters, typename RandomNumberEngine, TriangulationType triangulation_type>
 class MonteCarloUpdater
@@ -24591,6 +25076,18 @@ private:
     unsigned long flip_attempt{0}, bond_length_flip_rejection{0}, flip_back{0};
 
 public:
+
+    /**
+     * @param triangulation_inp Reference to the triangulation that will be updated.
+     * @param prms_inp The instance of the struct that contains the parameters of the system energy.
+     * @param energy_function_inp A c++ function that represents the system energy. It can be evaluated for a given node for a Monte Carlo step.
+     * @param rng_inp Random number engine
+     * @param min_bond_length Minimal bond length between two triangulation nodes. More generally, a minimal distance two nodes of the triangulation are allowed to have.
+     * If set to zero, the stability of the updater will suffer, and nonphysical shapes with self-intersecting triangulation will be common.
+     * @param max_bond_length Maximal allowed length of a bond between two nodes of a triangulation.
+     * If set too high, the stability of the updater will suffer, and nonphysical shapes with self-intersecting triangulation will be common.
+     * Conversely, setting this variable too low will significantly reduce the chance of a successful bond flip.
+     */
     MonteCarloUpdater(fp::Triangulation<Real, Index, triangulation_type>& triangulation_inp,
                       EnergyFunctionParameters const& prms_inp,
                       std::function<Real(fp::Node<Real, Index> const&, fp::Triangulation<Real, Index, triangulation_type> const&, EnergyFunctionParameters const&)> energy_function_inp,
@@ -24598,8 +25095,17 @@ public:
     :triangulation(triangulation_inp), prms(prms_inp), energy_function(energy_function_inp), rng(rng_inp),
     unif_distr_on_01(std::uniform_real_distribution<Real>(0, 1)),
     min_bond_length_square(min_bond_length*min_bond_length), max_bond_length_square(max_bond_length*max_bond_length)
-    {}
+    {
 
+    }
+
+    //! Implementation of the Metropolis algorithm.
+    /**
+     * This function implements the [Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm)
+     * to evaluate whether the performed move should be rejected and undone.
+     * @return `true` if the energy difference between the old and the new states is negative (i.e., the move costs energy)
+     * and the random number is smaller than the Boltzmann Probability of accepting the move. `false` otherwise.
+     */
     bool move_needs_undoing()
     {
         e_diff = e_old - e_new;
@@ -24610,6 +25116,18 @@ public:
         }
     }
 
+    //! Pre-update check to test that the update step will not result in an unphysical configuration.
+    /**
+     * Check if both the node does not overlap with any of its Verlet list neighbors or next neighbors and that none of
+     * its connections to the next neighbors exceeds the maximal distance.
+     * @param node @mcuNodeStub
+     * @param displacement @mcuDisplacementStub
+     * @return `true` if
+     * new_next_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const&, fp::vec3<Real> const&)
+     * and
+     * new_verlet_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const&, fp::vec3<Real> const&)
+     * conditions are both satisfied, `false` otherwise.
+     */
     bool new_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node,
                                                                      fp::vec3<Real> const& displacement)
 
@@ -24619,16 +25137,21 @@ public:
 
     }
 
+    //! Pre-update check to test that the update step will not result in an unphysical configuration.
+    /**
+     * Iterate through the next neighbor distances of a node which is a collection of
+     * 3d vectors, i.e. nn_dist is of type fp::vec3. Then check if the displacement would make any of the
+     * nn_distance vectors longer than the allowed max length.
+     *
+     * @param node @mcuNodeStub
+     * @param displacement @mcuDisplacementStub
+     * @return `true` if all next neighbor distances are between minimal and maximal allowed values,
+     * provided during the instantiation of the MonteCarloUpdater class, `false` otherwise.
+     */
     bool new_next_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node,
                                                                      fp::vec3<Real> const& displacement)
 
     {
-        /**
-         * iterate through the next neighbour distances of a node which is a collection of
-         * 3d vectors, i.e. nn_dist is of type fp::vec3. Then check if the displacement would make any of the
-         * nn_distance vectors longer than the allowed max length.
-         */
-
         Real distance_square_new, distance_square_old;
         for (auto const& nn_dist: node.nn_distances){
             distance_square_new=(nn_dist - displacement).norm_square();
@@ -24644,15 +25167,22 @@ public:
         return true;
     }
 
+
+    //! Pre-update check to test that the update step will not result in an unphysical configuration.
+    /**
+     * Iterate through the Verlet list neighbor distances of a node which is a collection of
+     * 3d vectors. Then check if the displacement would make any of the Verlet list neighbors move closer than the minimal allowed distance
+     * between two nodes. I.e., we check if the node would overlap with any of its Verlet list neighbors after the move.
+     * The overlap distance or the minimal allowed distance is provided during the instantiation of the class.
+     * @param node @mcuNodeStub
+     * @param displacement @mcuDisplacementStub
+     * @return `true` if the nodes did not overlap before but overlap now. `false` otherwise.
+     */
     bool new_verlet_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node,
                                                                      fp::vec3<Real> const& displacement)
 
     {
-        /**
-         * iterate through the next neighbour distances of a node which is a collection of
-         * 3d vectors, i.e. nn_dist is of type fp::vec3. Then check if the displacement would make any of the
-         * nn_distance vectors longer than the allowed max length.
-         */
+
         Real distance_square_new, distance_square_old;
         for (auto const& verlet_neighbour_id: node.verlet_list)
         {
@@ -24663,6 +25193,14 @@ public:
         return true;
     }
 
+    //! Attempt a move Monte Carlo Step.
+    /**
+     * A move step is attempted on the specified node.
+     * [Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm) is used to evaluate whether the move should be accepted.
+     * @param node @mcuNodeStub
+     * @param displacement @mcuDisplacementStub
+     *
+     */
     void move_MC_updater(fp::Node<Real, Index> const& node, fp::vec3<Real> const& displacement)
     {
         ++move_attempt;
@@ -24674,6 +25212,16 @@ public:
         }else{++bond_length_move_rejection;}
     }
 
+    //! Attempt a flip Monte Carlo Step.
+    /**
+     * A flip step is attempted between a specified node and one of its randomly chosen next neighbors.
+     * [Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm) is used to evaluate whether the flip should be accepted.
+     * @param node @mcuNodeStub
+     * otherwise, the flippy will fail silently.
+     * @note This function randomly chooses the next neighbor of the `node` and flips the edge between them.
+     * If more precise control is required, i.e., if it is necessary to control exactly which edge needs to be flipped,
+     * then the flip_MC_updater(fp::Node<Real, Index> const& node, Index id_in_nn_ids) method can be used.
+     */
     void flip_MC_updater(fp::Node<Real, Index> const& node)
     {
         ++flip_attempt;
@@ -24687,23 +25235,31 @@ public:
         }else{++bond_length_flip_rejection;}
     }
 
-    void flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids)
+    //! Attempt a flip Monte Carlo Step.
+    /**
+     * A flip step is attempted between a specified node and its specified next neighbor.
+     * [Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm) is used to evaluate whether the flip should be accepted.
+     * @param node @mcuNodeStub
+     * @param id_in_nn_ids This id must be part of the Node::nn_ids vector of the node provided in the first argument ,
+     * otherwise, the flippy will fail silently.
+     * @warning For performance reasons, this function does not check if `id_in_nn_ids` is really a `nn_id` of the `node` provided in the first argument.
+     * The user is required to guarantee this fact. Otherwise, flippy will fail unpredictably.
+     * flip_MC_updater(fp::Node<Real, Index> const&) is the safer method if the user does not care exactly which bond is flipped.
+     */
+    void flip_MC_updater(fp::Node<Real, Index> const& node, Index id_in_nn_ids)
     {
-        /**
-         *
-         */
         ++flip_attempt;
         e_old = energy_function(node, triangulation, prms);
         Index number_nn_ids = node.nn_ids.size();
 //        Index nn_id = index_in_nn_ids;//node.nn_ids[std::uniform_int_distribution<Index>(0, number_nn_ids-1)(rng)];
-        auto bfd = triangulation.flip_bond(node.id, index_in_nn_ids, min_bond_length_square, max_bond_length_square);
+        auto bfd = triangulation.flip_bond(node.id, id_in_nn_ids, min_bond_length_square, max_bond_length_square);
         if (bfd.flipped) {
             e_new = energy_function(node, triangulation, prms);
-            if (move_needs_undoing()) { triangulation.unflip_bond(node.id, index_in_nn_ids, bfd); ++flip_back;}
+            if (move_needs_undoing()) { triangulation.unflip_bond(node.id, id_in_nn_ids, bfd); ++flip_back;}
         }else{++bond_length_flip_rejection;}
     }
 
-
+    //! Reset the temperature of the Monte Carlo updater, at which the Boltzmann weights are evaluated.
     void reset_kBT(Real kBT){
         /**
          * @param kBT input value of new temperature.
@@ -24713,68 +25269,75 @@ public:
         kBT_=kBT;
     }
 
+    //! @getterFunctionStub
     [[nodiscard]] Real kBT(){
     /**
-     * Monte Carlo Updater requires a kBT value in teh calculation of the rejection probability of a random move.
-     * @return the state of kBT value of the updater.
+     * Monte Carlo Updater requires a kBT value in the calculation of the rejection probability of a random move.
+     * @return the state of the kBT value of the updater.
      * @see move_needs_undoing()
      */
         return kBT_;
     }
+    //! @getterFunctionStub
     [[nodiscard]] unsigned long move_attempt_count() const {
     /**
      * Every time a move is attempted, a private internal state variable `move_attempt` is incremented by move_MC_updater().
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `move_attempt`.
      * @see move_needs_undoing()
      */
         return move_attempt;
     }
+    //! @getterFunctionStub
     [[nodiscard]] unsigned long bond_length_move_rejection_count() const {
     /**
-     * Moves that cause nodes to overlap with their Verlet list neighbours or move them too far away from any of their next neighbours, are rejected. Every time such rejection happens, a private internal state variable `bond_length_move_rejection` is incremented by move_MC_updater().
+     * Moves that cause nodes to overlap with their Verlet list neighbors or move them too far away from any of their next neighbors are rejected. Every time such rejection happens, a private internal state variable `bond_length_move_rejection` is incremented by move_MC_updater().
      * The specifics of this rejection criteria are calculated in the function new_neighbour_distances_are_between_min_and_max_length(fp::Node<Real, Index> const& node, fp::vec3<Real> const& displacement)
-     * Every time a node move would lead that node to have a bond with one of its next neighbours which is longer than a specified maximal length (max_bond_length()), the move will be rejected.
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * Every time a node move would lead that node to have a bond with one of its next neighbors, which is longer than a specified maximal length (max_bond_length()), the move will be rejected.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `bond_length_move_rejection`.
      * @see move_needs_undoing()
      */
         return bond_length_move_rejection;
     }
+    //! @getterFunctionStub
     [[nodiscard]] unsigned long move_back_count() const {
     /**
-     * Every time a move is rejected, because the energy requirement was not satisfied, a private internal state variable `move_back` is incremented by move_MC_updater().
-     * This variable does not track the rejections resulting from bond length restriction violation.
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * Every time a move is rejected because the energy requirement was not satisfied, a private internal state variable `move_back` is incremented by move_MC_updater().
+     * This variable does not track the rejections resulting from bond length restriction violations.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `move_back`.
      * @see move_needs_undoing() bond_length_move_rejection_count()
      */
         return move_back;
     }
+    //!@getterFunctionStub
     [[nodiscard]] unsigned long flip_attempt_count() const {
     /**
      * Every time a flip is attempted, a private internal state variable `flip_attempt` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `flip_attempt`.
      */
         return flip_attempt;
     }
+    //! @getterFunctionStub
     [[nodiscard]] unsigned long bond_length_flip_rejection_count() const {
     /**
      * If a flip would turn a valid bond into a bond that is too long, the flip is rejected, a private internal state variable `bond_length_flip_rejection` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
      * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `bond_length_flip_rejection`.
      * @see Triangulation::flip_bond(Index, Index, Real, Real) Triangulation::unflip_bond(Index, Index, BondFlipData<Index> const&)
      */
         return bond_length_flip_rejection;
     }
+    //! @getterFunctionStub
     [[nodiscard]] unsigned long flip_back_count() const {
     /**
-     * Every time a flip is rejected, because the energy requirement was not satisfied, a private internal state variable `flip_back` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
+     * Every time a flip is rejected because the energy requirement was not satisfied, a private internal state variable `flip_back` is incremented by flip_MC_updater() and flip_MC_updater(fp::Node<Real, Index> const& node, Index index_in_nn_ids).
      * The rejection of flips is handled by the Triangulation class itself and reported through the BondFlipData to the flip functions of the updater.
-     * This variable does not track the rejections resulting from bond length restriction violation.
-     * This variable can be used for diagnostics or statistical tracking but its state does not impact the function of the updater.
+     * This variable does not track the rejections resulting from bond length restriction violations.
+     * This variable can be used for diagnostics or statistical tracking, but its state does not impact the function of the updater.
      * @return current state of `flip_back`.
      * @see Triangulation:: unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns) bond_length_flip_rejection_count()
      */
@@ -24799,7 +25362,7 @@ public:
 
 // begin --- flippy.hpp-e --- 
 
-/**
+/*
  *```txt
  *
  *  .d888 888 d8b
@@ -24814,7 +25377,7 @@ public:
  *                888      888      Y8b d88P
  *                888      888       "Y88P"
  *
- * https://gitlab.tudelft.nl/idema-group/flippy
+ * https://github.com/flippy-software-package/flippy
  *
  *
  * MIT License
@@ -24841,6 +25404,11 @@ public:
  *```
  */
 
+
+/**
+ * @file
+ * @brief This header file exists for convenience. Including this header will automatically include all parts of flippy in the project.
+ */
 #ifndef FLIPPY_FLIPPY_HPP
 #define FLIPPY_FLIPPY_HPP
 

@@ -1,6 +1,6 @@
 <map id="flippy/utilities/utils.hpp" name="flippy/utilities/utils.hpp">
-<area shape="rect" id="node1" title="This file contains helper functions that are used throughout flippy, but are not specific to any give..." alt="" coords="154,5,305,31"/>
-<area shape="rect" id="node2" href="$_triangulation_8hpp_source.html" title=" " alt="" coords="94,79,250,104"/>
-<area shape="rect" id="node4" href="$flippy_8hpp_source.html" title=" " alt="" coords="182,225,293,251"/>
-<area shape="rect" id="node3" href="$_monte_carlo_updater_8hpp_source.html" title=" " alt="" coords="5,152,200,177"/>
+<area shape="rect" id="node1" title="This file contains helper functions that are used throughout flippy, but are not specific to any give..." alt="" coords="146,5,297,31"/>
+<area shape="rect" id="node2" href="$_triangulation_8hpp.html" title="This file contains the fp::Triangulation class and several related helper classes...." alt="" coords="86,79,242,104"/>
+<area shape="rect" id="node4" href="$flippy_8hpp.html" title="This header file exists for convenience. Including this header will automatically include all parts o..." alt="" coords="225,152,335,177"/>
+<area shape="rect" id="node3" href="$_monte_carlo_updater_8hpp.html" title="This file contains the MonteCarloUpdater class template. Together with Triangulation...." alt="" coords="5,152,200,177"/>
 </map>

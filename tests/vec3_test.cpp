@@ -146,7 +146,7 @@ TEST_CASE("Operator checks"){
 
 }
 
-TEST_CASE("propper arithmetic for vec3"){
+TEST_CASE("proper arithmetic for vec3"){
 	SECTION("test cross product x cross y is z"){
 	fp::vec3<double> x{1, 0, 0};
 	fp::vec3<double> y{0, 1, 0};
@@ -187,8 +187,24 @@ TEST_CASE("propper arithmetic for vec3"){
 }
 
 TEST_CASE("check -v correctness"){
-    auto v = fp::vec3<float>{1.3f, 6.8f, 2.4f};
-    auto v_min = fp::vec3<float>{-1.3f, -6.8f, -2.4f};
-    CHECK(-v==v_min);
+    SECTION("arithmetic correctness") {
+        auto v = fp::vec3<float>{1.3f, 6.8f, 2.4f};
+        auto v_min = fp::vec3<float>{-1.3f, -6.8f, -2.4f};
+        CHECK(-v == v_min);
+    }
+    SECTION("rvalue - is correctly returned"){
+        auto make_min = [](fp::vec3<float>&& v){return -v;};
+        auto v_min = fp::vec3<float>{-1.3f, -6.8f, -2.4f};
+        auto v = make_min({1.3f, 6.8f, 2.4f});
+        CHECK(v == v_min);
+    }
+
+    SECTION("rvalue - is correctly returned 2"){
+        auto make_min = [](fp::vec3<float>&& v){return -v;};
+        auto v_min = fp::vec3<float>{-1.3f, -6.8f, -2.4f};
+        fp::vec3<float> temp{1.3f, 6.8f, 2.4f};
+        auto v = make_min(std::move(temp));
+        CHECK(v == v_min);
+    }
 
 }

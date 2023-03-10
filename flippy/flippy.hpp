@@ -1,4 +1,4 @@
-/**
+/*
  *```txt
  *
  *  .d888 888 d8b
@@ -13,7 +13,7 @@
  *                888      888      Y8b d88P
  *                888      888       "Y88P"
  *
- * https://gitlab.tudelft.nl/idema-group/flippy
+ * https://github.com/flippy-software-package/flippy
  *
  *
  * MIT License
@@ -40,8 +40,14 @@
  *```
  */
 
+
+/**
+ * @file
+ * @brief This header file exists for convenience. Including this header will automatically include all parts of flippy in the project.
+ */
 #ifndef FLIPPY_FLIPPY_HPP
 #define FLIPPY_FLIPPY_HPP
+
 #include "external/json.hpp"
 #include "custom_concepts.hpp"
 #include "vec3.hpp"

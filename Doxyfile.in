@@ -38,14 +38,18 @@ GENERATE_HTML           = YES
 GENERATE_XML            = NO
 USE_MATHJAX             = YES
 ###### aliases for repeated variables and stuff
-ALIASES  = "IndexStub=type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example `unsigned int`."
-ALIASES += "RealStub=type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example `float`."
-ALIASES += "NodeIDStub=Global id of the Node which is a number between 0 and max_number_of_nodes - 1."
-ALIASES += "NNIDStub=Global id of the next neighbour Node which is a number between 0 and max_number_of_nodes - 1."
-ALIASES += "LocNNIndexStub=Local index in the Node::nn_ids vector, which is a number between 0 and Node::nn_ids.size() - 1."
+ALIASES  = "IndexStub=type that will be used for all integer numbers inside this class/struct. Any data type that satisfies the indexing_number concept is allowed, for example, `unsigned int`."
+ALIASES += "RealStub=type that will be used for all floating point numbers inside this class/struct. Any data type that satisfies the floating_point_number concept is allowed, for example, `float`."
+ALIASES += "NodeIDStub=Global id of the Node, which is a number between 0 and max_number_of_nodes - 1."
+ALIASES += "NNIDStub=Global id of the next neighbor Node, which is a number between 0 and max_number_of_nodes - 1."
+ALIASES += "LocNNIndexStub=Local index in the Node::nn_ids vector, a number between 0 and Node::nn_ids.size() - 1."
 ALIASES += "FileNameOrPathFileNameStub = File name or a string containing the path and the file name."
 ALIASES += "GlobalsTitleStub = Globally defined functions constants and such"
-ALIASES += "GlobalsBriefStub = this is the grouped documentation of global objects that are not part of any specific class."
+ALIASES += "GlobalsBriefStub = this is the grouped documentation of global objects not part of any specific class."
 ALIASES += "GlobalsStub = @addtogroup Globals @GlobalsTitleStub ^^ @brief @GlobalsBriefStub"
 ALIASES += "TerminationNoteStub = Calling this function with a wrong argument will cause the termination of the program."
-ALIASES += BondLengthSquareStub{1}="Square of the \b \1 allowed bond length, in the triangulation."
+ALIASES += BondLengthSquareStub{1}="Square of the \b \1 allowed bond length, in the triangulation.
+ALIASES += mcuNodeStub="The reference to the node being updated."
+ALIASES += mcuDisplacementStub="Displacement vector, by which the node will be moved (if the move is accepted)."
+ALIASES += getterFunctionStub="A getter function that returns a value of a state variable."
+ALIASES += linearTriangulationWarningStub="This method belongs to the linear triangulation, which is not fully functional yet."

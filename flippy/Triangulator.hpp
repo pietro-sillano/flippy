@@ -1,5 +1,10 @@
 #ifndef FLIPPY_TRIANGULATOR_HPP
 #define FLIPPY_TRIANGULATOR_HPP
+/**
+ * @file
+ * @brief This file contains internal implementation details and is not part of the stable public api.
+ * The classes and methods implemented here are responsible for creating the intitial triangulations.
+ */
 
 #include <array>
 #include <vector>
@@ -8,9 +13,16 @@
 #include "custom_concepts.hpp"
 #include "vec3.hpp"
 
+
+/**
+ * @GlobalsStub
+ * @{
+ */
+//! The M_PI macro is not defined on for all compilers, so it is defined here (if a definition does not already exist).
 #ifndef M_PI
 #define M_PI 3.14159265358979323846	/* pi */
 #endif
+/**@}*/
 
 /**
  * The API stability of the functions in the implementation namespace is not guaranteed!

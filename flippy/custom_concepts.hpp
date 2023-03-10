@@ -1,7 +1,10 @@
 #ifndef FLIPPY_CUSTOM_CONCEPTS_HPP
 #define FLIPPY_CUSTOM_CONCEPTS_HPP
 #include <concepts>
-
+/**
+ * @file
+ * @brief This file contains the concepts that are costomly defined for the flippy class templates.
+ */
 namespace fp{
 /**
  * @defgroup myConcepts Special concepts

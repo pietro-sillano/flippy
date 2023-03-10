@@ -50,14 +50,19 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_monte_carlo_updater_8hpp_source.html"
+"_monte_carlo_updater_8hpp.html",
+"structfp_1_1_node.html#a5959f64aafa9cd65ff0e5fed21064da3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

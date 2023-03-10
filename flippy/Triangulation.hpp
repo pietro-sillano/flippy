@@ -1,6 +1,9 @@
 #ifndef FLIPPY_TRIANGULATION_HPP
 #define FLIPPY_TRIANGULATION_HPP
-
+/**
+ * @file
+ * @brief This file contains the fp::Triangulation class and several related helper classes. This is the core of flippy.
+ */
 #include<optional>
 #include "Nodes.hpp"
 #include "vec3.hpp"
@@ -11,7 +14,7 @@
  * @GlobalsStub
  * @{
  */
-//! Redefinition of the `LONG_LONG_MAX` macro, in case a specific compiler does not implement it. Largest number that fits in the `long long` type.
+//! Redefinition of the `LONG_LONG_MAX` macro in case a specific compiler does not implement it. The largest number that fits in the `long long` type.
 #ifndef LONG_LONG_MAX
 #define LONG_LONG_MAX 9223372036854775807LL
 #endif
@@ -19,10 +22,10 @@
 /**
  * @brief Literal for a very large integral number.
  *
- * This number will be used for default instantiation of variables/ data members that hold indices.
- * This is done to avoid instantiation with 0 which could also be a valid index.
- * This way one can differentiate between unintentionally default instantiated value and a proper value of an index.
- * This will also mean that the use of such improperly instantiated indexer variables will cause an easier to identify error during runtime.
+ * This number will be used for the default instantiation of variables/ data members that hold indices.
+ * This is done to avoid instantiation with 0, which could also be a valid index.
+ * This way, one can differentiate between unintentionally default instantiated value and a proper value of an index.
+ * This will also mean that the use of such improperly instantiated indexer variables will cause an easier-to-identify error during runtime.
  * @see fp::BondFlipData
  * fp::Neighbors
  * fp::Triangulation::two_common_neighbours(Index, Index) const
@@ -45,32 +48,28 @@ static constexpr int BOND_DONATION_CUTOFF = 4;
 
 //! A helper struct; keeps track of bond flips.
 /**
- * A bond flip can be unsuccessful, e.g. if the requested two nodes that are donating an edge already have too few edges
+ * A bond flip can be unsuccessful, e.g., if the requested two nodes that are donating an edge already have too few edges
  * (more details on bond flips and how they can fail are provided in the Triangulation.flip_bond(Index, Index, Real, Real) function).
- * If the flip does happen then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
+ * If the flip does happen, then #flipped will be changed to true by the Triangulation.flip_bond(Index, Index, Real, Real) function and
  * #common_nn_0 and #common_nn_1 will record the ids of nodes that receive new common bond.
  * If the flip does not happen then the #common_nn_0 and #common_nn_1 data members will hold a #VERY_LARGE_NUMBER_ with which they were initiated.
  *
  * The initiation with #VERY_LARGE_NUMBER_ is done to avoid #common_nn_0 and #common_nn_1 being zero initiated.
- * This is a mechanism to force errors (instead of silent wrong behaviour) in situations of un-careful usage.
- * If the end user does not check that the bonds were not flipped and tries to un-flip bonds with a
- * Triangulation.unflip_bond(Index, Index, BondFlipData<Index> const&) function, then #common_nn_0 and #common_nn_1
- * initiated with zeros will tell the *unflip_bond* function to un-flip a bond between zeros node and itself, which will cause wrong behaviour
- * but no outright error. However if *unflip_bond* function will try to un-flip a bond between two nodes with the id #VERY_LARGE_NUMBER_, then
- * the memory access at array location #VERY_LARGE_NUMBER_ will force an error.
+ * This mechanism will lead to wrong behavior that is easier to identify during debugging in situations of un-careful usage.
+ * Example of such un-careful usage is if the end-user does not check that the bonds were not flipped and tries to un-flip bonds.
  *
  *```txt
  *
  * State of the triangulation before and after the flip.
  *  before the flip                  after the flip
  *
- *      common nn 0                     common nn 0
+ *      common nn 1                     common nn 1
  *      /          \                    /    |    \
  *     /            \                  /     |     \
  *   node --------- nn              node     |     nn
  *     \            /                 \      |     /
  *      \          /                   \     |    /
- *     common nn 1                     common nn 1
+ *     common nn 0                     common nn 0
  *```
  *
  * @tparam Index @IndexStub
@@ -88,8 +87,8 @@ struct BondFlipData
 
 /**
  * A helper struct;  makes addition and subtraction on a ring easier.
- * Each fp::Node stores its next neighbours in a vector Node.nn_ids,
- * where the adjacent members in a vector are also next neighbours of each other.
+ * Each fp::Node stores its next neighbors in a vector Node.nn_ids,
+ * where the adjacent members in a vector are also next neighbors of each other.
  * This struct provides a safe way to always access the next or previous member of the nn_ids vector, even if a wraparound is necessary.
  * @see fp::Node.
  * @tparam Index @IndexStub
@@ -104,27 +103,27 @@ struct Neighbors
 
   /**
    *
-   * @param j index of the j-th next neighbour
+   * @param j index of the j-th next neighbor
    * @param ring_size corresponds to the number of elements of Node.nn_ids
-   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e. if `j` is the index of Node.nn_ids its next neighbour will be stored in `j+1` element, unless `j` is the last element, then its next neighbour will be stored in the 0th element.
+   * @return `j+1` if `j < ring_size - 1` and `0` otherwise. I.e., if `j` is the index of Node.nn_ids, its next neighbor will be stored in `j+1` element, unless `j` is the last element, then its next neighbor will be stored in the 0th element.
    */
   static Index plus_one(Index j, Index ring_size) { return ((j<ring_size - 1) ? j + 1 : (Index) 0); }
   /**
  *
- * @param j index of the j-th next neighbour
+ * @param j index of the j-th next neighbor
  * @param ring_size corresponds to the number of elements of Node.nn_ids
- * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e. if `j` is the index of Node.nn_ids its previous next neighbour will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbour will be stored in the last element.
+ * @return `j-1` if `j > 0` and `ring_size - 1` otherwise. I.e., if `j` is the index of Node.nn_ids, its previous next neighbor will be stored in `j-1` element, unless `j` is the 0th element, then its previous next neighbor will be stored in the last element.
  */
   static Index minus_one(Index j, Index ring_size) { return ((j==((Index) 0)) ? ring_size - 1 : j - 1); }
 };
-//! A helper struct that is used by the triangulation to pass data around in one convenient package.
+//! A helper struct. Used by the triangulation class to pass data around in one convenient package.
 /**
  * Geometry is a struct that contains the usually needed geometric data in a triangulation.
- * This struct can hold such data for a single node, a collection of nodes or the entire triangulation.
- * In abstract we can say that Geometry contains geometric data associated to some surface patch.
- * This is useful to have, since we often need to aggregate information for a node and all of its neighbouring nodes.
+ * This struct can hold such data for a single node, a collection of nodes, or the entire triangulation.
+ * In the abstract, the fp::Geometry struct contains geometric data associated with some surface patch.
+ * This is useful since we often need to aggregate information for a node and its neighboring nodes.
  *
- * The Data members of this struct are public and thus,
+ * The Data members of this struct are public, and thus,
  * it does not guarantee the correctness or consistency of the data it holds,
  * since it can be changed externally.
  * The geometry struct also provides overloaded arithmetic operators,
@@ -135,9 +134,9 @@ struct Neighbors
 template<floating_point_number Real, indexing_number Index>
 struct Geometry
 {
-  Real area; //!< Area of patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
-  Real volume; //!< Volume of patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
-  Real unit_bending_energy; //!< Volume of patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
+  Real area; //!< Area of the patch. Sum over the associated areas of individual nodes that comprise the patch. (Compare to Node::area).
+  Real volume; //!< Volume of the patch. Sum over the associated volumes of individual nodes that comprise the patch. (Compare to Node::volume).
+  Real unit_bending_energy; //!< Volume of the patch. Sum over the associated unit bending energies of individual nodes that comprise the patch. (Compare to Node::unit_bending_energy).
   //! Default constructor, that zero initiates all the data members.
   Geometry() :area(0.), volume(0.), unit_bending_energy(0.) { }
   //! Construct from a node.
@@ -204,7 +203,7 @@ struct Geometry
 
     //! Overloaded addition and assignment operator.
     /**
-     * Works through the use of already overloaded addition operator and
+     * Works through the use of an already overloaded addition operator and
      * simply performs `lhs = lhs + rhs;`.
      *
      * @param lhs
@@ -218,7 +217,7 @@ struct Geometry
 
     //! Overloaded subtraction and assignment operator.
     /**
-     * Works through the use of already overloaded subtraction operator and
+     * Works through the use of an already overloaded subtraction operator and
      * simply performs `lhs = lhs - rhs;`.
      *
      * @param lhs
@@ -250,20 +249,46 @@ struct Geometry
 //! This enum defines named types of triangulations that are implemented in flippy.
 /**
  * A triangulation type needs to be provided as a template parameter to the Triangulation class during instantiation.
- * This will tell the class to create appropriate topology of the triangulated Nodes.
+ * This will tell the class to create an appropriate topology of the triangulated Nodes.
  * The named types tell the triangulation class to...
  */
 enum TriangulationType{
 
-    //! create a spherical triangulation which is a sub-triangulation of a regular icosahedron
+    //! Create a spherical triangulation which is a sub-triangulation of a regular icosahedron
     SPHERICAL_TRIANGULATION,
-    //! create a triangulation which is a sub-triangulation of a plane square.
+    //! Create a triangulation which is a sub-triangulation of a plane square.
     PLANAR_TRIANGULATION
 };
 /**@}*/
 
+
 /**
- * Implementation of Triangulation of a two dimensional surfaces in 3D.
+ * \brief Implementation of Triangulation of two-dimensional surfaces in 3D.
+ * \image html assets/triangulation.png "Figure tr 1. Visualization of the triangulation."  width=500px
+ <b>Visualization of the triangulation</b>. <b>A</b>: Triangulated sphere with \f$N_{\mathrm{nodes}}=2252\f$. Black edges highlight the local neighborhood of a node.
+Circular arrows show the counterclockwise orientation of the nodes.
+This choice guarantees that all normal vectors point to the outside of the sphere.
+B: An arbitrary node \f$i\f$, with its curvature vector \f$\vec{K}_{i}\f$ and a highlighted angle \f$\alpha^j_{i,j+1}\f$
+at neighbour \f$j\f$ opposite to the edge \f$i, j+1\f$. Superscript \f$j\f$ denotes the neighboring node to which the angle
+belongs and subscript \f$i,j+1\f$ denotes the edge opposite of the angle.
+<b>C</b>: Node \f$i\f$ with its associated Voronoi area \f$A_i\f$ highlighted in red.
+The node has an associated area inside each triangle it is part of.
+We also highlight the triangle \f$i,j,j+1\f$ (light red with stripes) with the
+face normal \f$\vec{n}_{i,j,j+1}\f$ and the area \f$A_{i,j,j+1}\f$.
+The part of this triangle that is associated with node \f$i\f$ is highlighted in dark red and has the area \f$A_{ij}\f$.
+The convention is to use the central and rightmost nodes in the subscript.
+Since the nodes are ordered counterclockwise, this convention is unambiguous.
+<b>D</b>: Volume associated with node \f$i\f$ is made up of tetrahedrons
+that have as their base the triangles that make up the Voronoi cell of the node.
+The head of the tetrahedron points to some lab frame origin \f$\cal{O}\f$. \f$V_{ij}\f$ is the part of the volume
+associated to node \f$i\f$ that has its base in the triangle \f$i,j,j+1\f$.
+ *
+ *
+ * @tparam Real @RealStub
+ * @tparam Index @IndexStub
+ * @tparam triangulation_type Template parameter that specifies the type of triangulation to be created.
+ * This parameter must be chosen from the fp::TriangulationType `enum`.
+ * Defaulted to fp::SPHERICAL_TRIANGULATION.
  */
 template<floating_point_number Real, indexing_number Index, TriangulationType triangulation_type=SPHERICAL_TRIANGULATION>
 class Triangulation
@@ -274,7 +299,13 @@ private:
 public:
     Triangulation() = default;
     //unit tested
-    explicit Triangulation(Json const& nodes_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
+    //! Constructor that can re-initiate a triangulation from the stored data.
+    /**
+     *
+     * @param nodes_input json object that contains data generated by make_egg_data() function, or similarly structured data.
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
+    Triangulation(Json const& nodes_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         if constexpr(triangulation_type==SPHERICAL_TRIANGULATION) {
             nodes_ = Nodes<Real, Index>(nodes_input);
@@ -287,6 +318,13 @@ public:
 
     }
 
+    //! Constructor that can initiate a spherical triangulation from scratch.
+    /**
+     *
+     * @param n_nodes_iter Number of sub-triangulations.
+     * @param R_initial_input Initial radius of the spherical triangulation.
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
     Triangulation(Index n_nodes_iter, Real R_initial_input, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         static_assert(triangulation_type==SPHERICAL_TRIANGULATION, "This initialization is intended for spherical triangulations");
@@ -298,6 +336,17 @@ public:
         initiate_advanced_geometry();
     }
 
+    //! Constructor that can initiate a planar triangulation from scratch.
+    /**
+     * This overload initiates a planar triangulation with fixed (non-periodic boundaries).
+     * Corresponding tua clamped rectangular patch of a membrane.
+     * @warning @linearTriangulationWarningStub
+     * @param n_length Number of nodes along the length of the triangulation (at the boundary).
+     * @param n_width Number of nodes along the width of the triangulation (at the boundary).
+     * @param length Length of the planar membrane.
+     * @param width Width of the planar membrane
+     * @param verlet_radius_inp Value for [Verlet radius](https://en.wikipedia.org/wiki/Verlet_list).
+     */
     Triangulation(Index n_length, Index n_width, Real length, Real width, Real verlet_radius_inp):Triangulation(verlet_radius_inp)
     {
         static_assert(triangulation_type==PLANAR_TRIANGULATION, "This initialization is intended for planar triangulations");
@@ -305,12 +354,22 @@ public:
         initiate_advanced_geometry();
     }
 
+    //! Set the radius of the Verlet list to a new value.
+    /**
+     * @param R new radius
+     * @related Triangulation::make_verlet_list()
+     */
     void set_verlet_radius(Real R){
         verlet_radius = R;
         verlet_radius_squared = R*R;
     }
 
     //todo unittest
+    //! Create a [Verlet list](https://en.wikipedia.org/wiki/Verlet_list).
+    /**
+     * This method creates a Verlet list for each node of the triangulation. All nodes that are inside the `verlet_radius`, of a given node,
+     * are included in its Verlet list (Node.verlet_list),
+     */
     void make_verlet_list()
     {
         for (auto& node: nodes_) {
@@ -328,12 +387,25 @@ public:
         }
     }
 
+    //! Adds the same 3D vector to the positions of each node of the triangulation.
+    /**
+     * This method is most helpful in shifting a triangulation after its initiation.
+     * For example, to set up initial conditions for a simulation where several triangulated vesicles interact.
+     * @param translation_vector A fixed 3D vector by which the triangulation is to be shifted.
+     */
     void translate_all_nodes(vec3<Real> const& translation_vector)
     {
         for (Index i = 0; i<nodes_.size(); ++i) { move_node(i, translation_vector); }
     }
 
     //unit tested
+    //! Calculate the area-weighted average of node positions.
+    /**
+     * This method calculates the average position of the mass center of the triangulation,
+     * by averaging the positions of each node of the triangulation.
+     * The average is weighted by the area associated with each node.
+     * @return position of the mass center.
+     */
     vec3<Real> calculate_mass_center() const
     {
         vec3<Real> mass_center = vec3<Real>{0., 0., 0.};
@@ -343,6 +415,11 @@ public:
     }
 
     //unit tested
+    //! Move an individual node of the triangulation and update all the geometric quantities of the triangulation that changed.
+    /**
+     * @param node_id @NodeIDStub
+     * @param displacement_vector 3D vector by which the chosen node is to be displaced.
+     */
     void move_node(Index node_id, vec3<Real> const& displacement_vector)
     {
         pre_update_geometry = get_two_ring_geometry(node_id);
@@ -353,15 +430,22 @@ public:
     }
 
     // unit-tested
+    //! Adds a new node to the next neighbor list of a given node and calculates their mutual distance.
+    /**
+     * @note The direct use of this method is discouraged unless a very specific type of edge flipping is required.
+     * Triangulation::flip_bond is a more high-level method, suitable for most basic bond-flipping needs.
+     *
+     * This method finds the anchor node in the Nodes::nn_ids vector of the center_node
+     * and uses Node classes own method Node::emplace_nn_id to emplace the new_value
+     * there (together with its distance to the center_node).
+     * @param center_node_id @NodeIDStub The new node is emplaced in the Node.nn_ids vector of this node.
+     * @param anchor_id @LocNNIndexStub This is the index of the next neighbor (inside `nn_ids` vector of the node `center_node_id`), before which the new node id is emplaced.
+     * @param new_value @NodeIDStub The id of the new node.
+     */
     void emplace_before(Index center_node_id, Index anchor_id, Index new_value)
     {
-        /**
-         * this method finds the anchor node in the nn_ids vector of the center_node
-         * and uses Node classes own method emplace_nn_id to emplace the new_value
-         * there (together with its distance to the center_node).
-         * The body of this fuction looks like it does not guard against find returning
-         * end() pointer, but this is taken care of in the emplace_nn_id method.
-         */
+        // The body of this function looks like it does not guard against find returning
+        // end() pointer, but this is taken care of in the emplace_nn_id method.
         auto anchor_pos_ptr = std::find(nodes_[center_node_id].nn_ids.begin(),
                 nodes_[center_node_id].nn_ids.end(), anchor_id);
         indexing_number auto anchor_pos = (Index) (anchor_pos_ptr - nodes_[center_node_id].nn_ids.begin());
@@ -369,21 +453,21 @@ public:
     }
 
     //unit tested
-    //! Securely flip the bond inside a quadrilateral
-    //! formed by the nodes given by node_id, nn_id and their two common next neighbours,
-    //! if all topological requirements are satisfied.
+    /** \brief Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,
+     * nn_id and their two common next neighbors, if all topological requirements are satisfied.
+     */
     BondFlipData<Index> flip_bond(Index node_id, Index nn_id,
                                   Real min_bond_length_square,
                                   Real max_bond_length_square){
     /**
-     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e. not introduce holes or additional bonds in it.
-     * To this end the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
-     * The information if the flip was allowed and succeeded or not will be encoded in BondFlipData struct, which will be returned by this function.
+     * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e., not introduce holes or additional bonds in it.
+     * To this end, the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
+     * The information if the flip was allowed and succeeded or not will be encoded in the BondFlipData struct, which this function will return.
      * The struct also contains information on the new end nodes of the bond, which is useful if one wishes to undo the flip.
      * A bond flip can fail if:
-     * - if the provided nodes id's are do not correspond to neighbouring nodes.
-     * - one of the donor nodes have already too few bonds (bonds less then #BOND_DONATION_CUTOFF).
-     * - if a new bond that would be created would be
+     * - if the provided nodes id's do not correspond to neighboring nodes.
+     * - one of the donor nodes have already too few bonds (bonds less than #BOND_DONATION_CUTOFF).
+     * - if a new bond that would be created, would be
      *  - too long (length squared is larger than **max_bond_length_square**)
      *  - too short (length squared is smaller than **min_bond_length_square**)
      *
@@ -391,10 +475,10 @@ public:
      * @param nn_id @NNIDStub
      * @param min_bond_length_square @BondLengthSquareStub{minimal}
      * @param max_bond_length_square @BondLengthSquareStub{maximal}
-     * @return If the flip was successful the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
+     * @return If the flip was successful, the returned BondFlipData struct will contain a boolean state variable BondFlipData::flipped = **true**.
      * The members BondFlipData::common_nn_0 and BondFlipData::common_nn_1 will contain global ids of new end nodes of the flipped bond.
-     * If the flip was not successful then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
-     * @note Regardless of the return values the main purpose of the function, that of flipping a bond, is accomplished as a side-effect.
+     * If the flip was not successful, then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
+     * @note Regardless of the return values, the primary purpose of the function, that of flipping a bond, is accomplished as a side-effect.
      */
         BondFlipData<Index> bfd{};
         if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF) {
@@ -423,17 +507,75 @@ public:
     }
 
     //unit-tested
-    //! unflip a bond that was just flipped.
+    //! Un-flip a bond that was just flipped.
+    /**
+     * This method reverses a flip between two nodes that used to be connected and had their node just flipped away,
+     * provided their id's and the BondFlipData that holds the information on the current bond holders.
+     *
+     *
+     * This means that `node_id` and `nn_id` are (pre-flip) owners of the bond. And `common_nns` contains the id's of the
+     * current bond owners (to which the bond was flipped to).
+     * The edge will be taken away from the current two neighbors and added to the previous owners. All geometric information of the triangulation will be updated.
+     *
+     * @warning This method only works correctly if there were no bond flips after that flip which is being reversed.
+     * I.e., this method can only reverse the last flip. Furthermore, the method assumes that the arguments are provided correctly and
+     * will result in an illegal triangulation if this is not the case.
+     *
+     * @note This method does not check the validity of its input to provide a fast way of flip reversal. It relies on the fact that
+     * the user usually has the exact knowledge of all four node id's that participated in a flip and can provide those id's
+     * in the correct order. For a safer way of un-fliping, the Triangulation::flip_bond method can be used twice, with interchanged order
+     * of arguments.
+     *
+     * The following example implementation of a Monte Carlo flip update method shows the proper way to use
+     * the Triangulation.flip_bond and Triangulation.unflip_bond methods.
+     *
+     * ```c++
+     *  // `e_old`, `e_new`, `triangulation and `parameters` are data members of the updater
+     *  void mc_flipp_update(fp::Node<Real, Index> const& node)
+     *  {
+     *       e_old = energy_function(node, triangulation, parameters);
+     *       Index number_nn_ids = node.nn_ids.size();
+     *       Index nn_id = node.nn_ids[std::uniform_int_distribution<Index>(0, number_nn_ids-1)(rng)];
+     *       auto bond_flip_data = triangulation.flip_bond(node.id, nn_id, min_bond_length_square, max_bond_length_square);
+     *       if (bond_flip_data.flipped) {
+     *           e_new = energy_function(node, triangulation, parameters);
+     *           if (move_needs_undoing()) { triangulation.unflip_bond(node.id, nn_id, bond_flip_data); }
+     *       }
+     *   }
+     *```
+     *@see Triangulation.flip_bond BondFlipData
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param common_nns BondFlipData containing information on the common next neighbor ids.
+     */
     void unflip_bond(Index node_id, Index nn_id, BondFlipData<Index> const& common_nns)
     {
         flip_bond_unchecked(common_nns.common_nn_0, common_nns.common_nn_1, nn_id, node_id);
-//        copy_diamond_back(node_id, nn_id, cnn0_id, cnn1_id);
         update_diamond_geometry(node_id, nn_id, common_nns.common_nn_0, common_nns.common_nn_1);
         update_global_geometry(post_update_geometry, pre_update_geometry);
     }
 
-    //! Exchange next neighbourhood between four nodes in a manner that will correspond to
+    //! Exchange the next neighborhood between four nodes in a manner that will correspond to
     //! a bond flip if the provided information was correct.
+    /**
+     * @warning This method may lead to an unphysical state (broken lattice that no longer represents a triangulation) if the provided
+     * arguments are not correct.
+     * @note For most use-cases the high level methods Triangulation::flip_bond and Triangulation::unflilp_bond are recommended.
+     * They guarantee that the performed flips result in a legal triangulation and reject the flip otherwise.
+     * This method should only be used by advanced users that have very specific needs for a flip updater.
+     *
+     * The correct functioning of this method requires that, `node_id` and `nn_id` need to be next neighbours, and `common_nn_j_m_1` and `common_nn_j_p_1`
+     * need to be common next neighbors of both `node_id` and `nn_id`.
+     * Moreover, the nodes need to be ordered in the Node::nn_ids vector of the Node represented by `node_id` as follows:
+     * `... common_nn_j_m_1, node_id, common_nn_j_p_1 ...`,
+     * or a cyclic permutation thereof.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param common_nn_j_m_1
+     * @param common_nn_j_p_1
+     * @return BondFlipData, where the flipped field is always set to `True`.
+     */
     BondFlipData<Index> flip_bond_unchecked(Index node_id, Index nn_id,
                                             Index common_nn_j_m_1, Index common_nn_j_p_1)
     {
@@ -444,12 +586,18 @@ public:
     }
 
     // unit-tested
+    //! Update the geometric quantities associated with the given node.
+    /**
+     * This is the core update function of the triangulation.
+     * It updates the geometric quantities of the given node after its position in the triangulation has been changed
+     * through a node move, or its neighborhood structure has been changed through a bond flip.
+     * Calculate and update the local curvature, area, volume, and unit bending energy of the node (See Figure tr1 B, C and D).
+     *
+     * @see Node::curvature_vec, Node::area, Node::volume, Node::unit_bending_energy
+     * @param node_id @NodeIDStub
+     */
     void update_bulk_node_geometry(Index node_id)
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the voronoi cell
-         * associated to the node
-         */
         update_nn_distance_vectors(node_id);
 
         Real area_sum = 0.;
@@ -491,17 +639,24 @@ public:
     };
 
 
+    //! This function is deprecated!
+    /**
+     * @warning This function is here for legacy reasons! It is deprecated and will be removed in future minor updates.
+     * This function returns values of eqn.'s (82) & (84) from the paper [Gueguen et al. 2017](https://doi.org/10.1039/C7SM01272A).
+     * Every node has its associated Voronoi area, and each Voronoi area can be subdivided into parts that are
+     * associated with each triangle that the node is part of. This function returns that sub-area and the face normal
+     * of that triangle.
+     * @param lij distance between a node and its jth next neighbor
+     * @param lij_p_1 distance between a node and its j+1th next neighbor
+     * @return tuple of the area associated with the node inside the triangle (i,j,j+1) and the face normal of the triangle.
+     */
+    [[deprecated("This function is deprecated and will be removed in a future release. It uses expensive function calls and is not recommended for use.")]]
     static std::tuple<Real, vec3<Real>> partial_voronoi_area_and_face_normal_of_node_in_a_triangle(vec3<Real> const& lij,
                                                                                                    vec3<Real> const& lij_p_1)
     {
-        /** This function returns values of eqn.'s (82) & (84) from the paper [1]
-         * Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are
-         * associated to each triangle that the node is part of. This function returns that sub-area and the face normal
-         * of that triangle.
-         */
         Real area, face_normal_norm;
         vec3<Real> un_noremd_face_normal;
-        //precalculating this normal and its norm, will be needed in area calc. If all triangles are oriented as
+        //precalculating this normal and its norm will be needed in area calc. If all triangles are oriented as
         // right-handed, then this normal will point outwards
         un_noremd_face_normal = lij.cross(lij_p_1);
         face_normal_norm = un_noremd_face_normal.norm();
@@ -509,6 +664,25 @@ public:
         return std::make_tuple(area, un_noremd_face_normal);
     }
 
+    //! The node-associated area inside a triangle.
+    /**
+     * This function is calculating the area associated with a node inside a triangle. As depicted in Figure tr1. A.
+     * This can be found in the description of the Triangulation class.
+     *
+     * Every node of the triangulation has its own associated area.
+     * In the simplest case, the area associated with a node is the area of the Voronoi cell of that node. Where the Voronoi tessellation of the surface is the dual lattice of the triangulation.
+     * This function returns the area associated with a node inside a triangle. If that triangle is not obtuse, then this area is simply
+     * the area of the Voronoi cell of the node that is inside the triangle.
+     * This Voronoi area becomes negative for obtuse triangles, and thus an exception has to be made.
+     * If the triangle has an obtuse angle at the node, then the area associated with the node inside the triangle is half of the triangle area,
+     * otherwise, it is the quarter of the triangle area. This procedure is described in detail by [Meyer et al. 2003](https://doi.org/10.1007/978-3-662-05105-4_2)
+     * @param lij Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule. See Figure tr1. A and C)
+     * @param lij_p_1 Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule)
+     * @param triangle_area area of the triangle i,j,j+1. See Area \f$A_{i,j,j+1}\f$ in Figure tr1. C.
+     * @param cot_at_j Cotangent of the angle at the node j, opposite to the edge i,j+1. See Figure tr1. B.
+     * @param cot_at_j_p_1 Cotangent of the angle at the node j+1, opposite to the edge i,j. See Figure tr1. B.
+     * @return Area associated with the node inside the triangle. See Area \f$A_{ij}\f$ in Figure tr1. C.
+     */
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real triangle_area, Real cot_at_j, Real cot_at_j_p_1){
         if ((cot_at_j>0.) && (cot_at_j_p_1>0.)) { // both angles at j and j+1 are smaller than 90 deg so the triangle can only be obtuse at the node
             if (lij.dot(lij_p_1)>0) { // cos at i is positive i.e. angle at i is not obtuse
@@ -524,18 +698,20 @@ public:
 
         }
 
-//    unit tested
-    [[deprecated("This function is deprecated and will be removed in a future release. mixed_area which does not take precalculated cotangents is performs expensive calculations use the use the alternative mixed_area function!")]]
+    //unit tested
+    //! This function is deprecated!
+    /**
+     * @warning This function is here for legacy reasons! It is deprecated and will be removed in future minor updates.
+     * Use the alternative mixed_area function instead!
+     *
+     * @param lij Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule. See Figure tr1. A and C)
+     * @param lij_p_1 Distance vector between the node and its next neighbor. (Next neighbors are ordered according to the right-hand rule)
+     * @param triangle_area area of the triangle \f$i,j,j+1\f$. See Area \f$A_{i,j,j+1}\f$ in Figure tr1. C.
+     * @return Area associated with the node inside the triangle. See Area \f$A_{ij}\f$ in Figure tr1. C.
+     */
+    [[deprecated("This function is deprecated and will be removed in a future release. mixed_area, which does not take precalculated cotangents, performs expensive calculations! Use the alternative mixed_area function!")]]
     static Real mixed_area(vec3<Real> const& lij, vec3<Real> const& lij_p_1, Real const& triangle_area)
     {
-        /** This function returns values of eqn.'s (82) (and two unnamed formulas in the following paragraph) from [1]
-         *
-         * Every node has its associated voronoi area and each voronoi area can be subdivided into parts that are
-         * associated to each triangle that the node is part of. This function returns that sub-area. If the large triangle
-         * (that the voronoi sub element is part of), is not obtuse. If it is obtuse, then the return value is either half,
-         * or quarter of the large triangle. Depending where it is obtuse.
-         *
-         */
         vec3<Real> ljj_p_1 = lij_p_1 - lij;
 
         Real cot_at_j = cot_between_vectors(lij, (-1)*ljj_p_1);
@@ -554,12 +730,18 @@ public:
 
     }
 
+    //! Aggregates and Returns the geometric quantities of the center node and its next neighbor nodes.
+    /**
+     * This function aggregates area volume and squared curvature integrated over the area for the  two-ring of the
+     * associated with the node, using the stored quantities.
+     * Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node.
+     *
+     * @param node_id
+     * @return Geometry<Real, Index> object containing the geometric quantities of the center node and its next neighbor nodes.
+     */
     [[nodiscard]] Geometry<Real, Index> get_two_ring_geometry(Index node_id) const
     {
-        /**
-        * calculates area volume and squared curvature integrated over the area, for the  two-ring of the
-        * associated to the node, using the stored current_node_geometry
-        */
+
         Geometry<Real, Index> trg(nodes_[node_id]);
         for (auto const& nn_id: nodes_[node_id].nn_ids) {
             trg += nodes_[nn_id];
@@ -567,12 +749,16 @@ public:
         return trg;
     }
 
+    //! Updates the geometric quantities of the center node and its next neighbor nodes.
+    /**
+     * This function calculates and updates the area volume and squared curvature integrated over the area for the  two-ring of the
+     * associated with the node.
+     * Two-ring refers to the second concentric ring of the next-nearest-neighbor nodes surrounding the center node.
+     * @param node_id @NodeIDStub
+     */
     void update_two_ring_geometry(Index node_id)
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the  two-ring of the
-         * associated to the node
-         */
+
         update_bulk_node_geometry(node_id);
         for (auto nn_id: nodes_.nn_ids(node_id)) {
             update_bulk_node_geometry(nn_id);
@@ -580,6 +766,21 @@ public:
     };
 
     // unit-tested
+    //! Method for stretching or squeezing the initial triangulation shape.
+    /**
+     * This method is most useful for transforming a spherical triangulation into an ellipse.
+     *
+     * The method stretches `x`, `y`, and `z` components of each node by a factor provided in the function argument.
+     * Triangulation's local and global geometric properties are updated after the stretch.
+     *
+     * @note The stretch will happen with respect to the lab frame and not the mass center of the triangulation.
+     * Thus, to get the intended results, the stretch is most likely desired,
+     * when the triangulation is centered around the origin of the lab frame, This is the case right after the initiation.
+     *
+     * @param x_stretch Stretching factor of the `x` component of the position of the triangulation nodes.
+     * @param y_stretch Stretching factor of the `y` component of the position of the triangulation nodes.
+     * @param z_stretch Stretching factor of the `z` component of the position of the triangulation nodes.
+     */
     void scale_node_coordinates(Real x_stretch, Real y_stretch = 1, Real z_stretch = 1)
     {
         vec3<Real> displ = {0, 0, 0};
@@ -592,13 +793,30 @@ public:
     }
 
     //Todo unittest
+    //! Aggregates the geometric quantities of the diamond configuration of nodes associated with a bond flip.
+    /**
+     *```txt
+     * State of the diamond, which contains all nodes that participate in a bond flip.
+     *  before the flip
+     *
+     *      common nn 1
+     *      /          \
+     *     /            \
+     *   node --------- nn
+     *     \            /
+     *      \          /
+     *     common nn 0
+     *```
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NodeIDStub
+     * @param cnn_0 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @param cnn_1 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @return Geometric quantities aggregated over the diamond configuration of nodes associated with a bond flip.
+     */
     [[nodiscard]] Geometry<Real, Index> calculate_diamond_geometry(Index node_id, Index nn_id,
                                                              Index cnn_0, Index cnn_1) const
     {
-        /**
-         * calculates area volume and squared curvature integrated over the area, for the diamond configuration of nodes
-         * associated with a bond-flip from existing current_node_geometry
-         */
         Geometry<Real, Index> diamond_geometry(nodes_[node_id]);
         diamond_geometry += nodes_[nn_id];
         diamond_geometry += nodes_[cnn_0];
@@ -607,12 +825,28 @@ public:
     };
 
     //Todo unittest
+    //! Calculates and updates the geometric quantities of the diamond configuration of nodes associated with a bond flip.
+    /**
+     *```txt
+     * State of the diamond, which contains all nodes that participate in a bond flip.
+     *  before the flip
+     *
+     *      common nn 1
+     *      /          \
+     *     /            \
+     *   node --------- nn
+     *     \            /
+     *      \          /
+     *     common nn 0
+     *```
+     *
+     * @param node_id @NodeIDStub
+     * @param nn_id @NodeIDStub
+     * @param cnn_0 Global id of the common next nearest neighbor of node_id and nn_id.
+     * @param cnn_1 Global id of the common next nearest neighbor of node_id and nn_id.
+     */
     void update_diamond_geometry(Index node_id, Index nn_id, Index cnn_0, Index cnn_1)
     {
-        /**
-         * updates area volume and squared curvature integrated over the area, for the diamond configuration of nodes
-         * associated with a bondflip
-         */
         update_bulk_node_geometry(node_id);
         update_bulk_node_geometry(nn_id);
         update_bulk_node_geometry(cnn_0);
@@ -620,13 +854,45 @@ public:
     };
 
     // Const Viewer Functions
+    //! Returns the number of nodes in the triangulation.
+    /**
+     * @return Number of the nodes in the triangulation.
+     */
     [[nodiscard]] Index size() const { return nodes_.size(); }
+    //! Returns a constant reference to the node with the given id.
+    /**
+     * Triangulation will never give non-constant access to a node.
+     * In order to change a node, one has to use the methods of the Triangulation class.
+     * This guarantees that the triangulation is always in a consistent state.
+     * @param idx @NodeIDStub
+     * @return Constant reference to the node with the given id.
+     */
     const Node<Real, Index>& operator[](Index idx) const { return nodes_.data.at(idx); }
+    //! Returns a constant reference to the underlying Nodes container.
+    /**
+     * @return Constant reference to the underlying Nodes container.
+     */
     const Nodes<Real, Index>& nodes() const { return nodes_; }
+    //! Creates a JSON object with the data of the triangulation.
+    /**
+     * Egg refers to the fact that the data can be used to recreate the triangulation using the Triangulation(Json const& nodes_input, Real verlet_radius_inp) constructor.
+     * @note The Triangulation(Json const& nodes_input, Real verlet_radius_inp) constructor is currently only implemented for a spherical Triangulation!
+     *
+     * @return Triangulation data in JSON format.
+     */
     [[nodiscard]] Json make_egg_data() const { return nodes_.make_data(); }
+    //! Information about the global geometric quantities of the triangulation, like global area, volume, and total unit bending energy.
+    /**
+     * @return Geometric quantities of the triangulation aggregated over all nodes.
+     */
     [[nodiscard]] const Geometry<Real, Index>& global_geometry() const { return global_geometry_; }
 
     //Todo unittest
+    //! Initiates the global geometry of the triangulation.
+    /**
+     * The global geometry is calculated by summing up the local geometries of all nodes.
+     *
+     */
     void make_global_geometry()
     {
         const Geometry<Real, Index> empty{};
@@ -643,6 +909,13 @@ public:
     }
 
     //Todo unittest
+    //! Updates the local geometry of a boundary node (for triangulation types that have a boundary).
+    /**
+     * @warning @linearTriangulationWarningStub
+     * Boundary nodes need to be treated differently, depending on the boundary conditions.
+     * Right now, flippy is only handling fixed boundary conditions, where all geometric quantities of boundary nodes are set to zero.
+     * @param node_id Id of a boundary node.
+     */
     void update_boundary_node_geometry(Index node_id){
         nodes_.set_area(node_id, 0.);
         nodes_.set_volume(node_id, 0.);
@@ -689,13 +962,13 @@ private:
 
     }
 
-    //! This function calculates distance vectors from a node to all of it's neighbors.
+    //! This function calculates distance vectors from a node to all of its neighbors.
     void update_nn_distance_vectors(Index node_id)
     {
         /**
          *  The directions of the distance vectors are (radiating outward) pointing from the node to neighbors.
          *  The function also preserves the order of neighbors. Meaning that the order of distance vectors is in the same
-         *  order as th provided list of neighbor ids.
+         *  order as the provided list of neighbor ids.
          *  @param node_id Global id of a node.
          */
 
@@ -705,13 +978,21 @@ private:
         }
     }
 
+    /**
+     * given a node `i` and its neighbor `j`, they will share two common neighbor nodes, `p` and `m`.
+     * This function finds the angles at `p` & `m` opposite of `i-j` link.
+     * This function implements the cot(alpha_ij) + cot(beta_ij) from fig. (6c) from [.
+     * The order of these neighbors does not matter for the correct sign of the angles.
+     * @param node_id @NodeIDStub
+     * @param nn_id @NNIDStub
+     * @param cnn_0 common neighbor node 0
+     * @param cnn_1 common neighbor node 1
+     * @return cot(alpha_ij_jm1) + cot(alpha_ij_jp1)
+     */
     Real cot_alphas_sum(Index node_id, Index nn_id, Index cnn_0, Index cnn_1) const
     {
-        /**
-         * given a node i and its neighbor j, they will share two common neighbor nodes p and m.
-         * This function finds the angles at p & m opposite of i-j link.
-         * This function implements the cot(alpha_ij) + cot(beta_ij) from fig. (6c) from [1].
-         * The order of these neighbours does not matter for the correct sign of the angles.
+        /**	
+         *
          */
 
         l0_ = nodes_[node_id].pos - nodes_[cnn_0].pos;
@@ -862,8 +1143,8 @@ private:
          *     i-----j
          *     \    /
          *     	j-1
-         *     	given i and j this function finds the local ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
-         *     	This function relies on the fact that i & j are neighbours and will throw a nasty runtime error if they are
+         *     	given i and j, this function finds the local ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
+         *     	This function relies on the fact that i & j are neighbors and will throw a nasty runtime error if they are
          *     	not
          */
         auto const& nn_ids_view = nodes_[node_id].nn_ids;
@@ -883,8 +1164,8 @@ private:
          *     i-----j
          *     \    /
          *     	j-1
-         *     	given i and j this function finds the global ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
-         *     	This function relies on the fact that i & j are neighbours and will throw a nasty runtime error if they are
+         *     	given i and j, this function finds the global ids of j-1 and j+1 nodes and returns them IN THAT ORDER;
+         *     	This function relies on the fact that i & j are neighbors and will throw a nasty runtime error if they are
          *     	not
          */
         auto const& nn_ids_view = nodes_[node_id].nn_ids;

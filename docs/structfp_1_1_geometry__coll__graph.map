@@ -1,4 +1,4 @@
 <map id="fp::Geometry&lt; Real, Index &gt;" name="fp::Geometry&lt; Real, Index &gt;">
-<area shape="rect" id="node1" title="A helper struct that is used by the triangulation to pass data around in one convenient package." alt="" coords="5,123,147,163"/>
+<area shape="rect" id="node1" title="A helper struct. Used by the triangulation class to pass data around in one convenient package." alt="" coords="5,123,147,163"/>
 <area shape="rect" id="node2" title=" " alt="" coords="51,5,101,31"/>
 </map>
