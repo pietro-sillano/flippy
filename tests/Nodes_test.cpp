@@ -39,7 +39,10 @@ TEST_CASE("Correct Read of Icosa Data"){
 TEST_CASE("pop emplace test"){
     using real = double;
     using idx = unsigned short;
-    Node<real, idx> single_node{.id=1, .pos={1,1,1}, .nn_ids={1,3,2}, .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}}};
+    Node<real, idx> single_node{.id=1, .area=0, .volume=0, .unit_bending_energy=0 ,.pos={1,1,1},
+                                .nn_ids={1,3,2},
+                                .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}},
+                                .verlet_list={}};
     SECTION("simple pop test 1"){
         single_node.pop_nn(3);
         auto ids_res = std::vector<idx>{1,2};
@@ -62,7 +65,10 @@ TEST_CASE("pop emplace test"){
 TEST_CASE("get_distance_to test"){
     using real = double;
     using idx = unsigned short;
-    Node<real, idx> single_node{.id=1, .pos={1,1,1}, .nn_ids={1,3,2}, .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}}};
+    Node<real, idx> single_node{.id=1, .area=0, .volume=0, .unit_bending_energy=0 ,.pos={1,1,1},
+                                .nn_ids={1,3,2},
+                                .nn_distances{vec3<real>{1,0,0}, vec3<real>{0,1,0}, vec3<real>{0,0, 1}},
+                                .verlet_list={}};
     SECTION("simple get test 1"){
         auto exp_dist = vec3<real>{1,0,0};
         CHECK(single_node.get_distance_vector_to(1)==exp_dist);
