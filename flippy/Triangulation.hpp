@@ -5,6 +5,7 @@
  * @brief This file contains the fp::Triangulation class and several related helper classes. This is the core of flippy.
  */
 #include<optional>
+#include <set>
 #include "Nodes.hpp"
 #include "vec3.hpp"
 #include "utilities/utils.hpp"
@@ -351,6 +352,7 @@ public:
     {
         static_assert(triangulation_type==PLANAR_TRIANGULATION, "This initialization is intended for planar triangulations");
         triangulate_planar_nodes(n_length, n_width, length, width);
+        orient_plane();
         initiate_advanced_geometry();
     }
 
@@ -452,14 +454,13 @@ public:
         nodes_[center_node_id].emplace_nn_id(new_value, nodes_[new_value].pos, anchor_pos);
     }
 
-    //unit tested
     /** \brief Securely flip the bond inside a quadrilateral formed by the nodes given by node_id,
      * nn_id and their two common next neighbors, if all topological requirements are satisfied.
      */
     BondFlipData<Index> flip_bond(Index node_id, Index nn_id,
                                   Real min_bond_length_square,
                                   Real max_bond_length_square){
-    /**
+   /**
      * *flip_bond* function takes a lot of care to keep the triangulation intact, i.e., not introduce holes or additional bonds in it.
      * To this end, the function performs a lot of checks to determine if the proposed bond fip is allowed by the topology.
      * The information if the flip was allowed and succeeded or not will be encoded in the BondFlipData struct, which this function will return.
@@ -480,26 +481,93 @@ public:
      * If the flip was not successful, then a default initialized BondFlipData struct will be returned with BondFlipData::flipped = **false**.
      * @note Regardless of the return values, the primary purpose of the function, that of flipping a bond, is accomplished as a side-effect.
      */
+        if constexpr (triangulation_type == TriangulationType::SPHERICAL_TRIANGULATION) {
+            return flip_bulk_bond(node_id, nn_id, min_bond_length_square, max_bond_length_square);
+        } else if constexpr (triangulation_type == TriangulationType::PLANAR_TRIANGULATION){
+
+            if (boundary_nodes_ids_set_.contains(node_id) or boundary_nodes_ids_set_.contains(nn_id)){}
+            else{
+                Neighbors<Index> common_nns = previous_and_next_neighbour_global_ids(node_id, nn_id);
+//                std::cout << "common_nns.j_m_1 = " << common_nns.j_m_1 << std::endl;
+//                std::cout << "common_nns.j_p_1 = " << common_nns.j_p_1 << std::endl;
+                if(boundary_nodes_ids_set_.contains(common_nns.j_m_1) or boundary_nodes_ids_set_.contains(common_nns.j_p_1)){
+                }else{
+                    return flip_bulk_bond(node_id, nn_id, min_bond_length_square, max_bond_length_square);
+//                    if(nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF and nodes_.nn_ids(nn_id).size()>BOND_DONATION_CUTOFF){
+//                        return flip_bond_in_quadrilateral(node_id, nn_id, common_nns, min_bond_length_square, max_bond_length_square);
+//                    }
+                }
+            }
+            return BondFlipData<Index>();
+
+        }else{
+            static_assert(triangulation_type == TriangulationType::SPHERICAL_TRIANGULATION or triangulation_type == TriangulationType::PLANAR_TRIANGULATION,
+                          "Triangulation type must be either spherical or planar.");
+        }
+    }
+    //unit tested
+
+
+    BondFlipData<Index> flip_bulk_bond(Index node_id, Index nn_id,
+                                       Real min_bond_length_square,
+                                       Real max_bond_length_square) {
         BondFlipData<Index> bfd{};
-        if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF) {
-            if (nodes_.nn_ids(nn_id).size()>BOND_DONATION_CUTOFF) {
+        if (nodes_.nn_ids(node_id).size() > BOND_DONATION_CUTOFF) {
+            if (nodes_.nn_ids(nn_id).size() > BOND_DONATION_CUTOFF) {
                 Neighbors<Index> common_nns = previous_and_next_neighbour_global_ids(node_id, nn_id);
                 Real bond_length_square = (nodes_.pos(common_nns.j_m_1) - nodes_.pos(common_nns.j_p_1)).norm_square();
-                if ((bond_length_square<max_bond_length_square) && (bond_length_square>min_bond_length_square)) {
-                    if (common_neighbours(node_id, nn_id).size()==2) {
-                    pre_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
-                    bfd = flip_bond_unchecked(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
-                        if (common_neighbours(bfd.common_nn_0, bfd.common_nn_1).size()==2) {
-                    update_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
-                    post_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
-                            common_nns.j_p_1);
-                    update_global_geometry(pre_update_geometry, post_update_geometry);
-                        }
-                        else {
+                if ((bond_length_square < max_bond_length_square) && (bond_length_square > min_bond_length_square)) {
+                    if (common_neighbours(node_id, nn_id).size() == 2) {
+                        pre_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
+                                                                         common_nns.j_p_1);
+                        bfd = flip_bond_unchecked(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                        if (common_neighbours(bfd.common_nn_0, bfd.common_nn_1).size() == 2) {
+                            update_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                            post_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
+                                                                              common_nns.j_p_1);
+                            update_global_geometry(pre_update_geometry, post_update_geometry);
+                        } else {
                             flip_bond_unchecked(bfd.common_nn_0, bfd.common_nn_1, nn_id, node_id);
                             bfd.flipped = false;
                         }
                     }
+                }
+            }
+        }
+        return bfd;
+    }
+
+
+//    BondFlipData<Index> flip_bulk_bond(Index node_id, Index nn_id,
+//                                  Real min_bond_length_square,
+//                                  Real max_bond_length_square){
+//        if (nodes_.nn_ids(node_id).size()>BOND_DONATION_CUTOFF and nodes_.nn_ids(nn_id).size()>BOND_DONATION_CUTOFF) {
+//                Neighbors<Index> common_nns = previous_and_next_neighbour_global_ids(node_id, nn_id);
+//                return flip_bond_in_quadrilateral(node_id, nn_id, common_nns,
+//                                                 min_bond_length_square,
+//                                                 max_bond_length_square);
+//        }
+//        return BondFlipData<Index>{};
+//    }
+
+    BondFlipData <Index>
+    flip_bond_in_quadrilateral(Index node_id, Index nn_id, const Neighbors <Index> &common_nns,
+                               Real min_bond_length_square, Real max_bond_length_square) {
+        BondFlipData<Index> bfd{};
+        Real bond_length_square = (nodes_.pos(common_nns.j_m_1) - nodes_.pos(common_nns.j_p_1)).norm_square();
+        if ((bond_length_square<max_bond_length_square) && (bond_length_square>min_bond_length_square)) {
+            if (common_neighbours(node_id, nn_id).size() == 2) {
+                pre_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+            bfd = flip_bond_unchecked(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                if (common_neighbours(bfd.common_nn_0, bfd.common_nn_1).size() == 2) {
+            update_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                    post_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
+                                                                      common_nns.j_p_1);
+            update_global_geometry(pre_update_geometry, post_update_geometry);
+                }
+                else {
+                    flip_bond_unchecked(bfd.common_nn_0, bfd.common_nn_1, nn_id, node_id);
+                    bfd.flipped = false;
                 }
             }
         }
@@ -741,10 +809,11 @@ public:
      */
     [[nodiscard]] Geometry<Real, Index> get_two_ring_geometry(Index node_id) const
     {
-
-        Geometry<Real, Index> trg(nodes_[node_id]);
+        auto const& node = nodes_[node_id];
+        Geometry<Real, Index> trg(node);
         for (auto const& nn_id: nodes_[node_id].nn_ids) {
-            trg += nodes_[nn_id];
+            auto this_node = nodes_[nn_id];
+            trg += this_node;
         }
         return trg;
     }
@@ -758,10 +827,15 @@ public:
      */
     void update_two_ring_geometry(Index node_id)
     {
-
-        update_bulk_node_geometry(node_id);
-        for (auto nn_id: nodes_.nn_ids(node_id)) {
-            update_bulk_node_geometry(nn_id);
+        if constexpr(triangulation_type == TriangulationType::SPHERICAL_TRIANGULATION) {
+            update_two_ring_geometry_on_a_boundary_free_triangulation(node_id);
+        }
+        else if constexpr(triangulation_type == TriangulationType::PLANAR_TRIANGULATION) {
+            update_two_ring_geometry_on_a_boundary_triangulation(node_id);
+        }
+        else {
+            static_assert(triangulation_type == TriangulationType::SPHERICAL_TRIANGULATION || triangulation_type == TriangulationType::PLANAR_TRIANGULATION,
+                          "Triangulation type is not supported!");
         }
     };
 
@@ -897,15 +971,24 @@ public:
     {
         const Geometry<Real, Index> empty{};
         global_geometry_ = empty;
-//        for (auto const& node: nodes_.data) {
         for (auto node_id: bulk_nodes_ids) {
             update_bulk_node_geometry(node_id);
             update_global_geometry(empty, Geometry<Real, Index>(nodes_[node_id]));
         }
-        for (auto node_id: boundary_nodes_ids) {
+        for (auto node_id: boundary_nodes_ids_set_) {
             update_boundary_node_geometry(node_id);
             update_global_geometry(empty, Geometry<Real, Index>(nodes_[node_id]));
         }
+    }
+
+    //! Returns the ids of all nodes that are not on the boundary.
+    /**
+     * Only works for triangulations that have a boundary.
+     * @return unique set of global ids of all nodes that are not on the boundary.
+     */
+    std::set<Index> boundary_nodes_ids_set() const {
+        static_assert(triangulation_type == TriangulationType::PLANAR_TRIANGULATION, "This function is only implemented for PLANAR_TRIANGULATION.");
+        return boundary_nodes_ids_set_;
     }
 
     //Todo unittest
@@ -916,12 +999,18 @@ public:
      * Right now, flippy is only handling fixed boundary conditions, where all geometric quantities of boundary nodes are set to zero.
      * @param node_id Id of a boundary node.
      */
-    void update_boundary_node_geometry(Index node_id){
-        nodes_.set_area(node_id, 0.);
-        nodes_.set_volume(node_id, 0.);
-        nodes_.set_curvature_vec(node_id,  {0., 0., 0.});
-        nodes_.set_unit_bending_energy(node_id, 0.);
-
+    void update_boundary_node_geometry([[maybe_unused]]Index node_id){
+        update_nn_distance_vectors(node_id);
+        Real area = 0;
+        Real energy = 0;
+        Real n_neighbours = (Real) nodes_[node_id].nn_ids.size();
+        for(auto nn_id: nodes_[node_id].nn_ids){
+            Real n_neighbours_neighbours = (Real) nodes_.nn_ids(nn_id).size();
+            area += nodes_.area(nn_id)/n_neighbours_neighbours;
+            energy += nodes_.unit_bending_energy(nn_id)/n_neighbours_neighbours;
+        }
+        nodes_.set_area(node_id, area/n_neighbours);
+        nodes_.set_unit_bending_energy(node_id, energy/n_neighbours);
     }
 
 #ifdef TESTING_FLIPPY_TRIANGULATION_ndh6jclc0qnp274b
@@ -931,13 +1020,13 @@ private:
 #endif
     Real R_initial;
     Nodes<Real, Index> nodes_;
-    std::vector<Index> boundary_nodes_ids;
     std::vector<Index> bulk_nodes_ids;
     Geometry<Real, Index> global_geometry_;
     Geometry<Real, Index> pre_update_geometry, post_update_geometry;
     mutable vec3<Real> l0_, l1_;
     Real verlet_radius{};
     Real verlet_radius_squared{};
+    std::set<Index> boundary_nodes_ids_set_;
 
     //unit tested
     void initiate_advanced_geometry(){
@@ -945,6 +1034,28 @@ private:
         make_global_geometry();
         set_verlet_radius(verlet_radius);
         make_verlet_list();
+    }
+
+    void update_two_ring_geometry_on_a_boundary_free_triangulation(Index node_id){
+        update_bulk_node_geometry(node_id);
+        for (auto nn_id: nodes_.nn_ids(node_id)) {
+            update_bulk_node_geometry(nn_id);
+        }
+    }
+    void update_two_ring_geometry_on_a_boundary_triangulation(Index node_id){
+        if(boundary_nodes_ids_set_.contains(node_id)){
+            update_boundary_node_geometry(node_id);
+        }else{
+            update_bulk_node_geometry(node_id);
+        }
+
+        for (auto nn_id: nodes_.nn_ids(node_id)) {
+            if(boundary_nodes_ids_set_.contains(nn_id)){
+                update_boundary_node_geometry(nn_id);
+            }else{
+                update_bulk_node_geometry(nn_id);
+            }
+        }
     }
 
     //unit tested
@@ -1060,6 +1171,35 @@ private:
             nodes_.set_nn_ids(i, nn_ids_temp);
         }
     }
+
+        void orient_plane()
+        {
+            /**
+             * If the initial configuration is spherical, then this function can orient the surface, such
+             * that all right handed cross products will point outwards.
+             * And the nn_ids are ordered in a way that two successive nn_s j and j+1 will give a right handed
+             * cross product. I.e l_i_j x l_i_jp1 points outwards.
+             *
+             * This operation is not idempotent in a strict sense, since it guarantees that the nn_ids are in
+             * a correct cycle every time but not in the same strict order, they might differ by an even
+             * permutation. I.e. the ordering {1,2,3,4,5,6} and {6,1,2,3,4,5} are equivalent results.
+             */
+            static_assert(triangulation_type==PLANAR_TRIANGULATION, "This function is only well defined for a planar triangulation");
+            std::vector<Index> nn_ids_temp;
+            vec3<Real> li0, li1;
+            vec3<Real> mass_center = calculate_mass_center();
+            mass_center.z+=10;
+            for (Index i = 0; i<nodes_.size(); ++i) { //ToDo modernize this loop
+                if(boundary_nodes_ids_set_.contains(i)){continue;}
+                nn_ids_temp = order_nn_ids(i);
+                li0 = nodes_[nn_ids_temp[0]].pos - nodes_[i].pos;
+                li1 = nodes_[nn_ids_temp[1]].pos - nodes_[i].pos;
+                if ((li0.cross(li1)).dot(nodes_[i].pos - mass_center)<0) {
+                    std::reverse(nn_ids_temp.begin(), nn_ids_temp.end());
+                }
+                nodes_.set_nn_ids(i, nn_ids_temp);
+            }
+        }
 
     // Todo unittest
     void initiate_distance_vectors()
@@ -1190,11 +1330,11 @@ private:
                 fp::implementation::IcosahedronSubTriangulation<Real,Index>::make_corner_nodes();
         fp::implementation::IcosahedronSubTriangulation<Real,Index>::make_face_nodes(simpleNodeData, n_iter);
 
-        Index nNewNodesOnEdge = n_iter - 1;
-        Index nBulk = nNewNodesOnEdge*(nNewNodesOnEdge+1)/2;
-        Index nNodes = fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_NODEs
-                + fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_EDGEs*n_iter
-                + fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_FACEs*nBulk;
+        fp::indexing_number auto nNewNodesOnEdge = static_cast<Index>(n_iter - 1);
+        fp::indexing_number auto nBulk = static_cast<Index>(nNewNodesOnEdge*(nNewNodesOnEdge+1)/2);
+        fp::indexing_number auto nNodes = static_cast<Index>(fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_NODEs
+            + fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_EDGEs*n_iter
+            + fp::implementation::IcosahedronSubTriangulation<Real,Index>::N_ICOSA_FACEs*nBulk);
         std::vector<Node<Real, Index>> nodeData(nNodes);
         for(Index id; auto & nodeEl :simpleNodeData){
             id = nodeEl.second.id;
@@ -1211,7 +1351,8 @@ private:
         Index N_nodes = n_length*n_width;
         fp::implementation::PlanarTriangulation<Real, Index> triang(n_length, n_width);
 //        Nodes<Real, Index> bulk_nodes;
-        Node<Real, Index> node;
+        Node<Real, Index> node{};
+        node.curvature_vec=fp::vec3<Real>{0.,0.,1.};
         for(Index node_id=0; node_id<N_nodes; ++node_id){
             node.id = node_id;
             node.pos = fp::vec3<Real>{
@@ -1219,10 +1360,11 @@ private:
                     triang.id_to_i(node_id)*width/n_width,
                     0.
             };
+
             node.nn_ids = triang.nn_ids[node_id];
             nodes_.data.push_back(node);
             if(triang.is_bulk[node_id]){bulk_nodes_ids.push_back(node_id);}
-            else{boundary_nodes_ids.push_back(node_id);}
+            else{boundary_nodes_ids_set_.insert(node_id);}
         }
     }
     void all_nodes_are_bulk(){
