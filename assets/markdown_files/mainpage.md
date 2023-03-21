@@ -18,11 +18,12 @@ Information on how to get flippy and incorporate it in your project can be found
 ### General nomenclature of flippy
 All class methods in flippy use similar prefix based naming convention that is described in the table below. 
 
-|   prefix    | description                                                                                                                                                                                                                                       |
-|:-----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| calculate_  | Indicates that a calculation will happen when the method is called, which might be expensive.                                                                                                                                                     |
-|  [action]_  | [action]_ could be move_ or flip_ or any other descriptor. This prefixes indicate a state change and are usually expensive.                                                                                                                       |
-| [no prefix] | usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this). Example: In the triangulation class `mass_center()` returns a const reference to the private data member `mass_center_`. |
+|     prefix      | description                                                                                                                                                                                                                                       |
+|:---------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   calculate_    | Indicates that a calculation will happen when the method is called, which might be expensive.                                                                                                                                                     |
+|    [action]_    | [action]_ could be move_ or flip_ or any other descriptor. This prefixes indicate a state change and are usually expensive.                                                                                                                       |
+|   [no prefix]   | usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this). Example: In the triangulation class `mass_center()` returns a const reference to the private data member `mass_center_`. |
+| [experimental]_ | this method data member etc. Is at this point an experimental feature. This means that it is not thoroughly tested and it is not a stable part of the API.                                                                                        |
 
 
 
