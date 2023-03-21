@@ -48,17 +48,17 @@ int main(){
     fp::Json data_init = guv.make_egg_data();
     fp::json_dump("test_run_init", data_init);  // ATTENTION!!! this file will be saved in the same folder as the executable
 
-    std::vector<int> shuffled_ids;
+    std::vector<unsigned int> shuffled_ids;
     shuffled_ids.reserve(guv.size());
     for(auto const& node: guv.nodes()){ shuffled_ids.push_back(node.id);} //create a vector that contains all node ids. We can shuffle this vector in each MC step to iterate randomly through the nodes
 
     for(int mc_step=0; mc_step<max_mc_steps; ++mc_step){
-        for (int node_id: shuffled_ids) { // we first loop through all the beads and move them
+        for (unsigned int node_id: shuffled_ids) { // we first loop through all the beads and move them
             displ = {displ_distr(rng), displ_distr(rng), displ_distr(rng)};
             mc_updater.move_MC_updater(guv[node_id], displ); // guv[node_id] returns the node which has id=node_id
         }
         std::shuffle(shuffled_ids.begin(), shuffled_ids.end(), rng); // then we shuffle the bead_ids
-        for (int node_id: shuffled_ids) { // then we loop through all of them again and try to flip their bonds
+        for (unsigned int node_id: shuffled_ids) { // then we loop through all of them again and try to flip their bonds
             mc_updater.flip_MC_updater(guv[node_id]);
         }
     }
