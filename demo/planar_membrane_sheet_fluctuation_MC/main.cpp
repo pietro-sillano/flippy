@@ -83,10 +83,10 @@ int main(){
     double l_min = 2;
     unsigned int n_x = 30;
     unsigned int n_y = 30;
-    double non_overlap_stretch = 1.01 ;
+    double non_overlap_stretch = 1.05 ; //This stretch factor makes sure that the nodes do not overlap and the bonds are long enouth, s.t. the triangles are not degenerate (i.e. all nodes are on the same line)
     double l_x = non_overlap_stretch *(n_x-1)*l_min;
     double l_y = non_overlap_stretch *(n_x-1)*l_min;
-    double l_max = 1.9*l_min; // if you make l_max closer to l_min bond_flip acceptance rate will go down. However if l_max is large enough that degenerate triangles can forme, then the simulation will give wrong results.
+    double l_max = 2.*l_min; // if you make l_max closer to l_min bond_flip acceptance rate will go down. However if l_max is large enough that degenerate triangles can forme, then the simulation will give wrong results.
     double r_Verlet = 2*l_max;
     EnergyParameters prms{.kappa=2 /*kBT*/, .K_A=1000 /*kBT/volume*/, .A_t=l_x*l_y};
     double linear_displ=l_min/10.; // side length of a voxel from which the displacement of the node is drawn
@@ -103,7 +103,6 @@ int main(){
 
     fp::vec3<double> displ{}; // declaring a 3d vector (using flippy's built in vec3 type) for later use as a random direction vector
     std::uniform_real_distribution<double> displ_distr(-linear_displ, linear_displ); //define a distribution from which the small displacements in x y and z directions will be drawn
-
 
     fp::Json data_init = planar_trg.make_egg_data();
     fp::json_dump("test_run_init", data_init);  // ATTENTION!!! this file will be saved in the same folder as the executable

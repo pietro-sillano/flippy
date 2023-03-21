@@ -339,8 +339,8 @@ public:
 
     //! Constructor that can initiate a planar triangulation from scratch.
     /**
-     * This overload initiates a planar triangulation with fixed (non-periodic boundaries).
-     * Corresponding tua clamped rectangular patch of a membrane.
+     * This overload initiates a planar triangulation with free floating (non-periodic boundaries).
+     * Edge nodes only serve a topological function and they do not contribute curvature or area to the membrane.
      * @warning @linearTriangulationWarningStub
      * @param n_length Number of nodes along the length of the triangulation (at the boundary).
      * @param n_width Number of nodes along the width of the triangulation (at the boundary).
