@@ -14,7 +14,7 @@ var namespacefp =
     [ "Json", "group___globals.html#ga0527b166a9415a6e07381ef4e11ed318", null ],
     [ "TriangulationType", "group___globals.html#ga6ac3c08b4c402e40a3f270818345078a", [
       [ "SPHERICAL_TRIANGULATION", "group___globals.html#gga6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703", null ],
-      [ "PLANAR_TRIANGULATION", "group___globals.html#gga6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d", null ]
+      [ "EXPERIMENTAL_PLANAR_TRIANGULATION", "group___globals.html#gga6ac3c08b4c402e40a3f270818345078aafb3c1a4934975221c03cd6b957b3e089", null ]
     ] ],
     [ "json_dump", "group___globals.html#ga200da317c4ff647b237dad1acec6dcd2", null ],
     [ "json_read", "group___globals.html#gad562f1206f779edba9a0557e41b5a403", null ],

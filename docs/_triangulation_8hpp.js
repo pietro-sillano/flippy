@@ -8,7 +8,7 @@ var _triangulation_8hpp =
     [ "VERY_LARGE_NUMBER_", "group___globals.html#ga4fcd71172083b7ac36f8a59485826cc1", null ],
     [ "TriangulationType", "_triangulation_8hpp.html#ga6ac3c08b4c402e40a3f270818345078a", [
       [ "SPHERICAL_TRIANGULATION", "_triangulation_8hpp.html#gga6ac3c08b4c402e40a3f270818345078aa4818fa0ff44979ed665568888d681703", null ],
-      [ "PLANAR_TRIANGULATION", "_triangulation_8hpp.html#gga6ac3c08b4c402e40a3f270818345078aab48e29d27d66bcb71857d5cd3a0fb29d", null ]
+      [ "EXPERIMENTAL_PLANAR_TRIANGULATION", "_triangulation_8hpp.html#gga6ac3c08b4c402e40a3f270818345078aafb3c1a4934975221c03cd6b957b3e089", null ]
     ] ],
     [ "BOND_DONATION_CUTOFF", "_triangulation_8hpp.html#ga1f3b45f2b89de3c4508d87fca78f2a16", null ]
 ];

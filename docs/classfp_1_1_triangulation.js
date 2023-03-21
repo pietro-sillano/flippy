@@ -26,6 +26,7 @@ var classfp_1_1_triangulation =
     [ "make_egg_data", "classfp_1_1_triangulation.html#aca161d492a4ba155d41000e382a95555", null ],
     [ "global_geometry", "classfp_1_1_triangulation.html#a9890d90831a7a834e8fffa1c432200d3", null ],
     [ "make_global_geometry", "classfp_1_1_triangulation.html#a1afce8afd92f1b88fb15ce7d9cb31edd", null ],
+    [ "boundary_nodes_ids_set", "classfp_1_1_triangulation.html#a699133c53fc98a6f3ec463bf1567dec6", null ],
     [ "update_boundary_node_geometry", "classfp_1_1_triangulation.html#a6ad51f097deab1674fce1800d2f2cf31", null ],
     [ "set_verlet_radius", "classfp_1_1_triangulation.html#a58c6d3d8705bb041d4114e88bfd32b71", null ]
 ];

@@ -500,37 +500,6 @@ public:
                           "Triangulation type must be either spherical or planar.");
         }
     }
-    //unit tested
-
-
-    BondFlipData<Index> flip_bulk_bond(Index node_id, Index nn_id,
-                                       Real min_bond_length_square,
-                                       Real max_bond_length_square) {
-        BondFlipData<Index> bfd{};
-        if (nodes_.nn_ids(node_id).size() > BOND_DONATION_CUTOFF) {
-            if (nodes_.nn_ids(nn_id).size() > BOND_DONATION_CUTOFF) {
-                Neighbors<Index> common_nns = previous_and_next_neighbour_global_ids(node_id, nn_id);
-                Real bond_length_square = (nodes_.pos(common_nns.j_m_1) - nodes_.pos(common_nns.j_p_1)).norm_square();
-                if ((bond_length_square < max_bond_length_square) && (bond_length_square > min_bond_length_square)) {
-                    if (common_neighbours(node_id, nn_id).size() == 2) {
-                        pre_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
-                                                                         common_nns.j_p_1);
-                        bfd = flip_bond_unchecked(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
-                        if (common_neighbours(bfd.common_nn_0, bfd.common_nn_1).size() == 2) {
-                            update_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
-                            post_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
-                                                                              common_nns.j_p_1);
-                            update_global_geometry(pre_update_geometry, post_update_geometry);
-                        } else {
-                            flip_bond_unchecked(bfd.common_nn_0, bfd.common_nn_1, nn_id, node_id);
-                            bfd.flipped = false;
-                        }
-                    }
-                }
-            }
-        }
-        return bfd;
-    }
 
     //unit-tested
     //! Un-flip a bond that was just flipped.
@@ -1329,6 +1298,35 @@ private:
     }
 
 
+        //unit tested
+        BondFlipData<Index> flip_bulk_bond(Index node_id, Index nn_id,
+                                           Real min_bond_length_square,
+                                           Real max_bond_length_square) {
+            BondFlipData<Index> bfd{};
+            if (nodes_.nn_ids(node_id).size() > BOND_DONATION_CUTOFF) {
+                if (nodes_.nn_ids(nn_id).size() > BOND_DONATION_CUTOFF) {
+                    Neighbors<Index> common_nns = previous_and_next_neighbour_global_ids(node_id, nn_id);
+                    Real bond_length_square = (nodes_.pos(common_nns.j_m_1) - nodes_.pos(common_nns.j_p_1)).norm_square();
+                    if ((bond_length_square < max_bond_length_square) && (bond_length_square > min_bond_length_square)) {
+                        if (common_neighbours(node_id, nn_id).size() == 2) {
+                            pre_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
+                                                                             common_nns.j_p_1);
+                            bfd = flip_bond_unchecked(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                            if (common_neighbours(bfd.common_nn_0, bfd.common_nn_1).size() == 2) {
+                                update_diamond_geometry(node_id, nn_id, common_nns.j_m_1, common_nns.j_p_1);
+                                post_update_geometry = calculate_diamond_geometry(node_id, nn_id, common_nns.j_m_1,
+                                                                                  common_nns.j_p_1);
+                                update_global_geometry(pre_update_geometry, post_update_geometry);
+                            } else {
+                                flip_bond_unchecked(bfd.common_nn_0, bfd.common_nn_1, nn_id, node_id);
+                                bfd.flipped = false;
+                            }
+                        }
+                    }
+                }
+            }
+            return bfd;
+        }
 
     ///// EXPERIMENTAL SUPPORT /////
     BondFlipData <Index>
