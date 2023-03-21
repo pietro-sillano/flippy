@@ -163,7 +163,7 @@ This folder also provides a `data_vizualization.py` python file. If this file is
 `test_run_init.json` and `test_run_final.json` JSON files are saved (the executable output files), then the python file will generate two plots.
 That of the initial and final configurations of a run.
 
-The `data.xyz` file contains snapshots of the membrane at different times. One can visualize the whole simulation by simply opening the file in visualization software like [Ovito](https://www.ovito.org/).
+The `data.xyz` file contains snapshots of the membrane at different times. One can visualize the whole simulation by simply opening the file in visualization software like [Ovito](https://www.ovito.org/). 
 And then rendered to an animation like this:
 
 ![planar_membrane_cooldown](https://user-images.githubusercontent.com/25377791/226763587-9c76ba66-776a-4201-90c6-6bfa6581b6d6.gif)
