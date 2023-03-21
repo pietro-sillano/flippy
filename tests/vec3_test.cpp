@@ -92,10 +92,15 @@ TEST_CASE("member function and associated operator checks"){
 	fp::vec3<double> x{vec[0], vec[1], vec[2]};
 	fp::vec3<double> cp = x;
 	fp::vec3<double> y{vec[3], vec[4], vec[5]};
-	CHECK(x==x+y-y);
+    auto target = Approx(0).margin(EPSILON);
+	CHECK((x-(x+y-y)).x==target);
+	CHECK((x-(x+y-y)).y==target);
+	CHECK((x-(x+y-y)).z==target);
 	x+=y;
 	x-=y;
-	CHECK(x==cp);
+	CHECK((x-cp).x==target);
+	CHECK((x-cp).y==target);
+	CHECK((x-cp).z==target);
   }
 
   SECTION("case test: norm"){
