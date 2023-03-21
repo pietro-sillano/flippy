@@ -432,11 +432,6 @@ public:
 
         nn_ids.resize(N_nodes);
         is_bulk.resize(N_nodes,false);
-        for(Index i=0; i<n_width;++i) {
-            for (Index j = 0; j<n_length; ++j) {
-                Index id = ij_to_id(i, j);
-            }
-        }
         // populate_bulk
         for(Index i=1; i<n_width-1;++i){
             for(Index j=1; j<n_length-1;++j){
