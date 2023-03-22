@@ -126,7 +126,9 @@ General nomenclature of flippy</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">[action]_   </td><td class="markdownTableBodyLeft">[action]_ could be move_ or flip_ or any other descriptor. This prefixes indicate a state change and are usually expensive.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">[no prefix]   </td><td class="markdownTableBodyLeft">usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this). Example: In the triangulation class <code>mass_center()</code> returns a const reference to the private data member <code>mass_center_</code>.   </td></tr>
+<td class="markdownTableBodyCenter">[no prefix]   </td><td class="markdownTableBodyLeft">usually signifies functions that return a constant reference to a private member (some people use get_ prefix for this). Example: In the triangulation class <code>mass_center()</code> returns a const reference to the private data member <code>mass_center_</code>.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">[experimental]_   </td><td class="markdownTableBodyLeft">this method data member etc. Is at this point an experimental feature. This means that it is not thoroughly tested and it is not a stable part of the API.   </td></tr>
 </table>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
