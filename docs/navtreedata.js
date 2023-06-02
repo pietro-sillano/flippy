@@ -61,8 +61,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_monte_carlo_updater_8hpp.html",
-"structfp_1_1_node.html#a4743d523ce7d4e1ea613d685af1da9be"
+"_curvature_minimization_updater_8hpp.html",
+"structfp_1_1_geometry.html#ad54e751bccf6ae11d4af543ef6a23c23"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

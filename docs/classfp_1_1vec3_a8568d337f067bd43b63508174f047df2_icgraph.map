@@ -1,10 +1,11 @@
 <map id="fp::vec3::norm" name="fp::vec3::norm">
-<area shape="rect" id="node1" title="Returns the norm of the vector." alt="" coords="841,77,948,103"/>
-<area shape="rect" id="node2" href="$classfp_1_1vec3.html#a3484a50de6cbbadfa7b04d4352410a10" title="Normalize the vector in place. And return a reference to the new normalized vector." alt="" coords="633,5,766,31"/>
-<area shape="rect" id="node3" href="$classfp_1_1_triangulation.html#a75e93af077cc8434bb76a1a4a39f3adf" title="This function is deprecated!" alt="" coords="609,55,790,125"/>
-<area shape="rect" id="node4" href="$classfp_1_1_triangulation.html#a5d5763865ac706a2e800ed306d070d68" title="Update the geometric quantities associated with the given node." alt="" coords="605,149,793,189"/>
-<area shape="rect" id="node5" href="$classfp_1_1_triangulation.html#a1afce8afd92f1b88fb15ce7d9cb31edd" title="Initiates the global geometry of the triangulation." alt="" coords="390,117,546,157"/>
-<area shape="rect" id="node6" href="$classfp_1_1_triangulation.html#a762c6430c00d719a8ea5a4a3e89715a8" title="Calculates and updates the geometric quantities of the diamond configuration of nodes associated with..." alt="" coords="379,181,557,221"/>
-<area shape="rect" id="node7" href="$classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa" title="Un&#45;flip a bond that was just flipped." alt="" coords="208,181,331,221"/>
-<area shape="rect" id="node8" href="$classfp_1_1_monte_carlo_updater.html#a8de725c1ae28fd44d096ffb82467b598" title="Attempt a flip Monte Carlo Step." alt="" coords="5,181,160,221"/>
+<area shape="rect" id="node1" title="Returns the norm of the vector." alt="" coords="867,77,973,103"/>
+<area shape="rect" id="node2" href="$classfp_1_1vec3.html#a3484a50de6cbbadfa7b04d4352410a10" title="Normalize the vector in place. And return a reference to the new normalized vector." alt="" coords="658,5,791,31"/>
+<area shape="rect" id="node3" href="$classfp_1_1_triangulation.html#a75e93af077cc8434bb76a1a4a39f3adf" title="This function is deprecated!" alt="" coords="634,55,815,125"/>
+<area shape="rect" id="node4" href="$classfp_1_1_triangulation.html#a5d5763865ac706a2e800ed306d070d68" title="Update the geometric quantities associated with the given node." alt="" coords="631,149,819,189"/>
+<area shape="rect" id="node5" href="$classfp_1_1_triangulation.html#a1afce8afd92f1b88fb15ce7d9cb31edd" title="Initiates the global geometry of the triangulation." alt="" coords="415,117,571,157"/>
+<area shape="rect" id="node6" href="$classfp_1_1_triangulation.html#a762c6430c00d719a8ea5a4a3e89715a8" title="Calculates and updates the geometric quantities of the diamond configuration of nodes associated with..." alt="" coords="404,181,583,221"/>
+<area shape="rect" id="node7" href="$classfp_1_1_triangulation.html#a5d1ec431a7a0040d7963e4297a80faaa" title="Un&#45;flip a bond that was just flipped." alt="" coords="233,181,356,221"/>
+<area shape="rect" id="node8" href="$classfp_1_1experimental_1_1_curvature_minimization_updater.html#a22925b1173cb80cf90cb62229ffe2ee4" title="Attempt a flip Monte Carlo Step." alt="" coords="5,137,185,192"/>
+<area shape="rect" id="node9" href="$classfp_1_1_monte_carlo_updater.html#a8de725c1ae28fd44d096ffb82467b598" title="Attempt a flip Monte Carlo Step." alt="" coords="18,217,173,257"/>
 </map>

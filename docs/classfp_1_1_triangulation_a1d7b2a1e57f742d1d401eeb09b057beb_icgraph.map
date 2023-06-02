@@ -1,7 +1,8 @@
 <map id="fp::Triangulation::update_two_ring_geometry" name="fp::Triangulation::update_two_ring_geometry">
-<area shape="rect" id="node1" title="Updates the geometric quantities of the center node and its next neighbor nodes." alt="" coords="387,69,565,109"/>
-<area shape="rect" id="node2" href="$classfp_1_1_triangulation.html#ad8102adbe7dab80cda3209844a939e30" title="Move an individual node of the triangulation and update all the geometric quantities of the triangula..." alt="" coords="216,69,339,109"/>
-<area shape="rect" id="node3" href="$classfp_1_1_monte_carlo_updater.html#ac3e40c3b93bf2bf6f2b08291357503be" title="Attempt a move Monte Carlo Step." alt="" coords="9,5,164,45"/>
-<area shape="rect" id="node4" href="$classfp_1_1_triangulation.html#a692685c96cd6a0cdba72b50adf3fb49b" title="Method for stretching or squeezing the initial triangulation shape." alt="" coords="5,69,168,109"/>
-<area shape="rect" id="node5" href="$classfp_1_1_triangulation.html#aaef436fe4758c409b21a135b329edc17" title="Adds the same 3D vector to the positions of each node of the triangulation." alt="" coords="19,133,154,173"/>
+<area shape="rect" id="node1" title="Updates the geometric quantities of the center node and its next neighbor nodes." alt="" coords="405,117,584,157"/>
+<area shape="rect" id="node2" href="$classfp_1_1_triangulation.html#ad8102adbe7dab80cda3209844a939e30" title="Move an individual node of the triangulation and update all the geometric quantities of the triangula..." alt="" coords="235,117,357,157"/>
+<area shape="rect" id="node3" href="$classfp_1_1experimental_1_1_curvature_minimization_updater.html#a39835031ed9846a08f087c605ae08dbc" title="Attempt a move Monte Carlo Step." alt="" coords="5,5,187,60"/>
+<area shape="rect" id="node4" href="$classfp_1_1_monte_carlo_updater.html#ac3e40c3b93bf2bf6f2b08291357503be" title="Attempt a move Monte Carlo Step." alt="" coords="19,85,173,125"/>
+<area shape="rect" id="node5" href="$classfp_1_1_triangulation.html#a692685c96cd6a0cdba72b50adf3fb49b" title="Method for stretching or squeezing the initial triangulation shape." alt="" coords="15,149,177,189"/>
+<area shape="rect" id="node6" href="$classfp_1_1_triangulation.html#aaef436fe4758c409b21a135b329edc17" title="Adds the same 3D vector to the positions of each node of the triangulation." alt="" coords="29,213,163,253"/>
 </map>

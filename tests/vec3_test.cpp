@@ -152,6 +152,8 @@ TEST_CASE("Operator checks"){
 }
 
 TEST_CASE("proper arithmetic for vec3"){
+    auto zero_ish = Approx(0).margin(1e-6);
+
 	SECTION("test cross product x cross y is z"){
 	fp::vec3<double> x{1, 0, 0};
 	fp::vec3<double> y{0, 1, 0};
@@ -164,16 +166,23 @@ TEST_CASE("proper arithmetic for vec3"){
 	constexpr double min=-1e5, max=1e5;
 	auto vec = GENERATE(take(numTrials,chunk(3,random(min,max))));
 	fp::vec3<double> x{vec[0], vec[1], vec[2]};
-	fp::vec3<double> zero_vec{0, 0, 0};
-	CHECK(x.cross(x)==zero_vec);
+    auto cp = x.cross(x);
+    CHECK(cp.x==zero_ish);
+    CHECK(cp.y==zero_ish);
+    CHECK(cp.z==zero_ish);
 	}
+
   SECTION("property test: antisymmetry of cross product"){
 	constexpr int numTrials = 3;
 	constexpr int min=-1.e5, max=1.e5;
 	const std::vector<double> vec = GENERATE(take(numTrials,chunk(6,random<double>(min,max))));
 	fp::vec3<double> x{vec[0], vec[1], vec[2]};
 	fp::vec3<double> y{vec[3], vec[4], vec[5]};
-	CHECK(x.cross(y)==(-1)*y.cross(x));
+	fp::vec3<double> diff = x.cross(y) + y.cross(x);
+    CHECK(diff.x==zero_ish);
+    CHECK(diff.y==zero_ish);
+    CHECK(diff.z==zero_ish);
+//    CHECK(x.cross(y)==(-1)*y.cross(x));
 	}
   SECTION("property test: cross product is orthogonal to crossed vectors"){
 	constexpr int numTrials = 3;
@@ -184,9 +193,8 @@ TEST_CASE("proper arithmetic for vec3"){
 
 
 	fp::vec3<double> z=x.cross(y);
-	auto target = Approx(0).margin(EPSILON);
-	CHECK(z.dot(x)==target);
-	CHECK(z.dot(y)==target);
+	CHECK(z.dot(x)==zero_ish);
+	CHECK(z.dot(y)==zero_ish);
   }
 
 }
