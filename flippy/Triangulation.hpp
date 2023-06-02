@@ -740,11 +740,9 @@ public:
      */
     [[nodiscard]] Geometry<Real, Index> get_two_ring_geometry(Index node_id) const
     {
-        auto const& node = nodes_[node_id];
-        Geometry<Real, Index> trg(node);
+        Geometry<Real, Index> trg(nodes_[node_id]);
         for (auto const& nn_id: nodes_[node_id].nn_ids) {
-            auto this_node = nodes_[nn_id];
-            trg += this_node;
+            trg += nodes_[nn_id];
         }
         return trg;
     }
