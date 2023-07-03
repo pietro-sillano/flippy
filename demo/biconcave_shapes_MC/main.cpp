@@ -61,6 +61,10 @@ int main(){
         for (unsigned int node_id: shuffled_ids) { // then we loop through all of them again and try to flip their bonds
             mc_updater.flip_MC_updater(guv[node_id]);
         }
+        
+        if (mc_step%5000== 0){
+            std::cout<<"step "<<mc_step <<" over "<<max_mc_steps<<'\n';
+        }
     }
 
     // MonteCarloUpdater counts the number of accepted and rejected moves, distinguishing whether a rejection occurred because of the energy or the bond length constraint.
